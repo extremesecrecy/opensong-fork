@@ -41,7 +41,8 @@ Module SongML
 		      line3 = ""
 		      line4 = ""
 		      i = 0
-		      While i <= lines.Ubound
+		      ' FIX: Must check i+1 is in bounds before accessing lines(i+1)
+		      While i < lines.Ubound
 		        pos1 = InStr(lines(i), "||")
 		        pos2 = InStr(lines(i + 1), "||")
 		        If Pos1 <> 0 Then
@@ -317,7 +318,8 @@ Module SongML
 		      lines.Append("")
 		    End If
 		    // if lines have to be split either split both or add in a separationMark
-		    While i <= lines.Ubound()
+		    ' FIX: Must check i+1 is in bounds before accessing lines(i+1)
+		    While i < lines.Ubound()
 		      barpos1 = InStr(lines(i), "|")
 		      barpos2 = InStr(lines(i+1), "|")
 		      If barpos1 > 0 Then
@@ -1889,7 +1891,12 @@ Module SongML
 		  firstLineIndex = chordLineIndex
 		  i = chordLineIndex + 1
 		  While lastLineIndex = 0
-		    If i > UBound(lines) Or Len(lines(i)) = 0 Or InStr("123456789 ", Left(lines(i), 1)) = 0 Then
+		    ' FIX: Xojo Or does NOT short-circuit - must check bounds first!
+		    If i > UBound(lines) Then
+		      lastLineIndex = i - 1
+		    ElseIf Len(lines(i)) = 0 Then
+		      lastLineIndex = i - 1
+		    ElseIf InStr("123456789 ", Left(lines(i), 1)) = 0 Then
 		      lastLineIndex = i - 1
 		    ElseIf Mid(lines(i),1,1) = " " Then
 		      If i = chordLineIndex + 1 Then

@@ -80,8 +80,8 @@
     <title caption="Title">Sets the title of the selected song.</title>
     <author caption="Author">Sets the author of the selected song.</author>
     <copyright caption="Copyright">Sets the copyright of the selected song.</copyright>
-    <ccli caption="CCLI Song #">Sets the CCLI number of the selected song.</ccli>
-    <hymn_number caption="Hymn #">Sets the Hymn number of the selected song.</hymn_number>
+    <ccli caption="Catalog #">Sets the catalog/license number of the selected song.</ccli>
+    <hymn_number caption="Track #">Sets the track number of the selected song.</hymn_number>
     <presentation caption="Presentation">Sets the presentation order of the selected song. Sections should be separated with spaces. (i.e. "V1 C V2 C")</presentation>
     <lyrics caption="Chords/Lyrics">Edit songs here using Section lines, Comment lines, Chord lines, and Lyric lines.</lyrics>
     <insert caption="Insert"/>
