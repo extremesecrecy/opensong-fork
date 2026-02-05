@@ -1,0 +1,326 @@
+; This file defines custom hyphenation words for the lilypond renderer.
+; Each line should contain either a comment (start with a ; ) or the word
+; to hyphen, followed by some empty space (tabs, spaces, etc.) followed the hyphen
+; result in lilypond format (so: part1 -- part2 -- part3, etc.)
+; A word is defined by a consecutive sequence of alphabetical characters or the ' character.
+; When a custom hyphen ends with an underscore, spaces between this and the next
+; word will be removed. This allows you to merge words together.
+; don't use capitals
+'k 'k_
+'s 's_
+'t 't_
+a' a'_
+aadren aad -- ren
+aäron a -- ä -- ron
+aärons a -- ä -- rons
+aarz'lend aarz'-- lend
+above a -- bo -- ve
+abiram a -- bi -- ram
+abraham a -- bra -- ham
+abrahams a -- bra -- hams
+abram a -- bram
+abrams a -- brams
+achim a -- chim
+achtb're acht -- b're
+adam a -- dam
+adams a -- dams
+ademende a -- dem -- en -- de
+adel a -- del
+adelaar a -- de -- laar
+adelaarswiek a -- de -- laars -- wiek
+adem a -- dem
+adembenemend a -- dem -- be -- ne -- mend
+ademen a -- de -- men
+ademhalen a -- dem -- ha -- len
+ademhaling a -- dem -- ha -- ling
+ademloos a -- dem -- loos
+ademnood a -- dem -- nood
+ademt a -- demt
+ademtocht a -- dem -- tocht
+ader a -- der
+adonai a -- do -- nai
+adore a -- do -- re
+adres a -- dres
+alle al -- le
+allerdiepst al -- ler -- diepst
+aloe a -- lo -- e
+alom al -- om
+alomme a -- lom -- me
+altaar al -- taar
+amen a -- men
+andre an -- dre
+andren an -- dren
+apart a -- part
+apost'len a -- post' -- len
+arabisch a -- ra -- bisch
+aren a -- ren
+arend a -- rend
+arends a -- rends
+arme ar -- me
+aron a -- ron
+arons a -- rons
+around a -- round
+aten a -- ten
+avond a -- vond
+avondmaal a -- vond -- maal
+avondlied a -- vond -- lied
+avonds a -- vonds
+avondschaduw a -- vond -- scha -- duw
+avondwolken a -- vond -- wol -- ken
+avontuur a -- von -- tuur
+away a -- way
+azijn a -- zijn
+azuur a -- zuur
+b' b'_
+belaan be -- laan
+belacht be -- lacht
+belachten be -- lach -- ten
+bethlehem beth -- le -- hem
+bethl'em  bethl -- 'em
+bloeie bloei -- e
+burgertwist bur -- ger -- twist
+c' c'_
+d' d'_
+d'adem d'a -- dem
+dankerkentenis dank -- er -- ken -- te -- nis
+dathan da -- than
+deo de -- o
+daarbuiten daar -- bui -- ten
+dankaltaar dank -- al -- taar
+diepst diepst
+donkre donk -- re
+drieenig drie -- e -- nig
+drieeenge drie -- een -- ge
+duistre dui -- stre
+e' e'_
+ebaoth e -- ba -- oth
+echo e -- cho
+ede -- le ede -- le
+edel e -- del
+edelen e -- de -- len
+edeler e -- de -- ler
+edelst e -- delst
+eden e -- den
+edens e -- dens
+edik e -- dik
+efraïm E -- fra -- ïm
+efrata e -- fra -- ta
+egypte e -- gyp -- te
+egypte's e -- gyp -- te's
+egypteland e -- gyp -- te -- land
+egyptenaren e -- gyp -- te -- na -- ren
+eland e -- land
+elia e -- li -- a
+elisabet e -- li -- sa -- bet
+elke el -- ke
+emoe e -- moe
+ene e -- ne
+enen e -- nen
+enes e -- nes
+eng'lensferen eng -- len -- sfe -- ren
+eni -- ge eni -- ge
+enig e -- nig
+enige e -- ni -- ge
+enigst e -- nigst
+ere e -- re
+eren e -- ren
+erin er -- in
+erover er -- o -- ver
+erve er -- ve
+ete e -- te
+eten e -- ten
+etend e -- tend
+etende e -- ten -- de
+eeuwigheid eeu -- wig -- heid
+ev'ry ev -- 'ry
+evangelie e -- van -- ge -- lie
+evangeliebladen e -- van -- ge -- lie -- bla -- den
+evangelieboden e -- van -- ge -- lie -- bo -- den
+evangeliewoord e -- van -- ge -- lie -- woord
+evangeliezaad e -- van -- ge -- lie -- zaad
+even e -- ven
+evenals e -- ven -- als
+evenzo e -- ven -- zo
+evers e -- vers
+evenwicht e -- ven -- wicht
+exodus ex -- o -- dus
+ezel e -- zel
+ezelen e -- ze -- len
+ezelin eze -- lin
+ezels e -- zels
+ezeltje e -- zel -- tje
+f' f'_
+farao fa -- ra -- o
+fijnste fijn -- ste
+g' g'_
+geëerd ge -- ëerd
+geevenaard ge -- e -- ven -- aard
+gistren gist -- ren
+gloria glo -- ri -- a
+goddlijk godd -- lijk
+Golgotha Gol -- go -- tha
+groeie groei -- e
+h' h'_
+hemelkoning he -- mel -- ko -- ning
+hizkia hiz -- ki -- a
+i' i'_
+ibis i -- bis
+ideaal i -- de -- aal
+idolen i -- do -- len
+iedre ie -- dre
+ijle ij -- le
+immermeer im -- mer -- meer
+isaï i -- sa -- ï
+israël is -- ra -- ël
+israëls is -- ra -- ëls
+ivoor i -- voor
+izaak i -- zaak
+izak i -- zak
+j' j'_
+jozua jo -- zu -- a
+k' k'_
+kanaan Ka -- na -- an
+kanaän Ka -- na -- än
+kyrieleis ky -- ri -- e -- leis
+l' l'_
+levensjordaan le -- vens -- jor -- daan
+liedren lied -- ren
+liefdekracht lief -- de -- kracht
+m' m'_
+maria ma -- ri -- a
+moesten moes -- ten
+morgenglans mor -- gen -- glans
+n' n'_
+needrig need -- rig
+o' o'_
+oases o -- a -- ses
+oceaan o -- ce -- aan
+oceanen o -- ce -- a -- nen
+offren off -- ren
+oge o -- ge
+ogen o -- gen
+ogenblik o -- gen -- blik
+olie o -- lie
+olijf o -- lijf
+omega o -- me -- ga
+ongastvrije on -- gast -- vrij -- e
+ongedacht on -- ge -- dacht
+onnooz'le on -- nooz -- 'le
+ontelb're on -- tel -- b're
+ontwaakt ont -- waakt
+onzaal'gen on -- zaal' -- gen
+onze on -- ze
+onzeek're on -- zeek -- 're
+ooma oo -- ma
+open o -- pen
+openbaarde o -- pen -- baar -- de
+openbaart o -- pen -- baart
+openbaren o -- pen -- ba -- ren
+opende o -- pen -- de
+openga o -- pen -- ga
+opengaan o -- pen -- gaan
+opengaat o -- pen -- gaat
+openleggen o -- pen -- leg -- gen
+openlijk o -- pen -- lijk
+openscheurt o -- pen -- scheurt
+opent o -- pent
+orde or -- de
+ore o -- re
+oren o -- ren
+oriënt o -- ri -- ënt
+oude ou -- de
+oven o -- ven
+over o -- ver
+overal o -- ver -- al
+overblijft o -- ver -- blijft
+overbodig o -- ver -- bo -- dig
+overdaad o -- ver -- daad
+overdekt o -- ver -- dekt
+overdenk o -- ver -- denk
+overeind o -- ver -- eind
+overhand o -- ver -- hand
+overig o -- ve -- rig
+overgaf o -- ver -- gaf
+overgeven o -- ver -- ge -- ven
+overkomen o -- ver -- ko -- men
+overlaan o -- ver -- laan
+overlaten o -- ver -- la -- ten
+overlegt o -- ver -- legt
+overleven o -- ver -- le -- ven
+overloopt o -- ver -- loopt
+overluid o -- ver -- luid
+overmaat o -- ver -- maat
+overmacht o -- ver -- macht
+overmand o -- ver -- mand
+overmande o -- ver -- man -- de
+overmant o -- ver -- mant
+overmocht o -- ver -- mocht
+overmoed o -- ver -- moed
+overmoedig o -- ver -- moed -- ig
+overmorgen o -- ver -- mor -- gen
+overnacht o -- ver -- nacht
+overspoelt o -- ver -- spoelt
+overstelpen o -- ver -- stel -- pen
+overstelpend o -- ver -- stel -- pend
+overstelpt o -- ver -- stelpt
+overstromen o -- ver -- stro -- men
+overtrof o -- ver -- trof
+overtogen o -- ver -- to -- gen
+overtreden o -- ver -- tre -- den
+overtuigd o -- ver -- tuigd
+overtuigt o -- ver -- tuigt
+overval o -- ver -- val
+overvloed o -- ver -- vloed
+overvloedig o -- ver -- vloe -- dig
+overvloeien o -- ver -- vloei -- en
+overwinnaar o -- ver -- win -- naar
+overwinnaars o -- ver -- win -- naars
+overwinnen o -- ver -- win -- nen
+overwinning o -- ver -- win -- ning
+overwinningskroon o -- ver -- win -- nings -- kroon
+overwinningsmacht o -- ver -- win -- nings -- macht
+overwinningstocht o -- ver -- win -- nings -- tocht
+overwint o -- ver -- wint
+overwon o -- ver -- won
+overwonnen o -- ver -- won -- nen
+overziet o -- ver -- ziet
+overzij o -- ver -- zij
+ovrig ov -- rig
+p' p'_
+q' q'_
+r' r'_
+s' s'_
+scheppersmacht schep -- pers -- macht
+springader spring -- a -- der
+t' t'_
+triomfgeschal tri -- omf -- ge -- schal
+u' u'_
+under un -- der
+ure u -- re
+uren u -- ren
+uwe u -- we
+uwen uw -- en
+uwentwil u -- went -- wil 
+uwer uw -- er
+uzelf u -- zelf
+uzelve u -- zel -- ve
+v' v'_
+vaderogen va -- der -- o -- gen
+verhindren ver -- hin -- dren
+verlangt ver -- langt
+verste ver -- ste
+via vi -- a
+vredesoord vre -- des -- oord
+vreugdepsalmen vreug -- de -- psal -- men
+vrije vrij -- e
+w' w'_
+wat'ie wat'ie
+weeuw weeuw
+weêuw weêuw
+wellekome wel -- le -- ko -- me
+winste win -- ste
+woudezels woud -- e -- zels
+x' x'_
+y' y'_	
+z' z'_
+zeeën zee -- en

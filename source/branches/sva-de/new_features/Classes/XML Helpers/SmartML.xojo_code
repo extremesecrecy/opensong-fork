@@ -1,0 +1,1694 @@
+#tag Module
+Protected Module SmartML
+	#tag Method, Flags = &h0
+		Function CleanXML(Extends str As String) As String
+		  Static reCleanXml As RegEx
+		  If reCleanXml = Nil Then
+		    reCleanXml = New RegEx
+		    reCleanXml.SearchPattern = "[\x01-\x08\x0B\x0C\x0E-\x1F]"
+		    reCleanXml.ReplacementPattern = ""
+		    reCleanXml.Options.ReplaceAllMatches = True
+		  End If
+		  
+		  Return reCleanXml.Replace(str)
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub CloneAttributes(fromNode As XmlNode, toNode As XmlNode)
+		  Dim i As Integer
+		  Dim attCount As Integer
+		  Dim att As XmlAttribute
+		  
+		  attCount = fromNode.AttributeCount
+		  
+		  For i = 0 To attCount - 1
+		    att = fromNode.GetAttributeNode(i)
+		    toNode.SetAttribute(att.Name, att.Value)
+		  Next
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub CloneChildren(fromNode As XmlNode, toNode As XmlNode)
+		  Dim xchild As XmlNode
+		  xchild = fromNode.FirstChild
+		  While xchild <> Nil
+		    toNode.AppendChild toNode.OwnerDocument.SafeImportNode(xchild, True)
+		    xchild = xchild.NextSibling
+		  Wend
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function CreateSpecificNodeType(xDoc As XmlDocument, xSource As XmlNode) As XmlNode
+		  //
+		  // Create a node in the xDoc that has the same name, value, and type
+		  //  as the source XmlNode.
+		  //
+		  // Note the special interpretation on the XmlTextNode due to issues
+		  // with XmlNodeType for XmlCDATASection
+		  //
+		  // No attributes or children are copied
+		  //
+		  Dim xReturn As XmlNode
+		  
+		  Select Case xSource.Type
+		    
+		  Case XmlNodeType.CDATA_SECTION_NODE
+		    xReturn = xDoc.CreateCDATASection(XmlCDATASection(xSource).Name)
+		    xReturn.Value = xSource.Value
+		    
+		  Case XmlNodeType.COMMENT_NODE
+		    xReturn = xDoc.CreateComment(XmlComment(xSource).Name)
+		    xReturn.Value = xSource.Value
+		    
+		  Case XmlNodeType.TEXT_NODE
+		    //
+		    // The parser does not seem to distinguish between CDATA and Text nodes
+		    // If there is more than one of each "<" and ">", assume it's HTML and
+		    // should be a CDATA.
+		    //
+		    If XmlTextNode(xSource).Value.CountFields("<") > 2 And _ 
+		      XmlTextNode(xSource).Value.CountFields(">") > 2 Then
+		      xReturn = xDoc.CreateCDATASection(xSource.Name)
+		    Else
+		      xReturn = xDoc.CreateTextNode(XmlTextNode(xSource).Name)
+		    End If
+		    xReturn.Value = xSource.Value
+		    
+		  Case XmlNodeType.ELEMENT_NODE
+		    If xSource.Prefix <> "" Then
+		      xReturn = xDoc.CreateElement(xSource.NamespaceUri,xSource.LocalName)
+		    Else
+		      xReturn = xDoc.CreateElement(xSource.Name)
+		    End If
+		    
+		  End Select
+		  
+		  Return xReturn
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function DeterminePathType(path As String) As Integer
+		  //++
+		  // Xojo has deprecated FolderItem.AbsolutePath in favor of
+		  // FolderItem.NativePath. The differences are subtle on Windows
+		  // and Linux, but on macOS they are radically different:
+		  // the separator for AbsolutePath is ":" and the path starts with the
+		  // name of the volume. NativePath is the Posix-style path using
+		  // the "/" separator and starting from the root ("/").
+		  //
+		  // Return the appropriate value to feed to the second argument for
+		  // New FolderItem(path, pathtype)
+		  //--
+		  
+		  If path.Left(7) = "file://" Then
+		    Return FolderItem.PathTypeURL
+		  End If
+		  
+		  #If Not TargetMacOS
+		    Return FolderItem.PathTypeAbsolute
+		  #EndIf
+		  
+		  #If RBVersion >= 2013
+		    If path.Left(1) = "/" Then
+		      Return FolderItem.PathTypeNative
+		    Else
+		      Return FolderItem.PathTypeAbsolute
+		    End If
+		  #Else
+		    Return FolderItem.PathTypeAbsolute
+		  #EndIf
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub DisplayError()
+		  InputBox.Message GetErrorMessage()
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function GetAttribute(xnode As XmlNode, attribName As String, default As String = "") As String
+		  Dim attribute As XmlNode
+		  Dim s As String
+		  Dim i As Integer
+		  
+		  If xnode = Nil Then Return default
+		  
+		  s = attribName
+		  i = 0
+		  
+		  Try
+		    attribute = xnode.GetAttributeNode(attribName)
+		  Catch err
+		    MsgBox(TranslateMessage("smartml/attrib_except", "Exception with attribute %s, %s", attribName, xnode.ToString))
+		    Return default
+		  End Try
+		  
+		  If attribute <> Nil Then Return attribute.Value
+		  
+		  // For some reason, the following seems necessary sometimes. At least it did in RB 5.2.1
+		  For i = 0 To xnode.AttributeCount - 1
+		    attribute = xnode.GetAttributeNode(i)
+		    If attribute <> Nil Then
+		      If attribute.Name = s Then
+		        Return attribute.Value
+		      End If
+		    End If
+		  Next i
+		  
+		  Return default
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function GetAttributeNode(xnode As XmlNode, attribName As String) As XmlNode
+		  Dim attrNode As XmlNode
+		  Dim s As String
+		  
+		  If xnode = Nil Then Return Nil
+		  
+		  s = attribName
+		  If Mid(s, 1, 1) = "@" Then s = Mid(s, 2)
+		  
+		  Try
+		    attrNode = xnode.GetAttributeNode(s)
+		  Catch err
+		    MsgBox(TranslateMessage("smartml/attrib_except", "Exception with attribute %s, %s", attribName, xnode.ToString))
+		    Return Nil
+		  End Try
+		  
+		  If attrNode <> Nil Then Return attrNode
+		  
+		  // For some reason, the following seems necessary sometimes. At least it did in RB 5.2.1
+		  For i As Integer = 0 To xnode.AttributeCount - 1
+		    attrNode = xnode.GetAttributeNode(i)
+		    If attrNode <> Nil Then
+		      If attrNode.Name = s Then Return attrNode
+		    End If
+		  Next i
+		  
+		  Return Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function GetChildNode(xnode As XmlNode, childName As String, create As Boolean = True) As XmlNode
+		  If xnode = Nil Then Return Nil
+		  If childName = "." Then Return xNode
+		  If childName = ".." Then Return xNode.Parent
+		  
+		  Dim child As XmlNode
+		  
+		  If childName = "" Then Return xnode
+		  If childName = "." Then Return xnode
+		  If childName = ".." Then
+		    If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Then
+		      Return XmlAttribute(xnode).OwnerElement
+		    Else
+		      Return xnode.Parent
+		    End If
+		  End If
+		  
+		  child = xnode.FirstChild
+		  While child <> Nil
+		    If child.Name = childName Then Return child
+		    child = child.NextSibling
+		  Wend
+		  
+		  If create Then
+		    Dim xDoc As XmlDocument
+		    If xnode IsA XmlDocument Then
+		      xDoc = XmlDocument(xnode)
+		    Else
+		      xDoc = xnode.OwnerDocument
+		    End If
+		    Return xnode.AppendChild(xDoc.CreateElement(childName))
+		  End If
+		  
+		  Return Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetErrorMessage() As String
+		  Return ErrorString + " (" + Str(ErrorCode) + ")"
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetNode(xnode As XmlNode, nodePath As String, create As Boolean = False) As XmlNode
+		  Dim parent As XmlNode
+		  
+		  Dim i, j As Integer
+		  
+		  parent = xnode
+		  
+		  nodePath = nodePath + "/"
+		  i = 1
+		  j = InStr(i, nodePath, "/")
+		  While j > 0
+		    If Mid(nodePath, i, 1) = "@" Then Return GetAttributeNode(parent, Mid(nodePath, i + 1, j - i - 1))
+		    parent = GetChildNode(parent, Mid(nodePath, i, j-i), create)  // GetNode will create a node if asked
+		    If parent = Nil Then Return Nil
+		    
+		    i = j + 1
+		    j = InStr(i, nodePath, "/")
+		  Wend
+		  
+		  Return parent
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function GetNodeText(extends node as XmlNode, subNodeName as String = "") As String
+		  If subNodeName="" Then
+		    If node.FirstChild<>Nil And node.FirstChild IsA XmlTextNode Then Return node.FirstChild.Value
+		  Else
+		    Dim xql As New XmlNodeList
+		    xql=node.Xql(subNodeName+"/text()")
+		    If xql.Length=1 Then
+		      Return xql.Item(0).Value
+		    End If
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetPlatform() As SmartML.Platform
+		  Static thePlatform As SmartML.Platform = SmartML.Platform.Unknown
+		  
+		  If thePlatform <> SmartML.Platform.Unknown Then Return thePlatform
+		  
+		  #if RBVersion < 2015.04
+		    #If TargetWin32
+		      thePlatform = SmartML.Platform.Windows
+		    #ElseIf TargetMacOS
+		      thePlatform = SmartML.Platform.macOS
+		    #ElseIf TargetLinux
+		      thePlatform = SmartML.Platform.Linux
+		    #endif
+		  #Else
+		    #if TargetWindows
+		      thePlatform = SmartML.Platform.Windows
+		    #ElseIf TargetMacOS
+		      thePlatform = SmartML.Platform.macOS
+		    #ElseIf TargetARM And TargetLinux
+		      thePlatform = SmartML.Platform.LinuxARM
+		    #ElseIf TargetLinux
+		      thePlatform = SmartML.Platform.Linux
+		    #EndIf
+		  #EndIf
+		  
+		  Return thePlatform
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValue(xnode As XmlNode, childPath As String, create As Boolean = True, default As String = "") As String
+		  If xnode = Nil Then Return default
+		  
+		  Dim atPos As Integer
+		  atPos = InStr(childPath, "@")
+		  If atPos > 0 Then
+		    If atPos > 1 Then xnode = GetNode(xnode, Left(childPath, atPos-2), create)
+		    Return GetAttribute(xnode, Mid(childPath, atPos+1), default)
+		  End If
+		  
+		  xnode = GetNode(xnode, childPath, create)
+		  If xnode <> Nil Then
+		    If xnode.ChildCount > 0 Then
+		      Return xnode.Child(0).Value
+		    Else
+		      Return default
+		    End If
+		  Else
+		    Return default
+		  End If
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueB(xnode As XmlNode, childPath As String, create As Boolean = True, default As Boolean = False) As Boolean
+		  Dim s As String
+		  s = GetValue(xnode, childPath, create)
+		  If Len(s) = 0 Then
+		    If create Then
+		      SetValueB(xnode, childPath, default)
+		    End If
+		    Return default
+		  ElseIf Lowercase(s) = "true" Or s = "1" Then
+		    Return True
+		  Else
+		    Return False
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueC(xnode As XmlNode, childPath As String, ByRef c As Color, create As Boolean = True) As Boolean
+		  Dim s As String
+		  s = GetValue(xnode, childPath, create)
+		  //
+		  // Update to support the RGBA string as well as legacy RGB
+		  //
+		  If Len(s) = 0 Then Return False
+		  If Left(s, 1) <> "#" Then
+		    App.DebugWriter.Write "SmartML::GetValueC, invalid color string '" + s + "'", 1
+		    Return False
+		  End If
+		  Select Case Len(s)
+		  Case 7
+		    c = RGB( _ ' modified for backward compatibility: Color.RGB( _
+		    Val("&H" + (Mid(s, 2, 2))), _
+		    Val("&H" + (Mid(s, 4, 2))), _
+		    Val("&H" + (Mid(s, 6, 2))))
+		  Case 9
+		    #if RBVersion >= 2011.04
+		      c = RGB( _ ' modified for backward compatibility: Color.RGBA(_
+		      Val("&H" + (Mid(s,2,2))), _
+		      Val("&H" + (Mid(s,4,2))), _
+		      Val("&H" + (Mid(s,6,2))), _
+		      Val("&H" + (Mid(s,8,2))))
+		    #else
+		      c = RGB( _ ' modified for backward compatibility: Color.RGB( _
+		      Val("&H" + (Mid(s, 2, 2))), _
+		      Val("&H" + (Mid(s, 4, 2))), _
+		      Val("&H" + (Mid(s, 6, 2))))
+		    #endif
+		  Case Else
+		    App.DebugWriter.Write "SmartML::GetValueC, invalid color string '" + s + "'", 1
+		    Return False
+		  End Select
+		  Return True
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueDate(xnode As XmlNode, childPath As String, create As Boolean = True, default As Date = Nil) As Date
+		  'TODO Internationalize & cross-platform
+		  
+		  Dim s As String
+		  Dim d As New Date
+		  
+		  s = GetValue(xnode, childPath, create)
+		  If create And Len(s) = 0 Then
+		    SetValueDate(xnode, childPath, default)
+		    Return default
+		  End If
+		  d.SQLDate = s
+		  return d
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueF(xnode As XmlNode, childPath As String, create As Boolean = True) As FontFace
+		  If Not create Then
+		    If Not HasNode(xnode, childPath + "/@font") Then
+		      Return Nil
+		    End If
+		  End If
+		  
+		  
+		  Dim f As New FontFace
+		  Dim c As Color
+		  
+		  f.Name = GetValue(xnode, childPath + "/@font")
+		  f.Size = GetValueN(xnode, childPath  + "/@size")
+		  f.Bold = GetValueB(xnode, childPath  + "/@bold")
+		  f.Italic = GetValueB(xnode, childPath  + "/@italic")
+		  f.Underline = GetValueB(xnode, childPath  + "/@underline")
+		  
+		  f.Border = GetValueB(xnode, childPath  + "/@border")
+		  If GetValueC(xnode, childPath  + "/@border_color", c) Then
+		    f.BorderColor = c
+		  End If
+		  f.Shadow = GetValueB(xnode, childPath  + "/@shadow")
+		  If GetValueC(xnode, childPath  + "/@shadow_color", c) Then
+		    f.ShadowColor = c
+		  End If
+		  f.Fill = GetValueB(xnode, childPath  + "/@fill")
+		  If GetValueC(xnode, childPath  + "/@fill_color", c) Then
+		    f.FillColor = c
+		  End If
+		  
+		  If GetValueC(xnode, childPath  + "/@color", c) Then
+		    f.ForeColor = c
+		  End If
+		  
+		  Return f
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueFI(xnode As XmlNode, childPath As String, relativeFolder As FolderItem = Nil) As FolderItem
+		  //++
+		  // Return a FolderItem built from the information at xnode + childPath.
+		  //
+		  // Unlike other GetValue... routines, this does not have a "create" option. If the XML location
+		  // does not exist, this will return Nil.
+		  //
+		  // See companion SetValueFI for a detailed description of what is stored.
+		  //
+		  // Since paths and FolderItem SaveInfo are not portable across platforms, a path saved on
+		  // one platform may not work if the XML is read on another platform. In this case, a
+		  // PlatformNotSupportedException will be raised with the path returned as the
+		  // error message text. This gives the calling routine information to attempt to locate
+		  // the file, if desired.
+		  //
+		  // Nil will be returned if there is no way to construct a valid FolderItem. Note that "valid"
+		  // does not imply "exists".
+		  //--
+		  
+		  // with the OpenSong v3.5.0 extionsion where xnode + childPath denotes an attribute node, then
+		  // following special case applies:
+		  // if there is no @relativeto attribute, and the value at childPath is not rooted and
+		  // relativeFolder is not Nil, then the path is treated as relative to relativeFolder
+		  
+		  Dim targetSaveInfo As String
+		  Dim relativeTo As SmartML.RelativePath
+		  Dim relativeToInt As Integer
+		  Dim fTarget As FolderItem
+		  Dim fRelative As FolderItem
+		  Dim xPlatException As PlatformNotSupportedException
+		  Dim targetPath As String
+		  Dim relativePath As String
+		  Dim sourcePlatform As SmartML.Platform
+		  Dim sourcePlatformInt As Integer
+		  Dim completeNode As XmlNode
+		  
+		  #If DebugBuild
+		    Dim xPath As String
+		    If xnode <> Nil Then
+		      xPath = XmlElement(xnode).xPath
+		      If childPath.Left(1) <> "/" Then xPath = xPath + "/"
+		      xPath = xPath + childPath
+		    Else
+		      xPath = childPath
+		      App.DebugWriter.Write(CurrentMethodName + ": node is Nil", 7)
+		    End If
+		    App.DebugWriter.Write(CurrentMethodName + ": " + xPath, 7)
+		  #EndIf
+		  
+		  If xnode = Nil Then Return Nil
+		  
+		  If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Or childPath.InStr("@") > 0 Then
+		    
+		    targetPath = GetValue(xnode, childPath, False)
+		    If targetPath = "" Then Return Nil
+		    If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Then
+		      relativeTo = SmartML.RelativePath.Absolute
+		    Else
+		      Dim Len As Integer
+		      
+		      completeNode = GetNode(xnode, childPath)
+		      if completeNode <> Nil Then
+		        If completeNode.Type = XmlNodeType.ATTRIBUTE_NODE Then
+		          completeNode = XmlAttribute(completeNode).OwnerElement
+		        Else
+		          completeNode = Nil
+		        End If
+		      End If
+		      if completeNode = Nil Then Return Nil
+		      
+		      relativeToInt = Val(completeNode.GetAttribute(kRelativeTo))
+		      relativeTo = SmartML.RelativePath(relativeToInt)
+		      Len = Val(completeNode.GetAttribute(kRelativeToBaseLen))
+		      If GetNode(completeNode, "@" + kRelativeTo) = Nil And relativeFolder <> Nil And Not FileUtils.IsPathRooted(targetPath) Then
+		        relativeTo = SmartML.RelativePath.UserSpecified
+		      ElseIf Len = 0 Or relativeTo = SmartML.RelativePath.Absolute Or relativeTo = SmartML.RelativePath.UserSpecified Then
+		        relativeTo = SmartML.RelativePath.Absolute
+		      Else
+		        targetPath = targetPath.Middle(Len)
+		      End If
+		    End If
+		    If relativeTo = SmartML.RelativePath.Absolute Then
+		      Return PathToFolderItem(targetPath, FileUtils.PathType)
+		    End If
+		    If relativeTo = SmartML.RelativePath.UserSpecified Then
+		      relativeTo = SmartML.RelativePath.Absolute  // avoid messing with SaveInfo below
+		    End If
+		  Else
+		    
+		    completeNode = GetChildNode(xnode, childPath, False)
+		    If completeNode = Nil Then Return Nil
+		    
+		    targetSaveInfo = DecodeBase64(GetValue(completeNode, kSaveInfo))
+		    
+		    //++
+		    // If no SaveInfo stored, the path may have been stored using SetValue and not SetValueFI.
+		    // Return a FolderItem based on the path string.
+		    //--
+		    targetPath = GetValue(xnode, childPath, False)
+		    If targetPath = "" And targetSaveInfo = "" Then Return Nil
+		    relativePath = GetAttribute(completeNode, kRelativePath)
+		    
+		    If GetNode(completeNode, "@" + kRelativeTo) = Nil Then
+		      If targetSaveInfo.Len = 0 And relativeFolder <> Nil And Not FileUtils.IsPathRooted(targetPath) Then
+		        relativeTo = SmartML.RelativePath.UserSpecified
+		      Else
+		        relativeTo = SmartML.RelativePath.Absolute  // by default
+		      End If
+		    Else
+		      relativeToInt = Val(completeNode.GetAttribute(kRelativeTo))
+		      relativeTo = SmartML.RelativePath(relativeToInt)
+		    End If
+		    
+		    // this is the PlatformNotSupportedException promised above, but it is never raised
+		    sourcePlatformInt = Val(completeNode.GetAttribute(kPlatform))
+		    sourcePlatform = SmartML.Platform(sourcePlatformInt)
+		    If sourcePlatform <> GetPlatform Then
+		      xPlatException = New PlatformNotSupportedException
+		      xPlatException.Message = GetValue(xnode, childPath, False)
+		    End If
+		    
+		  End If
+		  
+		  Select Case relativeTo
+		    
+		  Case SmartML.RelativePath.Absolute
+		    fRelative = New FolderItem
+		    
+		  Case SmartML.RelativePath.UserSpecified
+		    If relativeFolder <> Nil  Then
+		      fRelative = relativeFolder
+		    Else
+		      fRelative = New FolderItem
+		      Try
+		        fRelative = fRelative.GetRelative(DecodeBase64(GetValue(completeNode, kRelativeInfo)))
+		      Catch
+		        fRelative = Nil
+		      End Try
+		      If fRelative = Nil Or Not fRelative.Exists Or Not fRelative.IsFolder Then
+		        If relativePath <> "" Then
+		          fRelative = FileUtils.PathToFolderItem(relativePath)
+		        End If
+		      End If
+		    End If
+		    
+		  Case SmartML.RelativePath.AppParent
+		    fRelative = App.AppFolder
+		    
+		  Case SmartML.RelativePath.AppSupport
+		    #If TargetWin32
+		      fRelative = SpecialFolder.ApplicationData.Child("OpenSong")
+		    #EndIf
+		    
+		    #If TargetMacOS
+		      fRelative = SpecialFolder.ApplicationData.Child("org.opensong.opensong")
+		    #ElseIf TargetLinux
+		      fRelative = SpecialFolder.ApplicationData.Child("opensong")
+		    #EndIf
+		    If Not fRelative.Exists Then fRelative = App.AppPreferencesFolderForOpenSong
+		    
+		  Case SmartML.RelativePath.MyDocuments
+		    fRelative = SpecialFolder.Documents
+		    
+		  Case SmartML.RelativePath.OpenSongDocuments
+		    fRelative = App.AppDocumentsFolderForOpenSong
+		    
+		  Case SmartML.RelativePath.OpenSongPreferences
+		    fRelative = App.AppPreferencesFolderForOpenSong
+		    
+		  Case SmartML.RelativePath.OpenSongBackgrounds
+		    fRelative = App.DocsFolder.Child(App.STR_BACKGROUNDS)
+		    
+		  Case SmartML.RelativePath.SeparateBackgrounds
+		    fRelative = App.GetDocumentFolderItem(App.BACKGROUNDS_FOLDER)  // that is separate backgrounds folder with a fallback to the default backgrounds folder
+		    
+		  Case SmartML.RelativePath.PortableRoot
+		    fRelative = PortableDriveRoot()
+		    
+		  End Select
+		  
+		  If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Or childPath.InStr("@") > 0 Or targetSaveInfo.Len = 0 Then
+		    If relativeTo = SmartML.RelativePath.Absolute Then
+		      fRelative = relativeFolder
+		    End If
+		    fTarget = FileUtils.RelativePathToFolderItem(fRelative, targetPath)
+		  Else
+		    #pragma warning "GetRelative is deprecated, but FromSaveInfo does not return a path relative to fRelative (Xojo 2022r1.1, Xojo 2024r4.2)"
+		    // see Xojo Issues#78742
+		    Try
+		      fTarget = fRelative.GetRelative(targetSaveInfo)
+		    Catch
+		      fTarget = Nil
+		    End Try
+		    If fTarget = Nil Or Not fTarget.Exists Then
+		      // Try using path strings
+		      If fRelative <> Nil And relativePath <> "" And targetPath.StartsWith(relativePath) Then
+		        // remove the part that is relative, so we can use fRelative as a new base path
+		        targetPath = StringUtils.LTrim(targetPath.Middle(relativePath.Length), DelimiterFromPath(targetPath))
+		      End If
+		      fTarget = FileUtils.RelativePathToFolderItem(fRelative, targetPath)
+		    End If
+		  End If
+		  
+		  Return fTarget
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueN(xnode As XmlNode, childPath As String, create As Boolean = True) As Double
+		  Return Val(GetValue(xnode, childPath, create))
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueP(xnode As XmlNode, childPath As String, create As Boolean = True) As Picture
+		  Dim s As String
+		  Dim p As Picture
+		  
+		  s = GetValue(xnode, childPath, create)
+		  If Len(s) = 0 Then Return Nil
+		  
+		  Dim data As MemoryBlock
+		  
+		  Try
+		    data = DecodeBase64(s)
+		    p = Picture.FromData(data)
+		  Catch
+		    p = Nil
+		  End Try
+		  
+		  Return p
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function GetValueTime(xnode As XmlNode, childPath As String, create As Boolean = True, default As Date = Nil) As Date
+		  'TODO Internationalize & cross-platform
+		  
+		  Dim s As String
+		  Dim d As New Date
+		  
+		  s = GetValue(xnode, childPath, create)
+		  If create And Len(s) = 0 Then
+		    SetValueTime(xnode, childPath, default)
+		    Return default
+		  End If
+		  d.SQLDateTime = d.SQLDate + " " + s
+		  return d
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function HasNode(xnode As XmlNode, childPath As String) As Boolean
+		  If xnode = Nil Then Return False
+		  
+		  Dim xNodeList As XmlNodeList
+		  xNodeList = xnode.Xql(childpath)
+		  
+		  Return xNodeList.LastError = 0 AND xNodeList.Length > 0
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub Init()
+		  //Legacy
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function InsertAfter(xnode As XmlNode, newNode As String) As XmlNode
+		  If xnode.NextSibling = Nil Then
+		    Return xnode.Parent.AppendChild(xnode.OwnerDocument.CreateElement(newNode))
+		  Else
+		    Return xnode.Parent.Insert(xnode.OwnerDocument.CreateElement(newNode), xnode.NextSibling)
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function InsertBefore(xnode As XmlNode, newNode As String) As XmlNode
+		  Return xnode.Parent.Insert(xnode.OwnerDocument.CreateElement(newNode), xnode)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function InsertChild(xnode As XmlNode, childName As String, index As Integer) As XmlNode
+		  If index < xnode.ChildCount Then
+		    Return xnode.Insert(xnode.OwnerDocument.CreateElement(childName), xnode.Child(index))
+		  Else
+		    Return xnode.AppendChild(xnode.OwnerDocument.CreateElement(childName))
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function InsertChildNode(xnode As XmlNode, child As XmlNode, index As Integer) As XmlNode
+		  If index < xnode.ChildCount Then
+		    Return xnode.Insert(xnode.OwnerDocument.SafeImportNode(child, True), xnode.Child(index))
+		  Else
+		    Return xnode.AppendChild(xnode.OwnerDocument.SafeImportNode(child, True))
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function MoveChild(xnode As XmlNode, fromIndex As Integer, toIndex As Integer) As XmlNode
+		  If toIndex >= xnode.ChildCount Then
+		    Return xnode.AppendChild(xnode.Child(fromIndex))
+		  Else
+		    Return xnode.Insert(xnode.Child(fromIndex), xnode.Child(toIndex))
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function PortableDriveRoot() As FolderItem
+		  Dim appFolder As FolderItem = App.AppFolder
+		  Dim drive As FolderItem
+		  Dim result As FolderItem
+		  
+		  // Use the AppFolder in order to find the portable drive. This assumes, that OpenSong
+		  // is running  from the portable drive in question. This might not be true. But Xojo
+		  // does not provide any means of identifying the drive in some usefull other way, either
+		  // by way of a hardware id, drive, or partition GUID, or a volume label, or even usefull
+		  // information that could be used for fingerprinting
+		  If appFolder = Nil Then Return Nil
+		  If AppFolder.IsAlias and AppFolder.Parent <> Nil Then
+		    appFolder = appFolder.Parent.Child(appFolder.Name)
+		  End If
+		  
+		  For i As Integer = 0 To FolderItem.LastDriveIndex
+		    drive = FolderItem.DriveAt(i)
+		    If drive <> Nil Then
+		      If appFolder.NativePath.StartsWith(drive.NativePath) Then
+		        If result = Nil Or drive.NativePath.Length > result.NativePath.Length Then
+		          result = drive
+		        End If
+		      End If
+		    End If
+		  Next i
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RemoveChild(xnode As XmlNode, index As Integer)
+		  xnode.RemoveChild xnode.Child(index)
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RemoveChild(xnode As XmlNode, child As XmlNode)
+		  xnode.RemoveChild child
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RemoveChildren(xnode As XmlNode)
+		  If xnode = Nil Then Return
+		  
+		  Dim xchild As XmlNode
+		  
+		  xchild = xnode.FirstChild
+		  While xchild <> Nil
+		    xnode.RemoveChild xchild
+		    xchild = xnode.FirstChild
+		  Wend
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RemoveNode(root As XmlNode, childname As String)
+		  Dim ChildNode As XmlNode
+		  Dim ChildPath() As String
+		  Dim CurChild As String
+		  
+		  If root = Nil Then Return
+		  
+		  ChildPath = Split(childname, "/")
+		  If UBound(ChildPath) = -1 Then Return
+		  
+		  CurChild = ChildPath(0)
+		  ChildPath.Remove 0
+		  
+		  // Are we looking for an attribute or a node?
+		  If Left(CurChild,1) = "@" Then
+		    CurChild = Mid(CurChild, 2)
+		    If Ubound(ChildPath) > -1 Then Return // Illegal path passed (can't have /something/@att/something)
+		    XmlElement(root).RemoveAttribute CurChild
+		    Return
+		  End If
+		  
+		  ChildNode = root.FirstChild
+		  
+		  While ChildNode <> Nil
+		    If ChildNode.Name = CurChild Then // We've found it
+		      If UBound(ChildPath) > -1 Then // But we have more to go
+		        RemoveNode(ChildNode, Join(ChildPath, "/"))
+		        Return
+		      Else
+		        root.RemoveChild ChildNode
+		        Return
+		      End If // If Ubound...
+		    End If // If ChildNode.Name ...
+		    ChildNode = ChildNode.NextSibling
+		  Wend
+		  Return
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RemoveSelf(xnode As XmlNode)
+		  If xnode = Nil Then Return
+		  If xnode.Parent <> Nil Then
+		    xnode.Parent.RemoveChild xnode
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function ReplaceWithImportNode(oldNode As XmlNode, newNode As XmlNode) As XmlNode
+		  Dim parent, previous As XmlNode
+		  
+		  parent = oldNode.Parent
+		  previous = oldNode.PreviousSibling
+		  
+		  parent.ReplaceChild oldNode.OwnerDocument.SafeImportNode(newNode, True), oldNode
+		  If previous = Nil Then
+		    Return parent.FirstChild
+		  Else
+		    Return previous.NextSibling
+		  End If
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SafeImportNode(Extends xDoc As XmlDocument, xNode As XmlNode, deep As Boolean = True) As XmlNode
+		  //
+		  // Replacement for the XmlDocument.ImportNode function
+		  // Under certain circumstances, this seems to be failing and corrupting
+		  // the internal data structures for the XML DOM representation
+		  // Odd things fail, in particular, XmlNode.GetAttribute or
+		  // XmlDocument.Xql with an attribute as the search target
+		  //
+		  // See Feedback report 24322 <feedback://showreport?report_id=24322>
+		  // dated February 2013.
+		  //
+		  
+		  #Pragma DisableBackgroundTasks
+		  
+		  Dim i As Integer
+		  Dim newNode As XmlNode
+		  Dim child As XmlNode
+		  Dim attribute As XmlAttribute
+		  Dim newAttribute As XmlAttribute
+		  
+		  newNode = CreateSpecificNodeType(xDoc, xNode)
+		  
+		  For i = 0 To xNode.AttributeCount - 1
+		    attribute = xNode.GetAttributeNode(i)
+		    newAttribute = xDoc.CreateAttribute(attribute.Name)
+		    newAttribute.Value = attribute.Value
+		    newNode.SetAttributeNode(newAttribute)
+		  Next i
+		  
+		  If Not deep Then Return newNode
+		  
+		  For i = 0 To xNode.ChildCount - 1
+		    child = xNode.Child(i)
+		    newNode.AppendChild xDoc.SafeImportNode(child, deep)
+		  Next i
+		  
+		  Return newNode
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub SetAttribute(xnode As XmlNode, attribName As String, value As String)
+		  xnode.SetAttribute attribName, value
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValue(xnode As XmlNode, childPath As String, value As String)
+		  Dim atPos As Integer
+		  atPos = InStr(childPath, "@")
+		  value = value.ConvertEncoding(Encodings.UTF8).CleanXML
+		  If atPos > 0 Then
+		    If atPos > 1 Then xnode = GetNode(xnode, Left(childPath, atPos-2), True)
+		    If xnode <> Nil Then SetAttribute(xnode, Mid(childPath , atPos+1), value)
+		    Return
+		  End If
+		  
+		  xnode = GetNode(xnode, childPath, True)
+		  If xnode <> Nil Then
+		    If xnode.ChildCount > 0 Then
+		      xnode.Child(0).Value = value
+		      Return
+		    Else
+		      xnode = xnode.AppendChild(xnode.OwnerDocument.CreateTextNode(value))
+		      Return
+		    End If
+		  Else
+		    Return
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueB(xnode As XmlNode, childPath As String, value As Boolean)
+		  If value Then
+		    SetValue xnode, childPath, "true"
+		  Else
+		    SetValue xnode, childPath, "false"
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueC(xnode As XmlNode, childPath As String, c As Color)
+		  // Updated to include alpha value
+		  #if RBVersion >= 2011.04 Then
+		    #if RBVersion>2015 then
+		      SetValue xnode, childPath, "#" _
+		      + c.Red.ToHex(2) _
+		      + c.Green.ToHex(2) _
+		      + c.Blue.ToHex(2) _
+		      + c.Alpha.ToHex(2)
+		    #else
+		      SetValue xnode, childPath, "#" _
+		      + StringUtils.PadLeft(Hex(c.Red),2,"0") _
+		      + StringUtils.PadLeft(Hex(c.Green),2,"0") _
+		      + StringUtils.PadLeft(Hex(c.Blue),2,"0") _
+		      + StringUtils.PadLeft(Hex(c.Alpha),2,"0")
+		    #endif
+		  #else
+		    SetValue xnode, childPath, "#" _
+		    + StringUtils.PadLeft(Hex(c.Red),2,"0") _
+		    + StringUtils.PadLeft(Hex(c.Green),2,"0") _
+		    + StringUtils.PadLeft(Hex(c.Blue),2,"0")
+		  #endif
+		  Return
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueDate(xnode As XmlNode, childPath As String, D As Date)
+		  If D = Nil Then Return
+		  
+		  SetValue xnode, childPath, D.SQLDate
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueF(xnode As XmlNode, childPath As String, f As FontFace)
+		  SetValue xnode, childPath + "/@font", f.Name
+		  SetValueN xnode, childPath + "/@size", f.Size
+		  SetValueB xnode, childPath + "/@bold", f.Bold
+		  SetValueB xnode, childPath + "/@italic", f.Italic
+		  SetValueB xnode, childPath + "/@underline", f.Underline
+		  SetValueC xnode, childPath + "/@color", f.ForeColor
+		  
+		  SetValueB xnode, childPath  + "/@border", f.Border
+		  SetValueC xnode, childPath  + "/@border_color", f.BorderColor
+		  SetValueB xnode, childPath  + "/@shadow", f.Shadow
+		  SetValueC xnode, childPath  + "/@shadow_color", f.ShadowColor
+		  SetValueB xnode, childPath  + "/@fill", f.Fill
+		  SetValueC xnode, childPath  + "/@fill_color", f.FillColor
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueFI(xnode As XmlNode, childPath As String, f As FolderItem, relativeTo As SmartML.RelativePath = SmartML.RelativePath.Absolute, relativeFolder As FolderItem = Nil)
+		  //++
+		  // Save a FolderItem in a somewhat intelligent way
+		  // Prior to this, the FolderItem was stored as a String using the AbsolutePath.
+		  // If the target XML node is an Attribute, this behavior is maintained for backward compatibility.
+		  //
+		  // This creates numerous issues for xplat usage, and was complicated by the
+		  // deprecation of AbsolutePath by Xojo as of 2015r1.
+		  // This uses a more "Xojo-like" way and increases flexibility by formalizing
+		  // a way to store a relative path to one of the standard folders.
+		  // Here is what we save with this function:
+		  // 1. Text node with AbsolutePath (for backward compatibility; eventually will have to
+		  //      change to NativePath when the deprecation is removed totally...see @PathType)
+		  // 2. SaveInfo: Base64 encoded SaveInfo string for the target
+		  // 3. @RelativeTo: Integer version of the SmartML.RelativePath enum
+		  // 4. RelativeSaveInfo: Base64 encoded SaveInfo string for the relative folder
+		  // 5. @RelativePath: Absolute or Native path of the RelativeFolder
+		  // 6. @Platform: Integer version of the SmartML.Platform enum
+		  // 7. @PathType: Integer version of the FolderItem.PathTypeAbsolute/PathTypeNative enum values
+		  // 8. @SaveInfoType: The GetSaveInfo mode (any = 0, relative = 1, absolute = 2)
+		  //
+		  // If the xnode or childPath is an AttributeNode, the AbsolutePath is stored in the attribute
+		  // and the function returns.
+		  //
+		  // If the RelativeTo enum argument is anything other than SmartML.RelativePath.UserSpecified,
+		  // the RelativeFolder argument is ignored.
+		  //--
+		  
+		  // extension for OpenSong v3.5.0
+		  // relative information can be added to with an attribute. Only one folderitem attribute per
+		  // element may use this.
+		  //
+		  // - The attribute given as parameter continues to be set to the native path
+		  // - @RelativeTo: Integer version of the SmartML.RelativePath enum (as with the element version)
+		  // - @RelativeToBaseLen: Length of the path representing the base folder
+		  //
+		  // e.g. <background filename="C:\Users\TomCat\Documents\OpenSong\backgrounds\Cross.jpg" relativeto="7" relativetobaselen="47" />
+		  //
+		  // relativeto="7" is OpenSong's default Backgrounds folder within the configured "OpenSong Documents"
+		  // relativetobaselen="47" sais the first 47 characters (as given by String.Length) are the base folder, 
+		  // i.e. the folder specified by @relativeto on the system the path was stored. In the example this is
+		  // "C:\Users\TomCat\Documents\OpenSong\backgrounds\".
+		  // @relativetobaselen shall include the final path separator such that @filename.Middle(@relativetobaselen)
+		  // returns a proper relative path that may be resolved relative to the current path related to
+		  // @relativeto, possibly after having replaced the path separators to those of the current system
+		  // (I hope my assumptions concerning String.Length and String.Middle hold in all cases)
+		  //
+		  // Backward compatibility:
+		  // For legacy data the additional attributes are non-existent, the attribute denoted by xnode and childPath is set
+		  // to an absolute path, or, if it is not an absolute path, it is relative to whatever the program used to
+		  // treat those paths relative to, and therefore needs to continue treating it relative to.
+		  
+		  
+		  Dim SaveInfo64 As String
+		  Dim RelativeSaveInfo64 As String
+		  Dim myPlatform As Integer = Integer(GetPlatform)
+		  Dim created As Boolean = False
+		  Dim saveMode As Integer
+		  Dim portableRootFI As FolderItem
+		  
+		  If relativeTo = SmartML.RelativePath.PortableRoot Or (App.IsPortable And relativeTo = SmartML.RelativePath.Absolute) Then
+		    portableRootFI = PortableDriveRoot()
+		    If relativeTo = SmartML.RelativePath.Absolute And f <> Nil And portableRootFI <> Nil And f.NativePath.StartsWith(portableRootFI.NativePath) Then
+		      relativeTo = SmartML.RelativePath.PortableRoot
+		    End If
+		  End If
+		  
+		  Select Case relativeTo
+		    
+		  Case SmartML.RelativePath.Absolute
+		    relativeFolder = Nil
+		    saveMode = FolderItem.SaveInfoAbsoluteMode
+		    
+		  Case SmartML.RelativePath.UserSpecified
+		    If relativeFolder = Nil Then
+		      Dim rpNOE As New NilObjectException
+		      rpNOE.Message = CurrentMethodName + ": Requested user-specified relative path, but did relativeFolder is Nil"
+		      Raise rpNOE
+		    End If
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.AppParent
+		    relativeFolder = App.AppFolder
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.AppSupport
+		    #If RBVersion < 2015.04
+		      #If TargetWin32
+		        relativeFolder = SpecialFolder.ApplicationData.Child("OpenSong")
+		      #EndIf
+		    #Else
+		      #If TargetWindows
+		        relativeFolder = SpecialFolder.ApplicationData.Child("OpenSong")
+		      #EndIf
+		    #EndIf
+		    
+		    #If TargetMacOS
+		      relativeFolder = SpecialFolder.ApplicationData.Child("org.opensong.opensong")
+		    #ElseIf TargetLinux
+		      relativeFolder = SpecialFolder.ApplicationData.Child("opensong")
+		    #EndIf
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.MyDocuments
+		    relativeFolder = SpecialFolder.Documents
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.OpenSongDocuments
+		    relativeFolder = App.AppDocumentsFolderForOpenSong
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.OpenSongPreferences
+		    relativeFolder = App.AppPreferencesFolderForOpenSong
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.OpenSongBackgrounds
+		    relativeFolder = App.DocsFolder.Child(App.STR_BACKGROUNDS)
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.SeparateBackgrounds
+		    relativeFolder = App.GetDocumentFolderItem(App.BACKGROUNDS_FOLDER)  // that is separate backgrounds folder with a fallback to the default backgrounds folder
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  Case SmartML.RelativePath.PortableRoot
+		    relativeFolder = portableRootFI
+		    saveMode = FolderItem.SaveInfoRelativeMode
+		    
+		  End Select
+		  
+		  //++
+		  // If Relative doesn't exist when the GetValueFI is attempted
+		  // an NOE will result. Try to avoid this happening.
+		  //--
+		  
+		  If RelativeFolder = Nil Or Not relativeFolder.exists Then
+		    relativeFolder = Nil
+		    saveMode = FolderItem.SaveInfoAbsoluteMode
+		  End If
+		  
+		  //
+		  // Check to see if the specified XMLnode is an Attribute node
+		  //
+		  If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Or childPath.InStr("@") > 0 Then
+		    Dim attrNode, parentNode As XmlNode
+		    If f = Nil Then
+		      // clean up by removing
+		      If xnode.Type = XmlNodeType.ATTRIBUTE_NODE Then
+		        RemoveSelf(xnode)
+		      Else
+		        attrNode = GetNode(xnode, childPath)
+		        If attrNode <> Nil Then
+		          parentNode = attrNode.Parent
+		          RemoveSelf(attrNode)
+		          If parentNode <> Nil Then
+		            RemoveNode(parentNode, "@" + kRelativeTo)
+		            RemoveNode(parentNode, "@" + kRelativeToBaseLen)
+		          End If
+		        End If
+		      End If
+		    Else
+		      SetValue(xnode, childPath, f.NativePath)
+		      If xnode.Type <> XmlNodeType.ATTRIBUTE_NODE Then
+		        attrNode = GetNode(xnode, childPath)
+		        parentNode = XmlAttribute(attrNode).OwnerElement
+		        If parentNode <> Nil Then
+		          If relativeTo = SmartML.RelativePath.Absolute Or relativeFolder = Nil Then
+		            RemoveNode(parentNode, "@" + kRelativeTo)
+		            RemoveNode(parentNode, "@" + kRelativeToBaseLen)
+		          Else
+		            Dim basePath As String
+		            basePath = relativeFolder.NativePath
+		            If Not basePath.EndsWith(FileUtils.NativePathSeparator) Then
+		              basePath.Append(FileUtils.NativePathSeparator)
+		            End If
+		            If f.NativePath.StartsWith(basePath) Then
+		              parentNode.SetAttribute(kRelativeTo, CStr(Integer(relativeTo)))
+		              parentNode.SetAttribute(kRelativeToBaseLen, CStr(basePath.Length))
+		            Else
+		              RemoveNode(parentNode, "@" + kRelativeTo)
+		              RemoveNode(parentNode, "@" + kRelativeToBaseLen)
+		            End If
+		          End If
+		        End If
+		      End If
+		    End If
+		    
+		    Return
+		  End If
+		  
+		  Dim targetNode As xmlNode = GetNode(xnode, childPath, False)
+		  
+		  If f = Nil Then
+		    If targetNode <> Nil Then
+		      // remove constituents. Remove the node itself if it is empty thereafter
+		      Dim child As XmlNode
+		      Dim i As Integer
+		      Dim keepTarget As Boolean = False
+		      
+		      For i = targetNode.ChildCount - 1 DownTo 0
+		        child = targetNode.Child(i)
+		        Select Case child.Type
+		        Case XmlNodeType.ATTRIBUTE_NODE
+		          Select Case child.Name
+		          Case kRelativeTo, kRelativePath, kPlatform, kPathType, kSaveInfoType
+		            RemoveSelf(child)
+		          Case Else
+		            keepTarget = True
+		          End Select
+		        Case XmlNodeType.TEXT_NODE
+		          RemoveSelf(child)
+		        Case XmlNodeType.ELEMENT_NODE
+		          Select Case child.Name
+		          Case kSaveInfo, kRelativeInfo
+		            RemoveSelf(child)
+		          Case Else
+		            keepTarget = True
+		          End Select
+		        Case XmlNodeType.COMMENT_NODE
+		          // remove along with parent
+		        Case Else
+		          keepTarget = True
+		        End Select
+		      Next i
+		      If Not keepTarget Then
+		        RemoveSelf(targetNode)
+		      End If
+		    End If
+		    
+		    Return
+		  End If
+		  
+		  If targetNode = Nil Then
+		    targetNode = GetNode(xnode, childPath, True)
+		    created = (targetNode <> Nil)
+		  End If
+		  
+		  //
+		  // Handle standard XmlNode
+		  //
+		  targetNode.SetAttribute(kPathType, CStr(FolderItem.PathTypeAbsolute))
+		  targetNode.SetAttribute(kPlatform, CStr(myPlatform))
+		  targetNode.SetAttribute(kRelativeTo, CStr(Integer(relativeTo)))
+		  targetNode.AppendChild(targetNode.OwnerDocument.CreateTextNode(f.NativePath))
+		  
+		  SaveInfo64 = EncodeBase64(f.GetSaveInfo(relativeFolder, saveMode))
+		  SetValue(targetNode, kSaveInfo, SaveInfo64)
+		  If relativeFolder <> Nil Then
+		    RelativeSaveInfo64 = EncodeBase64(relativeFolder.GetSaveInfo(Nil, FolderItem.SaveInfoAbsoluteMode))
+		    SetValue(targetNode, kRelativeInfo, RelativeSaveInfo64)
+		    targetNode.SetAttribute(kRelativePath, relativeFolder.NativePath)
+		  ElseIf Not created Then
+		    RemoveNode(targetNode, kRelativeInfo)
+		    RemoveNode(targetNode, "@" + kRelativePath)
+		  End If
+		  targetNode.SetAttribute(kSaveInfoType, CStr(saveMode))
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueN(xnode As XmlNode, childPath As String, value As Double)
+		  SetValue xnode, childPath, Str(value)
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub SetValueP(xnode As XmlNode, childPath As String, f As FolderItem)
+		  Dim inputStream As BinaryStream
+		  
+		  If f <> Nil Then
+		    inputStream = BinaryStream.Open(f)
+		    If inputStream <> Nil Then
+		      SetValue xnode, childPath, EncodeBase64(inputStream.Read(f.Length))
+		      inputStream.Close
+		    End If
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SetValueTime(xnode As XmlNode, childPath As String, T As Date)
+		  'TODO Internationalize & cross-platform
+		  If T = Nil Then Return
+		  Dim timeString As String
+		  
+		  timeString = T.SQLDateTime
+		  timeString = Mid(timeString, Len(T.SQLDate) + 2)
+		  SetValue xnode, childPath, timeString
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SwapChildren(xnode As XmlNode, index1 As Integer, index2 As Integer)
+		  Dim temp As XmlNode
+		  
+		  temp = MoveChild(xnode, index1, index2)
+		  temp = MoveChild(xnode, index2, index1)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function TranslateMessage(id As String, altText As String = "", param1 As String = "", param2 As String = "", param3 As String = "") As String
+		  //++
+		  // Even though Translator.Translate is defined with a paramarray argument, there's no way
+		  // to use one as input here and pass it along.  Therefore, only handle the most basic cases
+		  // (0, 1, 2 or 3)
+		  //
+		  // This routine helps eliminate excessive If...Then coding in error traps by providing a
+		  // means to generate a meaningful error message if the translator object is not loaded.
+		  //
+		  // Ed Palmer, June 2007
+		  //--
+		  
+		  If App.T Is Nil Then
+		    Return StringUtils.Sprintf(altText, param1, param2, param3)
+		  Else
+		    Return App.T.Translate(id, param1, param2, param3)
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function XDocFromFile(f As FolderItem) As XmlDocument
+		  Dim input As TextInputStream
+		  Dim s As String
+		  Dim d As New XmlDocument
+		  d.PreserveWhitespace = False
+		  
+		  If f = Nil Then
+		    ErrorCode = 1
+		    '++JRC Translated
+		    ErrorString = TranslateMessage("smartml/no_path", "The FolderItem object is Nil in XDocFromFile")
+		    '--
+		    Return Nil
+		  ElseIf Not f.Exists Then
+		    ErrorCode = 2
+		    '++JRC Translated
+		    ErrorString = TranslateMessage("smartml/no_file",  "File does not exist in XDocFromFile: %s", f.NativePath)
+		    '--
+		    Return Nil
+		  End If
+		  input = TextInputStream.Open(f)
+		  If input = Nil Then
+		    ErrorCode = 4
+		    ErrorString = TranslateMessage("smartml/cant_open",  "Could not open %s in XDocFromFile: %s", f.NativePath, CStr(f.LastErrorCode))
+		    Return Nil
+		  End If
+		  
+		  s = input.ReadAll
+		  input.Close
+		  Try
+		    If Len(s) > 5 Then
+		      '
+		      ' OnSong writes "OpenSong" format claiming UTF-8 in the XML  header, but the file has a UTF-16 bytemark.
+		      '     The XML parser throws an error
+		      '     trying to load this with the encoding wrong. By empirical testing, it appears that the &HFFFE byte mark for
+		      '     a UTF-16 file in little-endian format shows up as &H001C0000 when we read the leftmost "character" of the string.
+		      '     Check for this and define the correct encoding.
+		      '     We'll excuse OnSong for claiming in the XML header that it's a UTF-8 encoding when it's not... :-)
+		      '     This may need to be revisited and corrected by reopening the file and re-reading it with a defined UTF-16 encoding.
+		      '
+		      Dim FixSongFile As Boolean = False
+		      If asc(Left(s,1)) = &H001C0000 Then 'The string actually starts with a UTF-16LE byte mark (&HFFFE)
+		        s = DefineEncoding(s, encodings.UTF16)
+		        Dim XmlDeclLen As Integer = InStr(6, s, ">")
+		        If InStr(Mid(s, 6, XmlDeclLen-6), "UTF-8") <> 0 Then
+		          ' the xml declaration says it is UTF-8, so convert it to be so
+		          s = s.ConvertEncoding(Encodings.UTF8)
+		          FixSongFile = True
+		        End If
+		      End If
+		      d.LoadXml(s)
+		      If FixSongFile Then
+		        FixSongFile = XDocToFile(d, f) ' try to write the file in the correct encoding, ignoring errors
+		      End If
+		      Return d
+		    Else
+		      ErrorCode = 5
+		      '++JRC Translated
+		      ErrorString = TranslateMessage("smartml/xml_error",  "LoadXML Error from file %s", f.NativePath)
+		      '--
+		      Return Nil
+		    End If
+		  Catch err As XmlException
+		    ErrorCode = 3
+		    '++JRC Translated
+		    Dim msg As String
+		    msg = ""
+		    If err.Line <> "" Then msg = msg + " line:" + err.Line
+		    If err.Node <> "" Then msg = msg + " node:" + err.Node
+		    If err.Message <> "" Then msg = msg + " " + err.Message
+		    ErrorString = TranslateMessage("smartml/xml_exterror", "XmlException from LoadXML on file %s %s", f.NativePath, msg.Trim, "")
+		    '--
+		    Return Nil
+		  End Try
+		  Catch ex
+		    If ex IsA NilObjectException Then
+		      //++
+		      // Most likely the Nil object is App.T and we're trying to open
+		      // one of the XML documents that should be in a subdirectory of
+		      // the application.  Without trapping this, the program abruptly
+		      // blows up.  With this, at least a basic error message is output
+		      // to give someone an idea of what is happening.
+		      //--
+		      ErrorString = "Error in SmartML.XDocFromFile and translator is not loaded"
+		    Else
+		      ErrorString = "Unexpected exception in SmartML.XDocFromFile"
+		      If ErrorCode = 0 Then ErrorCode = -1
+		    End If
+		    If f <> Nil Then ErrorString = ErrorString + ", file is " + f.NativePath
+		    Return Nil
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function XDocFromString(s As String) As XmlDocument
+		  Dim d As New XmlDocument
+		  d.PreserveWhitespace = False
+		  
+		  Try
+		    If Len(s) > 5 Then
+		      d.LoadXml(s)
+		      Return d
+		    Else
+		      Return Nil
+		    End If
+		  Catch err As XmlException
+		    ErrorCode = 3
+		    '++JRC Translated
+		    ErrorString = TranslateMessage("smartml/xml_error",  "XML Error in XDocFromString: %s", Left(s, 30))
+		    '--
+		    If Len(s) > 30 Then ErrorString = ErrorString
+		    Return Nil
+		  End Try
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function XDocToFile(xdoc As XmlDocument, f As FolderItem) As Boolean
+		  If f = Nil Then
+		    ErrorCode = 11
+		    ErrorString = TranslateMessage("smartml/no_path", "XDocToFile: FolderItem argument is Nil")
+		    Return False
+		  End If
+		  
+		  Dim output As TextOutputStream = Nil
+		  Try
+		    output = TextOutputStream.Create(f)
+		  Catch e As IOException
+		    output = Nil
+		  End Try
+		  If output <> Nil Then
+		    Try
+		      output.Write XDocToString(xdoc).FormatLocalEndOfLine
+		      output.Close
+		    Catch e As IOException
+		      ErrorString = f.NativePath
+		      If e.Message <> "" Then
+		        ErrorString = ErrorString + EndOfLine + EndOfLine + e.Message
+		      End If
+		      If e.ErrorNumber <> 0 Then
+		        ErrorString = ErrorString + " (Error Code " + CStr(e.ErrorNumber) + ")"
+		      End If
+		      ErrorString = TranslateMessage("fileutils/unknownerror", "XDocToFile: Unable to save to file: %s", ErrorString)
+		    End Try
+		    Return True
+		  Else
+		    ErrorCode = 12
+		    ErrorString = TranslateMessage("smartml/cant_create", "XDocToFile: Unable to create file: %s", f.NativePath)
+		    Return False
+		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function XDocToString(xdoc As XmlDocument) As String
+		  Dim s As String
+		  
+		  s = xdoc.ToString
+		  s = ReplaceAll(s, "/></", "/>" + Newline + "</")
+		  s = ReplaceAll(s, "?><", "?>" + Newline + "<")
+		  s = ReplaceAll(s, "></", "&aardvark;")
+		  s = ReplaceAll(s, "><", ">" + Newline + "  <")
+		  s = ReplaceAll(s, "&aardvark;", "></")
+		  s = ReplaceAll(s, "<option>", "  <option>")
+		  's = ReplaceAll(s, "UTF-8", "ISO-8859-1")
+		  's = ConvertEncoding(s, Encodings.ISOLatin1) ' ISO-8859-1
+		  
+		  Return s
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function XPath(Extends node As XmlNode) As String
+		  //++
+		  // Determine the fully-qualified XmlPath for a given node in a tree.
+		  //--
+		  Dim instanceNumber As Integer
+		  Dim sib As XmlNode
+		  Dim partial As String
+		  
+		  Select Case node.Type
+		    
+		  Case XmlNodeType.DOCUMENT_NODE
+		    //++
+		    // Am I the Document?
+		    //--
+		    Return ""
+		    
+		  Case XmlNodeType.ATTRIBUTE_NODE
+		    //++
+		    // Am I an Attribute?
+		    //--
+		    partial = "/@" + node.name
+		    Return node.Parent.XPath + partial
+		    
+		  Case XmlNodeType.TEXT_NODE
+		    //++
+		    // Am I a Text node?
+		    //--
+		    Return node.Parent.XPath
+		  Case Else
+		    //++
+		    // Regular child node
+		    //--
+		    instanceNumber = 1
+		    sib = node.PreviousSibling
+		    While sib <> Nil
+		      If sib.Name = node.Name Then instanceNumber = instanceNumber + 1
+		      sib = sib.PreviousSibling
+		    Wend
+		    
+		    partial = "/" + node.name
+		    If instanceNumber > 1 Then
+		      partial = partial + "[" + CStr(instanceNumber) + "]"
+		    End If
+		    Return node.Parent.XPath + partial
+		  End Select
+		  
+		  Exception ex
+		    If ex IsA NilObjectException Then
+		      Return Partial
+		    Else
+		      Return ""
+		    End If
+		End Function
+	#tag EndMethod
+
+
+	#tag Note, Name = Enum RelativePath
+		Used to identify the relationship between the SaveInfo of the target FolderItem. 
+		"Absolute" is assigned to zero as GetAttribute will return a zero-length string for a missing Attribute. 
+		This gives a reasonable default in the absence of additional information.
+	#tag EndNote
+
+
+	#tag Property, Flags = &h1
+		Protected ErrorCode As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected ErrorString As String
+	#tag EndProperty
+
+	#tag ComputedProperty, Flags = &h1
+		#tag Getter
+			Get
+			  Return EndOfLine
+			End Get
+		#tag EndGetter
+		Protected Newline As String
+	#tag EndComputedProperty
+
+
+	#tag Constant, Name = kPathType, Type = String, Dynamic = False, Default = \"pathtype", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kPlatform, Type = String, Dynamic = False, Default = \"platform", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kRelativeInfo, Type = String, Dynamic = False, Default = \"relativesaveinfo", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kRelativePath, Type = String, Dynamic = False, Default = \"relativepath", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kRelativeTo, Type = String, Dynamic = False, Default = \"relativeto", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kRelativeToBaseLen, Type = String, Dynamic = False, Default = \"relativetobaselen", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kSaveInfo, Type = String, Dynamic = False, Default = \"saveinfo", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kSaveInfoType, Type = String, Dynamic = False, Default = \"saveinfotype", Scope = Private
+	#tag EndConstant
+
+
+	#tag Enum, Name = Platform, Flags = &h1
+		Unknown
+		  Windows
+		  macOS
+		  Linux
+		LinuxARM
+	#tag EndEnum
+
+	#tag Enum, Name = RelativePath, Type = Integer, Flags = &h1, Description = 5573656420746F206964656E74696679207468652072656C6174696F6E73686970206265747765656E207468652053617665496E666F206F66207468652074617267657420466F6C6465724974656D2E20224162736F6C757465222069732061737369676E656420746F207A65726F206173204765744174747269627574652077696C6C2072657475726E2061207A65726F2D6C656E67746820737472696E6720666F722061206D697373696E67204174747269627574652E2054686973206769766573206120726561736F6E61626C652064656661756C7420696E2074686520616273656E6365206F66206164646974696F6E616C20696E666F726D6174696F6E2E
+		Absolute = 0
+		  UserSpecified
+		  MyDocuments
+		  AppSupport
+		  AppParent
+		  OpenSongDocuments
+		  OpenSongPreferences
+		  OpenSongBackgrounds
+		  SeparateBackgrounds
+		PortableRoot
+	#tag EndEnum
+
+
+	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+	#tag EndViewBehavior
+End Module
+#tag EndModule

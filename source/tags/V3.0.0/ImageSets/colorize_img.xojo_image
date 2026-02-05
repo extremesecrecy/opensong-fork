@@ -1,0 +1,46 @@
+#tag MultiImage
+Image colorize_img
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHiAAAAAAHiAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0QY29sb3JpemVfcGljLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuONaTtjYAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yGAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAYE1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAY29sb3JpemVfcGljLnBuZwAOACIAEABjAG8AbABvAHIAaQB6AGUAXwBwAGkAYwAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIATVVzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy9jb2xvcml6ZV9waWMucG5nAAATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/colorize_pic.png
+		PartialPath = ImageSets\colorize_pic.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHuAAAAAAHuAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0TY29sb3JpemVfcGljQDJ4LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuOdaV6roAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWljEKAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAY01hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAY29sb3JpemVfcGljQDJ4LnBuZwAADgAoABMAYwBvAGwAbwByAGkAegBlAF8AcABpAGMAQAAyAHgALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFBVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvY29sb3JpemVfcGljQDJ4LnBuZwATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/colorize_pic@2x.png
+		PartialPath = ImageSets\colorize_pic@2x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHuAAAAAAHuAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0TY29sb3JpemVfcGljQDN4LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuOtaTtjYAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yGAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAY01hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAY29sb3JpemVfcGljQDN4LnBuZwAADgAoABMAYwBvAGwAbwByAGkAegBlAF8AcABpAGMAQAAzAHgALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFBVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvY29sb3JpemVfcGljQDN4LnBuZwATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/colorize_pic@3x.png
+		PartialPath = ImageSets\colorize_pic@3x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

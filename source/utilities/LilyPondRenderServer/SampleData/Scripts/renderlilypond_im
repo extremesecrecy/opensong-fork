@@ -1,0 +1,7 @@
+#!/bin/bash
+# Render songs with LilyPond and convert them to white-on-black
+cd "$1"
+lilypond -ddelete-intermediate-files $include --png -dresolution=375 "$2"
+for file in ${2%.ly}*.png ; do
+  convert -negate "$file" "$file"
+done

@@ -1,0 +1,232 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=AllAudioTypes
+		DocIcon=OpenSong.xojo_resources;&h0
+		Extension=.mp3;.wav
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=All Audio Types
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AllFiles
+		DocIcon=OpenSong.xojo_resources;&hC
+		Extension=.*
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=All Files (*.*)
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=MIDIFilesMidMidiRmi
+		DocIcon=OpenSong.xojo_resources;&h18
+		Extension=.mid;.midi;.rmi
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=MIDI Files (*.mid,*.midi,*.rmi)
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=MP3sMp3
+		DocIcon=OpenSong.xojo_resources;&h24
+		Extension=.mp3
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=MP3s (*.mp3)
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=WAVFilesWav
+		DocIcon=OpenSong.xojo_resources;&h30
+		Extension=.wav
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=WAV Files (*.wav)
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=SpecialAny
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=special/any
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=OpenSongModule
+		DocIcon=OpenSong.xojo_resources;&h3C
+		Extension=.xmm
+		Flags=&h0
+		MacCreator=OSng
+		MacType=OXmm
+		Name=OpenSong Module
+		UTI=org.opensong.module
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=CSSFiles
+		Extension=.css
+		Flags=&h0
+		MacCreator=
+		MacType=css
+		Name=Cascading Style Sheets
+		UTI=public.css
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=TextHtml
+		Extension=.htm;.html
+		Flags=&h0
+		MacCreator=????
+		MacType=TEXT
+		Name=HTML Source
+		UTI=public.html
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=SpecialFolder
+		Extension=
+		Flags=&h0
+		MacCreator=MACS
+		MacType=fold
+		Name=special/folder
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageFiles
+		Extension=.bmp;.dib;.jpg;.jpeg;.png;.tif;.tiff;.gif;.pic;.pict
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=Image Files
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=XMLFiles
+		Extension=.xml
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=XML Files
+		UTI=public.xml
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=text/xml
+		Imported=True
+		HandlerRank=&h3
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Text
+		Extension=.txt
+		Flags=&h2
+		MacCreator=
+		MacType=TEXT
+		Name=text/plain
+		UTI=public.text
+		UTIConformsTo=public.data, public.content
+		Description=text/plain
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=PDFFiles
+		Extension=.pdf
+		Flags=&h2
+		MacCreator=
+		MacType=PDF
+		Name=PDF Files
+		UTI=com.adobe.pdf
+		UTIConformsTo=public.data, public.composite-content
+		Description=
+		MimeType=application/pdf
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

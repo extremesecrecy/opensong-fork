@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+  <title>346 Maak ons tot een stralend licht</title>
+  <copyright>Tekst &amp; muziek: Chris Christensen
+Ned. tekst: Rikkert Zuiderveld
+© 1986 Integrity Music / Small Stone Media</copyright>
+  <lyrics>;$hyphenlanguage=nl_NL
+[N]
+ \relative c'
+ {
+  \time 4/4 
+  \key a \major
+  \clef "treble"
+  \partial 4 e16 e e e e4. d8 cis4 a'8. gis16 fis2 e4. e8 d4. cis8 b4 gis'8. fis16 e8. fis16 e8 d8
+  cis4 e8 e e4. d8 cis4 a'8 b cis8. cis16 cis8 b a2 b4 cis d b a4 gis8. a16 (a2)
+ }
+[NV5]
+ \relative c'
+ {
+  \time 4/4 
+  \key bes \major
+  \clef "treble"
+  \partial 2 r8 f8 f f f4. es8 d4 bes'8. a16 g2 f4. f8 es4. d8 c4 a'8. g16 f8. g16
+   f8 es8 d4 f8 f f4. es8 d4 bes'8 (c) d8. d16 d8 c bes2
+   c4 d es c bes a8. (bes16) bes2 c4 d es c bes2 a2 bes1
+ }
+[V1]
+ Maak ons tot een stralend licht
+ voor de volken,
+ een stralend licht
+ voor de mensen om ons heen.
+ Tot de wereld ziet
+ wie _ haar het leven geeft.
+ Laat het schijnen door ons heen.
+[V2]
+ Maak ons tot een woord
+ van hoop voor de volken,
+ een levend woord
+ voor de mensen om ons heen.
+ Tot de wereld weet
+ dat _ U verlossing geeft.
+ Uw genade door ons heen.
+[V3]
+ Maak ons tot een zegening
+ voor de volken,
+ een zegening
+ voor de mensen om ons heen.
+ Tot de wereld weet
+ wie _ elke schuld vergeeft.
+ Uw genezing door ons heen.
+[V4]
+ Maak ons tot een vrolijk lied
+ voor de volken,
+ een lied van dank
+ voor de mensen om ons heen.
+ Tot de wereld zingt
+ voor degeen die eeuwig leeft.
+ Laat het klinken door ons heen.
+[V5]
+ En bouw uw koninkrijk
+ in de volken,
+ uw wil geschied'
+ in de mensen om ons heen.
+ ||
+ Tot de wereld weet
+ dat Jezus Christus heerst.
+ Bouw uw koninkrijk in ons.
+ Bouw uw koninkrijk op aard'!
+ </lyrics>
+  <hymn_number>346</hymn_number>
+  <presentation>V1 V2 V3 V4 V5 </presentation>
+  <author></author>
+  <ccli></ccli>
+  <capo print="false"></capo>
+  <key></key>
+  <aka></aka>
+  <key_line></key_line>
+  <user1></user1>
+  <user2></user2>
+  <user3></user3>
+  <theme></theme>
+  <linked_songs/>
+  <tempo></tempo>
+  <time_sig></time_sig>
+  <backgrounds resize="screen" keep_aspect="true" link="true" background_as_text="false"/>
+</song>

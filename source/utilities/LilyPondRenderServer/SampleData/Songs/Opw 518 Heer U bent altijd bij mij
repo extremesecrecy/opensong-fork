@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+  <title>518 Heer, U bent altijd bij mij</title>
+  <copyright>Tekst &amp; muziek: Marcel Zimmer © 1998 Celmar Music</copyright>
+  <lyrics>;$hyphenlanguage=nl_NL
+[N]
+ \relative c'
+ { 
+ \time 4/4 
+ \key a \major
+ \clef "treble"
+ cis8 d e d (d4) cis b (cis8) cis (cis4) r8
+ e fis4 fis8 e (e4) cis b2. r4
+ cis8 d e d (d4) cis b (cis8) cis (cis4) r8
+ e fis4 a8 a (a4) fis e2. r8
+ cis d4 cis8 d (d4) a' a e8 e (e4) r8
+ e fis4 e8 d (d4) cis b2. r8
+ cis d4 cis8 d (d4) a' a e8 e (e4) r8
+ e fis4 gis8 a (a4) b b1 (b4) r
+ }
+[NC]
+ \relative c'
+ { 
+ \time 4/4 
+ \key a \major
+ \clef "treble"
+ r2 e8 a cis d(d4) cis8 a(a) e4. r2
+ e8 a cis d(d4) cis8 a(a) e4. r2
+ a8 b cis cis(cis4.) b8(b4) fis8 cis'(cis4.) b8(b4) fis8 a(a2.)
+ b8 b(b4) r4
+ e,8 a cis d8(d4) cis8 a(a) e4. r2
+ e8 a cis d8(d4) cis8 a(a) e4. r2
+ a8 b cis cis(cis4.) b8(b4) fis8 cis'(cis4.) b8(b4)
+ fis8 a(a2.) b8 b(b4) r
+ b8(a) gis b\((b) a(a2.)\)
+ }
+[V1]
+ Heer, U doorgrondt en kent mij;
+ mijn zitten en mijn staan
+ en U kent mijn gedachten,
+ mijn liggen en mijn gaan.
+ ||
+ De woorden van mijn mond, o Heer,
+ die zijn voor U bekend
+ en waar ik ook naar toe zou gaan,
+ ik weet dat U daar bent.
+[C]
+ Heer, U bent altijd bij mij,
+ U legt uw handen op mij
+ en U bent voor mij
+ en naast mij
+ en om mij heen.
+ ||
+ Heer, U bent altijd bij mij,
+ U legt uw handen op mij
+ en U bent voor mij
+ en naast mij
+ en om mij heen,
+ elke dag.
+[V2]
+ Heer, U doorgrondt en kent mij,
+ want in de moederschoot
+ ben ik door U geweven;
+ U bent oneindig groot.
+ ||
+ Ik dank U voor dit wonder, Heer,
+ dat U mijn leven kent
+ en wat er ook gebeuren zal,
+ dat U steeds bij mij bent.
+ </lyrics>
+  <hymn_number>518</hymn_number>
+  <presentation>V1 C V2 C</presentation>
+  <author></author>
+  <ccli></ccli>
+  <capo print="false"></capo>
+  <key></key>
+  <aka></aka>
+  <key_line></key_line>
+  <user1></user1>
+  <user2></user2>
+  <user3></user3>
+  <theme></theme>
+  <linked_songs/>
+  <tempo></tempo>
+  <time_sig></time_sig>
+  <backgrounds resize="screen" keep_aspect="true" link="true" background_as_text="false"/>
+</song>

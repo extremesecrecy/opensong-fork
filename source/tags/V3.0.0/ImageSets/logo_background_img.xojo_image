@@ -1,0 +1,46 @@
+#tag MultiImage
+Image logo_background_img
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAH+AAAAAAH+AAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0XbG9nb19iYWNrZ3JvdW5kX3BpYy5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjucNaTtjcAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yHAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAZ01hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAbG9nb19iYWNrZ3JvdW5kX3BpYy5wbmcAAA4AMAAXAGwAbwBnAG8AXwBiAGEAYwBrAGcAcgBvAHUAbgBkAF8AcABpAGMALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFRVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvbG9nb19iYWNrZ3JvdW5kX3BpYy5wbmcAEwABLwAAFQACAA///wAAAAAAAAAA
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/logo_background_pic.png
+		PartialPath = ImageSets\logo_background_pic.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAIKAAAAAAIKAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0abG9nb19iYWNrZ3JvdW5kX3BpY0AyeC5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjucdaV6roAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWljEKAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAak1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAbG9nb19iYWNrZ3JvdW5kX3BpY0AyeC5wbmcADgA2ABoAbABvAGcAbwBfAGIAYQBjAGsAZwByAG8AdQBuAGQAXwBwAGkAYwBAADIAeAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAV1VzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy9sb2dvX2JhY2tncm91bmRfcGljQDJ4LnBuZwAAEwABLwAAFQACAA///wAAAAAAAAAA
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/logo_background_pic@2x.png
+		PartialPath = ImageSets\logo_background_pic@2x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAIKAAAAAAIKAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0abG9nb19iYWNrZ3JvdW5kX3BpY0AzeC5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuctaTtjcAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yHAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAak1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAbG9nb19iYWNrZ3JvdW5kX3BpY0AzeC5wbmcADgA2ABoAbABvAGcAbwBfAGIAYQBjAGsAZwByAG8AdQBuAGQAXwBwAGkAYwBAADMAeAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAV1VzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy9sb2dvX2JhY2tncm91bmRfcGljQDN4LnBuZwAAEwABLwAAFQACAA///wAAAAAAAAAA
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/logo_background_pic@3x.png
+		PartialPath = ImageSets\logo_background_pic@3x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

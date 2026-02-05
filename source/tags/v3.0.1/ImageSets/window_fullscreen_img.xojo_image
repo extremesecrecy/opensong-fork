@@ -1,0 +1,46 @@
+#tag MultiImage
+Image window_fullscreen_img
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAIGAAAAAAIGAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0Zd2luZG93X2Z1bGxzY3JlZW5fcGljLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuwdaTtjgAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yIAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAaU1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAd2luZG93X2Z1bGxzY3JlZW5fcGljLnBuZwAADgA0ABkAdwBpAG4AZABvAHcAXwBmAHUAbABsAHMAYwByAGUAZQBuAF8AcABpAGMALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFZVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvd2luZG93X2Z1bGxzY3JlZW5fcGljLnBuZwATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/window_fullscreen_pic.png
+		PartialPath = ImageSets\window_fullscreen_pic.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAISAAAAAAISAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0cd2luZG93X2Z1bGxzY3JlZW5fcGljQDJ4LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuwtaV6roAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWljEKAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAbE1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAd2luZG93X2Z1bGxzY3JlZW5fcGljQDJ4LnBuZwAOADoAHAB3AGkAbgBkAG8AdwBfAGYAdQBsAGwAcwBjAHIAZQBlAG4AXwBwAGkAYwBAADIAeAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAWVVzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy93aW5kb3dfZnVsbHNjcmVlbl9waWNAMngucG5nAAATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/window_fullscreen_pic@2x.png
+		PartialPath = ImageSets\window_fullscreen_pic@2x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAISAAAAAAISAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0cd2luZG93X2Z1bGxzY3JlZW5fcGljQDN4LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjuw9aTtjkAAAAAAAAAAP////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADWk/yJAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAbE1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAd2luZG93X2Z1bGxzY3JlZW5fcGljQDN4LnBuZwAOADoAHAB3AGkAbgBkAG8AdwBfAGYAdQBsAGwAcwBjAHIAZQBlAG4AXwBwAGkAYwBAADMAeAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAWVVzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy93aW5kb3dfZnVsbHNjcmVlbl9waWNAM3gucG5nAAATAAEvAAAVAAIAD///AAAAAAAAAAA=
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/window_fullscreen_pic@3x.png
+		PartialPath = ImageSets\window_fullscreen_pic@3x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

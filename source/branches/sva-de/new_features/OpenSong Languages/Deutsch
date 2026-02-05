@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language name="Deutsch" author="Stefan von Allmen, Bernd u. Dominic Tubach, Rüdiger Greeb" version="3.6.0">
+<!-- aäöΑΩασωЖѰ🙈 these hopefully help editors to detect UTF-8 encoding of the file-->
+<!-- Diese Sprachdatei basiert auf den Arbeiten von Bernd Tubach, Dominic Tubach und Rüdiger Greeb -->
+  <load_settings>
+    <checking_folders>Erstelle/prüfe Verzeichnisse</checking_folders>
+    <main>Lade Programmeinstellungen</main>
+    <print>Lade Druckeinstellungen</print>
+    <presentation>Lade Präsentationseinstellungen</presentation>
+    <transitions>Lade Überblendeffekte</transitions>
+    <tempos>Lade Liste der Tempi</tempos>
+    <themes>Lade Liste der Kategorien</themes>
+    <time_signatures>Lade Liste der Taktarten</time_signatures>
+    <imagequality>Lade Liste der Bildqualitäten</imagequality>
+    <videolan_preset>Lade VLC Media Player Voreinstellungen</videolan_preset>
+    <fonts>Lade Liste der Schriftarten</fonts>
+    <latest_version>Suche nach Programmaktualisierungen
+      <newer_available>Eine neuere Version (%1) ist verfügbar. Besuchen Sie http://www.opensong.org/, um diese herunterzuladen.</newer_available>
+    </latest_version>
+  </load_settings>
+
+  <load_data>
+    <bible>Lade die Standardbibel</bible>
+    <songs_cache>Erstelle Verzeichnis der Lieder</songs_cache>
+    <folders>Lade die Liederordner</folders>
+    <songs>Lade die Lieder</songs>
+    <sets>Lade die Sets</sets>
+  </load_data>
+
+  <welcome>Willkommen!</welcome>
+
+  <songs_mode caption="Liederverwaltung">Hier können Sie im Liededitor Lieder erstellen und bearbeiten. Lieder können als Liederblätter gedruckt oder als Präsentation angezeigt werden. Wenn Sie vom Liededitor zur Präsentation wechseln, werden Sie aufgefordert, Änderungen zu speichern.
+    <all_songs caption="Alle Lieder">
+      <print caption="Drucken">Druckt alle im gewählten Ordner vorhandenen Lieder. Diese Funktion kann genutzt werden, um Liederbücher zu drucken.</print>
+      <export caption="Exportieren">Exportiert alle Lieder im gewählten Ordner als HTML-Dateien.</export>
+      <find caption="Suchen">Erweiterte Suche nach Liedern im gewählten Ordner.</find>
+    </all_songs>
+    <new_song caption="Neues Lied">
+      <create caption="Erstellen">Erstellt ein neues Lied.</create>
+      <import caption="Importieren">Importiert ein neues Lied von "CCLI SongSelect" in OpenSong.</import>
+    </new_song>
+    <selected_song caption="Gewähltes Lied">
+      <save caption="Speichern">Speichert das ausgewählte Lied.</save>
+      <revert caption="Zurück">Setzt das ausgewählte Lied auf die gespeicherte Version zurück.</revert>
+      <print caption="Drucken">Druckt das ausgewählte Lied.</print>
+      <present caption="Anzeigen">Präsentiert das ausgewählte Lied. Falls Sie Änderungen am aktuellen Lied vorgenommen hatten, werden diese gespeichert.
+        <single_screen caption="link(shared/single_screen/@caption)"/>
+        <dual_screen caption="link(shared/dual_screen/@caption)"/>
+        <preview_dual_screen caption="link(shared/preview_dual_screen/@caption)"/>
+      </present>
+      <export caption="Exportieren">Exportiert das ausgewählte Lied in eine HTML-Datei.</export>
+      <rename caption="Umbenennen">Der Dateiname des ausgewählten Liedes kann geändert werden. Unter diesem Namen wird das Lied in der Liste der Lieder im Liededitor einsortiert. Bei der Präsentationszusammenstellung wird das Lied über diesen Namen gesucht und eingefügt.</rename>
+      <move caption="Verschieben">Verschiebt das ausgewählte Lied in einen anderen Ordner.
+        <where caption="Verschiebe '%1' in den folgenden Ordner:"/>
+      </move>
+      <copy caption="Kopieren">Kopiert das ausgewählte Lied in einen anderen Ordner.
+        <where caption="Kopiere '%1' in den folgenden Ordner:"/>
+      </copy>
+      <delete caption="Löschen">Löscht das ausgewählte Lied.</delete>
+    </selected_song>
+
+    <songs caption="Lieder">Markieren Sie ein Lied in der Liste, um es in den Liededitor zu laden.</songs>
+
+    <curr_folder caption="Liedordner (aktuelles Lied)">Zeigt den Ordner an, in dem das Lied gespeichert ist (relativ zum aktuellen Ordner, falls einer im Feld Liederordner gewählt ist).</curr_folder>
+
+    <song_folders caption="Liederordner">Wählen Sie den Ordner dessen Lieder in der Liederliste angezeigt werden sollen. Auch die Lieder untergeordneter Ordner werden angezeigt.
+      <new>Erstellt einen neuen Liederordner.</new>
+      <delete>Löscht den ausgewählten Ordner. Der Ordner muss leer sein.</delete>
+      <filter_all caption="Alle"/>
+      <filter_main caption="Hauptordner"/>
+    </song_folders>
+  </songs_mode>
+
+  <general_song_editor caption="Allgemein">Hier können Titel, Untertitel, Autor, Präsentationsreihenfolge, und Liedtext des ausgewählten Liedes erfasst und geändert werden.
+    <header caption="Liededitor"/>
+    <show_general_editor caption="Allgemein"/>
+    <show_advanced_editor caption="Erweitert"/>
+    <show_backgrounds_editor caption="Bilder"/>
+    <title caption="Titel">Geben Sie hier den Titel des Liedes ein.</title>
+    <author caption="Autor">Geben Sie hier den Autor des Liedes ein.</author>
+    <copyright caption="Copyright">Erfassen Sie hier die Urheberrechte des Liedes.</copyright>
+    <ccli caption="CCLI Lied Nr.">Geben Sie hier die CCLI-Nummer des Liedes ein.</ccli>
+    <hymn_number caption="Lied Nr.">Hier können Sie einen Verweis auf ein Liederbuch erfassen, aus dem das Lied entnommen ist.</hymn_number>
+    <presentation caption="Reihenfolge">Bestimmt die Präsentationsreihenfolge. Liedteile müssen durch Leerzeichen getrennt sein. (Bsp. "V1 C V2 C")</presentation>
+    <lyrics caption="Liedtext">Erfassen Sie hier das Lied unter Verwendung von allen nötigen Steuerzeichen (Refr./Strophe, Akkorde, Kommentare). Eine ausführliche Erklärung des Formats finden Sie in der Hilfe.</lyrics>
+    <insert caption="Einfügen"/>
+    <ins_section caption="Liedteil">Fügt eine Liedteilmarke ein. Diese werden gebraucht, um ein Lied zu gliedern, z.B. [V1] für die 1. Strophe.
+      <section_name caption="Liedteil"/>
+    </ins_section>
+    <ins_lyrics caption="Akkorde/Liedtext">Fügt die Steuerzeichen für Akkorde und Text ein.
+      <number_of_lines caption="Anzahl der Zeilen"/>
+    </ins_lyrics>
+    <ins_multi_verse caption="Mehrere Strophen">Fügt ein Raster zur Eingabe von Akkorden bei mehreren Strophen ein.
+      <number_of_verses caption="Anzahl der Strophen"/>
+      <number_of_lines caption="Anzahl der Zeilen"/>
+    </ins_multi_verse>
+    <ins_comment caption="Kommentar">Kommentare werden auf dem Liederblatt gedruckt, aber in der Präsentation nicht angezeigt.</ins_comment>
+    <ins_column caption="Neue Spalte">Liederblätter können zwei Spalten haben, um bspw. lange Lieder auf eine Seite zu bringen. In der Präsentation werden keine Spalten angezeigt.</ins_column>
+    <ins_page caption="Neue Seite">Beim Ausdrucken längerer Lieder kann ein Seitenwechsel erwünscht sein. Dieser Seitenumbruch wird in der Präsentation ignoriert. Verwenden Sie für die Präsentation stattdessen '||'.</ins_page>
+    <transpose caption="Transponieren">Hiermit können Sie die Tonhöhe der Akkorde in Halbtonschritten anheben oder absenken.
+      <using caption="in">Wählen Sie ob die Zielakkorde mit # oder b geschrieben werden sollen.
+        <sharps caption="#-Tonart"/>
+        <flats caption="b-Tonart"/>
+      </using>
+    </transpose>
+    <linked caption="Verknüpfte Lieder">Verknüpfte Lieder werden automatisch mit in das Set eingefügt, wenn dieses Lied eingefügt wird.</linked>
+    <add_link caption="Zufügen">Fügt ein Lied der Liste hinzu. Der Dialog Lied Einfügen wird dazu angezeigt.</add_link>
+    <remove_link caption="Entfernen">Löscht das selektierte Lied aus der Liste.</remove_link>
+  </general_song_editor>
+
+  <advanced_song_editor caption="Erweitert">Hier können Kategorie, Kapo, Takt, Stil, etc. des ausgewählten Liedes geändert werden.
+    <header caption="link(general_song_editor/header/@caption)"/>
+    <show_general_editor caption="link(general_song_editor/show_general_editor/@caption)"/>
+    <show_advanced_editor caption="link(general_song_editor/show_advanced_editor/@caption)"/>
+    <show_backgrounds_editor caption="link(general_song_editor/show_backgrounds_editor/@caption)"/>
+    <themes caption="Kategorien">Ordnet das Lied Kategorien zu.</themes>
+    <capo caption="Kapo">Gibt die Position des Kapodasters an.
+      <using caption="in">Wählen Sie ob die Kapoakkorde mit # oder b geschrieben werden.</using>
+    </capo>
+    <capo_print caption="Drucken">Wenn diese Option gewählt ist, werden auf dem Liedblatt die Kapo-Akkorde zusätzlich zu den normalen Akkorden gedruckt.</capo_print>
+    <time_sig caption="Taktart">Gibt die Taktart an.</time_sig>
+    <tempo caption="Tempo">Gibt das Tempo an.</tempo>
+    <key caption="Tonart">Gibt die Tonart an.</key>
+    <aka caption="Alternativtitel">Gibt einen gebräuchlichen alternativen Titel an.</aka>
+    <key_line caption="Schlüsselzeile">Hier kann eine liedtypische Zeile für die Suchfunktion eingegeben werden.</key_line>
+    <style caption="Eigener Stil">Wenn Sie diese Funktion aktivieren, können Sie dem Lied einen eigenen Stil zuweisen. Klicken Sie dazu auf das Vorschaubild.</style>
+    <user1 caption="Benutzerdefiniert 1">Benutzerdefinierte Angaben für die Suche oder für Fremdanwendungen</user1>
+    <user2 caption="Benutzerdefiniert 2">Benutzerdefinierte Angaben für die Suche oder für Fremdanwendungen</user2>
+    <user3 caption="Benutzerdefiniert 3">Benutzerdefinierte Angaben für die Suche oder für Fremdanwendungen</user3>
+  </advanced_song_editor>
+
+  <backgrounds_song_editor caption="Bilder">Hier können Bilder für die einzelnen Liedteile festgelegt werden.
+    <header caption="link(general_song_editor/header/@caption)"/>
+    <show_general_editor caption="link(general_song_editor/show_general_editor/@caption)"/>
+    <show_advanced_editor caption="link(general_song_editor/show_advanced_editor/@caption)"/>
+    <show_backgrounds_editor caption="link(general_song_editor/show_backgrounds_editor/@caption)"/>
+    <backgrounds caption="Hintergrund pro Vers" head1="Vers" head2="Hintergrund">Zeigt die Hintergrund-Einstellungen die für einen bestimmten Liedteil festgelegt wurden an.</backgrounds>
+    <add_background caption="Zufügen">Fügt einen Hintergrund für den selektierten Liedteil hinzu.</add_background>
+    <del_background caption="Entfernen">Setzt den Hintergrund für den selektierten Liedteil auf den Standard zurück.</del_background>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="Bild nicht im Lied speichern, sondern auf die Datei verweisen">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <background_as_text caption="link(general_settings/imagedefaults/background_as_text/@caption)">link(general_settings/imagedefaults/background_as_text)</background_as_text>
+    <sectionless_background>Dieser Liedteil wurde aus dem Liedtext entfernt. Das Bild erscheint in der Präsentation nicht.</sectionless_background>
+  </backgrounds_song_editor>
+
+  <sets_mode caption="Präsentation">Benutzen Sie diese Funktion, um komplette Abläufe (Sets) zu erstellen und die Präsentation aufzurufen.
+    <sets caption="Set">Hier können Sie ein gespeichertes Set laden.
+      <add>Erstellt ein neues Set</add>
+    </sets>
+    <current_set caption="Aktuelles Set">
+      <save caption="Speichern">Speichert das aktuelle Set.</save>
+      <saveas caption="Speichern unter">Speichert das aktuelle Set unter einem neuen Namen.</saveas>
+      <rename caption="Umbenennen">Ändert den Namen des aktuellen Sets.</rename>
+      <delete caption="Löschen">Löscht das aktuelle Set.</delete>
+      <present caption="Anzeigen">Das aktuelle Set wird in der Präsentation angezeigt. Sie können wählen zwischen: Aktueller Monitor (Einzelmonitor), Zweiter Monitor (Multi-Monitor), Vorschau des Multi-Monitor-Modus auf dem aktuellen Bildschirm (Multi-Monitor-Vorschau).
+        <single_screen caption="link(shared/single_screen/@caption)"/>
+        <dual_screen caption="link(shared/dual_screen/@caption)"/>
+        <preview_dual_screen caption="link(shared/preview_dual_screen/@caption)"/>
+        <no_slides>Das Set muss mindestens einen Eintrag haben, damit es angezeigt werden kann.</no_slides>
+      </present>
+      <print_songs caption="Lieder">Druckt die Lieder im aktuellen Set.
+        <no_songs>Es befinden sich keine Lieder im aktuellen Set.</no_songs>
+      </print_songs>
+      <print_order caption="Ablaufplan">Druckt eine Liste mit den Namen der Set-Einträge.</print_order>
+      <export caption="Exportieren">Exportiert dieses Set mitsamt seinen Liedern in einen Ordner.</export>
+    </current_set>
+    <new_item caption="Neuer Eintrag">
+      <add_song caption="Lied">Fügt dem aktuellen Set ein oder mehrere Lieder hinzu. Zur Auswahl öffnet sich die Liederliste.</add_song>
+      <add_scripture caption="Bibeltext">Fügt dem aktuellen Set einen oder mehrere Bibeltexte hinzu. Es öffnet sich das entsprechende Auswahlfenster.</add_scripture>
+      <add_slides caption="Text">Fügt dem aktuellen Set einen frei anzugebenden Text hinzu. Einträge können auch mehrere Folien umfassen.</add_slides>
+      <add_style caption="Stil">Fügt dem aktuellen Set einen Eintrag hinzu, der den Stil für die nachfolgenden Set-Einträge definiert. Es kann ein neuer Stil definiert werden oder zum vorhergehenden Stil zurückgekehrt werden.</add_style>
+      <add_image caption="Bild">Fügt dem aktuellen Set ein Bild hinzu. Bilder erlauben es ein einzelnes Bild oder eine Diaschau ohne Texte anzuzeigen.</add_image>
+      <add_external caption="Fremdinhalt">Fügt dem aktuellen Set einen Eintrag hinzu, der das Einbinden externer Programme als Quellen ermöglicht wie z.B. eine Präsentation oder eine DVD.</add_external>
+    </new_item>
+    <current_item caption="Aktueller Eintrag">
+      <move_up caption="Nach oben">Verschiebt den aktuellen Eintrag um eine Position nach oben.</move_up>
+      <move_down caption="Nach unten">Verschiebt den aktuellen Eintrag um eine Position nach unten.</move_down>
+      <remove caption="Löschen">Löscht den aktuellen Eintrag aus dem Set.</remove>
+      <copy caption="Kopieren">Dupliziert den aktuellen Eintrag.</copy>
+      <paste caption="Einfügen">Fügt den Eintrag aus der Zwischenablage nach dem aktuellen Eintrag ein.</paste>
+      <store caption="Speichern">Speichert Änderungen am aktuellen Eintrag. Es wird nicht das Set gespeichert. Klicken Sie dazu auf "Aktuelles Set|Speichern".</store>
+      <presentitem caption="link(sets_mode/current_set/present/@caption)">Startet die Präsentation angefangen beim aktuellen Eintrag im Set. Sie können wählen zwischen: Aktueller Monitor (Einzelmonitor), Zweiter Monitor (Multi-Monitor), Vorschau des Multi-Monitor-Modus auf dem aktuellen Bildschirm (Multi-Monitor-Vorschau).
+        <single_screen caption="link(sets_mode/current_set/present/single_screen/@caption)"/>
+        <dual_screen caption="link(sets_mode/current_set/present/dual_screen/@caption)"/>
+        <preview_dual_screen caption="link(sets_mode/current_set/present/preview_dual_screen/@caption)"/>
+        <no_slides>link(sets_mode/current_set/present/no_slides)</no_slides>
+      </presentitem>
+    </current_item>
+    <items caption="Set Einträge">Zeigt die Einträge des ausgewählten Sets. Klicken Sie auf einen Eintrag, um ihn zu editieren. Doppelklicken Sie auf ein Lied, um es im Liededitor zu bearbeiten. Einträge können Sie mit der Maus verschieben.
+      <song caption="(Lied)"/>
+      <custom caption="(Text)"/>
+      <scripture caption="(Bibeltext)"/>
+      <image caption="(Bild)"/>
+      <external caption="(Fremdinhalt)"/>
+      <style caption="(Stil)">-- neuer Stil --</style>
+      <revert caption="(Stil)">-- vorhergehender Stil --</revert>
+      <defaultstyle caption="(Stil)">-- Standard Stil --</defaultstyle>
+    </items>
+    <untitled caption="Ohne Titel"/>
+    <errors>
+      <revert caption="Fehler beim Lesen des Sets &quot;%1&quot; aus der Datei."/>
+      <insert caption="Einfügen der kopierten Folien ist fehlgeschlagen:&#10;%1"/>
+    </errors>
+    <messages>
+      <export_complete>'%1' wurde exportiert nach
+%2
+      </export_complete>
+    </messages>
+  </sets_mode>
+
+  <slide_editor>
+    <header caption="Folien Editor"/>
+    <title caption="Titel">Titel, der in der Präsentation angezeigt wird.</title>
+    <subtitle caption="Untertitel">Untertitel, der in der Präsentation angezeigt wird.</subtitle>
+    <name caption="Name">Text, der in der Präsentationssteuerung angezeigt wird. Er wird in der Präsentation nicht angezeigt.</name>
+    <slides caption="Text">Enthält den Text des ausgewählten Eintrags.</slides>
+    <presentation caption="Angepasste Abspielreihenfolge">Hier kann eine veränderte Abspielreihenfolge erfasst werden, die nur für diese Präsentation gilt.</presentation>
+    <origorder caption="Standard-Abspielreihenfolge">Abspielreihenfolge, die im Liededitor festgelegt wurde.</origorder>
+    <folder caption="Ordner des Liedes">Ordner, in dem das Lied gespeichert ist.</folder>
+    <notes caption="Notizen">Die Notizen werden in der Präsentationssteuerung angezeigt.</notes>
+    <insert caption="link(shared/insert/@caption)"/>
+    <ins_slide caption="Neue Folie">Erstellt eine weitere Folie in diesem Eintrag. Alle Folien haben den gleichen Titel, Untertitel und Stil. Auf die Folien eines Eintrags können die Funktionen "Automatisch weiterschalten" und "Wiederholen" angewandt werden.</ins_slide>
+    <loop caption="Wiederholen">Ist diese Option aktiviert, springt OpenSong zur ersten Folie dieser Gruppe, nachdem die letzte Folie dieser Gruppe erreicht wurde. Eine Gruppe ist eine Reihe aufeinanderfolgender Einträge mit gleichem Namen</loop>
+    <print caption="Auf Ablaufplan drucken">Deaktivieren Sie diese Option, wenn Sie nicht möchten, dass dieser Eintrag auf dem gedruckten Ablaufplan erscheint.</print>
+    <transition caption="Überblendung verwenden">Geben Sie an, ob beim Wechsel zwischen Folien dieses Eintrags Überblendungen verwendet werden sollen.</transition>
+    <auto_advance caption="Automatisch weiterschalten nach">Geben Sie die Zeit in Sekunden an, nach der automatisch zur nächsten Folie in diesem Eintrag geschaltet wird.</auto_advance>
+    <seconds caption="Sekunden"/>
+    <style caption="Eigener Stil">Wenn Sie diese Funktion aktivieren, können Sie dem Eintrag einen eigenen Stil zuweisen. Klicken Sie dazu auf das Vorschaubild.</style>
+  </slide_editor>
+
+  <image_slide>
+    <header caption="Diaschau"/>
+    <title caption="link(slide_editor/title/@caption)">link(slide_editor/title)</title>
+    <subtitle caption="link(slide_editor/subtitle/@caption)">link(slide_editor/subtitle)</subtitle>
+    <descriptions caption="Bildbeschreibung im Untertitel">Fügt die Bildbeschreibung dem Untertitel hinzu.</descriptions>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <images caption="Bilder" head1="Vorschau" head2="Beschreibung">Liste der Bilder, die zur Diaschau gehören. Ziehen Sie Bilder auf diese Liste um auf einfache Weise Bilder hinzuzufügen.</images>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="Bilder nicht im Set speichern sondern auf Datei verweisen">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <action caption="Aktion"/>
+      <preview caption="Vorschau">Zeige das Bild in einem Fenster als Vorschau an.</preview>
+      <ins_image caption="Bild hinzufügen">Fügt ein Bild dieser Diaschau hinzu. Damit wird der selbe Titel, Untertitel, Stil und automatische Weiterschaltung verwendet. So zusammengestellte Bilder können auch automatisch in einer Schlaufe wiederholt werden.</ins_image>
+      <imp_image caption="Präsentation importieren">Lädt alle Folien einer Präsentation als Bilder.</imp_image>
+      <del_image caption="Bild entfernen">Entfernt das Bild aus der Zusammenstellung.</del_image>
+      <move_up caption="Nach oben">Verschiebt das gewählte Bild in Richtung Anfang.</move_up>
+      <move_down caption="Nach unten">Verschiebt das gewählte Bild in Richtung Ende.</move_down>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+    <print caption="link(slide_editor/print/@caption)">link(slide_editor/print)</print>
+    <transition caption="link(slide_editor/transition/@caption)">link(slide_editor/transition)</transition>
+    <auto_advance caption="link(slide_editor/auto_advance/@caption)">link(slide_editor/auto_advance)</auto_advance>
+    <seconds caption="link(slide_editor/seconds/@caption)">link(slide_editor/seconds)</seconds>
+    <style caption="link(slide_editor/style/@caption)">link(slide_editor/style)</style>
+  </image_slide>
+
+  <external_slide>
+    <header caption="Fremdinhalte"/>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <presentation caption="Präsentation">Verwendet Microsoft PowerPoint oder OpenOffice.org Impress zum Anzeigen einer Präsentation.</presentation>
+    <videolan caption="VideoLAN">Verwende den VLC Media Player zum Anzeigen einer Mediendatei.</videolan>
+    <application caption="Anwendung">Verwende ein externes Programm.</application>
+    <no_application caption="Keine Anwendung gewählt">
+      <no_application caption="Wählen Sie eine Anwendung als Quelle für anzuzeigende Inhalte."/>
+    </no_application>
+    <presentation_settings caption="Einstellung der Präsentation">
+      <presentation_host caption="Welche Anwendung soll verwendet werden?"/>
+      <host_powerpoint caption="Microsoft PowerPoint"/>
+      <host_powerpoint_info caption="Wenn Sie Microsoft Office installiert haben, haben Sie die volle Kontrolle über die Präsentation."/>
+      <host_pptview caption="Microsoft PowerPoint Viewer"/>
+      <host_pptview_info caption="Zur einfachen Anzeige einer PowerPoint Präsentation können Sie den freien Microsoft PowerPoint Viewer verwenden. OpenSong versucht eine installierte Version zu finden. Sie können einen bestimmten Viewer im Dialog 'Allgemeine Einstellungen' festlegen."/>
+      <host_impress caption="OpenOffice.org Impress"/>
+      <host_impress_info caption="Wenn OpenOffice.org installiert ist können Sie damit die Präsentation einer Impress oder PowerPoint Datei steuern."/>
+      <presentation_file caption="Dateiname der Präsentation">Wählen Sie die Präsentationsdatei über einen Dateiauswahldialog.</presentation_file>
+      <loop_presentation caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop_presentation>
+      <embed_presentation caption="Präsentationsdatei im OpenSong Set speichern"/>
+    </presentation_settings>
+    <videolan_settings caption="VideoLAN Einstellungen">
+      <videolan_start caption="VLC Media Player starten"/>
+      <videolan_mediafilename caption="Zu spielende Mediendatei">Wählen Sie die Video- oder Audiodatei, die abgespielt werden soll.</videolan_mediafilename>
+      <embed_mediafile caption="Mediadatei im OpenSong Set speichern"/>
+      <videolan_preset caption="Folgende Vorgabeparameter verwenden"/>
+      <videolan_manual caption="Individuell angepasste Parameter (Verwenden Sie %d für die Bildschirm Nummer, %s für die Mediendatei)"/>
+      <wait_for_videolan caption="Das Ende der Mediadatei abwarten bevor es zur nächsten Folie weiter geht"/>
+      <videolan_stop caption="Gestartete Instanz von VLC Media Player beenden"/>
+    </videolan_settings>
+    <application_settings caption="Einstellungen für externes Programm">
+      <application_start caption="Programm ausführen"/>
+      <application_filename caption="Dateiname der Anwendung">Wählen Sie die Ausführbare Programmdatei der zu startenden Anwendung.</application_filename>
+      <application_parameters caption="Programmparameter"/>
+      <wait_for_application caption="Warten, bis die externe Anwendung beendet wird, bevor es zur nächsten Folie weiter geht"/>
+      <application_stop caption="Gestartete Instanz der Anwendung beenden"/>
+    </application_settings>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+    <print caption="link(slide_editor/print/@caption)">link(slide_editor/print)</print>
+  </external_slide>
+
+  <style_change>
+    <header caption="Stil ändern"/>
+    <revert caption="Zurück zum vorhergehenden Stil">Ist diese Option aktiviert, werden die folgenden Einträge wieder mit dem zuvor im Set aktiven Stil angezeigt.</revert>
+    <change caption="Stil ändern">Mit dieser Option kann der Stil der folgenden Set-Einträge verändert werden. Die Stiländerung betrifft alle nachfolgenden Einträge bis zum nächsten Stil-Eintrag.</change>
+    <style>Klicken Sie hier, wenn "Stil ändern" aktiviert ist, um den neuen Stil einzustellen.</style>
+  </style_change>
+
+  <video_slides>
+    <header caption="Video abspielen"/>
+    <name caption="Name">Text, der in der Präsentationssteuerung angezeigt wird. Er wird in der Präsentation nicht angezeigt.</name>
+    <file caption="Videodatei">Dateinamen des Videos, das abgespielt werden soll.</file>
+    <loop caption="Wiederholen">Ist diese Option aktiviert, startet OpenSong das Video erneut, sobald es zu Ende abgelaufen ist.</loop>
+  </video_slides>
+
+  <powerpoint_slides>
+    <header caption="PowerPoint-Präsentation"/>
+    <name caption="Name">Text, der in der Präsentationssteuerung angezeigt wird. Er wird in der Präsentation nicht angezeigt.</name>
+    <file caption="PowerPoint-Datei">Dateiname der PowerPoint-Präsentation die angezeigt werden soll.</file>
+  </powerpoint_slides>
+
+  <song_search title="Liedersuche">
+    <search caption="Bitte geben Sie den Suchtext ein:"/>
+    <fields caption="Suchoptionen">
+      <title caption="link(general_song_editor/title/@caption)"/>
+      <author caption="link(general_song_editor/author/@caption)"/>
+      <copyright caption="link(general_song_editor/copyright/@caption)"/>
+      <ccli caption="link(general_song_editor/ccli/@caption)"/>
+      <presentation caption="link(general_song_editor/presentation/@caption)"/>
+      <lyrics caption="link(general_song_editor/lyrics/@caption)"/>
+      <hymn_number caption="link(general_song_editor/hymn_number/@caption)"/>
+      <themes caption="link(advanced_song_editor/themes/@caption)"/>
+      <capo caption="link(advanced_song_editor/capo/@caption)"/>
+      <print_capo caption="link(advanced_song_editor/print_capo/caption)"/>
+      <time_sig caption="link(advanced_song_editor/time_sig/@caption)"/>
+      <tempo caption="link(advanced_song_editor/tempo/@caption)"/>
+      <key caption="link(advanced_song_editor/key/@caption)"/>
+      <aka caption="link(advanced_song_editor/aka/@caption)"/>
+      <key_line caption="link(advanced_song_editor/key_line/@caption)"/>
+      <style caption="link(advanced_song_editor/style/@caption)"/>
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <chord caption="Akkord"/>
+      <chord_key caption="Grundton"/>
+      <chord_form caption="Modifikation"/>
+    </fields>
+  </song_search>
+
+  <scripture_search title="Bibeltext suchen">
+    <caption caption="Textsuche in der Bibel"/>
+    <example caption="Um nach einem Satzteil zu suchen geben Sie den Suchausdruck mit Anführungszeichen ein, z.B. &quot;Simon Petrus&quot;."/>
+    <match caption="Wortübereinstimmung">
+      <exact caption="&amp;vollständig"/>
+      <begin caption="Wortan&amp;fang"/>
+    </match>
+    <words caption="Vers enthält">
+      <all caption="&amp;alle Wörter"/>
+      <any caption="&amp;eines der Wörter"/>
+    </words>
+    <search caption="S&amp;uchen"/>
+    <ok caption="link(shared/ok/@caption)"/>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <result caption="%1 Textstellen wurden für den angegebenen Suchausdruck gefunden." head1="Bibelstelle" head2="Text"/>
+  </scripture_search>
+
+  <songpicker_menu>
+    <file>
+      <close caption="link(shared/close/@caption)"/>
+    </file>
+    <edit caption="link(main_menu/edit/@caption)">
+      <undo caption="link(main_menu/edit/undo/@caption)"/>
+      <selall caption="link(shared/selectall/@caption)"/>
+      <cut caption="link(shared/cut/@caption)"/>
+      <copy caption="link(shared/copy/@caption)"/>
+      <paste caption="link(shared/paste/@caption)"/>
+      <clear caption="link(shared/clear/@caption)"/>
+      <find caption="link(main_menu/edit/find/@caption)"/>
+      <find_next caption="link(main_menu/edit/find_next/@caption"/>
+    </edit>
+  </songpicker_menu>
+
+  <main_menu>
+    <file caption="_Datei">
+      <new caption="_Neu"/>
+      <save caption="_Speichern"/>
+      <present caption="An_zeigen">
+        <single_screen caption="_Einzelmonitor"/>
+        <dual_screen caption="_Multi-Monitor"/>
+        <preview_dual_screen caption="Multi-Monitor-_Vorschau"/>
+      </present>
+      <pagesetup caption="Seite _einrichten"/>
+      <print caption="D_rucken"/>
+      <print_alphabetical_toc caption="Drucke _Alphabetische Liederliste"/>
+      <print_categorical_toc caption="Drucke Liederliste nach _Kategorien"/>
+      <song_act caption="Aktivitäten_protokoll anzeigen"/>
+      <scripture caption="B_ibeltext suchen"/>
+      <quit caption="_Beenden"/>
+    </file>
+    <edit caption="_Bearbeiten">
+      <undo caption="_Rückgängig"/>
+      <selall caption="link(shared/selectall/@caption)"/>
+      <cut caption="link(shared/cut/@caption)"/>
+      <copy caption="link(shared/copy/@caption)"/>
+      <paste caption="link(shared/paste/@caption)"/>
+      <clear caption="link(shared/clear/@caption)"/>
+      <find caption="_Suchen"/>
+      <find_next caption="_Weitersuchen"/>
+      <interleave caption="_Zeilen verschachteln"/>
+    </edit>
+    <mode caption="_Modus">
+      <songs caption="_Liededitor"/>
+      <sets caption="_Präsentation"/>
+    </mode>
+    <settings caption="_Einstellungen">
+      <presentation caption="_Präsentation"/>
+      <print caption="_Druck"/>
+      <general caption="_Allgemein"/>
+      <refresh_songs caption="_Liederliste neu laden"/>
+      <refresh_sets caption="_Setliste neu laden"/>
+      <install_module caption="Modul _installieren"/>
+    </settings>
+    <help caption="_Hilfe">
+      <help_topics caption="Hilfe_themen"/>
+      <user_manual caption="Online Hand_buch"/>
+      <translating caption="_OpenSong übersetzen"/>
+      <about caption="_Über OpenSong"/>
+    </help>
+  </main_menu>
+
+  <general_settings title="Allgemeine Einstellungen">
+    <general caption="Allgemein" head1="Einstellungen" head2="Dateipfade" head3="Bildverarbeitung" head4="Integration" head5="System" head6="Darstellung">
+      <ccli caption="CCLI Lizenz Nr."/>
+      <version_check caption="Beim Start auf neue Version prüfen"/>
+      <language caption="Sprache"/>
+    </general>
+    <linked caption="Verknüpfte Lieder">
+      <prompt caption="Nachfragen vor Einfügen verknüpfter Lieder"/>
+    </linked>
+    <proxy caption="Proxy">
+      <host caption="Host"/>
+      <port caption="Port"/>
+    </proxy>
+    <rcserver caption="Fernsteuerung">
+      <enable caption="Fernsteuerung einschalten"/>
+      <key caption="Zugriffsschlüssel"/>
+      <port caption="Port"/>
+    </rcserver>
+    <extrender caption="Externer Renderer">
+      <enable caption="Externer Renderer benutzen"/>
+      <server caption="Server"/>
+      <port caption="Port"/>
+      <timeout caption="Timeout (in ms)"/>
+    </extrender>
+    <user_defined caption="Benutzerdefinierte Felder in Liedern">
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <load caption="Lade Standardtext"/>
+    </user_defined>
+    <fonts caption="Schriftarten">
+      <headings caption="Überschriften"/>
+      <labels caption="Beschriftung"/>
+      <text_fields caption="Textfelder"/>
+      <fixed_width caption="Text mit fester Breite"/>
+      <buttons caption="Buttons"/>
+      <large_headings caption="Große Überschriften"/>
+      <newpaint caption="Oberfläche in 3D">Die Schaltflächen werden plastisch dargestellt.</newpaint>
+    </fonts>
+    <documents_folder caption="Dokumentenordner">
+      <folder caption="" comment="No caption needed; OpenSong fills this field dynamically"/>
+      <warning caption="Achtung: Die Änderung wird erst nach einem Neustart von OpenSong aktiv."/>
+      <default caption="Standard"/>
+      <custom caption="Eigener Ordner"/>
+      <message>Der neue Dokumentenordner wird erst nach einem Neustart von OpenSong aktiv. Sie können die Daten aus dem alten Ordner in den neuen kopieren.</message>
+      <changed>Sie haben einen individuellen Dokumentenordner ausgewählt, aber die Schaltfläche 'Übernehmen' nicht angeklickt. Wollen Sie den neuen Ordner verwenden?</changed>
+      <change caption="Übernehmen"/>
+      <oldfolderdb caption="Cachedatei für Liederliste erstellen"/>
+    </documents_folder>
+    <imagedefaults caption="Voreinstellungen Bildverarbeitung">
+      <fit_to_screen caption="Bildgröße dem Bildschirm anpassen">Bilder werden vergrößert oder verkleinert, so dass sie den ganzen Bildschirm ausfüllen.</fit_to_screen>
+      <fit_to_body caption="Bildgröße dem Anzeigebereich anpassen">Bilder werden so vergrößert oder verkleinert, dass sie innerhalb der Ränder angezeigt werden, die im Stil definiert sind.</fit_to_body>
+      <keepaspect caption="Seitenverhältnis beibehalten">Die Bilder werden nicht verzerrt wenn die Größe angepasst wird.</keepaspect>
+      <store_as_link caption="Bilder nicht einbetten sondern auf Datei verweisen">Wenn Bilder im Set oder Lied gespeichert werden dessen Daten schnell sehr groß. Außerdem kann je nach Einstellungen die Bildqualität darunter leiden. Dies kann durch Verweise umgangen werden. Verweise in die Hintergrundbilder werden relativ gespeichert. Diese Funktion sollte mit Bedacht verwendet werden, wenn das Set auf einem anderen Computer verwendet werden soll.</store_as_link>
+      <background_as_text caption="Nur das Bild anzeigen, den Text ausblenden">Verwende nur das Hintergrundbild und blende den Liedtext aus. Dies kann verwendet werden um vorformatierten Text, Noten oder Akkorde als Bild anzuzeigen.</background_as_text>
+    </imagedefaults>
+    <imagequality caption="Bildqualität">
+      <note caption="Beim Exportieren eines Sets speichert OpenSong die verwendeten Bilder im JPEG Format. Hier kann eingestellt werden, ob die Bilder mit exportiert werden und, sofern Quicktime installiert ist, in welcher Qualität."/>
+      <compression caption="Bildkomprimierung"/>
+      <extern caption="Nur Verweis auf Bilder in 'Backgrounds'">Bilder aus OpenSongs Hintergrundsammlung nicht einfügen.</extern>
+    </imagequality>
+    <logging caption="Fehlerprotokoll">
+      <append caption="An Protokolldatei anhängen"/>
+      <console caption="Auf Systemkonsole/Debugger protokollieren"/>
+      <level caption="Umfang der Protokollierung" disabled="deaktiviert"/>
+      <dialog caption="Bitte wählen Sie die Datei, in die protokolliert werden soll." title="Protokolldatei auswählen"/>
+    </logging>
+    <log caption="Einstellungen des Aktivitätenprotokolls">
+      <enable caption="Protokollierung aktivieren"/>
+      <prompt caption="Vor dem Starten der Präsentation nachfragen"/>
+    </log>
+    <locale caption="Länderspezifische Einstellungen">
+      <search caption="Gebietsschema für die Suche"/>
+      <sort caption="Gebietsschema für die Sortierung"/>
+    </locale>
+    <ndi caption="NDI®">
+      <enable caption="NDI Quelle aktivieren"/>
+    </ndi>
+    <startmode caption="Programmteil nach Start">
+      <songs caption="link(songs_mode/@caption)"/>
+      <sets caption="link(sets_mode/@caption)"/>
+    </startmode>
+    <reload caption="Letzte Auswahl bei Start laden">
+      <songfolder caption="Liederordner"/>
+      <set caption="Set"/>
+    </reload>
+    <backgrounds caption="Hintergrundbilder">
+      <browse caption="link(shared/browse/@caption)"/>
+      <folder caption="Pfad für Hintergrundbilder"/>
+      <separate caption="Verwende eigenen Bilderordner"/>
+    </backgrounds>
+    <applications caption="Externe Programme">
+      <pptview caption="Pfad zum Powerpoint Viewer"/>
+      <pptview_browse caption="link(shared/browse/@caption)"/>
+      <videolan caption="Pfad zum VLC Media Player"/>
+      <videolan_browse caption="link(shared/browse/@caption)"/>
+    </applications>
+    <text caption="Ausgabe in Textdatei (OBS)">
+      <text_enable caption="Datei bei Folienwechsel aktualisieren"/>
+      <text_location caption="Speicherort der Textdatei"/>
+      <text_browse caption="link(shared/browse/@caption)" default="OpenSongSlide.txt"/>
+      <separator caption="Feldtrenner">
+        <value tag="">Nichts</value>
+        <value tag="&#10;">Zeilenumbruch &lt;lf&gt;</value>
+        <value tag=" ">Leerzeichen</value>
+        <value tag=",">Komme</value>
+        <value tag=";">Strichpunkt</value>
+        <value tag="|">Vertikaler Strich</value>
+        <value tag="&#9;">Tabulator</value>
+      </separator>
+    </text>
+    <text_fields caption="Datenfelder">
+      <text_lyrics caption="link(shared/lyrics/@caption)"/>
+      <text_title caption="link(shared/title/@caption)"/>
+      <text_subtitle caption="Untertitel"/>
+    </text_fields>
+    <vmix caption="vMix-Integration">
+      <vmix_enable caption="vMix-Inegration einschalten"/>
+      <vmix caption="Speicherort der vMix XML Datei"/>
+      <vmix_browse caption="link(shared/browse/@caption)"/>
+    </vmix>
+    <color_dialog caption="Farb-Auswahl Dialog">
+      <colordlg_enable caption="Anwendungsspezifischen Dialog verwenden"/>
+      <palette caption="Farbpalette beim Öffnen"/>
+    </color_dialog>
+    <slidetype_coloring caption="Farbcodierung der Folien">
+      <coloring caption="Hintergrundfarben verwenden"/>
+      <verse caption="Lied, Strophe"/>
+      <bridge caption="Lied, Bridge"/>
+      <prechorus caption="Lied, Pre-Chorus"/>
+      <chorus caption="Lied, Refrain"/>
+      <tag caption="Lied, Tag"/>
+      <scripture caption="Bibeltext"/>
+      <custom caption="Text"/>
+      <style caption="Stil"/>
+      <image caption="Bild"/>
+      <application caption="Fremdinhalt"/>
+      <blank caption="leer (eingefügt)"/>
+    </slidetype_coloring>
+  </general_settings>
+
+  <print_settings title="Druckeinstellungen">
+    <tabs head3="Maße" head1="Schriftarten" head2="Gestaltung"/>
+    <margins>
+      <left caption="Links"/>
+      <top caption="Oben"/>
+      <right caption="Rechts"/>
+      <bottom caption="Unten"/>
+      <width caption="Breite"/>
+      <height caption="Höhe"/>
+      <page_setup caption="Seite einrichten"/>
+      <message caption="Seitenränder können über Datei|Seite Einrichten… eingestellt werden."/>
+    </margins>
+    <fonts>
+      <title caption="Titel"/>
+      <author caption="Autor"/>
+      <sections caption="Liedabschnitte"/>
+      <lyrics caption="Liedtext"/>
+      <lyrics2 caption="Liedtext &#10;2. Sprache"/>
+      <chords caption="Akkorde"/>
+      <capo caption="Kapo"/>
+      <copyright caption="Copyright"/>
+      <spacing caption="Abstände"/>
+      <sections_before caption="davor"/>
+      <sections_after caption="danach"/>
+      <chords_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <chords_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <capo_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <capo_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <lyrics_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics2_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <lyrics2_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics1 caption="Hauptsprache"/>
+    </fonts>
+    <layout>
+      <heading_border_thickness caption="Konturdicke der Überschrift"/>
+      <title_in_caps caption="Titel in Großbuchstaben"/>
+      <highlight_chorus caption="link(style_editor/options/highlight_chorus/@caption)"/>
+      <header_adornment caption="Liedteil-Überschriften mit Kästchen verzieren"/>
+      <presentation caption="Drucke Liedteil-Reihenfolge"/>
+      <chords caption="Drucke Akkorde"/>
+      <capo caption="Drucke Kapo-Akkorde"/>
+      <capo_hide_regular_chords caption="Unterdrücke die eigentlichen Akkorde"/>
+      <language2 caption="Drucke zweite Sprache"/>
+      <language2_hide_primary caption="Unterdrücke erste Sprache"/>
+      <hide_sections caption="Drucke nur Liedteile in der Reihenfolge"/>
+    </layout>
+    <units caption="Einheiten">
+      <inches caption="Zoll"/>
+      <cm caption="Zentimeter"/>
+    </units>
+  </print_settings>
+
+  <presentation_settings title="Präsentationseinstellungen">
+    <settings head1="Stil" head2="Optionen" head3="Schnappschuss">
+      <default_slides caption="Standardstil"/>
+      <scripture_slides caption="Bibeltext"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+      <export_snapshot caption="Exportiere ein Abbild von jedem angezeigten Bildschirm in eine Datei wie nachfolgend angegeben"/>
+      <snapshot_file caption="Dateiname Bildschirmabzüge">Wählen Sie eine Datei mittels eines Dialogs</snapshot_file>
+      <export_preview caption="Bildschirmabzüge exportieren während einer Vorschau"/>
+      <export_live_insertions caption="Bildschirmabzüge exportieren von Folien, die nicht im Set geplant waren"/>
+      <export_metadata caption="Angaben zum Bildschirmabzug in eine ähnlich benannte XML-Datei exportieren"/>
+      <snapshot_parameters caption="link(/presentation_settings/settings/snapshot_parameters)" xml:space="preserve">Die folgenden Parameter können im Dateinamen oder -pfad als Platzhalter verwendet werden:
+    - %d: Der Tag des aktuellen Monats (01-31)
+    - %h: Die Stunde der aktuellen Zeit (00-23)
+    - %i: Die Minute der aktuellen Zeit (00-59)
+    - %m: Der aktuelle Monat (01-12)
+    - %n: Die Nummer der Folie im aktuellen Set (mit führenden Nullen)
+    - %N: Der Name der aktuellen Folie
+    - %P: Eine Fortlaufende Nummer während der aktuellen Präsentation (mit führenden Nullen)
+    - %s: Die Sekunde der aktuellen Zeit (00-59)
+    - %S: Der Name des Sets
+    - %T: Der Titel der aktuellen Folie
+    - %V: Das Kürzel für den aktuellen Liedteil (Vers Nr., Refrain …) (nur für Lieder, sonst leer)
+    - %y: Das aktuelle Jahr (4-stellig)</snapshot_parameters>
+    </settings>
+    <transitions caption="Überblendungen">
+      <use_transitions caption="Benutze Überblendungen¹"/>
+      <transition_note caption="¹ Überblendeffekte sind abhängig von der Auflösung. Um die Geschwindigkeit der Überblendung zu erhöhen, muss eventuell die Auflösung des Präsentationsbildschirms heruntergesetzt werden. Bei zu geringer Farbtiefe funktioniert das Überblenden nicht."/>
+      <time caption="Dauer [ms]" helptag="Gesamtdauer der Überblendung (kann auf langsamen Systemen länger dauern)"/>
+      <frames caption="Teilbilder" helptag="Anzahl der Teilbilder oder Stufen der Überblendung"/>
+    </transitions>
+    <style caption="Stil">
+      <border_thickness caption="Kontur-/Schattendicke"/>
+      <subtitles caption="Untertitel"/>
+      <modes>
+        <normal caption="Normal"/>
+        <black caption="Schwarz"/>
+        <white caption="Weiß"/>
+        <logo caption="Logo"/>
+        <hidden caption="Ohne Text"/>
+        <frozen caption="Eingefroren"/>
+        <ndi caption="NDI Quelle"/>
+      </modes>
+      <mouse_cursor caption="Mauszeiger">
+        <!--These will be phased out in favor of user editable cursors-->
+        <arrow caption="Pfeil"/>
+        <cross caption="Fadenkreuz"/>
+        <hidden caption="Versteckt"/>
+        <hourglass caption="Sanduhr"/>
+        <ibeam caption="Textmarke"/>
+      </mouse_cursor>
+      <blanks caption="Leere Folien zwischen"/>
+      <blanks_between caption="Set-Einträgen einfügen"/>
+      <blank_style caption="Leere Folien erhalten"/>
+      <blank_prev caption="Stil von vorhergehendem Eintrag"/>
+      <blank_next caption="Stil von nächstem Eintrag"/>
+      <initial_mode caption="Startmodus"/>
+      <blank_is_slide_change caption="Leere Liedzeile bewirkt neue Folie" helptag="Wenn diese Option aktiviert ist bewirkt eine Liedzeile ohne Text, dass der nachfolgende Text auf einer neuen Folie dargestellt wird, d.h sie wirkt wie die Zeichensequenz &quot;||&quot; in einer Zeile."/>
+    </style>
+    <alerts caption="Meldungen">
+      <font caption="Schriftart"/>
+      <align caption="Ausrichtung"/>
+    </alerts>
+    <monitor caption="Monitore">
+      <control caption="Kontrollmonitor"/>
+      <presentation caption="Präsentationsmonitor"/>
+      <detected caption="%1 Monitor(e) angeschlossen."/>
+      <default_mode caption="Standard Anzeigemodus"/>
+      <force_4_3_preview caption="Preview auf 4:3 festlegen"/>
+      <force_16_9_preview caption="Preview auf 16:9 festlegen"/>
+      <nativefullscreen caption="Use native fullscreen mode (macOS)"/>
+    </monitor>
+    <logo caption="Logo">
+      <mask caption="Logomaske"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+    </logo>
+    <audio caption="Audio">
+      <file_to_play caption="Audiodatei"/>
+      <browse caption="Öffnen"/>
+      <stop caption="Stopp"/>
+      <play caption="Wiedergabe"/>
+    </audio>
+    <presentation_control caption="Verschiedenes">
+      <exit_prompt caption="Nachfrage beim Beenden"/>
+      <exit_doubleclick caption="Beenden mit Doppelklick"/>
+    </presentation_control>
+    <errors>
+      <snapshot_file>Fehler: Das Erstellen von Bildschirmabzügen ist aktiviert, aber es ist kein Dateiname konfiguriert.</snapshot_file>
+    </errors>
+  </presentation_settings>
+
+  <presentation_helper title="Präsentationssteuerung">
+    <top>
+      <slides head1="Titel" head2="ID" head3="Text"/>
+    </top>
+    <modes caption="Modus">
+      <normal caption="[N] Normal"/>
+      <black caption="[K] Schwarz"/>
+      <white caption="[W] Weiß"/>
+      <logo caption="[L] Logo"/>
+      <hidden caption="[H] Ohne Text"/>
+      <frozen caption="[F] Einfrieren"/>
+      <ndi caption="[Z] NDI"/>
+    </modes>
+    <actions caption="Aktionen">
+      <alert caption="[A] Meldung">Bei leerem Feld wird die Meldung gelöscht</alert>
+      <quick_song caption="[Q] Lied einfügen"/>
+      <scripture caption="[S] Bibeltext einf."/>
+      <full_screen caption="[M] Vollbild"/>
+      <normal_screen caption="[M] Normale Größe"/>
+      <return caption="[Esc] Schließen"/>
+    </actions>
+    <exit caption="Präsentation verlassen?"/>
+    <loop caption="Wiederholen"/>
+    <keys xml:space="preserve">- Tasten -
+Runter: Nächste Folie
+Hoch: Vorherige Folie
+Rechts: Nächster Block
+Links: Vorheriger Block
+F1-F15: Lied
+1-9: Strophe
+C: Refrain
+P: Pre-Chorus
+B: Bridge (Zwischenteil)
+T: Tag (Markierung)</keys>
+    <bottom>
+      <preview caption="Aktuelle Folie"/>
+      <next caption="Nächste Folie"/>
+    </bottom>
+  </presentation_helper>
+
+  <help_topics title="Hilfethemen">
+    <tabs head1="Tastenbelegung Präsentation" head2="Liedtext-/Akkordeingabe" head3="Abspielreihenfolge" head4="Schließen"/>
+    <print caption="Drucken"/>
+    <close caption="link(shared/close/@caption)"/>
+    <keys><![CDATA[
+<h1>Tastenbelegung in der Präsentation</h1>
+
+Die Präsentation kann mit folgenden Tasten gesteuert werden:
+
+<h4>Navigation</h4>
+Pfeil hoch: Vorhergehende Folie
+Pfeil runter, Leertaste: Nächste Folie
+Pfeil links: Ans Ende des vorangehenden Blocks springen (leere Folie)
+Pfeil rechts: Ans Ende des Blocks springen (leere Folie)
+Rücktaste: Auf die erste Folie des aktuellen Blocks springen.
+
+Anm: Wenn keine leeren Folien zwischen den Blöcken angezeigt werden springen die
+Tasten Pfeil links/rechst sowie Rücktaste (Backspace) jeweils zum ersten
+Eintrag des aktuellen vorhergehenden oder nachfolgenden Blocks. Die Rücktaste
+verhält sich dabei genau gleich wie die Pfeil links Taste.
+
+B: Springe zur (nächsten) Bridge im aktuellen Lied
+    (wie im Lied mit der Kennzeichnung [B#] angegeben).
+    (# steht hier für eine beliebige Ziffer)
+C: Springe zum (nächsten) Refrain (Chorus) im aktuellen Lied
+    (wie im Lied mit der Kennzeichnung [C#] angegeben).
+T: Springe zum (nächsten) Tag im aktuellen Lied
+    (wie im Lied mit der Kennzeichnung [T#] angegeben).
+P: Springe zum (nächsten) Pre-Chorus im aktuellen Lied
+    (wie im Lied mit der Kennzeichnung [P#] angegeben).
+1-9: Springe zum Vers mit der angegebenen Nummer
+    (wie im Lied mit der Kennzeichnung [V#] angegeben).
+
+<h4>Anzeigemodus</h4>
+Q: Lied in die laufende Präsentation einfügen (Quick insert).
+A: Meldung anzeigen oder löschen (Alert).
+S: Bibelstelle anzeigen oder in die aktuelle Präsentation einfügen (Scripture).
+W: Anzeige auf weiß schalten (White).
+K: Anzeige auf schwarz schalten (blacK).
+L: Logo in die Anzeige einblenden (Logo).
+H: Text ausblenden, nur den Hintergrund anzeigen (Hide).
+F: Anzeige einfrieren (Freeze). Dies ermöglicht es, in der Präsentationssteuerung eine andere Folie anzuwählen, ohne dass die präsentierte Folie verändert wird.
+N: Normale Anzeige (Spezial-Anzeigemodi verlassen).
+
+Esc : Präsentation beenden
+
+]]></keys>
+
+    <format><![CDATA[
+<h1>OpenSong Format für die Liedtext- und Akkordeingabe</h1>
+
+Lieder werden mit den folgenden Zeilentypen erfasst: Liedteilmarken, Akkordzeilen, Liedtextzeilen und Kommentare.
+Ein einfaches Lied kann z.B so aussehen:
+<pre><b>
+;Die Strophe wird einmal wiederholt.
+[V]
+.G                      C
+ Dies ist eine Strophe, dies ist eine Strophe.
+.D          G
+ Das ist so cool.
+
+[C]
+.G                C/D D        C
+ Wir singen jetzt den Refrain, Tralala.
+.G             C        D/F# G
+ Das Lied wird so nicht spielbar sein.</b></pre>
+
+Wir schauen uns die Zeilen genauer an…
+
+<h2>Liedteilmarken</h2>
+
+Liedteilmarken stehen alleine auf einer Zeile und werden von eckigen Klammern [ und ] umschlossen. Ein Abschnitt oder Liedteil umfasst die nachfolgenden Zeilen bis zur nächsten Liedteilmarke oder dem Ende des Liedes. Diese Zeilen werden in der Präsentation nicht angezeigt, aber sie werden verwendet zur Angabe der Abspielreihenfolge. Weiterhin wird bei der Präsentation für jeden Abschnitt eine neue Folie begonnen. Der Text zwischen den eckigen Klammern ist beliebig, aber die folgenden Zeichen haben spezielle Bedeutung:
+
+<b><i>[V]: </i></b>Strophen (Verse). Auf dem gedruckten Liedblatt wird das V automatisch entfernt und nur der nachfolgende Text (üblicherweise eine Zahl) gedruckt.
+Beispiele: [V1], [V2], [V3].
+
+<b><i>[C]: </i></b>Refrain (Chorus). Auf dem gedruckten Liedblatt wird "Strophe" gedruckt, gefolgt von evtl. zusätzlich angegebenem Text.
+Beispiele: [C], [C2], [CModulation].
+
+<b><i>[P]: </i></b>Pre-Chorus. Auf dem gedruckten Liedblatt wird "Pre-Chorus" gedruckt, gefolgt von evtl. zusätzlich angegebenem Text.
+Beispiele: [P], [P2].
+
+<b><i>[B]: </i></b>Bridge, Zwischenspiel. Auf dem gedruckten Liedblatt wird "Bridge" gedruckt, gefolgt von evtl. zusätzlich angegebenem Text.
+Beispiele: [B], [B2].
+
+<b><i>[T]: </i></b>Tag, Markierung. Auf dem gedruckten Liedblatt wird "Tag" gedruckt, gefolgt von evtl. zusätzlich angegebenem Text.
+Beispiele: [T], [T2].
+
+<h2>Akkordzeilen</h2>
+
+Akkordzeilen sind in der ersten Zeile mit einem Punkt "." gekennzeichnet. Der erste Buchstaben eines Akkordes muss an dem Liedtext in der nachfolgenden Zeile ausgerichtet werden. Akkordzeilen werden auf dem Liederblatt gedruckt, erscheinen aber nicht in der Präsentation.
+
+<h2>Liedtextzeilen</h2>
+
+Liedtextzeilen werden mit einem Leerzeichen " " in der ersten Spalte gekennzeichnet. Der Text muss an der Akkordzeile in der Zeile zuvor ausgerichtet werden, sofern Akkorde erfasst werden, damit die Akkorde auf dem Ausdruck richtig über dem Text platziert werden kann.
+
+<b>"__"</b> Wenn ein Wort auseinandergezogen werden muss, damit genügend Platz für die Akkorde bleibt, können an beliebiger Stelle im Wort Unterstriche eingefügt werden. Bei der Präsentation werden diese entfernt, beim Ausdruck auf dem Liederblatt wenn notwendig mit einem zentriert in der Lücke platzierten Bindestrich ersetzt. Beispiel:
+
+<b><pre>
+.Gsus7 C      G
+ Will__kommen zuhause.</pre></b>
+
+<b>"  "</b> Mehrere aufeinanderfolgende Leerzeichen stellen kein Problem dar. Die korrekten Wortabstände werden bei der Präsentation oder dem Druck automatisch neu ermittelt.
+
+<b>"|"</b> Ein vertikaler Strich wird für den Ausdruck behandelt wie ein Leerzeichen. Bei der Präsentation wird er durch einen Zeilenwechsel ersetzt.
+
+<b>"||"</b> Doppelte vertikale Striche zeigen an, dass bei der Präsentation eine neue Folie begonnen werden muss. Beim Ausdruck werden sie ignoriert. Doppelte vertikale Striche müssen immer am Ende einer Zeile gesetzt werden.
+
+<h3>Mehrere Textzeilen mit einer Akkordzeile</h3>
+
+Lieder mit mehreren Strophen verwenden oft in allen Strophen die selben Akkorde. Hier kann man die entsprechenden Textzeilen aller Strophen jeweils unter eine Akkordzeile schreiben. In diesem Fall wird in der Liedteilmarke nicht die Nummer der Strophe verwendet. Stattdessen wird diese Nummer jeweils an den Anfang jeder Zeile geschrieben, ersetzt also dort das üblicherweise notwendige Leerzeichen. Die Ausrichtung des Textes mit den Akkorden wird in diesem Fall natürlich etwas kniffliger, dafür wird der Ausdruck des Liederblattes kompakter. In der Präsentation besteht kein Unterschied.
+Beispiel:
+
+<b><i>(Versuche erst gar nicht, das zu singen ;-)</i><pre>
+[V]
+.G     C                 G
+1Dies  ist Strophe       eins;
+2Dies  ist nicht Strophe drei;
+3Wo    bleibt Strophe    vier;
+4End___los geht's hier   nicht weiter;
+
+.G     D    C                    D        G
+1Höhr  mein Lied wenn ich singe, Frem_____der.
+2Öffne dein Ohr meinem wunder____baren    Lied.
+3Warum sin__gen wir noch immer   dieses   Lied?
+4So    sollten Lieder            nicht    klingen.</pre>
+</b>
+
+Anm: In der Präsentationssteuerung wird das Zeichen in der ersten Spalte jeder Textzeile so behandelt, als ob es der vorangehenden Liedteilmarke angehängt wäre. Im vorangehenden Beispiel werden die die Ziffern 1, 2, 3, 4 also dem Text der Marke [V] angehängt, also als V1, V2, V3, V4 verwendet.
+
+<h2>Weitere Formatierungsmöglichkeiten</h2>
+
+<h3>Kommentarzeilen</h3>
+
+Kommentarzeilen beginnen mit einem Strichpunkt ";" in der erstem Spalte. Im Präsentationsmodus werden sie nicht angezeigt. Auf dem Liederblatt werden sie mit der Formatierung für Kommentare ausgedruckt.
+
+<h3>Spaltenumbruch</h3>
+
+Stehen auf einer Zeile nur drei Striche "---" wird im Ausdruck an dieser Stelle eine neue Druckspalte begonnen. Auf diese Weise können Lieder zweispaltig ausgedruckt werden.
+
+<h3>Seitenumbruch</h3>
+
+Die Zeichenfolge "-!!" bewirkt beim Ausdruck den Wechsel auf eine neue Seite.
+
+]]></format>
+
+    <presentation><![CDATA[
+<h1>OpenSong Abspielreihenfolge</h1>
+
+OpenSong kennt im Liededitor das Feld Reihenfolge, im Set die beiden Felder Angepasste Reihenfolge und Standard-Reihenfolge. Diese Felder bestimmen die sequentielle Anordnung der Liedteile in der Präsentation. Die Liedteilmarken werden in diese Felder in der zu verwendenden Reihenfolge, durch Leerzeichen getrennt, eingetragen.
+Zum Beispiel:
+
+<b>
+V1 C V2 C V3 C
+</b>
+
+In diesem Beispiel wird zuerst die erste Strophe, dann der Refrain, die 2. Strophe, usw. angezeigt.
+
+Wenn kein Eintrag in diese Felder vorgenommen wird, verwendet OpenSong die Reihenfolge, in der die Liedteilmarken im Textfeld des Liededitors erscheinen.
+
+]]></presentation>
+  </help_topics>
+
+  <font_selection title="Schriftauswahl">
+    <face caption="Schriftart"/>
+    <size caption="Größe"/>
+    <color caption="Farbe"/>
+    <bold caption="Fett"/>
+    <italic caption="Kursiv"/>
+    <underline caption="Unterstrichen"/>
+    <border caption="Kontur"/>
+    <shadow caption="Schatten"/>
+    <fill caption="Hintergrund"/>
+  </font_selection>
+
+  <print_preview title="Druckvorschau">
+    <first caption="&lt;&lt;"/>
+    <previous caption="&lt;"/>
+    <next caption="&gt;"/>
+    <last caption="&gt;&gt;"/>
+    <zoom_in caption="-"/>
+    <zoom_out caption="+"/>
+    <pages caption="%1 von %2"/>
+    <print_setup caption="Einstellungen"/>
+    <print caption="Drucken"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+  </print_preview>
+
+  <print>
+    <continued caption="(Fortsetzung)"/>
+    <toc caption="Inhaltsverzeichnis"/>
+    <categorized caption="nach Kategorien"/>
+    <alphabetical caption="alphabetisch"/>
+    <copyright caption="Copyright"/>
+    <page caption="Seite %1"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+    <create_list caption="Erstelle %1-Liste …"/>
+    <uncategorized caption="Sonstiges"/>
+    <setlist caption="Programm">
+      <date caption="vom "/>
+    </setlist>
+  </print>
+
+  <songml>
+    <page caption="Seite"/>
+    <capo caption="Kapo"/>
+    <copyright caption="Copyright"/>
+    <symbol caption="©"/>
+    <prechorus caption="Pre-Chorus"/>
+    <chorus caption="Refrain"/>
+    <bridge caption="Bridge"/>
+    <tag caption="Tag"/>
+    <verse caption="Strophe"/>
+    <prechorus_abbreviation caption="Pre"/>
+    <chorus_abbreviation caption="Ref"/>
+    <bridge_abbreviation caption="Brdg"/>
+    <tag_abbreviation caption="Tag"/>
+    <author caption=""/>
+    <hymn_number caption="Lied Nummer"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)">Geben Sie hier Ihre CCLI-Liedlizenznummer an.</ccli_license>
+    <presentation caption="Reihenfolge"/>
+    <!--The string "|NL|" is a special code to tell OpenSong that each subtitle should be on a separate line.-->
+    <separator caption="|NL|"/>
+    <!-- The leading comma is needed for internal data structure reasons.-->
+    <!-- Select English or German style chords by un-commenting the block you want to use and commenting out the other block -->
+    <!-- English style chords -->
+    <!--
+    <sharpchords>,C,C#,D,D#,E,F,F#,G,G#,A,A#,B</sharpchords>
+    <altsharpchords>,B#,C#,D,D#,E,E#,F#,G,G#,A,A#,B</altsharpchords>
+    <flatchords>,C,Db,D,Eb,E,F,Gb,G,Ab,A,Bb,B</flatchords>
+    <altflatchords>,C,Db,D,Eb,Fb,F,Gb,G,Ab,A,Bb,Cb</altflatchords>
+    <chordkeys>alle,A,A#,Ab,B,B#,Bb,C,C#,Cb,D,D#,Db,E,E#,Eb,F,F#,Fb,G,G#,Gb</chordkeys>
+    -->
+    <!-- German style chords -->
+    <!--    -->
+    <sharpchords>,C,C#,D,D#,E,F,F#,G,G#,A,A#,H</sharpchords>
+    <altsharpchords>,H#,C#,D,D#,E,E#,F#,G,G#,A,A#,H</altsharpchords>
+    <flatchords>,C,Db,D,Eb,E,F,Gb,G,Ab,A,B,H</flatchords>
+    <altflatchords>,C,Db,D,Eb,Fb,F,Gb,G,Ab,A,B,Cb</altflatchords>
+    <chordkeys>alle,A,A#,Ab,H,H#,B,C,C#,Cb,D,D#,Db,E,E#,Eb,F,F#,Fb,G,G#,Gb</chordkeys>
+    <!--    -->
+
+    <chordforms>Any,,m,2,M7,m7,7,dim7,dim,+,sus,sus2,6,6/9,M9,add9,7b5,7#5,9,7b9,7#9,13th,m7b5,m7#5,m7b9,11</chordforms>
+    <!-- formsdescriptive>alle,Dur,Moll(m),Sekund(2),Überm. Septim(M7),Moll Septim(m7),Dominant Septim(7),Vermindert Septim(dim7),Vermindert(dim),Augmented(+),Suspended(sus),Suspended 2nd(sus2),Sext(6),Sext Non(6/9),Überm. Non(M9),Add9(add9),Seven Flat Five(7b5),Seven Sharp Five(7#5),Non(9),Seven Flat Nine(7b9),Seven Sharp Nine(7#9),Tredezim(13),Moll Septim verm. Quint(m7b5),Moll Septim erh. Quint(m7#5),Moll Septim verm Non(m7b9),Undezim(11)</formsdescriptive -->
+    <formsdescriptive>alle,Major,Minor(m),2nd(2),Major 7th(M7),Minor 7th(m7),Dominant 7th(7),Diminished 7th(dim7),Diminished(dim),Augmented(+),Suspended(sus),Suspended 2nd(sus2),Sixth(6),Six Nine(6/9),Major 9th(M9),Add9(add9),Seven Flat Five(7b5),Seven Sharp Five(7#5),9th(9),Seven Flat Nine(7b9),Seven Sharp Nine(7#9),13th(13),Minor 7th Flat Five(m7b5),Minor 7th Sharp Five(m7#5),Minor 7th Flat Nine(m7b9),11th(11)</formsdescriptive>
+  </songml>
+
+  <smartml>
+    <attrib_except>SmartML.GetAttribute: Fehler beim Suchen von Attribut '%1' in '%2'.</attrib_except>
+    <no_path>Pfad nicht gefunden.</no_path>
+    <no_file>Datei nicht gefunden: %1</no_file>
+    <cant_open>Fehler beim Öffnen der Datei: %1</cant_open>
+    <cant_create>Datei konnte nicht erstellt werden: %1</cant_create>
+    <xml_error>Die XML-Datei ist ungültig: %1</xml_error>
+    <xml_exterror>XML-Datei %1 ist ungültig: "%2"</xml_exterror>
+  </smartml>
+
+  <style_editor title="Stileditor">
+    <fonts_and_alignment caption="Schrift und Ausrichtung">
+      <title caption="Titel"/>
+      <subtitle caption="Untertitel"/>
+      <body caption="Text"/>
+      <body_autosize caption="Textgröße wenn nötig automatisch verkleinern"/>
+      <align caption="Ausrichtung"/>
+      <margin caption="Ränder"/>
+      <tabs caption="Tabulatoren"/>
+    </fonts_and_alignment>
+    <bilingual caption="Zweisprachige Präsentation">
+      <style caption="Für zweite Sprache gleicher Stil aber"/>
+      <size caption="Größe [10-200%]"/>
+      <color caption="Farbe"/>
+      <note caption="Verwendung: L in runden Klammern an die Liedteilmarke anfügen z.B. [V1](L)"/>
+    </bilingual>
+    <options caption="Darstellungsoptionen">
+      <subtitles caption="Untertitel"/>
+      <highlight_chorus caption="Refrain hervorheben"/>
+      <descriptive_subtitle caption="Untertitel beschriften"/>
+      <verse_in_title caption="Versnummer im Titel anzeigen"/>
+    </options>
+    <background caption="Hintergrund">
+      <color caption="Einfarbig"/>
+      <image caption="Bild"/>
+      <image_fit caption="Skalierung">
+        <value tag="0">umschließen</value>
+        <value tag="1">einschließen</value>
+        <value tag="2">füllen</value>
+        <value tag="3">keine</value>
+        <value tag="99">Zentriert</value>
+      </image_fit>
+      <trim_bottom caption="Zuschneiden¹"/>
+      <pixels caption="px"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+    </background>
+    <trim_note caption="¹ Schneidet den unteren Teil des Bildes ab, um Homepage Adressen etc. zu verstecken. Die Skalierung wird auf das zugeschnittene Bild angewendet."/>
+  </style_editor>
+
+  <style_margins title="Ränder">
+    <left caption="Links"/>
+    <right caption="Rechts"/>
+    <top caption="Oben"/>
+    <bottom caption="Unten"/>
+    <pixels caption="px"/>
+    <preview caption="Vorschau"/>
+  </style_margins>
+
+  <style_tabs title="Tabulatoren">
+    <tabs caption="Tabulatoren">
+      <new caption="&amp;Neu"/>
+      <remove caption="&amp;Entfernen"/>
+      <removeall caption="&amp;Alle entfernen"/>
+    </tabs>
+    <properties caption="Einstellungen">
+      <position caption="Position"/>
+      <pixels caption="px"/>
+      <align caption="Ausrichtung"/>
+      <left caption="Links"/>
+      <middle caption="Zentriert"/>
+      <right caption="Rechts"/>
+      <char caption="Am Zeichen"/>
+      <apply caption="link(shared/apply/@caption)"/>
+    </properties>
+    <preview caption="Vorschau"/>
+  </style_tabs>
+
+  <song_lookup title="Lied einfügen">
+    <header caption="Um ein Lied einzufügen, wählen Sie den Titel und bestätigen mit Hinzufügen oder der Enter-Taste. Es ist auch möglich den Anfang des Titels einzutippen und so das gewünschte Lied auszuwählen. Über die Schaltfläche Suchen können Sie ein Lied suchen (Kurztaste Strg+F). Benutzen Sie Strg+G um weiterzusuchen."/>
+    <no_selection>Sie haben kein Lied ausgewählt.</no_selection>
+    <folder caption="Liederordner"/>
+    <preview caption="Vorschau"/>
+    <text caption="Text gefunden in:"/>
+    <lookup caption="link(shared/search/@caption)"/>
+    <songs head1="Lied Name" head2="Ordner"/>
+    <presentation caption="link(slide_editor/presentation/@caption)"/>
+    <origorder caption="link(slide_editor/origorder/@caption)"/>
+    <next caption="&gt;">Weitersuchen</next>
+    <back caption="&lt;">Rückwärtssuchen</back>
+    <add caption="link(shared/add/@caption)"/>
+    <done caption="link(shared/done/@caption)"/>
+    <cancel caption="link(shared/cancel/@caption)"/>
+  </song_lookup>
+
+  <song_activity title="Aktivitätenprotokoll">
+    <range caption="Datumsbereich"/>
+    <to caption="bis"/>
+    <find caption="link(shared/search/@caption)"/>
+    <clear_log caption="Protokoll &amp;löschen"/>
+    <print caption="&amp;Drucken"/>
+    <view caption="Datei ö&amp;ffnen"/>
+    <merge caption="&amp;Zusammenführen"/>
+    <export caption="Expor&amp;tieren"/>
+    <done caption="link(shared/done/@caption)">Verarbeitung abgeschlossen.
+'%1' wurde exportiert nach
+%2</done>
+    <show caption="&amp;Anzeigen">
+      <!-- 
+        "tag" attribute corresponds to the value of the
+        constants found in the LogEntry class. The list order
+        can be changed as desired for localisation (note that it is
+        alphabetical in English) as long as the tags relate to the
+        correct item. For example, the local language value of "Moved"
+        should always have tag="4"
+      -->
+      <value tag="0">Alles</value>
+      <value tag="1">Erstellt</value>
+      <value tag="3">Geändert</value>
+      <value tag="6">Gedruckt</value>
+      <value tag="2">Gelöscht</value>
+      <value tag="8">Kopiert</value>
+      <value tag="5">Präsentiert</value>
+      <value tag="7">Umbenannt</value>
+      <value tag="4">Verschoben</value>
+    </show>
+    <songs head7="Mit Akkorden" head6="CCLI Nr." head5="Autor" head4="Titel" head3="Vorgang" head2="Zeit" head1="Datum"/>
+    <input_box>
+      <erase_all>Alle Protokolleinträge werden gelöscht. Wollen Sie fortfahren?</erase_all>
+    </input_box>
+    <description>Erstellt|Gelöscht|Geändert|Verschoben|Präsentiert|Gedruckt|Umbenannt|Kopiert</description>
+    <file_type>OpenSong Aktivitätenprotokolldatei</file_type>
+    <merged>Zusammenführen beendet. %1 Einträge wurden dem Protokoll hinzugefügt.</merged>
+    <merged_dupes>%1 doppelte Einträge wurden ignoriert.</merged_dupes>
+  </song_activity>
+
+  <scripture_lookup title="Bibeltext einfügen">
+    <lookup caption="Schnelles Einfügen">
+      <reference caption="Bibelstelle"/>
+      <lookup caption="Nachsch&amp;lagen"/>
+      <example caption="Bsp: '2Pet 1:1-2' oder '2Pet 1:1-2 (KJV)'"/>
+    </lookup>
+    <search caption="Volltextsuche"/>
+    <books caption="Buch">
+      <ot caption="Altes Testament"/>
+      <nt caption="Neues Testament"/>
+    </books>
+    <paragraph caption="Kapitel"/>
+    <colon caption=":"/>
+    <from_verse caption="Von Vers"/>
+    <dash caption="-"/>
+    <to_verse caption="Bis Vers"/>
+    <version caption="Übersetzung"/>
+    <select_file caption="Bitte wählen Sie eine Bibelübersetzung aus."/>
+    <verses_per_slide caption="Verse pro Folie"/>
+    <chars_per_slide caption="Max. Zeichen pro Folie"/>
+    <format caption="Darstellung">
+      <paragraph caption="Absatz"/>
+      <verse caption="Vers"/>
+    </format>
+    <shownumbers caption="Versnummern anzeigen"/>
+    <preview caption="Vorschau"/>
+    <insert caption="&amp;Anzeigen"/>
+    <add caption="link(shared/add/@caption)"/>
+    <copy caption="link(shared/copy/@caption)"/>
+    <done caption="link(shared/done/@caption)"/>
+    <bad_reference>
+      <format>Bitte überprüfen Sie das Format der Stellenangabe und versuchen Sie es erneut.</format>
+      <empty>Ungültige Bibelstelle: Sie haben keine Bibelstelle eingegeben.</empty>
+      <book>Ungültige Bibelstelle: Das Buch wurde nicht gefunden.</book>
+      <ambiguous>Ungültige Bibelstelle: Das Buch ist mehrdeutig '%1': %2</ambiguous>
+      <version>Ungültige Bibelstelle: Die Übersetzung '%1' wurde nicht gefunden.</version>
+      <chapter>Ungültige Bibelstelle: Das Kapitel '%1' wurde nicht gefunden.</chapter>
+      <verse>Ungültige Bibelstelle: Der Vers '%1' wurde nicht gefunden.</verse>
+      <verse_range>Ungültige Bibelstelle: Der Endvers muss größer oder gleich dem Startvers sein.</verse_range>
+    </bad_reference>
+  </scripture_lookup>
+
+  <doc_folder_dialog title="Ordner auswählen">
+    <instructions caption="Der Ordner, dessen Namen im Textfeld steht wird für OpenSong Dokumente verwendet. Die Unterordner Songs, Sets, Background und Settings werden erstellt, sofern sie noch nicht existieren.&#10;Wenn ein Ordner über die Schaltfläche „Auswählen…” gesucht wird, wird dem gewählten Ordner der Unterordner „%1” angehängt, außer der ausgewählte Ordner ist leer oder wird anhand der typischen Unterordner als bestehender Dokumentenordner für OpenSong erkannt."/>
+    <location>
+      <user caption="Standard: Dokumente"/>
+      <shared caption="Für alle Benutzer"/>
+      <custom caption="individuell"/>
+    </location>
+    <docsfolder caption="Ordner"/>
+  </doc_folder_dialog>
+
+  <color_selector title="Farbe auswählen">
+    <rgb caption="RGB">
+      <red caption="Rot"/>
+      <green caption="Grün"/>
+      <blue caption="Blau"/>
+      <rgbhex caption="Hex #"/>
+    </rgb>
+    <hsv caption="HSV">
+      <hue caption="Farbwert"/>
+      <sat caption="Sättigung"/>
+      <value caption="Hellwert"/>
+    </hsv>
+    <cmy caption="CMY">
+      <cyan caption="Cyan"/>
+      <magenta caption="Magenta"/>
+      <yellow caption="Yellow"/>
+    </cmy>
+    <alpha helptag="" caption="Durchsichtigkeit"/>
+    <slots caption="Eigene Farben"/>
+    <color_palette>
+      <palette caption="Palette"/>
+      <standard caption="Standard"/>
+      <cga caption="CGA"/>
+      <matching_colors caption="Passende Farben"/>
+      <complement caption="Komplementär"/>
+      <triadic caption="Triadisch"/>
+      <tetradic caption="Tetradisch"/>
+      <analogous caption="Analog"/>
+      <neutral caption="Neutral"/>
+      <shades caption="Schattierung"/>
+      <tintes caption="Pastellton"/>
+      <tones caption="Buntheit"/>
+      <open_song caption="OpenSong"/>
+      <current_item caption="%1"/>
+      <current_set caption="Set"/>
+      <default_style caption="Standardstil"/>
+      <scripture_style caption="Bibeltext-Stil"/>
+      <alert caption="Meldungen"/>
+      <main_settings_fonts caption="link(general_settings/fonts/@caption)"/>
+      <main_settings_slidestyle caption="link(general_settings/slidetype_coloring/@caption)"/>
+      <print_settings_fonts caption="Schriftfarben"/> <!-- or until translated: "link(print_settings/tabs/@head1)" -->
+      <last_used caption="Zuletzt verwendet"/>
+    </color_palette>
+    <item_type>
+    	<song caption="link(sets_mode/new_item/add_song/@caption)"/>
+    	<scripture caption="link(sets_mode/new_item/add_scripture/@caption)"/>
+    	<custom caption="link(sets_mode/new_item/add_song/@caption)"/>
+    	<style caption="link(sets_mode/new_item/add_style/@caption)"/>
+    	<image caption="link(sets_mode/new_item/add_image/@caption)"/>
+    	<external caption="link(sets_mode/new_item/add_external/@caption)"/>
+    </item_type>
+  </color_selector>
+
+  <module>
+    <read_error>Die Datei konnte nicht gelesen werden oder sie ist in einem ungültigen Format.</read_error>
+    <format_error>Ungültiges Modul-Format.</format_error>
+    <move_error>Fehler beim Verschieben der Modul-Datei. Bitte überprüfen Sie, ob Sie Schreibrechte für '%1' haben.</move_error>
+    <rename_error>Fehler beim Umbenennen der Modul-Datei. Bitte überprüfen Sie, ob Sie Schreibrechte für '%1' haben.</rename_error>
+    <success>Modul erfolgreich geladen.</success>
+    <file_type>OpenSong Modul</file_type>
+    <generate_index>Suchindex für Bibeltext '%1' generieren?</generate_index>
+    <generate_error>Fehler beim Erstellen des Suchindex. Haben Sie Schreibrechte für %1?</generate_error>
+  </module>
+
+  <index_progress title="Bitte warten…">
+    <top caption="Erstelle Index:"/>
+    <bottom caption="Abbrechen mit Taste 'Esc'"/>
+  </index_progress>
+
+  <import_from_ccli title="Importiere von CCLI">
+    <user_id caption="Benutzer ID"/>
+    <password caption="Passwort"/>
+    <for caption="Suche nach"/>
+    <songs head1="Ly" head2="So" head3="Le" head4="Titel" head5="Autor" head6="Katalog" head7="Alternativtitel" head8="Schlüsselzeile" head9="Tonart" head10="CCLI #"/>
+    <!-- what's Ly, So, Le? -->
+    <!-- is Ly,So,Le Lyrics, Sound, Leads? -->
+    <by caption="in">
+      <title_and_aka caption="Titel und Alternativtitel"/>
+      <title caption="Titel"/>
+      <lyrics caption="Liedtext"/>
+      <author caption="Autor"/>
+      <catalog caption="Katalog"/>
+      <theme caption="Kategorie"/>
+      <ccli caption="CCLI Nr."/>
+    </by>
+    <filter caption="Filter">
+      <all caption="Alle"/>
+      <lead_sheets caption="Liederblätter"/>
+      <sound_samples caption="Hörprobe"/>
+    </filter>
+    <find caption="Suche"/>
+    <previous_page caption="Vorherige Seite"/>
+    <next_page caption="Nächste Seite"/>
+    <page caption="Seite"/>
+    <of_pages caption="von %1"/>
+    <import caption="Importieren"/>
+    <errors>
+      <no_data>Es wurden keine Daten von CCLI übertragen. Bitte überprüfen Sie Ihren Suchtext und Ihre Benutzerdaten (Benutzer ID, Passwort).</no_data>
+      <bad_html>Fehler bei der Analyse der HTML-Syntax. Bitte kontaktieren Sie den technischen Support von OpenSong.</bad_html>
+      <no_results>Es wurde nichts gefunden.</no_results>
+      <no_headers>Es wurden keine Kopfdaten von CCLI übertragen. Bitte überprüfen Sie Ihren Suchtext und Ihre Benutzerdaten (Benutzer ID, Passwort).</no_headers>
+      <no_connect>Es konnte keine Verbindung zu CCLI aufgebaut werden. Bitte versuchen Sie es später nochmals.</no_connect>
+      <already_exists>Das Lied ist bereits vorhanden.</already_exists>
+    </errors>
+  </import_from_ccli>
+
+  <find_image title="Bild auswählen">
+    <parent caption=".."/>
+    <name caption="find_image/name/@caption"/> <!-- from debug log -->
+    <path caption="find_image/path/@caption"/> <!-- from debug log -->
+  </find_image>
+
+  <input_box title="OpenSong"/>
+
+  <theme_list>
+    <option name="Gottesdienst: Abendmahl"/>
+    <option name="Gottesdienst: Anbetung/Lobpreis"/>
+    <option name="Gottesdienst: Bitte/Gebet"/>
+    <option name="Gottesdienst: Gemeinde/Gemeinschaft"/>
+    <option name="Gottesdienst: Gottes Liebe"/>
+    <option name="Gottesdienst: Lob/Dank"/>
+    <option name="Gottesdienst: Schöpfung/Natur"/>
+    <option name="Gottesdienst: Sendung/Dienst"/>
+    <option name="Gottesdienst: Taufe"/>
+    <option name="Gottesdienst: Wort Gottes"/>
+    <option name="Leben im Glauben: Demut"/>
+    <option name="Leben im Glauben: Ewigkeit"/>
+    <option name="Leben im Glauben: Freude"/>
+    <option name="Leben im Glauben: Friede"/>
+    <option name="Leben im Glauben: Geduld"/>
+    <option name="Leben im Glauben: Gehorsam"/>
+    <option name="Leben im Glauben: Glaube/Vertrauen"/>
+    <option name="Leben im Glauben: Hoffnung"/>
+    <option name="Leben im Glauben: Lebensweg"/>
+    <option name="Leben im Glauben: Nachfolge/Hingabe"/>
+    <option name="Leben im Glauben: Rechtfertigung"/>
+    <option name="Leben im Glauben: Sterben"/>
+    <option name="Leben im Glauben: Trost/Ermutigung"/>
+    <option name="Ruf zum Glauben: Bekenntnis"/>
+    <option name="Ruf zum Glauben: Einladung"/>
+    <option name="Ruf zum Glauben: Umkehr/Glaube"/>
+    <option name="Kirchenjahr: Advent"/>
+    <option name="Kirchenjahr: Erntedank"/>
+    <option name="Kirchenjahr: Himmelfahrt"/>
+    <option name="Kirchenjahr: Jahreswechsel"/>
+    <option name="Kirchenjahr: Ostern"/>
+    <option name="Kirchenjahr: Passion"/>
+    <option name="Kirchenjahr: Pfingsten"/>
+    <option name="Kirchenjahr: Weihnachten"/>
+    <option name="Kirchenjahr: Wiederkunft"/>
+    <option name="Jahreszeiten: Frühling/Sommer/Herbst/Winter"/>
+    <option name="Tageszeiten: Morgen/Mittag/Abend"/>
+    <option name="Jubiläum: Geburtstag/Hochzeit"/>
+  </theme_list>
+
+  <tempo_list>
+    <option name="Sehr schnell"/>
+    <option name="Schnell"/>
+    <option name="Normal"/>
+    <option name="Langsam"/>
+    <option name="Sehr langsam"/>
+  </tempo_list>
+
+  <time_sig_list>
+    <option name="2/4"/>
+    <option name="3/4"/>
+    <option name="4/4"/>
+    <option name="6/4"/>
+    <option name="3/8"/>
+    <option name="5/8"/>
+    <option name="6/8"/>
+    <option name="7/8"/>
+  </time_sig_list>
+
+  <transition_list>
+    <option name="Vorgabe"/>
+    <option name="Ja"/>
+    <option name="Nein"/>
+  </transition_list>
+
+  <imagequality_list>
+    <option name="Maximal — geringste qualität, kleine Set-Datei"/>
+    <option name="Hoch — geringe Qualität"/>
+    <option name="Mittel — normale Qualität"/>
+    <option name="Gering — hohe Qualität"/>
+    <option name="Minimal — maximale Qualität"/>
+    <option name="Keine — verlustlos, große Set-Datei"/>
+  </imagequality_list>
+
+  <videolan_preset_list>
+    <preset name="Video als Hintergrund in Windows (Verwenden Sie in den Folien die Farbe RGB 0,0,1)" parameters="--no-video-deco --no-video-title-show --no-osd --video-wallpaper --direct3d-desktop --one-instance --directx-device=\\.\DISPLAY%d %s"/>
+    <preset name="Vollbild-Video auf dem Präsentationsbildschirm" parameters="--no-video-deco --no-video-title-show --no-osd --one-instance %s"/>
+    <preset name="Vollbild-Video vom standard DirectShow Video Eingabegerät" parameters="--no-video-deco --no-video-title-show --no-osd --one-instance dshow://"/>
+    <preset name="Vollbild-Video auf dem Bildschirm bei x=1300,y=100" parameters="--no-video-deco --no-video-title-show --no-osd --one-instance --video-x=1300 --video-y=100 --no-embedded-video %s"/>
+    <!-- The line below is mandatory. Translators: only modify the value for 'name' -->
+    <preset name="Individuell" parameters=""/>
+  </videolan_preset_list>
+
+  <style_preview>
+    <slide_groups>
+      <slide_group name="Stil-Vorschau" type="custom" seconds="0" loop="false">
+        <title>Beispieltitel</title>
+        <subtitle>Beispiel-Untertitel</subtitle>
+        <notes>Lorem ipsum dolor sit amet consectetuer dui penatibus …</notes>
+        <slides>
+          <slide>
+            <body xml:space="preserve">Hier sehen Sie den Textkörper.
+Dies ist ein Beispiel.
+Klicken Sie auf dieses Feld, um diesen Stil anzupassen.</body>
+          </slide>
+        </slides>
+      </slide_group>
+    </slide_groups>
+  </style_preview>
+
+  <subtitles caption="Untertitel" head1="Sortieren" head2="Aktiv" head3="Beschreibung">
+    <row0 caption="Copyright|copyright"/>
+    <row1 caption="Autor|author"/>
+    <row2 caption="Lied Nummer|hymn_number"/>
+    <row3 caption="CCLI Lied Nr.|ccli_number"/>
+    <row4 caption="CCLI Lizenz Nr.|ccli_license"/>
+  </subtitles>
+
+  <shared>
+    <ok caption="OK"/>
+    <cancel caption="Abbrechen"/>
+    <yes caption="Ja"/>  <!-- kein hotkey möglich -->
+    <no caption="Nein"/> <!-- kein hotkey möglich -->
+    <apply caption="Ü&amp;bernehmen"/>
+    <browse caption="&amp;Auswählen"/>
+    <browse_for caption="Ordner auswählen"/>
+    <add caption="Hin&amp;zufügen"/>
+    <done caption="&amp;Beenden"/>
+    <untitled caption="Unbenannt"/>
+    <click_to_change caption="Ändern mit Linksklick"/>
+    <right_click_to_clear caption="Löschen mit Rechtsklick"/>
+    <insert caption="&amp;Einfügen"/>
+    <close caption="S&amp;chließen"/>
+    <search caption="S&amp;uchen"/>
+    <single_screen caption="Einzelmonitor"/>
+    <dual_screen caption="Multi-Monitor"/>
+    <preview_dual_screen caption="Multi-Monitor-Vorschau"/>
+    <save caption="Speichern" message="%1 wurde noch nicht gespeichert."/>
+    <nosave caption="Nicht Speichern"/>
+    <cut caption="&amp;Ausschneiden"/>
+    <copy caption="&amp;Kopieren"/>
+    <paste caption="&amp;Einfügen"/>
+    <clear caption="&amp;Löschen"/>
+    <selectall caption="Alles &amp;markieren"/>
+    <select caption="Aus&amp;wählen"/>
+    <exit_program caption="Programm &amp;beenden"/>
+    <export_to caption="Bitte wählen Sie einen Ziel-Ordner aus."/>
+    <style_file caption="Bitte wählen Sie ein CSS-Stylesheet."/>
+    <title caption="Titel"/>
+    <author caption="Autor"/>
+    <copyright caption="Copyright"/>
+    <ccli caption="CCLI Lied Nr."/>
+    <presentation caption="Präsentation"/>
+    <lyrics caption="Liedtext"/>
+    <theme caption="Kategorien"/>
+    <capo caption="Kapo"/>
+    <chord caption="Akkorde"/>
+    <time_sig caption="Taktart"/>
+    <tempo caption="Tempo"/>
+    <key caption="Tonart"/>
+    <aka caption="Alternativtitel"/>
+    <key_line caption="Schlüsselzeile"/>
+    <user1 caption="Benutzerdefiniert 1"/>
+    <user2 caption="Benutzerdefiniert 2"/>
+    <user3 caption="Benutzerdefiniert 3"/>
+    <hymn_number caption="Lied Nr."/>
+  </shared>
+
+  <questions>
+    <new_name caption="Bitte geben Sie einen Namen ein:"/>
+    <rename caption="Bitte geben Sie einen neuen Namen für '%1' ein:"/>
+    <save caption="Möchten Sie die Änderungen in '%1' speichern?"/>
+    <delete caption="Möchten Sie '%1' wirklich löschen?"/>
+    <clear caption="Möchten Sie dies wirklich löschen?"/>
+    <changed caption="Das aktuelle Lied wurde geändert. Wollen Sie es speichern?"/>
+    <revert caption="Alle Änderungen gehen verloren. Wollen Sie fortfahren?"/>
+    <long_operation caption="Diese Verarbeitung kann einige Zeit in Anspruch nehmen. Wollen Sie fortfahren?"/>
+    <generic_save caption="Änderungen speichern?"/>
+    <generic_save_explanation caption="Wenn Sie nicht speichern wollen gehen Ihre Änderungen verloren."/>
+    <set_changed caption="Das aktuelle Set wurde geändert. Wollen Sie es speichern?"/>
+    <song_changed caption="Das Lied wurde geändert. Wollen Sie es speichern?"/> <!-- from debug log -->
+    <activity_log caption="Möchten Sie die Lieder dieser Präsentation in das Aktivitätenprotokoll aufnehmen? (Dies betrifft auch Lieder, die direkt während der Präsentation zugefügt werden.)"/>
+    <import_presentation caption="Präsentation als Bilder einlesen">Bitte wählen Sie die Präsentation, deren Folien Sie als Bilder importieren wollen.</import_presentation>
+    <documents_folder_empty caption="Der OpenSong-Dokumentenordner ist nicht vorhanden oder ist leer. Wollen Sie die Beispieldateien kopieren?"/>
+    <songs_folder_empty caption="Der Liederordner ist leer. Möchten Sie die Beispiel-Lieder in den Ordner kopieren?"/>
+    <sets_folder_empty caption="Der Ordner mit den Sets ist leer. Möchten Sie die Beispiel-Sets in den Ordner kopieren?"/>
+    <settings_folder_empty caption="Der Ordner mit den Einstellungen ist leer. Möchten Sie die Standard-Einstellungen in den Ordner kopieren?"/>
+    <backgrounds_folder_empty caption="Der Ordner mit den Hintergrundbildern ist Leer. Möchten Sie die Beispiel-Hintergrundbilder in den Ordner kopieren?"/>
+    <no_songs_folder caption="Der Liederordner konnte nicht gefunden werden. Möchten Sie den Ordner erstellen?"/>
+    <no_sets_folder caption="Der Ordner mit den Sets konnte nicht gefunden werden. Möchten Sie den Ordner erstellen?"/>
+    <no_folder caption="Der Ordner '%1' konnte nicht gefunden werden. Möchten Sie den Ordner erstellen?"/>
+    <destination_exists caption="Die Datei existiert bereits im Zielordner. Möchten Sie diese Datei unter einem neuen Name speichern?"/>
+    <linked_songs caption="Das ausgewählte Lied hat verknüpfte Lieder. Möchten Sie diese hinzufügen?"/>
+    <large_margins caption="Die Ränder sind extrem groß gewählt.&#xA;(1 px = Bildschirmbreite / 640).&#xA;&#xA;Wollen Sie diese Ränder so beibehalten?"/>
+  </questions>
+
+  <about>
+    <additional>Weitere Entwickler:</additional>
+    <copyright>Copyright</copyright>
+    <gpl>Für diese Software gelten die Bedingungen der GPL.</gpl>
+    <web>Weitere Infos finden Sie auf http://www.opensong.org/</web>
+    <translating>Um OpenSong zu übersetzen, kopieren Sie die Datei 'English' im Ordner 'OpenSong Languages' und geben der Kopie den Namen der neuen Sprache. Übersetzen Sie alles, außer die Tag- und Attributnamen. Anschließend senden Sie die Datei an opensong-translate@lists.sourceforge.net oder fügen Sie sie im Tracker Bereich 'Patches' auf der OpenSong Projektseite auf SourceForge.net hinzu und die neue Sprache wird in die offizielle Version aufgenommen.</translating>
+    <created_with_opensong>Erstellt mit OpenSong</created_with_opensong>
+    <sources xml:space="preserve">OpenSong enthält Quellcode von:
+• StringUtils (http://www.strout.net/info/coding/rb/)
+• HTMLEntityEncode (http://sourceforge.jp/project/php-i18n/)
+• REALbasic Examples (http://www.declaresub.com/Articles/HowDoI.html)
+• iDeclare (http://www.declaresub.com/iDeclare)
+• Monitors by Jürg Otter (https://github.com/jo-tools/monitors)
+• SmartSplitter by Harry Hooie (http://www.harryhooie.com/source/)
+• imSplitter by Oliver Osswald (https://github.com/oleman108/imSplitter)
+• modGtk3 by Jim McKay (https://bitbucket.org/pidog/modgtk3)
+NDI® ist ein eingetragenes Warenzeichen von Vizrt NDI AB
+Das Bild PuffyClouds1.jpg im Backgrounds Ordner ist urheberrechtlich geschützt von FreeStockPhotos.com
+Der Splash Screen beinhaltet Bilder von stock.xchng die von ba1969 und everywhere erstellt wurden.</sources>
+    <ndiinfo translatornote="DO NOT TRANSLATE" caption="ndi.video"/>
+    <ndilicense caption="NDI Lizenz"/>
+  </about>
+
+  <folderdb_errors>
+    <error code="1">Der Ordner '%1' ist bereits vorhanden.</error>
+    <error code="2">Der Ordner '%1' konnte nicht erstellt werden.</error>
+    <error code="3">Die Datei '%1' ist bereits vorhanden.</error>
+    <error code="4">Der Pfad zur neuen Datei '%1' wurde nicht gefunden.</error>
+    <error code="5">Im Hauptordner '%1' konnte nicht geschrieben werden.</error>
+    <error code="6">Der Ordner '%1' wurde nicht gefunden.</error>
+    <error code="7">Der Ordner '%1' konnte nicht gelöscht werden.</error>
+    <error code="8">Die Datei '%1' wurde nicht gefunden.</error>
+    <error code="9">Die Datei '%1' konnte nicht gelöscht werden.</error>
+    <error code="10">Die Datei '%2' konnte nicht umbenannt werden.</error>
+    <error code="11">Der Ordner '%1' ist nicht leer.</error>
+    <error code="12">Die Datei '%1' konnte nicht nach '%2' verschoben werden.</error>
+    <error code="13">Die Datei '%1' ist im Ordner '%2' bereits vorhanden.</error>
+    <error code="14">link(errors/bad_file_name)</error>
+    <error code="15">link(errors/no_path_allowed)</error>
+  </folderdb_errors>
+
+  <errors>
+    <empty_group>Der Abschnitt '%1' muss mindestens eine Folie enthalten.</empty_group>
+    <unreadable_image>Die Bilddatei '%1' konnte nicht gelesen werden.</unreadable_image>
+    <unsupported_image_type>Das Bilddateiformat kann nicht verarbeitet werden '%1'</unsupported_image_type>
+    <end_of_songs>Ende der Liederliste erreicht.</end_of_songs>
+    <already_exists>'%1' ist bereits vorhanden.</already_exists>
+    <bad_format xml:space="preserve">'%1' enthält ein falsches Format und wird übersprungen.
+
+Details: %2</bad_format>
+    <no_songs>Es befinden sich keine Lieder in der Liederliste.</no_songs>
+    <no_multi_screen>Es wurde kein 2. Monitor gefunden.</no_multi_screen>
+    <bad_file_name>Der Dateiname '%1' ist ungültig.</bad_file_name>
+    <internal>Interner Fehler. Bitte kontaktieren Sie den technischen Support.</internal>
+    <no_such_song>Das Lied konnte nicht gefunden werden.</no_such_song>
+    <no_such_set>Das Set '%1' konnte nicht gefunden werden.</no_such_set>
+    <number_please>Bitte geben Sie eine gültige Zahl ein.</number_please>
+    <number_range>Bitte geben Sie eine Zahl zwischen %1 und %2 ein.</number_range>
+    <no_path_allowed>Der Dateiname darf keinen Pfad enthalten.</no_path_allowed>
+    <rename_error>Fehler beim Umbenennen der Datei.</rename_error>
+    <same_filename>Quell- und Zieldatei sind identisch.</same_filename>
+    <general1>In '%1': Unbekannter Fehler</general1>
+    <general2>In '%1': '%2'</general2>
+    <folder_error>Interner Fehler bezüglich Ordner. Bitte kontaktieren Sie den technischen Support.</folder_error>
+    <create_backgrounds_folder>Kann den Ordner 'Backgrounds' nicht erstellen: %1. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen. Wählen sie sonst in den Allgemeinen Einstellungen einen neuen Dokumentenordner aus.</create_backgrounds_folder>
+    <create_sets_folder>Kann den Ordner 'Sets' nicht erstellen/ändern: %1. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen. Wählen sie sonst in den Allgemeinen Einstellungen einen neuen Dokumentenordner aus. Bitte beachten Sie, dass Sie keine neu erstellten oder geänderten Sets speichern oder präsentieren können, ohne einen gültigen Ordner.</create_sets_folder>
+    <create_settings_folder>Kann den Ordner 'Settings' nicht erstellen: %1. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen. Wählen sie sonst in den Allgemeinen Einstellungen einen neuen Dokumentenordner aus.</create_settings_folder>
+    <load_default_settings>OpenSong versucht die Standardeinstellungen zu laden.</load_default_settings>
+    <create_songs_folder>Kann den Ordner 'Songs' nicht erstellen: %1. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen. Wählen sie sonst in den Allgemeinen Einstellungen einen neuen Dokumentenordner aus. Bitte beachten Sie, dass Sie keine neu erstellte oder geänderte Lieder speichern oder Präsentieren können ohne einen gültigen Ordner.</create_songs_folder>
+    <copy_default_songs>Die Beispiellieder konnten nicht in den Ordner '%1' kopiert werden. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen.</copy_default_songs>
+    <no_backgrounds_folder>Kann den Vorlagenordner 'Backgrounds' nicht finden oder der Ordner ist leer: %1</no_backgrounds_folder>
+    <no_defaults_folder>Kann den Vorlagenordner 'OpenSong Defaults' nicht finden oder der Ordner ist leer: %1</no_defaults_folder>
+    <no_scripture_folder>Kann den Ordner 'OpenSong Scripture' nicht finden oder der Ordner ist leer: %1. Das Suchen von Bibelstellen steht nicht zur Verfügung. Bitte fügen Sie einen Bibeltext hinzu indem Sie im Menü Einstellungen den Punkt Modul installieren… auswählen oder OpenSong neu installieren.</no_scripture_folder>
+    <load_bible>Die eingestellte Bibel '%1' kann nicht geladen werden. OpenSong versucht, die nächste verfügbare Bibel zu laden.</load_bible>
+    <no_sets_folder>Kann den Vorlagenordner 'Sets' nicht finden oder der Ordner ist leer: %1</no_sets_folder>
+    <no_settings_folder>Kann den Vorlagenordner 'Settings' nicht finden oder der Ordner ist leer: %1</no_settings_folder>
+    <no_songs_folder>Kann den Vorlagenordner 'Songs' nicht finden oder der Ordner ist leer: %1</no_songs_folder>
+    <no_docs_folder>Kann den Dokumentenordner weder finden noch neu erstellen: %1. Bitte überprüfen Sie, dass Sie Schreibrechte für diesen Ordner besitzen. Wählen sie sonst in den Allgemeinen Einstellungen einen neuen Dokumentenordner aus. Bitte beachten Sie, dass viele Funktionen von OpenSong nicht zur Verfügung stehen, wenn kein beschreibbarer Dokumentenordner konfiguriert ist.</no_docs_folder>
+    <docs_folder xml:space="preserve">Der 'Documents' Ordner kann nicht Unterordner von 'OpenSong Defaults' sein.
+Es wird vorübergehend der Ordner '%1' verwendet.
+Bitte ändern Sie Ihre Vorgabe in 'Allgemeine Einstellungen'.</docs_folder>
+    <fileutils>
+      <destdoesnotexisterror>Datei nicht gefunden: %1</destdoesnotexisterror>
+      <nilobjecterror>NilObjectException: Der Parameter FolderItem für FileUtils ist nicht definiert</nilobjecterror>
+      <accessdenied>Zugriff verweigert: %1</accessdenied>
+      <fileinuse xml:space="preserve">Die Datei wird bereits verwendet: %1
+(Läuft bereits eine weitere Kopie von OpenSong?)</fileinuse>
+      <filenotfound>Datei nicht gefunden: %1</filenotfound>
+      <invalidname>Ungültiger Dateiname: %1</invalidname>
+      <notenoughmemory xml:space="preserve">Zu wenig Speicher beim Lesen der Datei %1
+Schließen sie OpenSong und versuchen Sie es dann erneut.</notenoughmemory>
+      <unknownerror>Unbekannter Fehler bein Zugriff auf Datei %1</unknownerror>
+      <notaregularfile>%1 sollte eine Datei bezeichnen, nicht einen Ordner.</notaregularfile>
+      <notafolder>%1 sollte einen Ordner Bezeichnen, nicht eine Datei.</notafolder>
+      <temporaryfailed>Fehler beim Schreiben einer temporären Datei für %1.</temporaryfailed>
+    </fileutils>
+    <cclinotavailable xml:space="preserve">Die Webseite von CCLI wurde verändert. Aus diesem
+Grund funktioniert der CCLI-Import nicht, bis neue Zugriffsmechanismen 
+verwendet werden können. In der Zwischenzeit verwenden Sie bitte das
+OpenSong Import Programm (getrennt erhältlich von der OpenSong Projektseite
+auf Sourceforge.net). Das OpenSong Entwicklungsteam bedauert die Unannehmlichkeiten.
+    </cclinotavailable>
+    <activity_disabled>Kann die Aktivitätenprotokolldatei nicht laden: %1! Bitte stellen Sie sicher, dass die Datei existiert und dass sie nicht beschädigt ist. Das Protokollieren von Aktivitäten und das Anzeigen des Protokolls sind für diesen Programmlauf deaktiviert.</activity_disabled>
+    <adding_logentry>Beim Anfügen eines Aktivitätenprotokolleintrags ist ein Fehler aufgetreten!</adding_logentry>
+    <chars_per_slide>Die maximale Anzahl Zeichen pro Folie muss zwischen 1 und 1000 liegen.</chars_per_slide>
+    <presentations>
+      <nohost>Es ist keine Anwendung installiert, die die Präsentation anzeigen kann. Bitte installieren Sie OpenOffice.org, Microsoft PowerPoint oder Microsoft PowerPoint Viewer.</nohost>
+      <unsupported_feature>Die Anwendung '%1' unterstützt diese Option nicht.</unsupported_feature>
+      <picture_dimensions>Das Logo Bild und die Logomaske müssen die selbe Größe haben oder die Maske muss entfernt werden.
+Größe des Logos: %1 
+Größe der Maske: %2</picture_dimensions>
+      <load_failed>The Präsentation '%1' konnte nicht geladen werden.</load_failed>
+    </presentations>
+    <videolan_app_missing>Der VLC Media Player ist nicht richtig eingerichtet. Bitte konfigurieren Sie in OpenSong den VLC Media Player in den Allgemeinen Einstellungen auf der Karteikarte Dateipfade.</videolan_app_missing>
+    <videolan>
+      <no_medium>Sie haben kein Medium zum abspielen angegeben</no_medium>
+      <no_medium_in_slide>Sie haben kein Medium zum Abspielen angegeben im Set-Eintrag %1</no_medium_in_slide>
+    </videolan>
+    <linked_song>
+      <current>Sie können ein Lied nicht mit sich selbst verknüpfen.</current>
+      <exists>Das ausgewählte Lied ist bereits in der Liste der mit diesem Lied verknüpften Lieder.</exists>
+      <load_error>Fehler beim Laden des verknüpften Liedes: %1</load_error>
+    </linked_song>
+  </errors>
+
+  <xml_errors>
+    <noattribute>Konnte das Attribut '%1' in '%2' nicht finden.</noattribute>
+  </xml_errors>
+
+  <bible>
+    <errors>
+      <index_generation>Fehler beim Erstellen des Suchindex für '%1.' Die Suche im Bibeltext wird für diese Bibelversion deaktiviert.</index_generation>
+      <loadxml xml:space="preserve">XML Fehler beim Laden von %1.
+
+Fehler '%2' in Zeile %3</loadxml>
+      <load1>Unbekannter Fehler beim Laden von %1</load1>
+      <load2>Fehler beim Laden von %1: %2</load2>
+      <noindex>Es ist kein Suchindex verfügbar. Bitte wählen Sie eine andere Übersetzung oder starten Sie OpenSong neu.</noindex>
+      <missing_bnames>Kann die Datei 'bnames.xml' nicht finden im Ordner 'OpenSong Settings'. Diese Datei zum Einlesen von Zefania XML Bibeltexten benötigt.</missing_bnames>
+      <nobnames>Diese Bibel enthält nicht die erforderlichen bname Attribute und sie konnten auch nicht hinzugefügt werden.</nobnames>
+      <roman>Fehler beim Konvertieren der römischen Zahl '%1': %2</roman>
+      <save>Die geänderte Datei '%1' konnte nicht gespeichert werden.</save>
+    </errors>
+    <load_successful>Bibel '%1' erfolgreich geladen.</load_successful>
+    <messages>
+      <bnames xml:space="preserve">Diesem Bibeltext müssen die Namen der Biblischen Bücher hinzugefügt werden.
+
+Bitte wählen Sie die passende Sprache für die Buchnamen.</bnames>
+      <save>Geänderte Datei speichern?</save>
+    </messages>
+  </bible>
+
+  <song>
+    <errors>
+      <unknown_element>Unbekanntes Element beim Laden des Liedes: '%1'</unknown_element>
+    </errors>
+  </song>
+
+  <open_titles>
+    <audio>Bitte wählen Sie die zu öffnende Audiodatei.</audio>
+  </open_titles>
+
+  <hotkeys>
+    <ACTION_FIRST_SLIDE_OF_SECTION>Gehe zur ersten Folie des Abschnitts</ACTION_FIRST_SLIDE_OF_SECTION>
+    <ACTION_NEXT_SLIDE>Gehe zur nächsten Folie der Präsentation</ACTION_NEXT_SLIDE>
+    <ACTION_PREV_SLIDE>Gehe zur vorhergehenden Folie der Präsentation</ACTION_PREV_SLIDE>
+    <ACTION_FIRST_SLIDE>Gehe zur ersten Folie der Präsentation</ACTION_FIRST_SLIDE>
+    <ACTION_LAST_SLIDE>Gehe zur letzten Folie der Präsentation</ACTION_LAST_SLIDE>
+    <ACTION_NEXT_SECTION>Gehe zum nächsten Abschnitt (Lied usw.) der Präsentation</ACTION_NEXT_SECTION>
+    <ACTION_PREV_SECTION>Gehe an den Anfang des jetzigen oder vorangegangenen Abschnitts der Präsentation</ACTION_PREV_SECTION>
+    <ACTION_VERSE>Gehe zur nächsten Strophe</ACTION_VERSE>
+    <ACTION_BRIDGE>Gehe zur Bridge</ACTION_BRIDGE>
+    <ACTION_CHORUS>Gehe zum Refrain</ACTION_CHORUS>
+    <ACTION_PRECHORUS>Gehe zum Pre-Chorus</ACTION_PRECHORUS>
+    <ACTION_TAG>Gehe zum Tag</ACTION_TAG>
+    <ACTION_NORMAL>Aktuelle Folie anzeigen</ACTION_NORMAL>
+    <ACTION_BLACK>Schwarzen Bildschirm anzeigen</ACTION_BLACK>
+    <ACTION_WHITE>Weißen Bildschirm anzeigen</ACTION_WHITE>
+    <ACTION_FREEZE>Anzeige einfrieren</ACTION_FREEZE>
+    <ACTION_LOGO>Logo anzeigen</ACTION_LOGO>
+    <ACTION_HIDE>Hintergrund anzeigen (Text ausblenden)</ACTION_HIDE>
+    <ACTION_EXIT>Präsentation beenden</ACTION_EXIT>
+    <ACTION_EXIT_PROMPT>Präsentation nach Bestätigung verlassen</ACTION_EXIT_PROMPT>
+    <ACTION_EXIT_NOPROMPT>Präsentation ohne Nachfrage verlassen</ACTION_EXIT_NOPROMPT>
+  </hotkeys>
+
+  <progress_status>
+    <folder>Ordner '%1' einlesen</folder>
+    <lead_sheets>Liederblätter erstellen</lead_sheets>
+    <process_themes>Kategorien verarbeiten</process_themes>
+    <process_songs>Lieder verarbeiten</process_songs>
+    <song_search>Lieder suchen</song_search>
+    <export>Lied(er) exportieren</export>
+    <load_songs>Lied(er) laden</load_songs>
+    <load_externals>Fremdinhalte laden</load_externals>
+    <pass1>Sortieren, 1. Durchlauf</pass1>
+    <pass2>Sortieren, 2. Durchlauf</pass2>
+    <detect_presentation_hosts>Suche vorhandene Präsentationsprogramme.</detect_presentation_hosts>
+  </progress_status>
+
+  <export_options title="Einstellungen für HTML-Export">
+    <handling caption="CSS Stylesheet einbinden">
+      <link caption="Verknüpfung mit externer Stylesheet-Datei"/>
+      <embed caption="Eingebettet"/>
+    </handling>
+    <options caption="CSS Stylesheet Einstellungen">
+      <default caption="Das angegebene CSS Stylesheet verwenden"/>
+      <print caption="Stylesheet basierend auf Druckereinstellungen verwenden"/>
+    </options>
+    <export caption="Mehrere Lieder">
+      <single caption="Eine Datei für alle Lieder"/>
+      <unique caption="Für jedes Lied eine neue Datei"/>
+    </export>
+    <cssfile caption="Stylesheet">link(shared/style_file/@caption)</cssfile>
+    <outdir caption="Speicherordner">link(shared/export_to/@caption)</outdir>
+    <outfile>Ausgabedatei</outfile>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <ok caption="link(shared/ok/@caption)"/>
+    <nofile>(keine Datei)</nofile>
+    <filter_css>CSS Stylesheet</filter_css>
+    <hyphens caption="Verwende Trennstriche für getrennte Worte"/>
+  </export_options>
+
+  <file_filter>
+    <all_files>Alle Dateien</all_files>
+    <from_extension>%1-Dateien</from_extension>
+    <css>link(export_options/cssfile/@caption)</css>
+    <xml>XML Dateien</xml>
+    <xmm>link(module/file_type)</xmm>
+  </file_filter>
+
+  <installer>
+    <!-- these strings are used in the installer, not in OpenSong itself
+         they are placed here so they are gathered in one place
+         they will need to be transferred to WindowsInstaller\CustomMessages.iss
+         by a developer
+    -->
+    <usage_page>
+      <InstallTypeCaption>Art der Installation</InstallTypeCaption>
+      <InstallTypeSubCaption>Bitte wählen Sie eine Option aus und klicken Sie dann auf Weiter.</InstallTypeSubCaption>
+      <InstallTypeDescription>Welche Art von Installation soll durchgeführt werden?</InstallTypeDescription>
+      <InstallTypeRegular>Normal (für alle Benutzer dieses Computers)</InstallTypeRegular>
+      <InstallTypePersonal>Persönlich (nur für den aktuellen Benutzer)</InstallTypePersonal>
+      <InstallTypePortable>Portabel (alles in einem Ordner)</InstallTypePortable>
+    </usage_page>
+    <components_page>
+      <NormalInstallation>Normale Installation</NormalInstallation>
+      <CompExtras>Optionale Daten</CompExtras>
+      <CompBackgrounds>Hintergründe</CompBackgrounds>
+      <CompSets>Beispiel-Sets</CompSets>
+      <CompSongs>Lieder</CompSongs>
+      <CompBibles>Bibeln</CompBibles>
+      <CompLanguages>Sprachen</CompLanguages>
+    </components_page>
+    <tasks>
+      <InstallOps>Installationseinstellungen</InstallOps>
+      <ResetPrefs>OpenSong-Einstellungen zurücksetzen</ResetPrefs>
+      <Redist>Installieren von Microsoft VC++ 2015 Runtime</Redist>
+    </tasks>
+    <ready_page>
+      <InstallTypeMemo>Installations-Art:</InstallTypeMemo>
+      <InstallTypeMemoRegular>Für alle Benutzer</InstallTypeMemoRegular>
+      <InstallTypeMemoPersonal>Nur für mich</InstallTypeMemoPersonal>
+      <InstallTypeMemoPortable>Portabel</InstallTypeMemoPortable>
+    </ready_page>
+  </installer>
+</language>

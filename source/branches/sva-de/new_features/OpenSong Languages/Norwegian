@@ -1,0 +1,2380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language name="Norwegian" author="Daniel Fahre" version="1.0">
+<!-- aäöΑΩασωЖѰ🙈 these hopefully help editors to detect UTF-8 encoding of the file-->
+<!--Comparison done at 2023-12-15
+Please delete the items from this comment after updating their translations.
+Inserted new items:
+/language/about/ndiinfo
+/language/about/ndilicense-->
+  <!--
+Comparison done at 2023-11-29
+Please delete the items from this comment after updating their translations.
+Inserted new items:
+/language/general_settings/locale
+/language/general_settings/locale/search/@caption
+/language/general_settings/locale/sort/@caption
+/language/general_settings/locale/@caption
+/language/presentation_settings/monitor/nativefullscreen
+/language/presentation_settings/monitor/nativefullscreen/@caption
+/language/song_lookup/next
+/language/song_lookup/next/@caption
+/language/song_lookup/back
+/language/song_lookup/back/@caption
+/language/folderdb_errors/error[@code="13"]
+/language/doc_folder_dialog
+/language/doc_folder_dialog/instructions/@caption
+/language/doc_folder_dialog/location/user/@caption
+/language/doc_folder_dialog/location/shared/@caption
+/language/doc_folder_dialog/location/custom/@caption
+/language/doc_folder_dialog/docsfolder/@caption
+/language/doc_folder_dialog/@title
+-->
+  <!--
+Comparison done at 2022-07-28
+Please delete the items from this comment after updating their translations.
+Inserted new items:
+/language/general_song_editor/show_backgrounds_editor
+/language/general_song_editor/show_backgrounds_editor/@caption
+/language/advanced_song_editor/show_backgrounds_editor
+/language/advanced_song_editor/show_backgrounds_editor/@caption
+/language/backgrounds_song_editor
+/language/backgrounds_song_editor/header/@caption
+/language/backgrounds_song_editor/backgrounds/@caption
+/language/backgrounds_song_editor/backgrounds/@head1
+/language/backgrounds_song_editor/backgrounds/@head2
+/language/backgrounds_song_editor/show_general_editor/@caption
+/language/backgrounds_song_editor/show_advanced_editor/@caption
+/language/backgrounds_song_editor/show_backgrounds_editor/@caption
+/language/backgrounds_song_editor/add_background/@caption
+/language/backgrounds_song_editor/del_background/@caption
+/language/backgrounds_song_editor/fit_to_screen/@caption
+/language/backgrounds_song_editor/fit_to_body/@caption
+/language/backgrounds_song_editor/keepaspect/@caption
+/language/backgrounds_song_editor/store_as_link/@caption
+/language/backgrounds_song_editor/background_as_text/@caption
+/language/backgrounds_song_editor/@caption
+/language/general_settings/general/@head6
+/language/general_settings/documents_folder/folder
+/language/general_settings/documents_folder/folder/@caption
+/language/general_settings/documents_folder/folder/@comment
+/language/general_settings/ndi
+/language/general_settings/ndi/enable/@caption
+/language/general_settings/ndi/@caption
+/language/general_settings/text
+/language/general_settings/text/text_enable/@caption
+/language/general_settings/text/text_location/@caption
+/language/general_settings/text/browse/@caption
+/language/general_settings/text/browse/@default
+/language/general_settings/text/separator/value/@tag
+/language/general_settings/text/separator/@caption
+/language/general_settings/text/@caption
+/language/general_settings/text_fields
+/language/general_settings/text_fields/text_lyrics/@caption
+/language/general_settings/text_fields/text_title/@caption
+/language/general_settings/text_fields/text_subtitle/@caption
+/language/general_settings/text_fields/@caption
+/language/general_settings/vmix
+/language/general_settings/vmix/vmix_enable/@caption
+/language/general_settings/vmix/vmix/@caption
+/language/general_settings/vmix/vmix_browse/@caption
+/language/general_settings/vmix/@caption
+/language/print_settings/layout/presentation
+/language/print_settings/layout/presentation/@caption
+/language/print_settings/layout/chords
+/language/print_settings/layout/chords/@caption
+/language/print_settings/layout/capo
+/language/print_settings/layout/capo/@caption
+/language/print_settings/layout/capo_hide_regular_chords
+/language/print_settings/layout/capo_hide_regular_chords/@caption
+/language/print_settings/layout/language2
+/language/print_settings/layout/language2/@caption
+/language/print_settings/layout/language2_hide_primary
+/language/print_settings/layout/language2_hide_primary/@caption
+/language/print_settings/layout/hide_sections
+/language/print_settings/layout/hide_sections/@caption
+/language/presentation_settings/style/modes/ndi
+/language/presentation_settings/style/modes/ndi/@caption
+/language/presentation_helper/modes/ndi
+/language/presentation_helper/modes/ndi/@caption
+/language/song_lookup/add
+/language/song_lookup/add/@caption
+/language/song_lookup/done
+/language/song_lookup/done/@caption
+/language/song_lookup/cancel
+/language/song_lookup/cancel/@caption
+/language/errors/presentations/picture_dimensions
+/language/export_options/hyphens
+/language/export_options/hyphens/@caption
+/language/file_filter
+-->
+  <!--
+Comparison done at 2020-03-11
+Please delete the items from this comment after updating their translations.
+Inserted new items:
+/language/load_settings/checking_folders
+/language/load_settings/main
+/language/load_settings/transitions
+/language/load_settings/imagequality
+/language/load_settings/videolan_preset
+/language/songs_mode/selected_song/copy
+/language/songs_mode/selected_song/copy/where/@caption
+/language/songs_mode/selected_song/copy/@caption
+/language/general_song_editor/linked
+/language/general_song_editor/linked/@caption
+/language/general_song_editor/add_link
+/language/general_song_editor/add_link/@caption
+/language/general_song_editor/remove_link
+/language/general_song_editor/remove_link/@caption
+/language/advanced_song_editor/capo/using
+/language/advanced_song_editor/capo/using/@caption
+/language/advanced_song_editor/backgrounds
+/language/advanced_song_editor/backgrounds/@caption
+/language/advanced_song_editor/backgrounds/@head1
+/language/advanced_song_editor/backgrounds/@head2
+/language/advanced_song_editor/add_background
+/language/advanced_song_editor/add_background/@caption
+/language/advanced_song_editor/del_background
+/language/advanced_song_editor/del_background/@caption
+/language/advanced_song_editor/fit_to_screen
+/language/advanced_song_editor/fit_to_screen/@caption
+/language/advanced_song_editor/fit_to_body
+/language/advanced_song_editor/fit_to_body/@caption
+/language/advanced_song_editor/keepaspect
+/language/advanced_song_editor/keepaspect/@caption
+/language/advanced_song_editor/store_as_link
+/language/advanced_song_editor/store_as_link/@caption
+/language/advanced_song_editor/background_as_text
+/language/advanced_song_editor/background_as_text/@caption
+/language/sets_mode/current_set/export
+/language/sets_mode/current_set/export/@caption
+/language/sets_mode/new_item/add_image
+/language/sets_mode/new_item/add_image/@caption
+/language/sets_mode/new_item/add_external
+/language/sets_mode/new_item/add_external/@caption
+/language/sets_mode/current_item/paste
+/language/sets_mode/current_item/paste/@caption
+/language/sets_mode/items/song
+/language/sets_mode/items/song/@caption
+/language/sets_mode/items/custom
+/language/sets_mode/items/custom/@caption
+/language/sets_mode/items/scripture
+/language/sets_mode/items/scripture/@caption
+/language/sets_mode/items/image
+/language/sets_mode/items/image/@caption
+/language/sets_mode/items/external
+/language/sets_mode/items/external/@caption
+/language/sets_mode/items/style
+/language/sets_mode/items/style/@caption
+/language/sets_mode/items/revert
+/language/sets_mode/items/revert/@caption
+/language/sets_mode/items/defaultstyle
+/language/sets_mode/items/defaultstyle/@caption
+/language/sets_mode/untitled
+/language/sets_mode/untitled/@caption
+/language/sets_mode/errors
+/language/sets_mode/errors/revert/@caption
+/language/sets_mode/errors/insert/@caption
+/language/sets_mode/messages
+/language/slide_editor/folder
+/language/slide_editor/folder/@caption
+/language/slide_editor/transition
+/language/slide_editor/transition/@caption
+/language/image_slide
+/language/image_slide/header/@caption
+/language/image_slide/title/@caption
+/language/image_slide/subtitle/@caption
+/language/image_slide/descriptions/@caption
+/language/image_slide/name/@caption
+/language/image_slide/images/@caption
+/language/image_slide/images/@head1
+/language/image_slide/images/@head2
+/language/image_slide/fit_to_screen/@caption
+/language/image_slide/fit_to_body/@caption
+/language/image_slide/keepaspect/@caption
+/language/image_slide/store_as_link/@caption
+/language/image_slide/notes/@caption
+/language/image_slide/action/@caption
+/language/image_slide/preview/@caption
+/language/image_slide/ins_image/@caption
+/language/image_slide/imp_image/@caption
+/language/image_slide/del_image/@caption
+/language/image_slide/move_up/@caption
+/language/image_slide/move_down/@caption
+/language/image_slide/loop/@caption
+/language/image_slide/print/@caption
+/language/image_slide/transition/@caption
+/language/image_slide/auto_advance/@caption
+/language/image_slide/seconds/@caption
+/language/image_slide/style/@caption
+/language/external_slide
+/language/external_slide/header/@caption
+/language/external_slide/name/@caption
+/language/external_slide/application/@caption
+/language/external_slide/presentation/@caption
+/language/external_slide/videolan/@caption
+/language/external_slide/no_application/no_application/@caption
+/language/external_slide/no_application/@caption
+/language/external_slide/presentation_settings/presentation_host/@caption
+/language/external_slide/presentation_settings/host_powerpoint/@caption
+/language/external_slide/presentation_settings/host_powerpoint_info/@caption
+/language/external_slide/presentation_settings/host_pptview/@caption
+/language/external_slide/presentation_settings/host_pptview_info/@caption
+/language/external_slide/presentation_settings/host_impress/@caption
+/language/external_slide/presentation_settings/host_impress_info/@caption
+/language/external_slide/presentation_settings/presentation_file/@caption
+/language/external_slide/presentation_settings/loop_presentation/@caption
+/language/external_slide/presentation_settings/embed_presentation/@caption
+/language/external_slide/presentation_settings/@caption
+/language/external_slide/videolan_settings/videolan_start/@caption
+/language/external_slide/videolan_settings/videolan_mediafilename/@caption
+/language/external_slide/videolan_settings/embed_mediafile/@caption
+/language/external_slide/videolan_settings/videolan_preset/@caption
+/language/external_slide/videolan_settings/videolan_manual/@caption
+/language/external_slide/videolan_settings/wait_for_videolan/@caption
+/language/external_slide/videolan_settings/videolan_stop/@caption
+/language/external_slide/videolan_settings/@caption
+/language/external_slide/application_settings/application_start/@caption
+/language/external_slide/application_settings/application_filename/@caption
+/language/external_slide/application_settings/application_parameters/@caption
+/language/external_slide/application_settings/wait_for_application/@caption
+/language/external_slide/application_settings/application_stop/@caption
+/language/external_slide/application_settings/@caption
+/language/external_slide/notes/@caption
+/language/external_slide/loop/@caption
+/language/song_search/fields/hymn_number
+/language/song_search/fields/hymn_number/@caption
+/language/song_search/fields/chord
+/language/song_search/fields/chord/@caption
+/language/song_search/fields/chord_key
+/language/song_search/fields/chord_key/@caption
+/language/song_search/fields/chord_form
+/language/song_search/fields/chord_form/@caption
+/language/scripture_search
+/language/scripture_search/caption/@caption
+/language/scripture_search/example/@caption
+/language/scripture_search/match/exact/@caption
+/language/scripture_search/match/begin/@caption
+/language/scripture_search/match/@caption
+/language/scripture_search/words/all/@caption
+/language/scripture_search/words/any/@caption
+/language/scripture_search/words/@caption
+/language/scripture_search/search/@caption
+/language/scripture_search/result/@caption
+/language/scripture_search/ok/@caption
+/language/scripture_search/cancel/@caption
+/language/scripture_search/result/@head1
+/language/scripture_search/result/@head2
+/language/scripture_search/@title
+/language/songpicker_menu
+/language/songpicker_menu/file/close/@caption
+/language/songpicker_menu/edit/undo/@caption
+/language/songpicker_menu/edit/selall/@caption
+/language/songpicker_menu/edit/cut/@caption
+/language/songpicker_menu/edit/copy/@caption
+/language/songpicker_menu/edit/paste/@caption
+/language/songpicker_menu/edit/clear/@caption
+/language/songpicker_menu/edit/find/@caption
+/language/songpicker_menu/edit/find_next/@caption
+/language/songpicker_menu/edit/@caption
+/language/main_menu/file/song_act
+/language/main_menu/file/song_act/@caption
+/language/main_menu/file/scripture
+/language/main_menu/file/scripture/@caption
+/language/main_menu/edit/selall
+/language/main_menu/edit/selall/@caption
+/language/main_menu/edit/interleave
+/language/main_menu/edit/interleave/@caption
+/language/main_menu/help/user_manual
+/language/main_menu/help/user_manual/@caption
+/language/general_settings/general/@head3
+/language/general_settings/general/@head4
+/language/general_settings/general/@head5
+/language/general_settings/linked
+/language/general_settings/linked/prompt/@caption
+/language/general_settings/linked/@caption
+/language/general_settings/rcserver
+/language/general_settings/rcserver/enable/@caption
+/language/general_settings/rcserver/key/@caption
+/language/general_settings/rcserver/port/@caption
+/language/general_settings/rcserver/@caption
+/language/general_settings/extrender
+/language/general_settings/extrender/enable/@caption
+/language/general_settings/extrender/server/@caption
+/language/general_settings/extrender/port/@caption
+/language/general_settings/extrender/timeout/@caption
+/language/general_settings/extrender/@caption
+/language/general_settings/documents_folder/changed
+/language/general_settings/documents_folder/oldfolderdb
+/language/general_settings/documents_folder/oldfolderdb/@caption
+/language/general_settings/imagedefaults
+/language/general_settings/imagedefaults/fit_to_screen/@caption
+/language/general_settings/imagedefaults/fit_to_body/@caption
+/language/general_settings/imagedefaults/keepaspect/@caption
+/language/general_settings/imagedefaults/store_as_link/@caption
+/language/general_settings/imagedefaults/background_as_text/@caption
+/language/general_settings/imagedefaults/@caption
+/language/general_settings/imagequality
+/language/general_settings/imagequality/note/@caption
+/language/general_settings/imagequality/compression/@caption
+/language/general_settings/imagequality/@caption
+/language/general_settings/log
+/language/general_settings/log/enable/@caption
+/language/general_settings/log/prompt/@caption
+/language/general_settings/log/@caption
+/language/general_settings/startmode
+/language/general_settings/startmode/songs/@caption
+/language/general_settings/startmode/sets/@caption
+/language/general_settings/startmode/@caption
+/language/general_settings/reload
+/language/general_settings/reload/songfolder/@caption
+/language/general_settings/reload/set/@caption
+/language/general_settings/reload/@caption
+/language/general_settings/backgrounds
+/language/general_settings/backgrounds/browse/@caption
+/language/general_settings/backgrounds/folder/@caption
+/language/general_settings/backgrounds/@caption
+/language/general_settings/applications
+/language/general_settings/applications/pptview/@caption
+/language/general_settings/applications/pptview_browse/@caption
+/language/general_settings/applications/videolan/@caption
+/language/general_settings/applications/videolan_browse/@caption
+/language/general_settings/applications/@caption
+/language/general_settings/slidetype_coloring
+/language/general_settings/slidetype_coloring/coloring/@caption
+/language/general_settings/slidetype_coloring/verse/@caption
+/language/general_settings/slidetype_coloring/bridge/@caption
+/language/general_settings/slidetype_coloring/prechorus/@caption
+/language/general_settings/slidetype_coloring/chorus/@caption
+/language/general_settings/slidetype_coloring/tag/@caption
+/language/general_settings/slidetype_coloring/scripture/@caption
+/language/general_settings/slidetype_coloring/custom/@caption
+/language/general_settings/slidetype_coloring/style/@caption
+/language/general_settings/slidetype_coloring/image/@caption
+/language/general_settings/slidetype_coloring/application/@caption
+/language/general_settings/slidetype_coloring/blank/@caption
+/language/general_settings/slidetype_coloring/@caption
+/language/print_settings/fonts/lyrics1
+/language/print_settings/fonts/lyrics1/@caption
+/language/print_settings/fonts/lyrics2
+/language/print_settings/fonts/lyrics2/@caption
+/language/print_settings/fonts/spacing
+/language/print_settings/fonts/spacing/@caption
+/language/print_settings/fonts/sections_before
+/language/print_settings/fonts/sections_before/@caption
+/language/print_settings/fonts/sections_after
+/language/print_settings/fonts/sections_after/@caption
+/language/print_settings/fonts/chords_before
+/language/print_settings/fonts/chords_before/@caption
+/language/print_settings/fonts/chords_after
+/language/print_settings/fonts/chords_after/@caption
+/language/print_settings/fonts/capo_before
+/language/print_settings/fonts/capo_before/@caption
+/language/print_settings/fonts/capo_after
+/language/print_settings/fonts/capo_after/@caption
+/language/print_settings/fonts/lyrics_before
+/language/print_settings/fonts/lyrics_before/@caption
+/language/print_settings/fonts/lyrics_after
+/language/print_settings/fonts/lyrics_after/@caption
+/language/print_settings/fonts/lyrics2_before
+/language/print_settings/fonts/lyrics2_before/@caption
+/language/print_settings/fonts/lyrics2_after
+/language/print_settings/fonts/lyrics2_after/@caption
+/language/print_settings/layout/header_adornment
+/language/print_settings/layout/header_adornment/@caption
+/language/presentation_settings/settings/export_snapshot
+/language/presentation_settings/settings/export_snapshot/@caption
+/language/presentation_settings/settings/snapshot_file
+/language/presentation_settings/settings/snapshot_file/@caption
+/language/presentation_settings/settings/export_preview
+/language/presentation_settings/settings/export_preview/@caption
+/language/presentation_settings/settings/export_live_insertions
+/language/presentation_settings/settings/export_live_insertions/@caption
+/language/presentation_settings/settings/export_metadata
+/language/presentation_settings/settings/export_metadata/@caption
+/language/presentation_settings/settings/snapshot_parameters
+/language/presentation_settings/settings/snapshot_parameters/@caption
+/language/presentation_settings/settings/@head3
+/language/presentation_settings/style/time
+/language/presentation_settings/style/time/@caption
+/language/presentation_settings/style/time/@helptag
+/language/presentation_settings/style/blank_is_slide_change
+/language/presentation_settings/style/blank_is_slide_change/@caption
+/language/presentation_settings/style/blank_is_slide_change/@helptag
+/language/presentation_settings/monitor/force_4_3_preview
+/language/presentation_settings/monitor/force_4_3_preview/@caption
+/language/presentation_settings/monitor/force_16_9_preview
+/language/presentation_settings/monitor/force_16_9_preview/@caption
+/language/presentation_settings/presentation_control/exit_doubleclick
+/language/presentation_settings/presentation_control/exit_doubleclick/@caption
+/language/presentation_settings/errors
+/language/presentation_helper/preview
+/language/presentation_helper/preview/@caption
+/language/presentation_helper/next
+/language/presentation_helper/next/@caption
+/language/help_topics/keys
+/language/help_topics/format
+/language/help_topics/presentation
+/language/print/create_list
+/language/print/create_list/@caption
+/language/print/uncategorized
+/language/print/uncategorized/@caption
+/language/print/setlist
+/language/print/setlist/date/@caption
+/language/print/setlist/@caption
+/language/songml/presentation
+/language/songml/presentation/@caption
+/language/songml/sharpchords
+/language/songml/altsharpchords
+/language/songml/flatchords
+/language/songml/altflatchords
+/language/songml/chordkeys
+/language/songml/chordforms
+/language/songml/formsdescriptive
+/language/smartml
+/language/style_editor/fonts_and_alignment/body_autosize
+/language/style_editor/fonts_and_alignment/body_autosize/@caption
+/language/style_editor/fonts_and_alignment/margin
+/language/style_editor/fonts_and_alignment/margin/@caption
+/language/style_editor/fonts_and_alignment/tabs
+/language/style_editor/fonts_and_alignment/tabs/@caption
+/language/style_editor/bilingual
+/language/style_editor/bilingual/style/@caption
+/language/style_editor/bilingual/size/@caption
+/language/style_editor/bilingual/color/@caption
+/language/style_editor/bilingual/note/@caption
+/language/style_editor/bilingual/@caption
+/language/style_editor/options
+/language/style_editor/options/subtitles/@caption
+/language/style_editor/options/highlight_chorus/@caption
+/language/style_editor/options/descriptive_subtitle/@caption
+/language/style_editor/options/verse_in_title/@caption
+/language/style_editor/options/@caption
+/language/style_editor/background/image_fit
+/language/style_editor/background/image_fit/value/@tag
+/language/style_editor/background/image_fit/@caption
+/language/style_margins
+/language/style_margins/left/@caption
+/language/style_margins/right/@caption
+/language/style_margins/top/@caption
+/language/style_margins/bottom/@caption
+/language/style_margins/pixels/@caption
+/language/style_margins/preview/@caption
+/language/style_margins/@title
+/language/style_tabs
+/language/style_tabs/tabs/new/@caption
+/language/style_tabs/tabs/remove/@caption
+/language/style_tabs/tabs/removeall/@caption
+/language/style_tabs/tabs/@caption
+/language/style_tabs/properties/position/@caption
+/language/style_tabs/properties/pixels/@caption
+/language/style_tabs/properties/align/@caption
+/language/style_tabs/properties/left/@caption
+/language/style_tabs/properties/middle/@caption
+/language/style_tabs/properties/right/@caption
+/language/style_tabs/properties/char/@caption
+/language/style_tabs/properties/apply/@caption
+/language/style_tabs/properties/@caption
+/language/style_tabs/preview/@caption
+/language/style_tabs/@title
+/language/song_lookup/preview
+/language/song_lookup/preview/@caption
+/language/song_lookup/text
+/language/song_lookup/text/@caption
+/language/song_lookup/lookup
+/language/song_lookup/lookup/@caption
+/language/song_lookup/songs
+/language/song_lookup/songs/@head1
+/language/song_lookup/songs/@head2
+/language/song_activity
+/language/song_activity/range/@caption
+/language/song_activity/to/@caption
+/language/song_activity/find/@caption
+/language/song_activity/clear_log/@caption
+/language/song_activity/print/@caption
+/language/song_activity/view/@caption
+/language/song_activity/merge/@caption
+/language/song_activity/export/@caption
+/language/song_activity/done/@caption
+/language/song_activity/show/value/@tag
+/language/song_activity/show/@caption
+/language/song_activity/songs/@head7
+/language/song_activity/songs/@head6
+/language/song_activity/songs/@head5
+/language/song_activity/songs/@head4
+/language/song_activity/songs/@head3
+/language/song_activity/songs/@head2
+/language/song_activity/songs/@head1
+/language/song_activity/@title
+/language/scripture_lookup/books
+/language/scripture_lookup/books/ot/@caption
+/language/scripture_lookup/books/nt/@caption
+/language/scripture_lookup/books/@caption
+/language/scripture_lookup/paragraph
+/language/scripture_lookup/paragraph/@caption
+/language/scripture_lookup/from_verse
+/language/scripture_lookup/from_verse/@caption
+/language/scripture_lookup/to_verse
+/language/scripture_lookup/to_verse/@caption
+/language/scripture_lookup/select_file
+/language/scripture_lookup/select_file/@caption
+/language/scripture_lookup/chars_per_slide
+/language/scripture_lookup/chars_per_slide/@caption
+/language/scripture_lookup/shownumbers
+/language/scripture_lookup/shownumbers/@caption
+/language/scripture_lookup/preview
+/language/scripture_lookup/preview/@caption
+/language/scripture_lookup/add
+/language/scripture_lookup/add/@caption
+/language/scripture_lookup/copy
+/language/scripture_lookup/copy/@caption
+/language/scripture_lookup/done
+/language/scripture_lookup/done/@caption
+/language/scripture_lookup/bad_reference/format
+/language/scripture_lookup/bad_reference/ambiguous
+/language/module/generate_index
+/language/module/generate_error
+/language/index_progress
+/language/index_progress/top/@caption
+/language/index_progress/bottom/@caption
+/language/index_progress/@title
+/language/find_image/parent
+/language/find_image/parent/@caption
+/language/videolan_preset_list/preset
+/language/videolan_preset_list/preset/@name
+/language/videolan_preset_list/preset/@parameters
+/language/shared/apply
+/language/shared/apply/@caption
+/language/shared/browse_for
+/language/shared/browse_for/@caption
+/language/shared/save
+/language/shared/save/@caption
+/language/shared/save/@message
+/language/shared/nosave
+/language/shared/nosave/@caption
+/language/shared/cut
+/language/shared/cut/@caption
+/language/shared/copy
+/language/shared/copy/@caption
+/language/shared/paste
+/language/shared/paste/@caption
+/language/shared/clear
+/language/shared/clear/@caption
+/language/shared/selectall
+/language/shared/selectall/@caption
+/language/shared/select
+/language/shared/select/@caption
+/language/shared/exit_program
+/language/shared/exit_program/@caption
+/language/shared/export_to
+/language/shared/export_to/@caption
+/language/shared/style_file
+/language/shared/style_file/@caption
+/language/shared/title
+/language/shared/title/@caption
+/language/shared/author
+/language/shared/author/@caption
+/language/shared/copyright
+/language/shared/copyright/@caption
+/language/shared/ccli
+/language/shared/ccli/@caption
+/language/shared/presentation
+/language/shared/presentation/@caption
+/language/shared/lyrics
+/language/shared/lyrics/@caption
+/language/shared/theme
+/language/shared/theme/@caption
+/language/shared/capo
+/language/shared/capo/@caption
+/language/shared/chord
+/language/shared/chord/@caption
+/language/shared/time_sig
+/language/shared/time_sig/@caption
+/language/shared/tempo
+/language/shared/tempo/@caption
+/language/shared/key
+/language/shared/key/@caption
+/language/shared/aka
+/language/shared/aka/@caption
+/language/shared/key_line
+/language/shared/key_line/@caption
+/language/shared/user1
+/language/shared/user1/@caption
+/language/shared/user2
+/language/shared/user2/@caption
+/language/shared/user3
+/language/shared/user3/@caption
+/language/shared/hymn_number
+/language/shared/hymn_number/@caption
+/language/questions/revert
+/language/questions/revert/@caption
+/language/questions/long_operation
+/language/questions/long_operation/@caption
+/language/questions/generic_save
+/language/questions/generic_save/@caption
+/language/questions/generic_save_explanation
+/language/questions/generic_save_explanation/@caption
+/language/questions/set_changed
+/language/questions/set_changed/@caption
+/language/questions/select_docs_folder
+/language/questions/select_docs_folder/@caption
+/language/questions/activity_log
+/language/questions/activity_log/@caption
+/language/questions/import_presentation
+/language/questions/import_presentation/@caption
+/language/questions/documents_folder_empty
+/language/questions/documents_folder_empty/@caption
+/language/questions/songs_folder_empty
+/language/questions/songs_folder_empty/@caption
+/language/questions/sets_folder_empty
+/language/questions/sets_folder_empty/@caption
+/language/questions/settings_folder_empty
+/language/questions/settings_folder_empty/@caption
+/language/questions/backgrounds_folder_empty
+/language/questions/backgrounds_folder_empty/@caption
+/language/questions/no_songs_folder
+/language/questions/no_songs_folder/@caption
+/language/questions/no_sets_folder
+/language/questions/no_sets_folder/@caption
+/language/questions/no_folder
+/language/questions/no_folder/@caption
+/language/questions/destination_exists
+/language/questions/destination_exists/@caption
+/language/questions/linked_songs
+/language/questions/linked_songs/@caption
+/language/questions/large_margins
+/language/questions/large_margins/@caption
+/language/about/additional
+/language/about/sources
+/language/errors/unsupported_image_type
+/language/errors/no_such_song
+/language/errors/no_such_set
+/language/errors/number_please
+/language/errors/number_range
+/language/errors/no_path_allowed
+/language/errors/rename_error
+/language/errors/same_filename
+/language/errors/general1
+/language/errors/general2
+/language/errors/folder_error
+/language/errors/create_backgrounds_folder
+/language/errors/create_sets_folder
+/language/errors/create_settings_folder
+/language/errors/load_default_settings
+/language/errors/create_songs_folder
+/language/errors/copy_default_songs
+/language/errors/no_backgrounds_folder
+/language/errors/no_defaults_folder
+/language/errors/no_scripture_folder
+/language/errors/load_bible
+/language/errors/no_sets_folder
+/language/errors/no_settings_folder
+/language/errors/no_songs_folder
+/language/errors/no_docs_folder
+/language/errors/docs_folder
+/language/errors/fileutils
+/language/errors/cclinotavailable
+/language/errors/activity_disabled
+/language/errors/adding_logentry
+/language/errors/chars_per_slide
+/language/errors/presentations
+/language/errors/videolan_app_missing
+/language/errors/videolan
+/language/errors/linked_song
+/language/xml_errors
+/language/bible
+/language/song
+/language/hotkeys
+/language/progress_status
+/language/export_options
+/language/export_options/handling/link/@caption
+/language/export_options/handling/embed/@caption
+/language/export_options/handling/@caption
+/language/export_options/options/default/@caption
+/language/export_options/options/print/@caption
+/language/export_options/options/@caption
+/language/export_options/export/single/@caption
+/language/export_options/export/unique/@caption
+/language/export_options/export/@caption
+/language/export_options/cssfile/@caption
+/language/export_options/outdir/@caption
+/language/export_options/cancel/@caption
+/language/export_options/ok/@caption
+/language/export_options/@title
+-->
+  <!--
+Additions done at 2025-10-09
+Please delete the items from this comment after updating their translations.
+Inserted new items:
+/language/installer/usage_page/InstallTypeCaption
+/language/installer/usage_page/InstallTypeSubCaption
+/language/installer/usage_page/InstallTypeDescription
+/language/installer/usage_page/InstallTypeRegular
+/language/installer/usage_page/InstallTypePersonal
+/language/installer/usage_page/InstallTypePortable
+/language/installer/components_page/NormalInstallation
+/language/installer/components_page/CompExtras
+/language/installer/components_page/CompBackgrounds
+/language/installer/components_page/CompSets
+/language/installer/components_page/CompSongs
+/language/installer/components_page/CompBibles
+/language/installer/components_page/CompLanguages
+/language/installer/ready_page/InstallTypeMemo
+/language/installer/ready_page/InstallTypeMemoRegular
+/language/installer/ready_page/InstallTypeMemoPersonal
+/language/installer/ready_page/InstallTypeMemoPortable
+-->
+  <load_settings>
+    <print>Henter utskrifts instilinger</print>
+    <presentation>Henter presentasjons instilinger</presentation>
+    <tempos>Henter tempo liste</tempos>
+    <themes>Henter tema liste</themes>
+    <time_signatures>Henter tids signatur liste</time_signatures>
+    <fonts>Henter skrift type liste</fonts>
+    <latest_version>Ser etter nyere versjoner
+      <newer_available>En nyere versjon (%1) er tiljengelig. besøk www.opensong.org for å laste den ned.</newer_available>
+    </latest_version>
+    <init_audio>Instalerer SXMS Audio</init_audio>
+    <load_plugins>Sjekker fil formater støttet av Winamp Plugins</load_plugins>
+    <checking_folders>Creating/Checking documents folders</checking_folders>
+    <main>Loading main settings</main>
+    <transitions>Loading transitions list</transitions>
+    <imagequality>Loading image quality list</imagequality>
+    <videolan_preset>Loading Videolan parameter presets</videolan_preset>
+  </load_settings>
+  <load_data>
+    <bible>Henter standard bibelen</bible>
+    <songs_cache>Tar imot sanger</songs_cache>
+    <folders>henter sang mapper</folders>
+    <songs>Laster opp sanger</songs>
+    <sets>Henter lister</sets>
+  </load_data>
+  <welcome>Velkommen!</welcome>
+  <songs_mode caption="Sang modus">Bruk dette til å lage og redigere sangene. Sanger kan skrives ut og presenteres som lysbilder.
+    <all_songs caption="Alle sanger">
+      <print caption="Skriv ut">Skriv ut alle sangener. denne fungsjonen er flott for å lage sang hefter!.</print>
+      <export caption="Eksporter">Eksporterer alle sangene.</export>
+      <find caption="Søk">Søk eter et ord eller en setning i alle sangene.</find>
+    </all_songs>
+    <new_song caption="Ny sang">
+      <create caption="Lag">Legg til en ny sang til opensong.</create>
+      <import caption="Importer">Importer en ny sang til OpenSong fra CCLI sangvalg.</import>
+    </new_song>
+    <selected_song caption="Valgt sang">
+      <save caption="Lagre">Lagrer den valgte sangen.</save>
+      <revert caption="Tilbakestill">Tilbakestill sangen til sangen som er lagret.</revert>
+      <print caption="Print">Skriv ut denne sangen.</print>
+      <present caption="Presenter">Presenter denne sangen. Hvis du har gjort endringer i denne sangen vil de bli lagret.
+        <single_screen caption="En skjerm"/>
+        <dual_screen caption="to skjermer"/>
+        <preview_dual_screen caption="Se to skjermer på en"/>
+      </present>
+      <export caption="Eksporter">Eksporter denne sangen.
+        <to caption="Velg en mappe å eksportere til."/>
+      </export>
+      <rename caption="Gi nytt navn">Gi nytt navn til denne sangen.</rename>
+      <move caption="Flytt">Flytt denne sangen in til en annen mappe.
+        <where caption="flytt '%1' til hvilken mappe:"/>
+      </move>
+      <delete caption="Slett">Slett denne sangen.</delete>
+      <copy caption="Copy">Copies the current song to another folder.
+        <where caption="Copy '%1' to folder:"/>
+      </copy>
+    </selected_song>
+    <songs caption="Sanger">Velg en sang for å redigere den.</songs>
+    <curr_folder caption="Inneholder mappe">Vis mappen som inneholder denne sangen</curr_folder>
+    <song_folders caption="Mapper">Velg en mappe for å bare vise sangene i den mappen.
+      <new>Lag en ny mappe til å ha sanger i.</new>
+      <delete>Slett den valgte mappen. Mappen må være tom.</delete>
+      <filter_all caption="Alt"/>
+      <filter_main caption="Standard mappe"/>
+    </song_folders>
+  </songs_mode>
+  <general_song_editor caption="Generelt">Rediger sangens tittel, undertittel, forfatter, lysbilder, og tekst.
+    <header caption="Sang redigering"/>
+    <show_general_editor caption="Generelt"/>
+    <show_advanced_editor caption="Avansert"/>
+    <title caption="Tittel">Rediger tittelen på den valgte sangen.</title>
+    <author caption="Forfatter">Sett forfateren av denne sangen.</author>
+    <copyright caption="Copyright">Sett copyrighten for den valgte sangen.</copyright>
+    <ccli caption="CCLI #">Sett CCLI nummeret på denne sangen.</ccli>
+    <hymn_number caption="Hymn #">Sett Hymn nummeret på den valgte sangen.</hymn_number>
+    <presentation caption="Presentasjon">Sett presentasjon rekkefølgen på denne sangen. seksjoner må skilles med mellomrom. (f.eks. "V1 C V2 C")</presentation>
+    <lyrics caption="Besifring\tekst">Her kan du redigere sanger ved å bruke  seksjons linjer, komentar linjer, besiftings linjer, og tekst linjer.</lyrics>
+    <insert caption="Sett inn"/>
+    <ins_section caption="Seksjoner">Seksjoner blir brukt til å dele opp sangens deler.
+        <section_name caption="Seksjons navn"/>
+    </ins_section>
+    <ins_lyrics caption="Besifring \ tekst">Setter automatisk inn ferdilagde maler for akorder og tekst
+        <number_of_lines caption="Antall linjer"/>
+    </ins_lyrics>
+    <ins_multi_verse caption="Flere vers">Setter automatisk inn ferdilagde maler for akorder og tekst hvis du vil bruke flere værs fungsjonen.
+        <number_of_verses caption="Antall vers"/>
+      <number_of_lines caption="Antal linjer"/>
+    </ins_multi_verse>
+    <ins_comment caption="Kommentar">komentarer synes når du printer ut, men ikke i presentasjoner.</ins_comment>
+    <ins_column caption="Ny kolonne">Sang ark kan inneholde to kolonner for å få en lang sang til å passe inn på et ark.</ins_column>
+    <ins_page caption="Ny side">Indiker hvor en ny side skal starte for lange sanger.</ins_page>
+    <transpose caption="Modeler">Bruk dette til å modelere sangen din opp eller ned
+      <using caption="Bruk">.
+        <sharps caption="Sharps"/>
+        <flats caption="Flats"/>
+      </using>
+    </transpose>
+    <linked caption="Linked Songs">Linked songs will be automatically added to your presentation when you add this song.</linked>
+    <add_link caption="Add">Adds song to the list.</add_link>
+    <remove_link caption="Remove">Removes selected song from the list.</remove_link>
+    <show_backgrounds_editor caption="Images"/>
+  </general_song_editor>
+  <advanced_song_editor caption="Avansert">Bestem denne sangens tema, capo, takt, stil, etc.
+    <header caption="Sang redigering"/>
+    <show_general_editor caption="Generelt"/>
+    <show_advanced_editor caption="Avansert"/>
+    <themes caption="Temaer">Sett temaet for denne sangen.</themes>
+    <capo caption="Capo">Setter capo posisjonen på denne sangen<using caption="Using">Select Sharps from this list to cause OpenSong to use sharps rather than flats as accidentals for capo chords. Select Flats from this list to cause OpenSong to use flats rather than sharps as accidentals for capo chords.</using>
+    </capo>
+    <capo_print caption="Skriv ut"> Hvis denne er valgt, vil OpenSong skrive ut capo akordenr i tileg til de vanlige akordene.</capo_print>
+    <time_sig caption="Takt art">Sett takt arten for den valgte sangen.</time_sig>
+    <tempo caption="Tempo">Velg tempoet for denne sangen.</tempo>
+    <key caption="Nøkkel">Sett nøkkelen for denne sangen.</key>
+    <aka caption="Alternativ tittel">Sett den vanlige alternative tittelen på sangen.</aka>
+    <key_line caption="nøkkel Linje">sett en nøkkel linje.</key_line>
+    <style caption="Unik stil">Klikk her for å lage en spesiel stil til kun denne sangen.</style>
+    <user1 caption="Bruker definert 1">Sett dette til va du vill. disse områdene kan bli brukt av 3rd party aplikasjoner, etc.</user1>
+    <user2 caption="Bruker definert 2">SSett dette til va du vill. disse områdene kan bli brukt av 3rd party aplikasjoner, etc.</user2>
+    <user3 caption="Bruker definert 3">Sett dette til hva du vill. disse områdene kan bli brukt av 3rd party aplikasjoner, etc.</user3>
+    <backgrounds caption="Verse specific backgrounds" head1="Verse" head2="Background image">Shows the optional verse specific song backgrounds.</backgrounds>
+    <add_background caption="Add">Links an image to the selected verse.</add_background>
+    <del_background caption="Remove">Removes the currently selected verse image.</del_background>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="Do not store the image in the song, use a link">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <background_as_text caption="link(general_settings/imagedefaults/background_as_text/@caption)">link(general_settings/imagedefaults/background_as_text)</background_as_text>
+    <show_backgrounds_editor caption="Images"/>
+  </advanced_song_editor>
+  <sets_mode caption="Liste modus">bruk denne til å lage å redigere spille listene dine.
+    <sets caption="Lister">Velg en spille liste for å redigere den i liste redigering.
+      <add>lag ny spilleliste til OpenSong.</add>
+    </sets>
+    <current_set caption="Valgt Set">
+      <save caption="Lagre">Lagrer dette settet (inkludert alt innhold) til disk.</save>
+      <rename caption="Gi nytt navn">Gi nytt navn til denne spille listen.</rename>
+      <delete caption="Slett">Slett denne Listen. (Sangene i dette settet vil ikke bli borte fra sang listen)</delete>
+      <saveas caption="Lagre som">Lagre endringene i spillelisten med et nytt navn.</saveas>
+      <present caption="Presenter">Presenter denne spillelisten til skjerm. du har muligheten til å presentere til, denne skjermen en annen monitor,eller bruke en skjerm til å se hvordan det ville blitt på to.
+        <single_screen caption="En skjerm"/>
+        <dual_screen caption="To skjermer"/>
+        <preview_dual_screen caption="Forhådsvis to skjermer"/>
+        <no_slides>Du må ha minst en ting på listen for å presentere.</no_slides>
+      </present>
+      <print_songs caption="Sanger">Skriv ut sangene i denne listen.
+        <no_songs>Det er ingen sanger i denne listen .</no_songs>
+      </print_songs>
+      <print_order caption="Liste">Skriv ut en liste over innholde på denne spillelisten.</print_order>
+      <export caption="Export">Export this set to another folder.</export>
+    </current_set>
+    <new_item caption="Nytt innhold">
+      <add_song caption="Sang">Legg til en sang inn i denne listen.</add_song>
+      <add_scripture caption="Bibeltekst">Legg til en bibeltekst eller et lysbilde til denne listen.</add_scripture>
+      <add_slides caption="Lysbilde">Legg til et egendefinert lysbilde til denne listen.</add_slides>
+      <add_style caption="Stil">Skift stil hvorsomhelst på listen.</add_style>
+      <add_image caption="Image">Adds an image slide to the current set. Image slides will allow you to display a single image or a slideshow of multiple images instead of a body text.</add_image>
+      <add_external caption="External">Adds a new slide to the current set that enables activation of external sources such as a presentation or DVD playback software.</add_external>
+    </new_item>
+    <current_item caption="Valgt objekt">
+      <move_up caption="Flytt opp">Flytter det valgte objektet opp</move_up>
+      <move_down caption="Flytt ned">Flytter det valgte objektet ned</move_down>
+      <remove caption="Slett">Slett det valgte objektet fra denne listen.</remove>
+      <copy caption="Kopier">Lag en kopi av det valgte objektet.</copy>
+      <store caption="Lagre">Lagrer det valgte objektet til listen.</store>
+      <presentitem caption="link(sets_mode/current_set/present/@caption)">
+        <single_screen caption="link(sets_mode/current_set/present/single_screen/@caption)"/>
+        <dual_screen caption="link(sets_mode/current_set/present/dual_screen/@caption)"/>
+        <preview_dual_screen caption="link(sets_mode/current_set/present/preview_dual_screen/@caption)"/>
+        <no_slides>link(sets_mode/current_set/present/no_slides)</no_slides>
+      </presentitem>
+      <paste caption="link(shared/insert/@caption)">Insert copied item after current position.</paste>
+    </current_item>
+    <items caption="Liste innhold">
+      <song caption="(song)"/>
+      <custom caption="(custom)"/>
+      <scripture caption="(scripture)"/>
+      <image caption="(image)"/>
+      <external caption="(external)"/>
+      <style caption="(style)">-- Change Style --</style>
+      <revert caption="(style)">-- Revert Style --</revert>
+      <defaultstyle caption="(style)">-- Exported Style --</defaultstyle>
+    </items>
+    <untitled caption="Untitled"/>
+    <errors>
+      <revert caption="Error reloading set &quot;%1&quot; from file."/>
+      <insert caption="Insertion of copied slides failed:&#10;%1"/>
+    </errors>
+    <messages>
+      <export_complete>"%1" exported to %2
+      </export_complete>
+    </messages>
+  </sets_mode>
+  <slide_editor>
+    <header caption="Lysbilde redigering"/>
+    <title caption="Tittel">Setter tillelen som blir vist på lysbildet.</title>
+    <subtitle caption="Undertittel"/>
+    <name caption="Navn">Set navn på lysbilde(ne)</name>
+    <slides caption="Lysbilder">Inneholder lysbilder.</slides>
+    <presentation caption="Egendefinert presentasjons rekkefølge">Overrides the presentation order in the song file</presentation>
+    <origorder caption="Original presentasjons rekkefølge"/>
+    <notes caption="Notater">Disse notatene kommer opp i presentasjons hjelperen når du bruker to skjermer..</notes>
+    <insert caption="Sett inn"/>
+    <ins_slide caption="Lysbilde">Tilater å lage flere lysbilder som deler samme stil og instillinger.</ins_slide>
+    <loop caption="Loop Lysbilder">Kryss av her for at OpenSong skal starte på første lysbilde når det siste er ferdig</loop>
+    <print caption="Skriv ut inn Listen">Kryss av denne boksen for å slippe å få med denne gruppen av lysbilder når du skriver ut spillelisten.</print>
+    <auto_advance caption="Skift automatisk lysbilde hvert">Skriv inn et nummer som OpenSong skal vise hvært lysbilde og så automatisk skifte til neste lysbilde.</auto_advance>
+    <seconds caption="Sekund"/>
+    <style caption="Unik Stil">Kryss av her for å få en egendefinert stil på disse lysbildene. Når den er krysset av klikker du på den lille forhåndsvisningen for å redigere stilen.</style>
+    <folder caption="Song folder">Folder containing the selected item</folder>
+    <transition caption="Use transition">Check this box to use a transition when this slide is shown.</transition>
+  </slide_editor>
+  <style_change>
+    <header caption="Stil endring"/>
+    <revert caption="Bruk forrige stil">Dette valget setter stilen tilbake til det forrige stil valget herifra</revert>
+    <change caption="Skift stil til dette">Dette valget har muligheten til å skifte stil hvorsom helst i spille listen. Stil endringen brukes på allt etter den.</change>
+    <style>Klikk her for å redigere den nye stilen.</style>
+  </style_change>
+  <video_slides>
+    <header caption="Video instilinger"/>
+    <name caption="Lysbilde navn">Navnet OpenSong bruker for å identifisere dette lysbildet.</name>
+    <file caption="Video Fil">Sett navnet på videofilen som skal brukes i dette lysbildet.</file>
+    <loop caption="Loop Videoen">Velg dette for at videoen skal starte på nytt  hvær gang den er ferdig</loop>
+  </video_slides>
+  <powerpoint_slides>
+    <header caption="PowerPoint lysbilde instillinger"/>
+    <name caption="Lysbilders navn">Dette navnet blir brukt av OpenSong til å identifisere denne lysbilde gruppen.</name>
+    <file caption="PowerPoint Fil">Sett navnet på Power Point filen som skal brukes.</file>
+  </powerpoint_slides>
+  <song_search title="Sang søk">
+    <search caption="Skriv inn et søke ord:"/>
+    <fields caption="Søke områder">
+      <title caption="link(general_song_editor/title/@caption)"/>
+      <author caption="link(general_song_editor/author/@caption)"/>
+      <copyright caption="link(general_song_editor/copyright/@caption)"/>
+      <ccli caption="link(general_song_editor/ccli/@caption)"/>
+      <presentation caption="link(general_song_editor/presentation/@caption)"/>
+      <lyrics caption="link(general_song_editor/lyrics/@caption)"/>
+      <themes caption="link(advanced_song_editor/themes/@caption)"/>
+      <capo caption="link(advanced_song_editor/capo/@caption)"/>
+      <print_capo caption="link(advanced_song_editor/print_capo/caption)"/>
+      <time_sig caption="link(advanced_song_editor/time_sig/@caption)"/>
+      <tempo caption="link(advanced_song_editor/tempo/@caption)"/>
+      <key caption="link(advanced_song_editor/key/@caption)"/>
+      <aka caption="link(advanced_song_editor/aka/@caption)"/>
+      <key_line caption="link(advanced_song_editor/key_line/@caption)"/>
+      <style caption="link(advanced_song_editor/style/@caption)"/>
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <hymn_number caption="link(general_song_editor/hymn_number/@caption)"/>
+      <chord caption="Chord"/>
+      <chord_key caption="link(advanced_song_editor/key/@caption)"/>
+      <chord_form caption="Form"/>
+    </fields>
+  </song_search>
+  <main_menu>
+    <file caption="_Fil">
+      <new caption="_Ny"/>
+      <save caption="_Lagre"/>
+      <present caption="_Presenter">
+        <single_screen caption="_En skjerm"/>
+        <dual_screen caption="_To skjermer"/>
+        <preview_dual_screen caption="_Forhådsvis to skjermer"/>
+      </present>
+      <pagesetup caption="U_tskrifts format"/>
+      <print caption="_Skriv ut"/>
+      <print_alphabetical_toc caption="Skriv ut _Alfabetisk TOC"/>
+      <print_categorical_toc caption="Skriv ut _kategorisk TOC"/>
+      <quit caption="L_ukk"/>
+      <song_act caption="View Song Activity _Log"/>
+      <scripture caption="Scripture Look_up"/>
+    </file>
+    <edit caption="_Rediger">
+      <undo caption="_Angre"/>
+      <cut caption="_Klipp ut"/>
+      <copy caption="K_opier"/>
+      <paste caption="_Lim inn"/>
+      <clear caption="T_øm"/>
+      <find caption="_Finn"/>
+      <find_next caption="Finn _Igjenn"/>
+      <selall caption="Select _All"/>
+      <interleave caption="_Interleave lines"/>
+    </edit>
+    <mode caption="_Modus">
+      <songs caption="_Sang modus"/>
+      <sets caption="L_iste Modus"/>
+    </mode>
+    <settings caption="_Instillinger">
+      <presentation caption="_Presentasjons instillinger"/>
+      <print caption="Utskrifts _instillinger"/>
+      <general caption="_Generele instillinger"/>
+      <refresh_songs caption="Oppdater sang _Mappen"/>
+      <refresh_sets caption="O_ppdater Liste instillinger"/>
+      <install_module caption="_Instalerings modul"/>
+    </settings>
+    <help caption="_Hjelp">
+      <help_topics caption="Hjelp _Emner"/>
+      <translating caption="_Oversett Opensong"/>
+      <about caption="_Om OpenSong"/>
+      <user_manual caption="_Online User Manual"/>
+    </help>
+  </main_menu>
+  <general_settings title="Generelle instillinger">
+    <!--  V1.2 Changes-->
+    <general caption="Generelt" head1="Basic" head2="Special" head3="Image handling" head4="Integrations" head5="System" head6="Appearance">
+      <ccli caption="CCLI Lisens #"/>
+      <version_check caption="se etter oppdateringer ved oppstart"/>
+      <language caption="Språk"/>
+      <startmode caption="Standard vindu">
+        <songs caption="Sanger"/>
+        <sets caption="Lister"/>
+      </startmode>
+    </general>
+    <proxy caption="Proxy">
+      <host caption="Host"/>
+      <port caption="Port"/>
+    </proxy>
+    <user_defined caption="Bruker definert">
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <load caption="Hent språk standarer"/>
+    </user_defined>
+    <fonts caption="Skrift typer">
+      <headings caption="Overskrifter"/>
+      <labels caption="Merker"/>
+      <text_fields caption="Tekst områder"/>
+      <fixed_width caption="Fikset  med tekst"/>
+      <buttons caption="Knapper"/>
+      <large_headings caption="Store Overskrifter"/>
+      <newpaint caption="Bruk ny visuel stil"/>
+    </fonts>
+    <documents_folder caption="Dokument mappe">
+      <warning caption="Bruk med varsomhet, krever restart av programmet"/>
+      <default caption="Standard"/>
+      <custom caption="Egenskaper"/>
+      <message>Lukker OpenSong. Venlikst klikk OK og start OpenSong  igjenn. Du vil sikkert kopiere dine gamle dokumenter over til den nye adresen først.</message>
+      <change caption="Endre"/>
+      <changed>You selected to use a custom Documents Folder, but didn't click the change button.  Do you want to use the new folder?</changed>
+      <oldfolderdb caption="Use pre-V1.1 file cache"/>
+      <folder caption="" comment="No caption needed; OpenSong fills this field dynamically"/>
+    </documents_folder>
+    <!--    V1.2 Changes-->
+    <logging caption="Log settings">
+      <append caption="Append to log file"/>
+      <console caption="Log to system console"/>
+      <level caption="Log level" disabled="Disabled"/>
+      <dialog caption="Please select a file to store the log" title="Select log file"/>
+    </logging>
+    <linked caption="Linked Songs">
+      <prompt caption="Prompt when adding linked songs"/>
+    </linked>
+    <rcserver caption="Automation API">
+      <enable caption="Enable remote control server"/>
+      <key caption="Authentication key"/>
+      <port caption="Port"/>
+    </rcserver>
+    <extrender caption="External Renderer">
+      <enable caption="Enable external renderer"/>
+      <server caption="Server"/>
+      <port caption="Port"/>
+      <timeout caption="Timeout (in ms)"/>
+    </extrender>
+    <imagedefaults caption="Image Processing Defaults">
+      <fit_to_screen caption="Resize images to fit the screen">Images that are too large for the projector screen are resized to show the entire image. This also happens for images that are smaller than the screen size.</fit_to_screen>
+      <fit_to_body caption="Resize images to fit the body area">Images are made to always fit in the area that is bounded by the body style settings. This goes for both images that are larger and smaller than the body area.</fit_to_body>
+      <keepaspect caption="Keep aspect ratio when resizing images">In case of a resizing activity for either one of the above, the horizontal and vertical aspect will be maintained.</keepaspect>
+      <store_as_link caption="Do not embed images from backgrounds, use a link">Storing images in the set or song rapidly increases the size of it on disk and might degrade the quality of the image. Using a link avoids this. Images from the 'Backgrounds' folder are stored as relative link, which makes the switch to the presentation computer easier. Use with care if the presentation is created on a machine different from the presentation device!</store_as_link>
+      <background_as_text caption="Show the background instead of the verse text">Use the background image only and do not display the verse text. Usefull when the text is pre-rendered or when scores are displayed using the background image.</background_as_text>
+    </imagedefaults>
+    <imagequality caption="Set Image Quality">
+      <note caption="OpenSong tries to store the images that are used in a set in JPEG format. The items below control the quality and behaviour of image storage. The quality slider below will be disabled if QuickTime is not installed as OpenSong depends on that for storing JPEG images in user selectable quality."/>
+      <compression caption="Image compression"/>
+    </imagequality>
+    <log caption="Song Activity Log Settings">
+      <enable caption="Enable Logging"/>
+      <prompt caption="Prompt Before Presenting"/>
+    </log>
+    <startmode caption="Initial Window">
+      <songs caption="Songs"/>
+      <sets caption="Sets"/>
+    </startmode>
+    <reload caption="Reload On Startup">
+      <songfolder caption="Song Folder"/>
+      <set caption="Set"/>
+    </reload>
+    <backgrounds caption="Backgrounds">
+      <browse caption="link(shared/browse/@caption)"/>
+      <folder caption="Backgrounds Folder"/>
+      <separate caption="Backgrounds in separate folder"/>
+    </backgrounds>
+    <applications caption="External applications">
+      <pptview caption="Location of Powerpoint Viewer"/>
+      <pptview_browse caption="link(shared/browse/@caption)"/>
+      <videolan caption="Location of Videolan client"/>
+      <videolan_browse caption="link(shared/browse/@caption)"/>
+    </applications>
+    <slidetype_coloring caption="Slide type coloring">
+      <coloring caption="Apply background colors"/>
+      <verse caption="Song, Verse"/>
+      <bridge caption="Song, Bridge"/>
+      <prechorus caption="Song, Pre-Chorus"/>
+      <chorus caption="Song, Chorus"/>
+      <tag caption="Song, Tag"/>
+      <scripture caption="Scripture"/>
+      <custom caption="Custom slide"/>
+      <style caption="Style Change"/>
+      <image caption="Image slide"/>
+      <application caption="External application"/>
+      <blank caption="Blank (inserted)"/>
+    </slidetype_coloring>
+    <ndi caption="NDI®">
+      <enable caption="Enable NDI source"/>
+    </ndi>
+    <text caption="Text File Output (OBS)">
+      <text_enable caption="Update text file on slide change"/>
+      <text_location caption="Location to save text file"/>
+      <text_browse caption="link(shared/browse/@caption)" default="OpenSongSlide.txt"/>
+      <separator caption="Separate fields with">
+        <value tag="">None</value>
+        <value tag="&#10;">RETURN</value>
+        <value tag=" ">Space</value>
+        <value tag=",">Comma</value>
+        <value tag=";">Semicolon</value>
+        <value tag="|">Vertical Bar</value>
+      </separator>
+    </text>
+    <text_fields caption="Include fields">
+      <text_lyrics caption="link(shared/lyrics/@caption)"/>
+      <text_title caption="link(shared/title/@caption)"/>
+      <text_subtitle caption="Subtitle"/>
+    </text_fields>
+    <vmix caption="vMix Integration">
+      <vmix_enable caption="Enable vMix integration"/>
+      <vmix caption="Location for vMix XML file"/>
+      <vmix_browse caption="link(shared/browse/@caption)"/>
+    </vmix>
+    <color_dialog caption="Color Selection Dialog">
+      <colordlg_enable caption="Use custom color selection dialog"/>
+      <palette caption="Default palette"/>
+    </color_dialog>
+    <locale caption="Locale Settings">
+      <search caption="Locale for searchig"/>
+      <sort caption="Locale for sorting"/>
+    </locale>
+  </general_settings>
+  <print_settings title="Utskrifts instillinger">
+    <tabs head3="Marger" head1="Skrift typer" head2="Layout"/>
+    <margins>
+      <left caption="Venstre"/>
+      <top caption="Topp"/>
+      <right caption="Høyre"/>
+      <bottom caption="Bunn"/>
+      <width caption="Vidde"/>
+      <height caption="Høyde"/>
+      <page_setup caption="Utskrifts format"/>
+      <message caption="Se fil /Utskriftsformat ... for å stille inn marger"/>
+    </margins>
+    <fonts>
+      <title caption="Tittel"/>
+      <author caption="Forfatter"/>
+      <sections caption="Seksjoner"/>
+      <lyrics caption="Tekst"/>
+      <chords caption="Akkorder"/>
+      <capo caption="Capo"/>
+      <copyright caption="Copyright"/>
+      <lyrics1 caption="Primary Language"/>
+      <lyrics2 caption="Secondary Language"/>
+      <spacing caption="Spacing"/>
+      <sections_before caption="before"/>
+      <sections_after caption="after"/>
+      <chords_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <chords_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <capo_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <capo_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <lyrics_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics2_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <lyrics2_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+    </fonts>
+    <layout>
+      <heading_border_thickness caption="Overskrifts kant tykkelse"/>
+      <title_in_caps caption="Tittel i store bokstaver"/>
+      <highlight_chorus caption="link(style_editor/options/highlight_chorus/@caption)"/>
+      <header_adornment caption="Adorn section titles using boxes"/>
+      <presentation caption="Print presentation order"/>
+      <chords caption="Print chords"/>
+      <capo caption="Print capo chords"/>
+      <capo_hide_regular_chords caption="Hide regular chords"/>
+      <language2 caption="Print 2nd language lyrics"/>
+      <language2_hide_primary caption="Hide primary language lyrics"/>
+      <hide_sections caption="Hide sections not in presentation order"/>
+    </layout>
+    <units caption="Units">
+      <inches caption="Inches"/>
+      <cm caption="Centimeter"/>
+    </units>
+  </print_settings>
+  <presentation_settings title="Presentasjons instillinger">
+    <settings head1="Stil" head2="Valg" head3="Snapshots">
+      <default_slides caption="Standard lysbilde stil"/>
+      <scripture_slides caption="Standard Tekst stil"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+      <export_snapshot caption="Export a snapshot of each presented slide to the following file"/>
+      <snapshot_file caption="Snapshot filename">Choose the snapshot filename using a file selection dialog.</snapshot_file>
+      <export_preview caption="Export snapshots during set preview"/>
+      <export_live_insertions caption="Export snapshots of slides inserted during a live presentation"/>
+      <export_metadata caption="Export slide details in a similarly named xml file"/>
+      <snapshot_parameters caption="link(/presentation_settings/settings/snapshot_parameters)" xml:space="preserve">The following parameters can be used in the file name or path:
+    - %d: The day of the current month (01-31)
+    - %h: The hour from the current time of day in 24-hour format (00-23)
+    - %i: The minutes from the current time (00-59)
+    - %m: The current month (01-12)
+    - %n: The number of the slide in the current set (with leading zeroes)
+    - %N: The name of the current slide
+    - %P: Presentation index for slides during presentation (with leading zeroes)
+    - %s: The seconds from the current time (00-59)
+    - %S: The name of the current set
+    - %T: The title of the current slide
+    - %V: The verse indicator of the current slide (for songs, empty for other slides)
+    - %y: The current year (4 digits)</snapshot_parameters>
+    </settings>
+    <transitions caption="Stil">
+      <use_transitions caption="Bruk overganger"/>
+      <transition_note caption="*Overganger berøres av skjermopløsning. Om Du opplever langsome overganger,så må du vurdere å minske oppløsningen av monitoen som presentasjonen vises på. Også, om Du legger merke til at overganger ikke viser seg, det er fordi Deres fargenivåer er også lav på fremvisningsmonitoen"/>
+      <time caption="Tid" helptag="total tid for overgang (kan ta lenger tid på trege systemer)"/>
+      <frames caption="Bilder" helptag="Antal overgangs trinn på en overgang"/>
+    </transitions>
+    <style caption="Stil">
+      <border_thickness caption="Kant tykkelse"/>
+      <subtitles caption="Under tittler"/>
+      <modes>
+        <normal caption="Normal"/>
+        <black caption="Sort"/>
+        <white caption="Hvit"/>
+        <logo caption="Logo"/>
+        <hidden caption="Skjult"/>
+        <frozen caption="Fryst"/>
+        <ndi caption="NDI Source"/>
+      </modes>
+      <mouse_cursor caption="Muse peker">
+        <arrow caption="Pil"/>
+        <cross caption="Kryss"/>
+        <hidden caption="Skjult"/>
+        <hourglass caption="Timeglass"/>
+        <ibeam caption="Tekstmerking"/>
+      </mouse_cursor>
+      <blanks caption="Sett inn tomme lysbilder"/>
+      <blanks_between caption="mellom liste innhold"/>
+      <blank_style caption="Blanke lysbilder tar stil"/>
+      <blank_prev caption="forrige lysbilde"/>
+      <blank_next caption="Neste lysbilde"/>
+      <highlight_chorus caption="Lys ut Refreng tekst"/>
+      <initial_mode caption="Standard presentasjons modus"/>
+      <time caption="Time" helptag="Total time for transition (may actually take longer on slower systems)"/>
+      <blank_is_slide_change caption="Empty lyric line indicates slide change" helptag="If checked, an empty line in the lyrics (no text) indicates a slide change. Acts like using &quot;||&quot; on the line. Simulates EasyWorship-style behavior."/>
+    </style>
+    <alerts caption="Meldinger">
+      <font caption="Skrift typer"/>
+      <align caption="Justering"/>
+    </alerts>
+    <monitor caption="Monitorer">
+      <control caption="Instilings monitor"/>
+      <presentation caption="Presentasjons monitor"/>
+      <detected caption="%1 monitor(er) er funnet."/>
+      <default_mode caption="Standard monitor modus"/>
+      <force_4_3_preview caption="Force 4:3 preview"/>
+      <force_16_9_preview caption="Force 16:9 preview"/>
+      <nativefullscreen caption="Use native fullscreen mode (macOS)"/>
+    </monitor>
+    <logo caption="Logo">
+      <mask caption="Maske"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+    </logo>
+    <audio caption="Lyd">
+      <file_to_play caption="Fil å spille av"/>
+      <browse caption="Bla gjennom"/>
+      <stop caption="Stopp"/>
+      <play caption="Spill"/>
+    </audio>
+    <presentation_control caption="Diverse">
+      <exit_prompt caption="Tilskynd under lukking"/>
+      <descriptive_subtitle caption="Beskrivende undertittel info"/>
+      <exit_doubleclick caption="Exit on double-click"/>
+    </presentation_control>
+    <errors>
+      <snapshot_file>Error: creating snapshots is enabled, but no filename is entered.</snapshot_file>
+    </errors>
+  </presentation_settings>
+  <presentation_helper title="Presentasjons hjelper">
+    <top>
+      <slides head1="Tittel" head2="ID" head3="Tekst"/>
+    </top>
+    <modes caption="Modus">
+      <normal caption="[N] Normal"/>
+      <black caption="[K] Sort"/>
+      <white caption="[W] Hvit"/>
+      <logo caption="[L] Logo"/>
+      <hidden caption="[H] Skjult"/>
+      <frozen caption="[F] Fryst"/>
+      <ndi caption="[Z] NDI"/>
+    </modes>
+    <actions caption="Handlinger">
+      <alert caption="[A] Meldinger">Ny melding </alert>
+      <quick_song caption="[Q] Legg til sang"/>
+      <scripture caption="[S] Bibeltekst"/>
+      <full_screen caption="[M] Full Skjerm"/>
+      <normal_screen caption="[M] Normal Skjerm"/>
+      <return caption="[Esc] Lukk"/>
+    </actions>
+    <exit caption="Vil du lukke Presentasjonen?"/>
+    <loop caption="Loop"/>
+    <keys xml:space="preserve">- Knapper -
+Pil opp: Neste
+Pil ned: Forrige
+Pil Høyre: Neste seksjon
+Pil venstre: Forrige seksjon
+1-9: Vers
+C: Refreng
+P: Pre-refreng
+B: Bridge
+T: Tag</keys>
+    <bottom>
+      <preview caption="Current slide preview"/>
+      <next caption="Next slide preview"/>
+    </bottom>
+  </presentation_helper>
+  <help_topics title="Hjelpe emner">
+    <tabs head1="Presentasjons Knapper" head2="Akkorder/Tekst Format" head3="Presentasjons område" head4="Lukk"/>
+    <print caption="Skriv ut"/>
+    <close caption="link(shared/close/@caption)"/>
+    <keys><![CDATA[
+<h1>Presentation Keys</h1>
+
+The Presentation is controlled with the following keys:
+
+Esc Key: End the presentation.
+Up Arrow, 8 on Numpad, Backspace: Go to Previous Slide.
+Down Arrow, 2 on Numpad, Space Key: Go to Next Slide.
+Left Arrow, 4 on Numpad: Go to Previous item in set.
+Right Arrow, 6 on Numpad: Go to Next item in set.
+Q Key: Insert a new song into the presentation.
+A Key: Insert a new Alert.
+S Key: Insert a new scripture into the presentation.
+W Key: Fade to White screen.
+K Key: Fade to Black screen.
+L Key: Display OpenSong Logo.
+H Key: Hide Text, Show Background image only.
+F Key: Freezes Presentation(i.e. prevents displaying new slide, allowing you to change current slide
+    without affecting the presentation, press N to unfreeze).
+N Key: Normal mode(get out of black screen, etc.)
+B Key: Go to Bridge(as denoted by a [B#] in song
+    editor). If there is more than one Bridge,
+    then pressing the B key will move to the next Bridge.
+C Key: Go to Chorus(as denoted by a [C#] in song editor). If there is more than one chorus,
+    then pressing the C key will move to the next chorus.
+T Key: Go to Tag(as denoted by a [T#] in song editor). If there is more than one Tag,
+    then pressing the T key will move to the next Tag.
+P Key: Go to Pre-Chorus(as denoted by a [P#] in song editor). If there is more than one Pre-Chorus,
+    then pressing the P key will move to the next Pre-Chorus.
+1-9 Key: Go to Verse#(as denoted by a [V#] in song editor).
+
+Note the Numpad keys function depends on the state of the NumLock key.
+
+]]></keys>
+
+    <format><![CDATA[<h1>OpenSong Lyrics / Chords Format</h1>
+
+Songs are broken down into the following line types: Section lines, Chord lines, Lyric lines, and Comment lines. A simple song might look something like this:
+<pre><b>
+;Remember to sing the verse twice.
+[V]
+.G                C
+ This is a verse, this is a verse.
+.D          G
+ That is so cool.
+
+[C]
+.G               C/D  D     C
+ Sing the chorus now, yeah, yeah,
+.G           C       D/F# G
+ This is the dumbest song ever.</b></pre>
+
+Lets look at each line type...
+
+<h2>Section Lines</h2>
+
+Section lines are delimited by braces: [ and ]. A "section" includes any lines following this section line until the next section line or the end of the song. Sections are not displayed in the Presenter, but they are used to determine the order of the slides. Any text inside the braces is acceptable, but the following have special effects:
+
+<b><i>[V]: </i></b>Verses. Lead sheets will automatically remove the "V" and print the remaining number with a circle around it. Examples: [V1], [V2], [V3].
+
+<b><i>[C]: </i></b>Chorus. Lead sheets will automatically display "Chorus" followed by any extra text (see examples). "Chorus" will be printed with a square around it. Examples: [C], [C2], [CModulation].
+
+<b><i>[P]: </i></b>Pre-chorus. Lead sheets will automatically display "Pre-chorus" followed by any extra text (see examples). "Pre-chorus" will be printed with horizontal lines above it and below it. Examples: [P], [P2].
+
+<b><i>[B]: </i></b>Bridge. Lead sheets will automatically display "Bridge" followed by any extra text (see examples). "Bridge" will be printed with a rounded square around it. Examples: [B], [B2].
+
+<b><i>[T]: </i></b>Tag. Lead sheets will automatically display "Tag" followed by any extra text (see examples). "Tag" will be printed with a rounded square around it. Examples: [T], [T2].
+
+<h2>Chord Lines</h2>
+
+Chord lines start with a period: ".". The first letter of each chord should line up with the lyrics under it. Chord lines don't display on the Presenter, only on lead sheets.
+
+<h2>Lyric Lines</h2>
+
+Lyric lines start with a space: " ". Lyrics generally line up with a previous chord line, but not necessarily.
+
+<b><i>"__"</i></b> If a word needs to be stretched to fit the chords, use underscores: "_". For example:
+<b><pre>
+.Gsus7 C    G
+ Wel___come home.</pre></b>
+
+Underscores are replaced by an appropriate "-" centered between the word parts.
+
+<b>"  "</b> Multiple spaces between words are just fine. Underscores and multiple spaces are automatically removed in the Presenter. When printing lead sheets, both are dropped and dynamically adjusted to fit.
+
+<b>"|"</b> Vertical bars are replaced with spaces on lead sheets, and new lines in the Presenter.
+
+<b>"||"</b> Double vertical bars are replaced by "new slide" in the Presenter and ignored when printing lead sheets. Double vertical bars must be at the end of the line.
+
+<h3>Multiple Lyric Lines for One Chord Line!?</h3>
+
+Many songs have multiple verses which all share the same chords. Rather than repeat the chords in each verse section, we can group them by verse line rather than by verse number (like a hymnal). In this case, rather than start each lyric line with a space, start each lyric line with the verse number. Note that aligning multiple lyric lines with one chord line is a little trickier. It should look something like this:
+
+<b><i>(Don't try to sing it; the timing is terrible. *grin*)</i><pre>
+[V]
+.G     C               G
+1This  is verse        one;
+2This  is not verse    two;
+3Where did verse three go;
+4Ever__lasting is not  verse four;
+
+.G     D    C                D            G
+1Hear  my   song as I sing,  "Mon_________key."
+2Open  your ears to my       wonderful    song.
+3Why   are  we still         singing this song?
+4This  is   not the way that songs should sound.</pre>
+</b>
+As far as the Presenter is concerned, the first character of each lyric line (i.e. 1, 2, 3, etc.) is appended to the section it is in. In other words, a section line of [V] with following lyric lines starting with 1, 2, 3, etc. would look like V1, V2, V3, etc.
+
+<h2>Comment Lines</h2>
+
+There isn't much to a comment line. Comment lines are any lines that start with a semi-colon: ";". Comment lines are skipped in the Presenter, and displayed using the Comment font in Lead Sheets.
+
+<h2>Column Breaks</h2>
+
+If a line contains only three dashes ("---"), lyrics sheets will print with a second column starting at the column break.
+
+<h2>Page Breaks</h2>
+
+If a line contains ("-!!") this indicates the location where a page break should be placed in the lead sheet when printing longer songs.
+
+]]></format>
+
+    <presentation><![CDATA[
+<h1>OpenSong Presentation Field</h1>
+
+The presentation field contains a list of sections from the song's lyrics/chords field. Each section is separated by a space, for example:
+<b>
+V1 C V2 C V3 C
+</b>
+This example would display the first verse on the first slide, the chorus on the second slide, the second verse on the third slide, and so on.
+
+Keep in mind that if your song uses multi-lyric lines for a single chord line that each lyric line's prefix is appended to its section. See the "Lyric Lines" section under the "Lyrics / Chords Format" help for more information.
+
+<h3>Empty Presentation Field</h3>
+
+If the presentation field is empty, then the Presenter will order the slides based on the order in the Lyrics / Chords field.
+
+]]></presentation>
+  </help_topics>
+  <font_selection title="Skrift type valg">
+    <face caption="Skrift type"/>
+    <size caption="Størrelse"/>
+    <color caption="Farge"/>
+    <bold caption="Fet"/>
+    <italic caption="Kursiv"/>
+    <underline caption="Undertittel"/>
+    <border caption="Kant"/>
+    <shadow caption="Skygge"/>
+    <fill caption="Fil"/>
+  </font_selection>
+  <print_preview title="Forhåndsvisning">
+    <first caption="&lt;&lt;"/>
+    <previous caption="&lt;"/>
+    <next caption="&gt;"/>
+    <last caption="&gt;&gt;"/>
+    <zoom_in caption="-"/>
+    <zoom_out caption="+"/>
+    <pages caption="%1 of %2"/>
+    <print_setup caption="Utskrifts innstillinger"/>
+    <print caption="Skriv ut"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+  </print_preview>
+  <print>
+    <continued caption="(fortsettelse)"/>
+    <toc caption="Innholdsfortegnelse"/>
+    <categorized caption="Kategorisert"/>
+    <alphabetical caption="Alfabetisk"/>
+    <copyright caption="Copyright"/>
+    <page caption="Side %1"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+    <create_list caption="Creating list of %1..."/>
+    <uncategorized caption="Other"/>
+    <setlist caption="Order of Service">
+      <date caption="Printed "/>
+    </setlist>
+  </print>
+  <songml>
+    <page caption="Side"/>
+    <capo caption="Capo"/>
+    <copyright caption="Copyright"/>
+    <symbol caption="©"/>
+    <prechorus caption="Pre-refreng"/>
+    <chorus caption="Refreng"/>
+    <bridge caption="Bridge"/>
+    <tag caption="Tag"/>
+    <prechorus_abbreviation caption="refr"/>
+    <chorus_abbreviation caption="refr"/>
+    <bridge_abbreviation caption="brdg"/>
+    <tag_abbreviation caption="tag"/>
+    <verse caption="Vers"/>
+    <author caption=""/>
+    <hymn_number caption="Hymn Numer"/>
+    <ccli_number caption="CCLI Song #"/>
+    <ccli_license caption="CCLI Lisens #"/>
+    <!--The string "|NL|" is a special code to tell OpenSong that each subtitle should be on a separate line.-->
+    <separator caption="|NL|"/>
+    <presentation caption="Presentation Order"/>
+    <sharpchords>,C,C#,D,D#,E,F,F#,G,G#,A,A#,B</sharpchords>
+    <altsharpchords>,B#,C#,D,D#,E,E#,F#,G,G#,A,A#,B</altsharpchords>
+    <flatchords>,C,Db,D,Eb,E,F,Gb,G,Ab,A,Bb,B</flatchords>
+    <altflatchords>,C,Db,D,Eb,Fb,F,Gb,G,Ab,A,Bb,Cb</altflatchords>
+    <chordkeys>Any,A,A#,Ab,B,B#,Bb,C,C#,Cb,D,D#,Db,E,E#,Eb,F,F#,Fb,G,G#,Gb</chordkeys>
+    <chordforms>Any,,m,2,M7,m7,7,dim7,dim,+,sus,sus2,6,6/9,M9,add9,7b5,7#5,9,7b9,7#9,13th,m7b5,m7#5,m7b9,11</chordforms>
+    <formsdescriptive>Any,Major,Minor(m),2nd(2),Major 7th(M7),Minor 7th(m7),Dominant 7th(7),Diminished 7th(dim7),Diminished(dim),Augmented(+),Suspended(sus),Suspended 2nd(sus2),Sixth(6),Six Nine(6/9),Major 9th(M9),Add9(add9),Seven Flat Five(7b5),Seven Sharp Five(7#5),9th(9),Seven Flat Nine(7b9),Seven Sharp Nine(7#9),13th(13),Minor 7th Flat Five(m7b5),Minor 7th Sharp Five(m7#5),Minor 7th Flat Nine(m7b9),11th(11)</formsdescriptive>
+  </songml>
+  <style_editor title="Stil redigering">
+    <fonts_and_alignment caption="Skrift type og justering">
+      <title caption="Tittel"/>
+      <subtitle caption="Undertittel"/>
+      <body caption="Hoved tekst"/>
+      <align caption="Justering"/>
+      <subtitles caption="Sang undertittler"/>
+      <body_autosize caption="Automatic font size scaling to make text fit"/>
+      <margin caption="Margins"/>
+      <tabs caption="Tabulators"/>
+    </fonts_and_alignment>
+    <background caption="Bakgrunn">
+      <color caption="Farge"/>
+      <image caption="Bilde"/>
+      <position caption="Posisjon">
+        <row0 caption="Strekk"/>
+        <row1 caption="Senter"/>
+        <!-- <row2 caption="Tile"/> -->
+      </position>
+      <trim_bottom caption="*Trim Bunnen"/>
+      <pixels caption="px"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+      <image_fit caption="Scaling">
+        <value tag="0">Cover</value>
+        <value tag="1">Contain</value>
+        <value tag="2">Fill</value>
+        <value tag="3">None</value>
+        <value tag="99">Center</value>
+      </image_fit>
+    </background>
+    <trim_note caption="*Kutter av bunnen av en bakgrunn for å skjule vannmerker, web side adresser, etc. For å ungå forstyrrelse, dette trimmer også fra siden for å konpansere."/>
+    <bilingual caption="Bilingual presentation">
+      <style caption="Style variations for the second language:"/>
+      <size caption="Size [10-200%]"/>
+      <color caption="Color"/>
+      <note caption="Usage: append (L) to the section marker e.g. [V1](L)"/>
+    </bilingual>
+    <options caption="Textual options">
+      <subtitles caption="Song Subtitles"/>
+      <highlight_chorus caption="Highlight chorus text"/>
+      <descriptive_subtitle caption="Descriptive subtitle info"/>
+      <verse_in_title caption="Include verse numbers in title"/>
+    </options>
+  </style_editor>
+  <song_lookup title="Sang oppslag">
+    <header caption="Klikk på sangtittelen på listen under og klikk på 'Legg til' knappen for å legge til en sang. Du kan også  begynne å skrive inn sang tittelen og trykke på 'Legg til' knappen."/>
+    <no_selection>Du har ikke valgt en sang.</no_selection>
+    <folder caption="Velg mappe"/>
+    <presentation caption="link(slide_editor/presentation/@caption)"/>
+    <origorder caption="link(slide_editor/origorder/@caption)"/>
+    <preview caption="Song Preview"/>
+    <text caption="Found text in:"/>
+    <lookup caption="Quick Lookup"/>
+    <songs head1="Song Name" head2="Folder"/>
+    <add caption="link(shared/add/@caption)"/>
+    <done caption="link(shared/done/@caption)"/>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <next caption="&gt;">Find again</next>
+    <back caption="&lt;">Find previous</back>
+  </song_lookup>
+  <scripture_lookup title="Slå opp bibelvers">
+    <lookup caption="Hurtig oppslag">
+      <reference caption="Referanse"/>
+      <lookup caption="Slå opp"/>
+      <example caption="Eks: '2Pet 1:1-2' o '2Pet 1:1-2 (KJV)'"/>
+    </lookup>
+    <version caption="Versjon"/>
+    <verses_per_slide caption="Vers per lysbilde.">
+      <one caption="1"/>
+      <two caption="2"/>
+      <three caption="3"/>
+    </verses_per_slide>
+    <format caption="Format">
+      <paragraph caption="Avsnitt"/>
+      <verse caption="Vers"/>
+    </format>
+    <bad_reference>
+      <empty>Dårlig referanse: referansen var tom.</empty>
+      <book>Dårlig referanse: kunne ikke finne vers.</book>
+      <version>Dårlig referanse: '%1' Versjonen kunne ikke bli funnet</version>
+      <chapter>Dårlig referanse : Kunne ikke finne kapittel '%1'.</chapter>
+      <verse>Dårlig referanse: kunne ikke finne vers '%1'.</verse>
+      <verse_range>Dårlig referanse:  'til' verset må være høyere en 'fra' verset.</verse_range>
+      <format>Please check the format of the query and try again.</format>
+      <ambiguous>Bad reference: Multiple books match %1: %2</ambiguous>
+    </bad_reference>
+    <colon caption=":"/>
+    <dash caption="-"/>
+    <search caption="link(shared/search/@caption)"/>
+    <insert caption="link(shared/insert/@caption)"/>
+    <books caption="Bible Book">
+      <ot caption="Old testament"/>
+      <nt caption="New testament"/>
+    </books>
+    <paragraph caption="Paragraph"/>
+    <from_verse caption="From verse"/>
+    <to_verse caption="To verse"/>
+    <select_file caption="Please select a scripture file"/>
+    <chars_per_slide caption="Max. characters per slide"/>
+    <shownumbers caption="Display verse numbers"/>
+    <preview caption="Preview"/>
+    <add caption="link(shared/add/@caption)"/>
+    <copy caption="link(shared/copy/@caption)"/>
+    <done caption="link(shared/done/@caption)"/>
+  </scripture_lookup>
+
+  <color_selector title="Select a Color">
+    <rgb caption="RGB">
+      <red caption="Red"/>
+      <green caption="Green"/>
+      <blue caption="Blue"/>
+      <rgbhex caption="Hex #"/>
+    </rgb>
+    <hsv caption="HSV">
+      <hue caption="Hue"/>
+      <sat caption="Saturation"/>
+      <value caption="Brightness"/>
+    </hsv>
+    <cmy caption="CMY">
+      <cyan caption="Cyan"/>
+      <magenta caption="Magenta"/>
+      <yellow caption="Yellow"/>
+    </cmy>
+    <alpha helptag="" caption="Transparency"/>
+    <slots caption="Custom colors"/>
+    <color_palette>
+      <palette caption="Palette"/>
+      <standard caption="Standard"/>
+      <cga caption="CGA"/>
+      <matching_colors caption="Matching Colors"/>
+      <complement caption="Complement"/>
+      <triadic caption="Triadic"/>
+      <tetradic caption="Tetradic"/>
+      <analogous caption="Analogous"/>
+      <neutral caption="Neutral"/>
+      <shades caption="Shades"/>
+      <tintes caption="Tintes"/>
+      <tones caption="Tones"/>
+      <open_song caption="OpenSong"/>
+      <current_item caption="Current %1"/>
+      <current_set caption="Current Set"/>
+      <default_style caption="Default Style"/>
+      <scripture_style caption="Scripture Style"/>
+      <alert caption="Alert"/>
+      <main_settings_fonts caption="link(general_settings/fonts/@caption)"/>
+      <main_settings_slidestyle caption="link(general_settings/slidetype_coloring/@caption)"/>
+      <print_settings_fonts caption="Text Colors"/> <!-- or until translated: "link(print_settings/tabs/@head1)" -->
+      <last_used caption="Reload last used"/>
+    </color_palette>
+    <item_type>
+    	<song caption="link(sets_mode/new_item/add_song/@caption)"/>
+    	<scripture caption="link(sets_mode/new_item/add_scripture/@caption)"/>
+    	<custom caption="link(sets_mode/new_item/add_song/@caption)"/>
+    	<style caption="link(sets_mode/new_item/add_style/@caption)"/>
+    	<image caption="link(sets_mode/new_item/add_image/@caption)"/>
+    	<external caption="link(sets_mode/new_item/add_external/@caption)"/>
+    </item_type>
+  </color_selector>
+
+  <module>
+    <read_error>Kunne ikke lese fil, eller ugyldig filnavn.</read_error>
+    <format_error>ugyldig modul format.</format_error>
+    <move_error>Error med å flytte modul fil. Venligst bekreft at adressen er '%1'.</move_error>
+    <rename_error>Error med å gi nytt navn til modul fil. Venligst bekreft at du skrev inn '%1'.</rename_error>
+    <success>Modul ble hentet suksesfult.</success>
+    <file_type>OpenSong Moduler(*.xmm)</file_type>
+    <generate_index>Generate index for scripture file: '%1'?</generate_index>
+    <generate_error>Error generating index; do you have write access to %1?</generate_error>
+  </module>
+  <import_from_ccli title="Importer fra CCLI">
+    <user_id caption="Bruker ID"/>
+    <password caption="Passord"/>
+    <for caption="Søk etter"/>
+    <songs head1="Te" head2="Sa" head3="Le" head4="Tittel" head5="Forfatter" head6="Katalog" head7="AKA" head8="Nøkkel linje" head9="Nøkkel" head10="CCLI #"/>
+    <by caption="Av">
+      <title_and_aka caption="Tittel og AKA"/>
+      <title caption="Tittel"/>
+      <lyrics caption="Tekst"/>
+      <author caption="Forfatter"/>
+      <catalog caption="Katalog"/>
+      <theme caption="Tema"/>
+      <ccli caption="CCLI #"/>
+    </by>
+    <filter caption="Filter">
+      <all caption="Alt"/>
+      <lead_sheets caption="Sang ark"/>
+      <sound_samples caption="Lyd klipp"/>
+    </filter>
+    <find caption="Finn"/>
+    <previous_page caption="Forrige side"/>
+    <next_page caption="Neste side"/>
+    <page caption="Side"/>
+    <of_pages caption="av%1"/>
+    <import caption="Importer"/>
+    <errors>
+      <no_data>Ingen data ble funnet. Venligst sjekk søke ordene og ditt CCLI ID/passord .</no_data>
+      <bad_html>En feil har opstot i analysen av HTML. Kontakt OpenSong technical support.</bad_html>
+      <no_results>Ingen resultater.</no_results>
+      <no_headers>Ingen overskrifts data ble funnet. Venligst sjekk søke ordene og ditt CCLI ID/passord.</no_headers>
+      <no_connect>Kunne ikke kobles til CCLI. Venligst prøv igjenn senere.</no_connect>
+      <already_exists>Sangen eksisterer allerede.</already_exists>
+    </errors>
+  </import_from_ccli>
+  <find_image title="Finn bilde">
+    <parent caption="(Parent)"/>
+  </find_image>
+  <input_box title="OpenSong"/>
+  <theme_list>
+    <option name="Kristus: Egenskaper"/>
+    <option name="Kristus:Fødsel"/>
+    <option name="Kristus: Død"/>
+    <option name="Kristus: Makt\ Ære"/>
+    <option name="Kristus: Kjærlighet \ nåde"/>
+    <option name="Kristus: Helbredelse"/>
+    <option name="Kristus: Gjennkomst"/>
+    <option name="Kristus: Seier"/>
+    <option name="Kirke: Trofasthet\lydighet"/>
+    <option name="Kirke: Land"/>
+    <option name="Kirke: Liv etter døden\ himmelen"/>
+    <option name="Kirke: Evangelisme"/>
+    <option name="Kirke: Familie\fellesskap"/>
+    <option name="Kirke Fellesskap m\ Gud"/>
+    <option name="Kirke: Renhet\ Hellighet"/>
+    <option name="Kirke: Frelse"/>
+    <option name="Kirke: fornyelse"/>
+    <option name="Kirke: Tjeneste"/>
+    <option name="Kirke: +ndelig sult"/>
+    <option name="Frukt: Tro \ Håp"/>
+    <option name="Frukt: Kjærlighet"/>
+    <option name="Frukt: Glede"/>
+    <option name="Frukt: Fred"/>
+    <option name="Frukt: Godhet"/>
+    <option name="Frukt: Ydmykhet"/>
+    <option name="Gud: Egenskaper"/>
+    <option name="Gud: Skapelse"/>
+    <option name="Gud: Far"/>
+    <option name="Gud: Omsorg"/>
+    <option name="Gud: Hellig ånd"/>
+    <option name="Gud: Hellighet"/>
+    <option name="Gud: Kjærlighet \ nåde"/>
+    <option name="Gud: Styrke"/>
+    <option name="Gud: Løfer"/>
+    <option name="Gud: Seier"/>
+    <option name="Gud: Ord"/>
+    <option name="Lovsang: Tilit"/>
+    <option name="Lovsang: +pning"/>
+    <option name="Lovsang: Feiring"/>
+    <option name="Lovsang: Erklæring"/>
+    <option name="Lovsang: Fortrolighet"/>
+    <option name="Lovsang: Invitasjon"/>
+    <option name="Lovsang: Lovprisning"/>
+    <option name="Lovsang: Bønn"/>
+    <option name="Lovsang: motak"/>
+    <option name="Lovsang: Takk"/>
+  </theme_list>
+  <tempo_list>
+    <option name="Veldig fort"/>
+    <option name="Fort"/>
+    <option name="Normalt"/>
+    <option name="Sakte"/>
+    <option name="Veldig sakte"/>
+  </tempo_list>
+  <time_sig_list>
+    <option name="2/4"/>
+    <option name="3/4"/>
+    <option name="4/4"/>
+    <option name="3/8"/>
+    <option name="5/8"/>
+    <option name="6/8"/>
+  </time_sig_list>
+  <transition_list>
+    <option name="Default"/>
+    <option name="Yes"/>
+    <option name="No"/>
+  </transition_list>
+  <imagequality_list>
+    <option name="Full, minimum quality, small set file"/>
+    <option name="High, low quality"/>
+    <option name="Medium, normal quality"/>
+    <option name="Little, high quality"/>
+    <option name="Low, maximum quality"/>
+    <option name="None, lossless, large set file"/>
+  </imagequality_list>
+  <videolan_preset_list>
+    <preset name="Video as wallpaper background in Windows (use background color RGB 0,0,1)" parameters="--no-video-deco --no-video-title-show --no-osd --video-wallpaper --direct3d-desktop --one-instance --directx-device=\\.\DISPLAY%d %s"/>
+  </videolan_preset_list>
+  <style_preview>
+    <slide_groups>
+      <slide_group name="Eksempel tittel" type="Egendefinert" seconds="0" loop="false">
+        <title>Eksempel Tittel</title>
+        <subtitle>Eksempel undertittel</subtitle>
+        <notes>Eksempel noteter</notes>
+        <slides>
+          <slide>
+            <body xml:space="preserve">Dette er et eksempel lysbilde.
+Dette er hoved teksten.
+Klikk på dette lysbildet for å redigere stilen..</body>
+          </slide>
+        </slides>
+      </slide_group>
+    </slide_groups>
+  </style_preview>
+  <subtitles caption="Undertittler" head1="Sorter" head2="Enabled" head3="Beskrivelse">
+    <row0 caption="Copyright|copyright"/>
+    <row1 caption="Forfatter|forfatter"/>
+    <row2 caption="Hymn Nummer|hymn_nummer"/>
+    <row3 caption="CCLI Sang Nummer|ccli_number"/>
+    <row4 caption="CCLI Lisens Number|ccli_lisens"/>
+  </subtitles>
+  <shared>
+    <ok caption="OK"/>
+    <cancel caption="Avbryt"/>
+    <yes caption="Ja"/>
+    <no caption="Nei"/>
+    <browse caption="Bla igjennom"/>
+    <add caption="Legg til"/>
+    <done caption="Ferdig"/>
+    <untitled caption="Uten navn"/>
+    <click_to_change caption="Klikk for å endre"/>
+    <right_click_to_clear caption="Høyre klikk for å tømme"/>
+    <insert caption="Sett inn"/>
+    <close caption="Lukk"/>
+    <search caption="Søk"/>
+    <apply caption="Appl&amp;y"/>
+    <browse_for caption="Browse for Folder"/>
+    <save caption="Save" message="%1 has not been saved."/>
+    <nosave caption="Don't Save"/>
+    <cut caption="Cut"/>
+    <copy caption="Copy"/>
+    <paste caption="Paste"/>
+    <clear caption="Clear"/>
+    <selectall caption="Select All"/>
+    <select caption="Select"/>
+    <exit_program caption="Exit Program"/>
+    <export_to caption="Select a folder to export to."/>
+    <style_file caption="Select a style file"/>
+    <title caption="Title"/>
+    <author caption="Author"/>
+    <copyright caption="Copyright"/>
+    <ccli caption="CCLI #"/>
+    <presentation caption="Presentation"/>
+    <lyrics caption="Lyrics"/>
+    <theme caption="Theme"/>
+    <capo caption="Capo"/>
+    <chord caption="Chords"/>
+    <time_sig caption="Time-Signature"/>
+    <tempo caption="Tempo"/>
+    <key caption="Key"/>
+    <aka caption="AKA"/>
+    <key_line caption="Key Line"/>
+    <user1 caption="User1"/>
+    <user2 caption="User2"/>
+    <user3 caption="User3"/>
+    <hymn_number caption="Hymn #"/>
+  </shared>
+  <questions>
+    <new_name caption="Venligst skriv inn et navn:"/>
+    <rename caption="Venligst skriv inn et nytt navn for '%1':"/>
+    <save caption="Vil du lagre endringene i '%1'?"/>
+    <delete caption="Er du sikker på at du vil slette '%1'?"/>
+    <clear caption="Er du sikker på at du vil tømme dette??"/>
+    <changed caption="Denne sangen er endret, vil du lagre?"/>
+    <revert caption="All changes will be lost. Continue?"/>
+    <long_operation caption="This may take a long time to complete. Continue?"/>
+    <generic_save caption="Save changes?"/>
+    <generic_save_explanation caption="If you do not save, your changes will be lost"/>
+    <set_changed caption="Current set has been changed, do you want to save?"/>
+    <select_docs_folder caption="Select the OpenSong Documents folder">Where should the OpenSong files (songs and sets) be stored?</select_docs_folder>
+    <activity_log caption="Would you like the song(s) in this presentation added to the activity log? Note that this applies to songs added on-the-fly as well!"/>
+    <import_presentation caption="Import presentation images">Select the presentation file you want to import the slides from.</import_presentation>
+    <documents_folder_empty caption="The Documents folder does not exist or is empty. Would you like to copy the Default Documents?"/>
+    <songs_folder_empty caption="The Songs folder is empty. Would you like to copy the Default Songs to this folder?"/>
+    <sets_folder_empty caption="The Sets folder is empty. Would you like to copy the Default Set to this folder?"/>
+    <settings_folder_empty caption="The Settings folder is empty. Would you like to copy the Default Settings to this folder?"/>
+    <backgrounds_folder_empty caption="The Backgrounds folder is empty. Would you like to copy the Default Backgrounds to this folder?"/>
+    <no_songs_folder caption="Could not find Songs folder, would you like to create this folder?"/>
+    <no_sets_folder caption="Could not find Sets folder, would you like to create this folder?"/>
+    <no_folder caption="Could not find folder '%1', would you like to create this folder?"/>
+    <destination_exists caption="File exists in the destination folder. Would you like to rename this file?"/>
+    <linked_songs caption="Selected song contains one or more linked songs, do you want to add these songs?"/>
+    <large_margins caption="Margins are unreasonably large. (1 px = screen width / 640).  Do you want to keep these margins?"/>
+  </questions>
+  <about>
+    <copyright>Copyright</copyright>
+    <gpl>Dette programmet er utgitt under GPL.</gpl>
+    <web>Besøk http://www.opensong.org/ for mer informasjon.</web>
+    <translating>for å oversette OpenSong,så må du kopiere   'English' filen i 'OpenSong Languages' mappen og gi den et nytt navn. Oversett alt i filen bortset fra tagene og atributer navnene. Så sender du den nye filen til translator@opensong.org  så vil vi inkludere den i den ofesielle publiseringen.</translating>
+    <created_with_opensong>Laget ved hjelp av OpenSong</created_with_opensong>
+    <additional>Additional development by:</additional>
+    <sources xml:space="preserve">OpenSong includes source code from:
+• StringUtils (http://www.strout.net/info/coding/rb/)
+• HTMLEntityEncode (http://sourceforge.jp/project/php-i18n/)
+• REALbasic Examples (http://www.declaresub.com/Articles/HowDoI.html)
+• iDeclare (http://www.declaresub.com/iDeclare)
+• Monitors by Jürg Otter (https://github.com/jo-tools/monitors)
+• SmartSplitter by Harry Hooie (http://www.harryhooie.com/source/)
+• imSplitter by Oliver Osswald (https://github.com/oleman108/imSplitter)
+• modGtk3 by Jim McKay (https://bitbucket.org/pidog/modgtk3)
+NDI® is a registered trademark of Vizrt NDI AB
+The image file PuffyClouds1.jpg included in the Backgrounds folder is Copyright FreeStockPhotos.com
+The splash screen contains images of stock.xchng created by ba1969 and everywhere</sources>
+    <ndiinfo translatornote="DO NOT TRANSLATE" caption="NDI.video"/>
+    <ndilicense caption="NDI License"/>
+  </about>
+  <folderdb_errors>
+    <error code="1">Mappen '%1' Eksisterer allerede.</error>
+    <error code="2">Kan ikke oprette mappe '%1'.</error>
+    <error code="3">Filen '%1' eksisterer allerede.</error>
+    <error code="4">Kunne ikke finne adressen til den nye filen  '%1'.</error>
+    <error code="5">Kunne ikke bli lagt i main mappen '%1'.</error>
+    <error code="6">Finner ikke mappe '%1'.</error>
+    <error code="7">Du kan ikke slette mappen'%1'.</error>
+    <error code="8">Fant ikke fil '%1'.</error>
+    <error code="9">kan ikke slette fil '%1'.</error>
+    <error code="10">Du kan ikke gi nytt navn til filen '%2'.</error>
+    <error code="11">Mappen '%1' er ikke tom.</error>
+    <error code="12">Kan ikke flytte filen '%1' til '%2'.</error>
+    <error code="13">File '%1' already exists in folder '%2'.</error>
+    <error code="14">link(errors/bad_file_name)</error>
+    <error code="15">link(errors/no_path_allowed)</error>
+  </folderdb_errors>
+  <errors>
+    <empty_group>Group '%1' må inneholde minst et lysbilde.</empty_group>
+    <unreadable_image>Kunne ikke lese bildefilen '%1'.</unreadable_image>
+    <end_of_songs>Enden av sangen er nådd.</end_of_songs>
+    <already_exists>'%1' eksisterer allerede.</already_exists>
+    <bad_format xml:space="preserve">'%1' inneholder dårlig formatering. Hopper over...</bad_format>
+    <no_songs>Det er ingen sanger i sang listen.</no_songs>
+    <no_multi_screen>To skjermer ble ikke funnet.</no_multi_screen>
+    <bad_file_name>Ugyldig fil navn '%1'.</bad_file_name>
+    <internal>Internal error. Kontakt technical support.</internal>
+    <unsupported_image_type>This image file format is not supported '%1'</unsupported_image_type>
+    <no_such_song>Cannot find song.</no_such_song>
+    <no_such_set>Could not find Set file: '%1'.</no_such_set>
+    <number_please>Please enter a valid number.</number_please>
+    <number_range>Please enter a number between %1 and %2.</number_range>
+    <no_path_allowed>File name may not include a path.</no_path_allowed>
+    <rename_error>Unable to rename file.</rename_error>
+    <same_filename>Destination file is the same as source.</same_filename>
+    <general1>In '%1': Unknown error</general1>
+    <general2>In '%1': '%2'</general2>
+    <folder_error>Internal folder error. Contact technical support.</folder_error>
+    <create_backgrounds_folder>Could not create Backgrounds folder: %1. Please make sure you have write access to this folder, or select a new Documents folder from the General Settings.</create_backgrounds_folder>
+    <create_sets_folder>Could not create/edit Sets folder %1. Please make sure you have write access to this folder, or select a new Documents folder from the General Settings. Please note that you will be unable to save/present Sets without a Sets folder.</create_sets_folder>
+    <create_settings_folder>Could not create Settings folder: %1. Please make sure you have write access to this folder, or select a new Documents folder from the General Settings.</create_settings_folder>
+    <load_default_settings>OpenSong will attempt to load the Default Settings.</load_default_settings>
+    <create_songs_folder>Could not create songs folder: %1. Please make sure you have write access to this folder, or select a new Documents folder from the General Settings. Please note that you will be unable to save/present Songs without a Songs folder.</create_songs_folder>
+    <copy_default_songs>Could not copy default songs to folder: %1. Please ensure you have write access to this folder.</copy_default_songs>
+    <no_backgrounds_folder>Can't find default Backgrounds folder: %1, or folder is empty</no_backgrounds_folder>
+    <no_defaults_folder>Can't find Defaults folder: %1, or folder is empty</no_defaults_folder>
+    <no_scripture_folder>Can't find Scriptures folder: %1, or folder is empty. Scripture Lookup will be unavailable. Please add a Bible file by selecting Install Module from the Settings Menu, or re-installing OpenSong.</no_scripture_folder>
+    <load_bible>Could not load default Bible: '%1'. OpenSong will attempt to open the next available Bible.</load_bible>
+    <no_sets_folder>Can't find Default Sets folder: %1, or folder is empty</no_sets_folder>
+    <no_settings_folder>Can't find Default Settings folder: %1, or folder is empty</no_settings_folder>
+    <no_songs_folder>Can't find Default Songs folder: %1, or folder is empty.</no_songs_folder>
+    <no_docs_folder>Could not create/find Documents folder: %1. Please make sure you have write access to this folder, or select a new Documents folder from the General Settings. Please note that much of OpenSong's functionality will be unavailable without a Documents folder.</no_docs_folder>
+    <docs_folder xml:space="preserve">Documents folder cannot be a sub-folder of 'OpenSong Defaults'
+Temporarily changing to: %1
+Please modify your preferences.</docs_folder>
+    <fileutils>
+      <destdoesnotexisterror>File does not exist: %1</destdoesnotexisterror>
+      <nilobjecterror>NilObjectException: FolderItem argument to FileUtils is Nil</nilobjecterror>
+      <accessdenied>File protection error, access denied: %1</accessdenied>
+      <fileinuse xml:space="preserve">File in use error: %1
+(Is there a second copy of OpenSong running?)</fileinuse>
+      <filenotfound>File was not found: %1</filenotfound>
+      <invalidname>Invalid name for file: %1</invalidname>
+      <notenoughmemory xml:space="preserve">Memory exhausted accessing file %1
+Restart OpenSong and retry.</notenoughmemory>
+      <unknownerror>Unknown error accessing file %1</unknownerror>
+      <notaregularfile>Expected %1 to be a file, not a folder.</notaregularfile>
+      <notafolder>Expected %1 to be a folder, not a file.</notafolder>
+      <temporaryfailed>Creating a temporary file for %1 failed.</temporaryfailed>
+    </fileutils>
+    <cclinotavailable xml:space="preserve">The CCLI website has changed significantly.
+This has broken Import function until a new interface can be used.
+In the meantime, please investigate the OpenSong Import utility as an option.
+The OpenSong development team members regret any inconvenience.
+    </cclinotavailable>
+    <activity_disabled>Could not load Song Activity Log file: %1! Please ensure this file exists and is not corrupted. Log viewing and activity logging will be disabled for this session.</activity_disabled>
+    <adding_logentry>Error Adding log entry!</adding_logentry>
+    <chars_per_slide>Max characters per slide must be between 1 and 1000.</chars_per_slide>
+    <presentations>
+      <nohost>There is no application available to load a presentation. Please install OpenOffice.org, Microsoft PowerPoint or Microsoft PowerPoint Viewer.</nohost>
+      <unsupported_feature>The application '%1' does not support this feature.</unsupported_feature>
+      <load_failed>The presentation '%1' could not be opened.</load_failed>
+      <picture_dimensions>Logo picture and logo mask must be the same size or logo mask must be deleted. Picture size: %1; Mask size %2.</picture_dimensions>
+    </presentations>
+    <videolan_app_missing>The videolan application is not correctly set. Please specify the videolan client in the General settings dialog on the File locations tab.</videolan_app_missing>
+    <videolan>
+      <no_medium>You did not specify a medium for playing.</no_medium>
+      <no_medium_in_slide>You did not specify a medium for playing in the set entry %1</no_medium_in_slide>
+    </videolan>
+    <linked_song>
+      <current>Selected Song is the current song.</current>
+      <exists>Selected song is already in the list.</exists>
+      <load_error>Error loading linked song: %1</load_error>
+    </linked_song>
+  </errors>
+  <open_titles>
+    <audio>Velg en lydfil som du vill åpne.</audio>
+  </open_titles>
+  <image_slide>
+    <header caption="Image Slide Editor"/>
+    <title caption="link(slide_editor/title/@caption)">link(slide_editor/title)</title>
+    <subtitle caption="link(slide_editor/subtitle/@caption)">link(slide_editor/subtitle)</subtitle>
+    <descriptions caption="Image description in subtitle">Add the description of the showing image to the subtitle.</descriptions>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <images caption="Images" head1="Preview" head2="Description">Contains the images that are shown in this slide. Hint: Drag one or more images to this list for easy adding.</images>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="Do not store the image in the set, use a link">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <action caption="Action"/>
+    <preview caption="Preview">Show a preview of the image on the selected row.</preview>
+    <ins_image caption="Add">Adds an image to this slide to allow for a slideshow that shares a common title, subtitle, style, and/or auto-advance setting. Slides created this way can also be set to automatically loop.</ins_image>
+    <imp_image caption="Import">Loads all available slides from a presentation and adds these as image.</imp_image>
+    <del_image caption="Remove">Removes the currently selected image from the slide.</del_image>
+    <move_up caption="Move up">Moves the currently selected image in the slide closer to the beginning of the slide.</move_up>
+    <move_down caption="Move down">Moves the currently selected image in the slide closer to the end of the slide.</move_down>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+    <print caption="link(slide_editor/print/@caption)">link(slide_editor/print)</print>
+    <transition caption="link(slide_editor/transition/@caption)">link(slide_editor/transition)</transition>
+    <auto_advance caption="link(slide_editor/auto_advance/@caption)">link(slide_editor/auto_advance)</auto_advance>
+    <seconds caption="link(slide_editor/seconds/@caption)">link(slide_editor/seconds)</seconds>
+    <style caption="link(slide_editor/style/@caption)">link(slide_editor/style)</style>
+  </image_slide>
+  <external_slide>
+    <header caption="External Slide Editor"/>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <presentation caption="Presentation">Use this slide to show a presentation using Microsoft PowerPoint or the free and open source OpenOffice.org Impress.</presentation>
+    <videolan caption="Videolan">Use this slide to run a media file using the versatile and open source media player Videolan (VLC).</videolan>
+    <application caption="Application">Use this slide to run an external program by using a command line.</application>
+    <no_application caption="No application">
+      <no_application caption="Select an application to use as source for this slides content."/>
+    </no_application>
+    <presentation_settings caption="Presentation settings">
+      <presentation_host caption="Which application should be used to run the presentation?"/>
+      <host_powerpoint caption="Microsoft PowerPoint"/>
+      <host_powerpoint_info caption="For full control over your PowerPoint presentation an installation of Microsoft Office is required."/>
+      <host_pptview caption="Microsoft PowerPoint Viewer"/>
+      <host_pptview_info caption="For showing your PowerPoint presentation without interaction, you can use the free Microsoft PowerPoint Viewer. OpenSong tries to detect it. You can set a specific viewer in the general settings."/>
+      <host_impress caption="OpenOffice.org Impress"/>
+      <host_impress_info caption="For full control of an Impress or PowerPoint presentation the free OpenOffice.org suite is required."/>
+      <presentation_file caption="Presentation filename">Choose the presentation filename using a file selection dialog.</presentation_file>
+      <loop_presentation caption="Loop presentation"/>
+      <embed_presentation caption="Include the presentation in the OpenSong set"/>
+    </presentation_settings>
+    <videolan_settings caption="Videolan settings">
+      <videolan_start caption="Launch Videolan"/>
+      <videolan_mediafilename caption="Path to media file to play">Choose the filename of the audio or video file to play.</videolan_mediafilename>
+      <embed_mediafile caption="Include the media file in the OpenSong set"/>
+      <videolan_preset caption="Use the following preset with parameters"/>
+      <videolan_manual caption="Manually adjusted parameters (use %d for display number, %s for mediafile)"/>
+      <wait_for_videolan caption="Wait for playback to finish before continuing to next slide"/>
+      <videolan_stop caption="Stop any launched instance of Videolan"/>
+    </videolan_settings>
+    <application_settings caption="Application launcher settings">
+      <application_start caption="Start an external application"/>
+      <application_filename caption="Path to application executable">Choose the main executable file of the program that should be launched.</application_filename>
+      <application_parameters caption="Application parameters"/>
+      <wait_for_application caption="Wait for external application to finish before continuing"/>
+      <application_stop caption="Stop any currently running launched application"/>
+    </application_settings>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+    <print caption="link(slide_editor/print/@caption)">link(slide_editor/print)</print>
+  </external_slide>
+  <scripture_search title="Search">
+    <caption caption="Search in bible using keyword"/>
+    <example caption="To search for an exact phrase enclose it in double quotes, like &quot;Simon Peter&quot;"/>
+    <match caption="Match">
+      <exact caption="E&amp;xact"/>
+      <begin caption="&amp;Begins with"/>
+    </match>
+    <words caption="Verse must have">
+      <all caption="A&amp;ll words"/>
+      <any caption="An&amp;y word"/>
+    </words>
+    <search caption="&amp;Search"/>
+    <result caption="%1 matches were found using the specified keyword(s)." head1="Reference" head2="Text"/>
+    <ok caption="link(shared/ok/@caption)"/>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <result head1="Reference" head2="Text"/>
+  </scripture_search>
+  <songpicker_menu>
+    <file>
+      <close caption="link(shared/close/@caption)"/>
+    </file>
+    <edit caption="link(main_menu/edit/@caption)">
+      <undo caption="link(main_menu/edit/undo/@caption)"/>
+      <selall caption="link(shared/selectall/@caption)"/>
+      <cut caption="link(shared/cut/@caption)"/>
+      <copy caption="link(shared/copy/@caption)"/>
+      <paste caption="link(shared/paste/@caption)"/>
+      <clear caption="link(shared/clear/@caption)"/>
+      <find caption="link(main_menu/edit/find/@caption)"/>
+      <find_next caption="link(main_menu/edit/find_next/@caption"/>
+    </edit>
+  </songpicker_menu>
+  <smartml>
+    <attrib_except>SmartML.GetAttribute: Exception looking for attribute '%1' in '%2'</attrib_except>
+    <no_path>Path not found.</no_path>
+    <no_file>File not found: %1</no_file>
+    <cant_open>Error Opening File: %1</cant_open>
+    <cant_create>File could not be created: %1</cant_create>
+    <xml_error>Error parsing XML: %1</xml_error>
+    <xml_exterror>Error parsing XML: %1: %2: %3</xml_exterror>
+  </smartml>
+  <style_margins title="Margins Editor">
+    <left caption="Left"/>
+    <right caption="Right"/>
+    <top caption="Top"/>
+    <bottom caption="Bottom"/>
+    <pixels caption="px"/>
+    <preview caption="Preview"/>
+  </style_margins>
+  <style_tabs title="Tabulators Editor">
+    <tabs caption="Tabulators">
+      <new caption="&amp;New"/>
+      <remove caption="&amp;Remove"/>
+      <removeall caption="Remove &amp;All"/>
+    </tabs>
+    <properties caption="Properties">
+      <position caption="Position"/>
+      <pixels caption="px"/>
+      <align caption="Alignment"/>
+      <left caption="Left"/>
+      <middle caption="Middle"/>
+      <right caption="Right"/>
+      <char caption="At character"/>
+      <apply caption="link(shared/apply/@caption)"/>
+    </properties>
+    <preview caption="Preview"/>
+  </style_tabs>
+  <song_activity title="Song Activity Log">
+    <range caption="Date range (mm/dd/yyyy)"/>
+    <to caption="to"/>
+    <find caption="Find"/>
+    <clear_log caption="Clear log"/>
+    <print caption="Print"/>
+    <view caption="View LogFile"/>
+    <merge caption="Merge"/>
+    <export caption="Export"/>
+    <done caption="Done">'%1' has been exported to %2</done>
+    <show caption="Show">
+      <!--
+        "tag" attribute corresponds to the value of the
+        constants found in the LogEntry class. The list order
+        can be changed as desired for localisation (note that it is
+        alphabetical in English) as long as the tags relate to the
+        correct item. For example, the local language value of "Moved"
+        should always have tag="4"
+      -->
+      <value tag="0">All</value>
+      <value tag="1">Created</value>
+      <value tag="8">Copied</value>
+      <value tag="2">Deleted</value>
+      <value tag="3">Modified</value>
+      <value tag="4">Moved</value>
+      <value tag="5">Presented</value>
+      <value tag="6">Printed</value>
+      <value tag="7">Renamed</value>
+    </show>
+    <songs head7="Has Chords" head6="CCLI #" head5="Author" head4="Title" head3="Activity" head2="Time" head1="Date"/>
+    <input_box>
+      <erase_all>This will erase all entries. Continue?</erase_all>
+    </input_box>
+    <description>Created|Deleted|Modified|Moved|Presented|Printed|Renamed|Copied</description>
+    <file_type>OpenSong Activity Log File</file_type>
+    <merged>Merge complete %1 entries were added to the song activity log.</merged>
+    <merged_dupes>%1 duplicate entries were ignored.</merged_dupes>
+  </song_activity>
+  <index_progress title="Please Wait">
+    <top caption="Building index:"/>
+    <bottom caption="Press 'esc' to cancel"/>
+  </index_progress>
+  <xml_errors>
+    <noattribute>Unable to find XML attribute '%1' in '%2'.</noattribute>
+  </xml_errors>
+  <bible>
+    <errors>
+      <index_generation>Error generating index for '%1.' Bible search will be disabled.</index_generation>
+      <loadxml>XML error loading %1.
+ Error is '%2' at line %3</loadxml>
+      <load1>Unknown error loading %1</load1>
+      <load2>Error loading %1: %2</load2>
+      <noindex>No search index available.  Select a different translation or restart OpenSong.</noindex>
+      <missing_bnames>Unable to find Zefania support file 'bnames.xml' in 'OpenSong Settings'</missing_bnames>
+      <nobnames>Bible does not have required bname attributes and they could not be added</nobnames>
+      <roman>Error converting Roman numeral '%1': %2</roman>
+      <save>Error saving updated file '%1.'</save>
+    </errors>
+    <load_successful>Successfully loaded Bible: '%1'.</load_successful>
+    <messages>
+      <bnames xml:space="preserve">Book names must be added to this translation.
+Please indicate the appropriate language for the names.</bnames>
+      <save>Save updated file?</save>
+    </messages>
+  </bible>
+  <song>
+    <errors>
+      <unknown_element>Unknown element loading song: '%1'</unknown_element>
+    </errors>
+  </song>
+  <hotkeys>
+    <ACTION_FIRST_SLIDE_OF_SECTION>Go to first slide in section</ACTION_FIRST_SLIDE_OF_SECTION>
+    <ACTION_NEXT_SLIDE>Go to next slide in the set</ACTION_NEXT_SLIDE>
+    <ACTION_PREV_SLIDE>Go to previous slide in the set</ACTION_PREV_SLIDE>
+    <ACTION_FIRST_SLIDE>Go to the first slide in the set</ACTION_FIRST_SLIDE>
+    <ACTION_LAST_SLIDE>Go to the last slide in the set</ACTION_LAST_SLIDE>
+    <ACTION_NEXT_SECTION>Go to the next section in the set</ACTION_NEXT_SECTION>
+    <ACTION_PREV_SECTION>Go to the start of the current or previous set</ACTION_PREV_SECTION>
+    <ACTION_VERSE>Go to the next verse</ACTION_VERSE>
+    <ACTION_BRIDGE>Go to the bridge</ACTION_BRIDGE>
+    <ACTION_CHORUS>Go to the chorus</ACTION_CHORUS>
+    <ACTION_PRECHORUS>Go to the pre-chorus</ACTION_PRECHORUS>
+    <ACTION_TAG>Go to the tag</ACTION_TAG>
+    <ACTION_NORMAL>Display current slide</ACTION_NORMAL>
+    <ACTION_BLACK>Display black screen	</ACTION_BLACK>
+    <ACTION_WHITE>Display white screen</ACTION_WHITE>
+    <ACTION_FREEZE>Freeze display on current slide</ACTION_FREEZE>
+    <ACTION_LOGO>Display the logo</ACTION_LOGO>
+    <ACTION_HIDE>Hide current slide (background is still displayed)</ACTION_HIDE>
+    <ACTION_EXIT>Exit presenter mode</ACTION_EXIT>
+    <ACTION_EXIT_PROMPT>Exit presenter mode, require confirmation	</ACTION_EXIT_PROMPT>
+    <ACTION_EXIT_NOPROMPT>Exit presenter mode immediately</ACTION_EXIT_NOPROMPT>
+  </hotkeys>
+  <progress_status>
+    <folder>Caching Folder %1</folder>
+    <lead_sheets>Generating Lead Sheets</lead_sheets>
+    <process_themes>Processing Themes</process_themes>
+    <process_songs>Processing Songs</process_songs>
+    <song_search>Searching Songs</song_search>
+    <export>Exporting Song(s)</export>
+    <load_songs>Loading Song(s)</load_songs>
+    <load_externals>Loading External sheet(s)</load_externals>
+    <pass1>Sorting, 1st Pass</pass1>
+    <pass2>Sorting, 2nd Pass</pass2>
+    <detect_presentation_hosts>Detecting available presentation applications</detect_presentation_hosts>
+  </progress_status>
+  <export_options title="Export to HTML Options">
+    <handling caption="CSS Style Sheet Placement">
+      <link caption="Link to style sheet file"/>
+      <embed caption="Embed style in export file"/>
+    </handling>
+    <options caption="CSS Style Sheet Options">
+      <default caption="Use specified style sheet"/>
+      <print caption="Use style sheet based on print settings"/>
+    </options>
+    <export caption="Multiple export">
+      <single caption="Single file for all songs"/>
+      <unique caption="Unique file for all songs"/>
+    </export>
+    <cssfile caption="Style Sheet">link(shared/style_file/@caption)</cssfile>
+    <outdir caption="Output folder">link(shared/export_to/@caption)</outdir>
+    <outfile>Output file</outfile>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <ok caption="link(shared/ok/@caption)"/>
+    <nofile>(None)</nofile>
+    <filter_css>Cascading Style Sheet</filter_css>
+    <hyphens caption="Hyphenate word breaks"/>
+  </export_options>
+  <backgrounds_song_editor caption="Backgrounds">Define per-slide background images
+    <header caption="Song Editor"/>
+    <backgrounds caption="Verse specific backgrounds" head1="Verse" head2="Background image">Shows the optional verse specific song backgrounds.</backgrounds>
+    <show_general_editor caption="General"/>
+    <show_advanced_editor caption="Advanced"/>
+    <show_backgrounds_editor caption="Images"/>
+    <add_background caption="Add">Links an image to the selected verse.</add_background>
+    <del_background caption="Remove">Removes the currently selected verse image.</del_background>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="Do not store the image in the song, use a link">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <background_as_text caption="link(general_settings/imagedefaults/background_as_text/@caption)">link(general_settings/imagedefaults/background_as_text)</background_as_text>
+  </backgrounds_song_editor>
+  <file_filter>
+    <all_files>All files</all_files>
+    <from_extension>%1 files</from_extension> <!-- e.g. "IFO files" for extension .ifo -->
+    <css>link(export_options/cssfile/@caption)</css>
+    <xml>XML files</xml>
+    <xmm>link(module/file_type)</xmm>
+  </file_filter>
+  <doc_folder_dialog title="Select a Folder">
+    <instructions caption="The folder named in the edit box below will be used for OpenSong’s documents. Subfolders Songs, Sets, Background, and Settings will be created, unless they already exist.&#10;When you browse for a folder, '%1' will get suggested as a subfolder unless the folder chosen in the browse for folder dialog is empty or the subfolders typical for an OpenSong documents folder exist."/>
+    <location>
+      <user caption="Default: Documents"/>
+      <shared caption="Shared documents"/>
+      <custom caption="Custom"/>
+    </location>
+    <docsfolder caption="Documents folder"/>
+  </doc_folder_dialog>
+  <installer>
+    <!-- these strings are used in the installer, not in OpenSong itself
+         they are placed here so they are gathered in one place
+         they will need to be transferred to WindowsInstaller\CustomMessages.iss
+         by a developer
+    -->
+    <usage_page>
+    </usage_page>
+    <components_page>
+    </components_page>
+    <tasks>
+      <InstallOps>Installasjon alternativer</InstallOps>
+      <ResetPrefs>Tilbakestille OpenSong Innstillinger</ResetPrefs>
+      <Redist>Installerer Microsoft VC ++ 2015 Runtime</Redist>
+    </tasks>
+    <ready_page>
+    </ready_page>
+  </installer>
+</language>

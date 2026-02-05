@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+  <title>733 Tienduizend redenen</title>
+  <copyright>Tekst &amp; muziek: Matt Redman / Jonas Myrin
+Ned. tekst: Harold ten Cate
+© 2011 Shout! Publishing / Thankyou Music / worshiptogether.com Songs / sixsteps Music / Said And Done Music / Small Stone Media</copyright>
+  <lyrics>;$hyphenlanguage=nl_NL
+[N]
+ \relative c' {
+ \time 4/4
+ \clef treble
+ \partial 4 r8 d8 g4 g g e8 d f4 g g e
+ r8 d8 g g g4 g8 a a4 b8 b (b4) r8
+ g8 c4 c b8 a g a
+ \time 2/4
+ a4 b
+ \time 4/4
+ b4 a16 (g8.) r2 r8 g g g g g g a
+ \time 2/4
+ b4 a
+ \time 4/4
+ g2 r2
+ }
+[NV1]
+ \relative c' {
+ \time 4/4
+ \clef treble
+ \partial 4 r8 d8 g4 g g e8 d f4 g g e
+ r8 d8 g g g4 g8 a a4 b8 b (b4) r8 g c c c b b4 a8 g
+ \time 2/4
+ a g a b
+ \time 4/4
+ a (g) e4 r2 r8 g g g g g g a
+ \time 2/4
+ b4 a
+ \time 4/4
+ g2 r2
+ }
+[V1]
+ De zon komt op, maakt
+ de morgen wakker;
+ mijn dag begint met een lied voor U.
+ Heer, wat er ook gebeurt
+ en wat mij mag overkomen,
+ laat mij nog zingen
+ als de avond valt.
+[NC]
+ \relative c'' {
+ \time 4/4
+ \clef treble
+ \partial 4 b8 d e4 e8 d b4 r
+ a8 (b a) g e4 r e8 g d' b (b4) g8 a a2 r4 b8 f'
+ g4 g8 f b,4 r g'4 a b, r8 g g a b a (a4) g8 g g2 r2
+ }
+[C]
+ Loof de Heer, o mijn ziel.
+ O mijn ziel, prijs nu
+ zijn heilige naam.
+ Met meer passie dan ooit;
+ o mijn ziel, verheerlijk
+ zijn heilige naam.
+[V2]
+ Heer, vol geduld toont
+ U ons uw liefde.
+ Uw naam is groot en
+ uw hart is zacht.
+ ||
+ Van al uw goedheid wil
+ ik blijven zingen;
+ tienduizend redenen
+ tot dankbaarheid.
+[V3]
+ En op die dag, als mijn
+ kracht vermindert,
+ mijn adem stokt en mijn einde komt,
+ zal toch mijn ziel uw loflied
+ blijven zingen;
+ tienduizend jaar en
+ tot in eeuwigheid.
+[NV4]
+ \relative c'' {
+ \time 4/4
+ \clef treble
+ g8 a b a a4 b8 b b4 r r2 g8 a b a a4 g8 g g4 r r2
+ }
+[V4]
+ Verheerlijk zijn heilige naam.
+ Verheerlijk zijn heilige naam.
+ </lyrics>
+  <hymn_number>733</hymn_number>
+  <presentation>V1 C V2 C V3 C V4</presentation>
+  <author></author>
+  <ccli></ccli>
+  <capo print="false"></capo>
+  <key></key>
+  <aka></aka>
+  <key_line></key_line>
+  <user1></user1>
+  <user2></user2>
+  <user3></user3>
+  <theme></theme>
+  <linked_songs/>
+  <tempo></tempo>
+  <time_sig></time_sig>
+  <backgrounds resize="screen" keep_aspect="true" link="true" background_as_text="false"/>
+</song>

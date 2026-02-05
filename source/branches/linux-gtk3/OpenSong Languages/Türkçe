@@ -1,0 +1,1473 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<language name="Turkish (Türkçe)" author="İliya Sanyos" version="2.1.0">
+
+  <load_settings>
+    <checking_folders>Belge klasörleri yaratılıyor/denetleniyor</checking_folders>
+    <main>Ana ayarlar yükleniyor</main>
+    <print>Yazdırma ayarları yükleniyor</print>
+    <presentation>Sunum ayarları yükleniyor</presentation>
+    <transitions>Geçiş listesi yükleniyor</transitions>
+    <tempos>Tempo listesi yükleniyor</tempos>
+    <themes>Tema listesi yükleniyor</themes>
+    <time_signatures>Zaman listesi yükleniyor</time_signatures>
+    <imagequality>İmge kalitesi listesi yükleniyor</imagequality>
+    <videolan_preset>Videolan parametreleri yükleniyor</videolan_preset>
+    <fonts>Font listesi yükleniyor</fonts>
+    <latest_version>En son sürüm denetleniyor
+      <newer_available>Daha yeni bir sürüm (%1) var. İndirmek için www.opensong.org sitesine gidin.</newer_available>
+    </latest_version>
+ </load_settings>
+
+  <load_data>
+      <bible>Varsayılan Kutsal Kitap yükleniyor</bible>
+      <songs_cache>Şarkılar önbelleğe alınıyor</songs_cache>
+      <folders>Şarkı klasörleri yükleniyor</folders>
+      <songs>Şarkılar yükleniyor</songs>
+      <sets>Kümeler yükleniyor</sets>
+  </load_data>
+
+  <welcome>Hoşgeldiniz!</welcome>
+
+  <songs_mode caption="Şarkı Kipi">Bu kipi şarkılarınızı girmek ve düzenlemek için kullanın. Şarkılar nota kağıdı olarak yazdırılabilir, veya slayt olarak sunulabilir. Şarkı kipinden çıkarken, değişiklikleri kaydetmeniz istenecektir.
+    <all_songs caption="Tüm Şarkılar">
+      <print caption="Yazdır">Varolan tüm şarkıları yazdırır. Bu özellik şarkı kitapları yazdırmak için idealdir.</print>
+      <export caption="Ver">Tüm şarkıları verir.</export>
+      <find caption="Bul">Belirli bir sözcük veya tümceyi tüm şarkı sözlerinde arar.</find>
+    </all_songs>
+    <new_song caption="Yeni Şarkı">
+      <create caption="Yarat">OpenSong'a yeni bir şarkı ekler.</create>
+      <import caption="Al">CCLI SongSelect'ten OpenSong'a yeni bir şarkı alır.</import>
+    </new_song>
+    <selected_song caption="Seçili Şarkı">
+      <save caption="Kaydet">Seçili şarkıyı diske kaydeder.</save>
+      <revert caption="Geri Al">Geçerli şarkının diskte depolanan sürümüne geri döner.</revert>
+      <print caption="Yazdır">Geçerli şarkıyı yazdırır.</print>
+      <present caption="Sunum">Geçerli şarkıyı sunar. Geçerli şarkıya yapılan değişiklikler kaydedilir.
+        <single_screen caption="Tek Ekran"/>
+        <dual_screen caption="Çift Ekran"/>
+        <preview_dual_screen caption="Çift Ekran Önizleme"/>
+      </present>
+      <export caption="Ver">Geçerli şarkıyı verir.</export>
+      <rename caption="Ad Değiştir">Geçerli şarkının adını değiştirir.</rename>
+      <move caption="Taşı">Geçerli şarkıyı başka bir klasöre taşır.
+        <where caption="'%1' şarkısını şu klasöre taşı:"/>
+      </move>
+      <copy caption="Kopyala">Geçerli şarkıyı başka bir klasöre kopyalar.
+        <where caption="'%1' şarkısını şu klasöre kopyala:"/>
+      </copy>
+      <delete caption="Sil">Geçerli şarkıyı siler.</delete>
+    </selected_song>
+
+    <songs caption="Şarkılar">Şarkı düzenleyicisine yüklemek için listeden bir şarkı seçin.</songs>
+
+    <curr_folder caption="İçeren Klasör">Şarkıyı içeren klasörü gösterir (Etkin klasöre göre)</curr_folder>
+
+    <song_folders caption="Klasörler">Geçerli şarkı listesini süzmek için listeden bir klasör seçin.
+      <new>Şarkıları depolamak için yeni bir klasör yaratır.</new>
+      <delete>Seçili şarkı klasörünü siler. Klasör boş olmalıdır.</delete>
+      <filter_all caption="Hepsi"/>
+      <filter_main caption="Ana"/>
+    </song_folders>
+  </songs_mode>
+
+  <general_song_editor caption="Genel">Geçerli şarkının başlık, alt başlık, yazar, slayt ve sözlerine erişir.
+    <header caption="Şarkı Düzenleyicisi"/>
+    <show_general_editor caption="Genel"/>
+    <show_advanced_editor caption="Gelişmiş"/>
+    <title caption="Başlık">Seçili şarkının başlığını belirler.</title>
+    <author caption="Yazar">Seçili şarkının yazarını belirler.</author>
+    <copyright caption="Telif">Seçili şarkının telifini belirler.</copyright>
+    <ccli caption="CCLI Şarkı #">Seçili şarkının CCLI numarasını belirler.</ccli>
+    <hymn_number caption="İlahi #">Seçili şarkının ilahi numarasını belirler.</hymn_number>
+    <presentation caption="Sunum">Seçili şarkının sunum sırasını belirler. Bölümler boşlukla ayrılmalıdır. (örn. "V1 C V2 C")</presentation>
+    <lyrics caption="Akorlar/Sözler">Bölüm satırlarını, Yorum satırlarını, Akor satırlarını ve Söz satırlarını kullanarak şarkıları düzenleyin.</lyrics>
+    <insert caption="Gir"/>
+      <ins_section caption="Bölüm">Bölümler şarkı bölümlerini ayırmak için kullanılır.
+        <section_name caption="Bölüm Adı"/>
+      </ins_section>
+      <ins_lyrics caption="Akorlar/Sözler">Akorlar ve sözler için satır öneklerini otomatık olarak girer.
+        <number_of_lines caption="Satır Sayısı"/>
+      </ins_lyrics>
+      <ins_multi_verse caption="Çoklu Dizeler">Çoklu dize formatını kullanmak isterseniz, akorlar ve sözler için satır öneklerini otomatik olarak girer.
+        <number_of_verses caption="Dize Sayısı"/>
+        <number_of_lines caption="Satır Sayısı"/>
+      </ins_multi_verse>
+      <ins_comment caption="Yorum">Yorumlar nota kağıtlarına yazdırılır, ancak sunumlarda gösterilmez.</ins_comment>
+      <ins_column caption="Yeni Sütun">Uzun şarkıları tek sayfaya sığdırmaya yardım etmek için, nota kağıtları iki sütun içerebilir.</ins_column>
+      <ins_page caption="Yeni Sayfa">Uzun şarkılar yazdırılırken nota kağıdında sayfa sonu işaretinin konması gereken konumu belirler.</ins_page>
+    <transpose caption="Dönüştür">Bu seçeneği şarkınızı herhangi bir anahtara otomatik olarak dönüştürmek için kullanın. Değerler yarım ses olarak ölçülmektedir.
+      <using caption="Kullanarak">OpenSong'un uyumsuz notaları bemol yerine diyeze dönüştürmesi için listeden diyez seçin. OpenSong'un uyumsuz notaları diyez yerine bemole dönüştürmesi için listeden bemol seçin. 
+        <sharps caption="Diyez"/>
+        <flats caption="Bemol"/>
+      </using>
+    </transpose>
+    <linked caption="Bağlantılı Şarkılar">Bağlantılı şarkılar sunumunuza otomatik olarak eklenecektir.</linked>
+    <add_link caption="Ekle">Şarkıyı listeye ekler.</add_link>
+    <remove_link caption="Çıkar">Şarkıyı listeden çıkarır.</remove_link>
+  </general_song_editor>
+
+  <advanced_song_editor caption="Gelişmiş">Geçerli şarkının tema, capo, zaman, biçem, vs. erişir
+    <header caption="Şarkı Düzenleyicisi"/>
+    <show_general_editor caption="Genel"/>
+    <show_advanced_editor caption="Gelişmiş"/>
+    <themes caption="Temalar">Seçili şarkının ana temasını belirler.</themes>
+    <capo caption="Capo">Seçili şarkının capo konumunu belirler.</capo>
+    <capo_print caption="Yazdır"> Bu seçenek işaretlendiğinde, OpenSong caposuz akorlara ek olarak capolu akorları da yazdırır.</capo_print>
+    <time_sig caption="Zaman">Seçili şarkının zamanını belirler.</time_sig>
+    <tempo caption="Tempo">Seçili şarkının temposunu belirler.</tempo>
+    <key caption="Anahtar">Seçili şarkının anahtarını belirler.</key>
+    <aka caption="AKA">Seçili şarkının yaygın başlığını belirler.</aka>
+    <key_line caption="Anahtar Satır">Seçili şarkıyı tanımaya yardım eden satırı belirler.</key_line>
+    <style caption="Biçem Değiştir">Bu şarkının biçemini isteğinize göre değiştirmek için tıklayın.Kullanıcı tanımlı biçemler varsayılan sunum biçemini geçersiz kılar.</style>
+    <user1 caption="Kullanıcı Tanımlı 1">İsteğinize göre belirleyin. Bu alan başka uygulamalar tarafından kullanılabilir.</user1>
+    <user2 caption="Kullanıcı Tanımlı 2">İsteğinize göre belirleyin. Bu alan başka uygulamalar tarafından kullanılabilir.</user2>
+    <user3 caption="Kullanıcı Tanımlı 3">İsteğinize göre belirleyin. Bu alan başka uygulamalar tarafından kullanılabilir.</user3>
+    <backgrounds caption="Dizeye özgü arka planlar" head1="Dize" head2="Arka plan imgesi">Dizeye özgü isteğe bağlı arka planları gösterir.</backgrounds>
+    <add_background caption="Ekle">Seçili dizeye bir imge bağlar.</add_background>
+    <del_background caption="Çıkar">Seçili dize imgesini çıkarır.</del_background>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="İmgeyi şarkıya depolama, bağlantı kullan">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <background_as_text caption="link(general_settings/imagedefaults/background_as_text/@caption)">link(general_settings/imagedefaults/background_as_text)</background_as_text>
+  </advanced_song_editor>
+
+  <sets_mode caption="Küme Kipi">Bu kipi kümelerinizi girmek ve düzenlemek için kullanın. Kümeler bir dizi şarkı, slayt vs. yansıtmak için kullanılır. Küme kipinden çıkarken değişiklikleri kaydetmeniz istenecektir.
+    <sets caption="Kümeler">Küme düzenleyicisine yüklemek için listeden bir küme seçin.
+      <add>OpenSong'a yeni bir küme ekler.</add>
+    </sets>
+    <current_set caption="Geçerli Küme">
+      <save caption="Kaydet">Geçerli kümeyi (tüm öğeler dahil) diske kaydeder.</save>
+      <rename caption="Ad Değiştir">Geçerli kümenin adını değiştirir.</rename>
+      <delete caption="Sil">Geçerli kümeyi siler. (Kümedeki şarkılar silinmez.)</delete>
+       <saveas caption="Farklı Kaydet">Geçerli kümeyi yeni adla kaydeder.</saveas>
+      <present caption="Sunum">Geçerli kümeyi ekrana yansıtır. Geçerli ekrana yansıtma, ikinci bir ekrana yansıtma veya tek bir ekran kullanarak iki ekranı birden önizleme seçenekleri vardır.
+        <single_screen caption="Tek Ekran"/>
+        <dual_screen caption="Çift Ekran"/>
+        <preview_dual_screen caption="Çift Ekran Önizleme"/>
+        <no_slides>Sunum için kümede en az bir slayt bulunmalıdır.</no_slides>
+      </present>
+      <print_songs caption="Şarkılar">Yalnızca geçerli kümedeki şarkıları yazdırır.
+        <no_songs>Kümede şarkı yok.</no_songs>
+      </print_songs>
+      <print_order caption="Listele">Geçerli kümenin bir özetini yazdırır.</print_order>
+      <export caption="Ver">Geçerli kümeyi başka bir klasöre verir.</export>
+    </current_set>
+    <new_item caption="Yeni Öğe">
+      <add_song caption="Şarkı">Geçerli kümeye bir şarkı ekler. Seçmeniz için şarkı denetleyicisinde bulunan şarkıların bir listesi görüntülenir.</add_song>
+      <add_scripture caption="Kutsal Kitap">Geçerli kümeye bir Kutsal Kitap slaytı veya slaytları ekler. Görüntülemek istediğiniz bölümü seçebilmeniz için bir pencere görüntülenir.</add_scripture>
+      <add_slides caption="Slaytlar">Geçerli kümeye bir kullanıcı tanımlı slayt ekler. Kullanıcı tanımlı slaytlar kendi başlığınızı, alt başlığınızı, ana metninizi ve biçeminizi belirlemenize olanak verir. Kullanıcı tanımlı slayt öğesi bir dizi slayt içerebilir.</add_slides>
+      <add_style caption="Biçem">Geçerli kümenin herhangi bir yerinde varsayılan biçemi değiştirir. Yeni bir biçem tanımlayabilir veya önceki biçeme geri dönebilirsiniz.</add_style>
+      <add_image caption="İmge">Geçerli kümeye bir imge slaytı ekler. İmge slaytları ana metin yerine tek veya çok imgeden oluşan bir slayt gösterisini görüntülemenize olanak verir.</add_image>
+      <add_external caption="Dış">Geçeri kümeye sunum veya DVD oynatma yazılımı gibi dış kaynakları etkinleştirmeyi olanaklı kılan yeni bir slayt ekler.</add_external>
+    </new_item>
+    <current_item caption="Geçerli öğe">
+      <move_up caption="Yukarı Taşı">Seçili öğeyi yukarıya taşır.</move_up>
+      <move_down caption="Aşağı Taşı">Seçili öğeyi aşağıya taşır.</move_down>
+      <remove caption="Çıkar">Seçili öğeyi kümeden çıkarır.</remove>
+      <copy caption="Kopyala">Seçili öğenin bir kopyasını yaratır.</copy>
+      <paste caption="link(shared/insert/@caption)">Kopyalanan öğeyi seçili konuma ekler.</paste>
+      <store caption="Kaydet">Seçili öğeyi kümeye kaydeder.</store>
+      <presentitem caption="link(sets_mode/current_set/present/@caption)">Geçerli öğeden başlayarak geçerli kümeyi ekrana sunar. Geçerli ekrana yansıtma, ikinci bir ekrana yansıtma veya tek bir ekran kullanarak iki ekranı birden önizleme seçlenekleri vardır.
+        <single_screen caption="link(sets_mode/current_set/present/single_screen/@caption)"/>
+        <dual_screen caption="link(sets_mode/current_set/present/dual_screen/@caption)"/>
+        <preview_dual_screen caption="link(sets_mode/current_set/present/preview_dual_screen/@caption)"/>
+        <no_slides>link(sets_mode/current_set/present/no_slides)</no_slides>
+      </presentitem>
+    </current_item>
+    <items caption="Küme Öğeleri">Geçerli kümedeki öğeleri listeler. Kullanıcı tanımlı slayt düzenleyicisine yüklemek için bir kullanıcı tanımlı slaytı tıklayın veya şarkı düzenleyicisine yüklemek için bir şarkıyı çift tıklayın.
+      <song caption="(şarkı)"/>
+      <custom caption="(kullanıcı)"/>
+      <scripture caption="(kutsal kitap)"/>
+      <image caption="(imge)"/>
+      <external caption="(dış)"/>
+      <style caption="(biçem)">-- Biçem Değiştir --</style>
+      <revert caption="(style)">-- Biçeme Geri Dön --</revert>
+      <defaultstyle caption="(biçem)">-- Verilen Biçem --</defaultstyle>
+    </items>
+    <untitled caption="Başlıksız"/>
+    <errors>
+      <revert caption="&quot;%1&quot; kümesini dosyadan yüklerken hata oluştu."/>
+      <insert caption="Kopyalanan slaytları girme başarısız:&#10;%1"/>
+    </errors>
+    <messages>
+      <export_complete>&quot;%1&quot;%2 e verildi
+      </export_complete>
+    </messages>
+  </sets_mode>
+
+  <slide_editor>
+    <header caption="Slayt Düzenleyicisi"/>
+    <title caption="Başlık">Geçerli slaytın başlığını belirler.</title>
+    <subtitle caption="Alt Başlık">Geçerli slaytın alt başlığını belirler.</subtitle>
+    <name caption="Ad">Geçerli slayt(lar)ın Sunum Yardımcısı penceresinde görünen adını belirler. Slayt(lar)da görüntülenmez.</name>
+    <slides caption="Slaytlar">Geçerli kullanıcı tanımlı slayt öğesindeki slaytları içerir. İpucu: Kolaylık için bir veya birden çok imgeyi bu listeye sürükleyin.</slides>
+    <presentation caption="Kullanıcı tanımlı sunum düzeni">Şarkı dosyasındaki sunum düzenini geçersiz kılar</presentation>
+    <origorder caption="Özgün sunum düzeni">Şarkı dosyasındaki sunum düzeni</origorder>
+    <folder caption="Şarkı Klasörü">Seçili öğeyi içeren klasör</folder>
+    <notes caption="Notlar">Çoklu ekran kullanarak yapılan bir sunumda bu notlar Sunum Yardımcısı penceresinde görüntülenir.</notes>
+    <insert caption="Gir"/>
+      <ins_slide caption="Slayt">Başlığı, alt başlığı, biçemi ve/veya otomatik ilerleme ayarı ortak olan çoklu slaytların yaratılmasına olanak verir. Bu biçimde yaratılan slaytlarda otomatik döngü de belirlenebilir.</ins_slide>
+    <loop caption="Slayt Döngüsü">OpenSong'un geçerli öğedeki son slaydı görüntüledikten sonra otomatik olarak ilk slayda dönmesini istiyorsanız, bu kutucuğu işaretleyin.</loop>
+    <print caption="Listede Yazdır">Küme listelerini yazdırırken bu kullanıcı tanımlı slayt kümesinin görünmesini istemiyorsanız, bu kutucuğun işaretini kaldırın.</print>
+    <transition caption="Geçiş kullan">Geçerli slayt gösterilirken geçiş kullanmak için bu kutucuğu işaretleyin.</transition>
+    <auto_advance caption="Slaytları her">OpenSong'un bu öğedeki bir slaytı diğerine geçmeden önce görüntüleyeceği saniye sayısını girin.</auto_advance>
+    <seconds caption="sn.de bir ilerlet"/>
+    <style caption="Biçemi Geçersiz Kıl">Bu kutucuğu işaretlemek geçerli slayt öğesinin kullanıcı tanımlı bir biçem içermesine olanak verir. İşaretlendiğinde, bu öğenin biçemini düzenlemek için yukarıdaki önizleme kutusunu tıklayın.</style>
+  </slide_editor>
+
+  <image_slide>
+    <header caption="İmge Slaytı Düzenleyicisi"/>
+    <title caption="link(slide_editor/title/@caption)">link(slide_editor/title)</title>
+    <subtitle caption="link(slide_editor/subtitle/@caption)">link(slide_editor/subtitle)</subtitle>
+    <descriptions caption="Alt başlıkta imge açıklaması">Geçerli imgenin açıklamasını alt başlığa ekleyin.</descriptions>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <images caption="İmgeler" head1="Önizleme" head2="Açıklama">Geçerli slaytta gösterilen imgeleri içerir. İpucu: Kolaylık için bir veya birden çok imgeyi bu listeye sürükleyin.</images>
+    <fit_to_screen caption="link(general_settings/imagedefaults/fit_to_screen/@caption)">link(general_settings/imagedefaults/fit_to_screen)</fit_to_screen>
+    <fit_to_body caption="link(general_settings/imagedefaults/fit_to_body/@caption)">link(general_settings/imagedefaults/fit_to_body)</fit_to_body>
+    <keepaspect caption="link(general_settings/imagedefaults/keepaspect/@caption)">link(general_settings/imagedefaults/keepaspect)</keepaspect>
+    <store_as_link caption="İmgeyi kümeye depolama, bağlantı kullan">link(general_settings/imagedefaults/store_as_link)</store_as_link>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <action caption="Eylem" />
+      <ins_image caption="Ekle">Başlığı, alt başlığı, biçemi ve/veya otomatik ilerleme ayarı ortak olan bir slayt gösterisini olanaklı kılmak için geçerli slayta bir imge ekler. Bu biçimde yaratılan slaytlarda otomatik döngü de belirlenebilir.</ins_image>
+      <imp_image caption="Al">Bir sunumdan tüm slaytları yükler ve bunları imge olarak ekler.</imp_image>
+      <del_image caption="Çıkar">Seçili imgeyi slayttan çıkarır.</del_image>
+      <move_up caption="Yukarı Taşı">Seçili imgeyi yukarıya taşır.</move_up>
+      <move_down caption="Aşağı Taşı ">Seçili imgeyi aşağıya taşır.</move_down>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+    <print caption="link(slide_editor/print/@caption)">link(slide_editor/print)</print>
+    <transition caption="link(slide_editor/transition/@caption)">link(slide_editor/transition)</transition>
+    <auto_advance caption="link(slide_editor/auto_advance/@caption)">link(slide_editor/auto_advance)</auto_advance>
+    <seconds caption="link(slide_editor/seconds/@caption)">link(slide_editor/seconds)</seconds>
+    <style caption="link(slide_editor/style/@caption)">link(slide_editor/style)</style>
+  </image_slide>
+
+  <external_slide>
+    <header caption="Dış Slayt Düzenleyicisi"/>
+    <name caption="link(slide_editor/name/@caption)">link(slide_editor/name)</name>
+    <application caption="Uygulama"/>
+    <presentation caption="Sunum">Bu slaytı bir sunumu Microsoft PowerPoint veya ücretsiz ve açık kodlu OpenOffice.org Impress ile göstermek için kullanın.</presentation>
+    <videolan caption="Videolan">Bu slaytı çok yönlü ve açık kodlu ortam oynatıcısı Videolan (VLC) ile çalıştırmak için kullanın.</videolan>
+    <application caption="Uygulama">Bu slaytı bir dış programı komut satırından çalıştırmak için kullanın.</application>
+    <no_application caption="Uygulama yok">
+    <no_application caption="Bu slayt içeriği için kaynak olarak kullanılacak bir uygulama seçin."/>
+    </no_application>
+    <presentation_settings caption="Sunum ayarları">
+      <presentation_host caption="Sunumu çalıştırmak için hangi uygulama kullanılacaktır?"/>
+      <host_powerpoint caption="Microsoft PowerPoint"/>
+      <host_powerpoint_info caption="PowerPoint sunumunuzun tam denetimi için Microsoft Office kurulumu gerekmektedir."/>
+      <host_pptview caption="Microsoft PowerPoint Viewer"/>
+      <host_pptview_info caption="PowerPoint sunumunuzu etkileşimsiz olarak göstermek için ücretsiz Microsoft PowerPoint Viewer kullanabilirsiniz. OpenSong görüntüleyiciyi algılamaya çalışır. Genel ayarlarda belirli bir görüntüleyici tanımlayabilirsiniz."/>
+      <host_impress caption="OpenOffice.org Impress"/>
+      <host_impress_info caption="Impress veya PowerPoint sunumunun tam denetimi için ücretsiz OpenOffice.org suite gerekmektedir."/>
+      <presentation_file caption="Sunum Dosyası Adı">Dosya seçiminden sunum dosyasının adını seçiniz.</presentation_file>
+      <loop_presentation caption="Sunum Döngüsü"/>
+      <embed_presentation caption="Sunumu OpenSong kümesine ekle"/>
+    </presentation_settings>
+    <videolan_settings caption="Videolan ayarları">
+      <videolan_start caption="Videolanı Başlat"/>
+      <videolan_mediafilename caption="Oynatılacak ortam dosyasının yolu">Oynatılacak ses veya video dosyasının adını seçin.</videolan_mediafilename>
+      <embed_mediafile caption="Ortam dosyasını OpenSong kümesine ekle"/>
+      <videolan_preset caption="Aşağıdaki varsayılan parametreleri kullan"/>
+      <videolan_manual caption="Parametreleri elle ayarla (ekran numarası için %d, ortam dosyası için %s kullanın)"/>
+      <wait_for_videolan caption="Bir sonraki slayta ilerlemeden önce oynatımın bitmesini bekle."/>
+      <videolan_stop caption="Videolanı durdur"/>
+    </videolan_settings>
+    <application_settings caption="Uygulama Başlatıcısı Ayarları">
+      <application_start caption="Dış uygulamayı başlat"/>
+      <application_filename caption="Uygulama Çalıştırıcısının Yolu">Başlatılacak programın çalıştırma dosyasını seçin.</application_filename>
+      <application_parameters caption="Uygulama parametreleri"/>
+      <wait_for_application caption="İlerlemeden önce dış uygulamanın bitmesini bekle"/>
+      <application_stop caption="Uygulamayı durdur"/>
+    </application_settings>
+    <notes caption="link(slide_editor/notes/@caption)">link(slide_editor/notes)</notes>
+    <loop caption="link(slide_editor/loop/@caption)">link(slide_editor/loop)</loop>
+  </external_slide>
+
+  <style_change>
+    <header caption="Biçem Değişikliği"/>
+    <revert caption="Önceki Biçeme Dön">Bu seçenek küme biçeminin kümedeki bu noktadan sonra bir önceki biçeme dönmesini sağlar.</revert>
+    <change caption="Biçem Değiştir">Bu seçenek kümelerin biçemlerini kümedeki herhangi bir noktada değiştirmeye olanak verir. Biçem değişikliği bir sonraki değişiklik noktasına kadar bu noktayı izleyen tüm slaytlar için geçerlidir.</change>
+    <style>Yeni biçemi düzenlemek için burayı tıklayın.</style>
+  </style_change>
+
+  <video_slides>
+    <header caption="Video Slaytı Düzenleyicisi"/>
+    <name caption="Slayt Adı">OpenSong'un bu slaytı tanımlamak için kullandığı adı belirler.</name>
+    <file caption="Video Dosyası">Bu slayta ilişkin video dosyasının adını belirler.</file>
+    <loop caption="Video Döngüsü">Film bittiğinde yeniden başlaması için bu kutucuğu işaretleyin.</loop>
+  </video_slides>
+
+  <powerpoint_slides>
+    <header caption="PowerPoint Slaytı Düzenleyicisi"/>
+    <name caption="Slayt Adı">OpenSong'un bu slayt kümesini tanımlamak için kullandığı adı belirler.</name>
+    <file caption="PowerPoint Dosyası">Bu slayta ilişkin PowerPoint dosyasını belirler.</file>
+  </powerpoint_slides>
+
+  <song_search title="Şarkı Arama">
+    <search caption="Arama dizinini girin:"/>
+    <fields caption="Arama Alanları">
+      <title caption="link(general_song_editor/title/@caption)"/>
+      <author caption="link(general_song_editor/author/@caption)"/>
+      <copyright caption="link(general_song_editor/copyright/@caption)"/>
+      <ccli caption="link(general_song_editor/ccli/@caption)"/>
+      <presentation caption="link(general_song_editor/presentation/@caption)"/>
+      <lyrics caption="link(general_song_editor/lyrics/@caption)"/>
+      <hymn_number caption="link(general_song_editor/hymn_number/@caption)"/>
+      <themes caption="link(advanced_song_editor/themes/@caption)"/>
+      <capo caption="link(advanced_song_editor/capo/@caption)"/>
+      <print_capo caption="link(advanced_song_editor/print_capo/caption)"/>
+      <time_sig caption="link(advanced_song_editor/time_sig/@caption)"/>
+      <tempo caption="link(advanced_song_editor/tempo/@caption)"/>
+      <key caption="link(advanced_song_editor/key/@caption)"/>
+      <aka caption="link(advanced_song_editor/aka/@caption)"/>
+      <key_line caption="link(advanced_song_editor/key_line/@caption)"/>
+      <style caption="link(advanced_song_editor/style/@caption)"/>
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <chord caption="Akor"/>
+      <chord_key caption="link(advanced_song_editor/key/@caption)"/>
+      <chord_form caption="Form"/>
+    </fields>
+  </song_search>
+
+  <scripture_search title="Ara">
+    <caption caption="Kutsal Kitapta anahtar sözcük kullanarak ara"/>
+    <example caption="Tümcenin tamamını aramak için çift tırnak içine alın, örn. &quot;Simun Petrus&quot;"/>
+    <match caption="Eşleştir">
+      <exact caption="&amp;Tam"/>
+      <begin caption="&amp;Başlar"/>
+    </match>
+    <words caption="Ayetteki">
+      <all caption="&amp;Tüm sözcükler"/>
+      <any caption="&amp;Herhangi bir sözcük"/>
+    </words>
+    <search caption="&amp;Ara"/>
+    <result caption="Belirtilen anahtar sözcükleri kullanarak %1 eşleşme bulundu."/>
+    <ok caption="link(shared/ok/@caption)"/>
+    <cancel caption="link(shared/cancel/@caption)"/>
+    <result head1="Referans" head2="Metin" />
+  </scripture_search>
+
+  <main_menu>
+    <file caption="Dosya">
+      <new caption="Yeni"/>
+      <save caption="Kaydet"/>
+      <present caption="Sunum">
+        <single_screen caption="Tek Ekran"/>
+        <dual_screen caption="Çift Ekran"/>
+        <preview_dual_screen caption="Çift Ekran Önizleme"/>
+      </present>
+      <pagesetup caption="Sayfa Düzeni"/>
+      <print caption="Yazdır"/>
+      <print_alphabetical_toc caption="_Alfabe Sıralı Yazdır"/>
+      <print_categorical_toc caption="_Tema Sıralı Yazdır"/>
+      <song_act caption="_Şarkı Etkinlik Dosyasını Görüntüle"/>
+      <scripture caption="Kutsal Kitapta Ara"/>
+      <quit caption="Çıkış"/>
+    </file>
+    <edit caption="Düzenle">
+      <undo caption="Geri Al"/>
+      <cut caption="Kes"/>
+      <copy caption="Kopyala"/>
+      <paste caption="Yapıştır"/>
+      <clear caption="Temizle"/>
+      <find caption="Bul"/>
+      <find_next caption="Yeniden Bul"/>
+      <selall caption="Tümünü Seç"/>
+    </edit>
+    <mode caption="Kip">
+      <songs caption="Şarkı Kipi"/>
+      <sets caption="Küme Kipi"/>
+    </mode>
+    <settings caption="Ayarlar">
+      <presentation caption="Sunum Ayarları"/>
+      <print caption="Yazdırma Ayarları"/>
+      <general caption="Genel Ayarlar"/>
+      <refresh_songs caption="Şarkı Klasörünü Yenile"/>
+      <refresh_sets caption="Küme Klasörünü Yenile"/>
+      <install_module caption="Modül Kur"/>
+    </settings>
+    <help caption="Yardım">
+      <help_topics caption="Yardım Konuları"/>
+      <user_manual caption="Çevrimiçi Kullanıcı El Kitabı"/>
+      <translating caption="OpenSong'u Çevir"/>
+      <about caption="OpenSong Hakkında"/>
+    </help>
+  </main_menu>
+
+  <general_settings title="Genel Konfigürasyon">
+    <general caption="Genel" head1="Temel" head2="Dosya konumları" head3="İmge işleme" head4="Sistem" head5="Görünüş">
+      <ccli caption="Kilise CCLI Lisansı #"/>
+      <version_check caption="Açılışta son sürümü denetle"/>
+      <language caption="Dil"/>
+    </general>
+    <linked caption="Bağlantılı Şarkılar">
+      <prompt caption="Bağlantılı Şarkılar eklerken uyar"/>
+    </linked>
+    <proxy caption="Proxy">
+      <host caption="Host"/>
+      <port caption="Port"/>
+    </proxy>
+    <rcserver caption="API otomasyonu">
+      <enable caption="Uzaktan kumandalı sunucuyu etkinleştir"/>
+      <key caption="Doğrulama Anahtarı"/>
+      <port caption="Port"/>
+    </rcserver>
+    <user_defined caption="Kullanıcı tanımlı şarkı alanlarını adlandırma">
+      <user1 caption="link(advanced_song_editor/user1/@caption)"/>
+      <user2 caption="link(advanced_song_editor/user2/@caption)"/>
+      <user3 caption="link(advanced_song_editor/user3/@caption)"/>
+      <load caption="Varsayılan Dil Ayarlarını Yükle"/>
+    </user_defined>
+    <fonts caption="Fontlar">
+      <headings caption="Başlıklar"/>
+      <labels caption="Etiketler"/>
+      <text_fields caption="Metin Alanları"/>
+      <fixed_width caption="Sabit Genişlikte Metin"/>
+      <buttons caption="Düğmeler"/>
+      <large_headings caption="İri Başlıklar"/>
+      <newpaint caption="Yeni Görsel Biçem Kullan"/>
+    </fonts>
+    <documents_folder caption="Belge Klasörü">
+      <warning caption="Değişiklik OpenSong yeniden başlatılıncaya dek uygulanmayacaktır."/>
+      <default caption="Varsayılan"/>
+      <custom caption="Kullanıcı"/>
+      <message>OpenSong belgelerinin yeni konumu OpenSong yeniden başlatılıncaya dek etkin olmayacaktır. Önce eski OpenSong belgelerinizi yeni konuma kopyalamak isteyebilirsiniz.</message>
+      <changed>Kullanıcı tanımlı Belge Klasörü kullanmayı seçtiniz, ancak değiştirme düğmesini tıklamadınız. Yeni klasörü kullanmak istiyor musunuz?</changed>
+      <change caption="Değiştir"/>
+      <oldfolderdb caption="V1.1 öncesi önbellekleme kullan"/>
+    </documents_folder>
+    <imagedefaults caption="İmge İşleme Parametreleri">
+      <fit_to_screen caption="Ekrana sığmaları için imgeleri ölçekle">İmgenin tümünü görüntülemek için ekrana sığmayan imgeler ölçeklenir. Ölçekleme ekrandan daha küçük imgelere de uygulanır.</fit_to_screen>
+      <fit_to_body caption="Ana bölüme sığmaları için imgeleri ölçekle">İmgeler daima ana bölüm biçem ayarları ile sınırlanan alana sığdırılır. Bu durum ana alandan hem daha büyük, hem de daha küçük imgeler için geçerlidir.</fit_to_body>
+      <keepaspect caption="İmgeleri ölçeklerken en boy oranını koru">Yukarıdaki ölçeklemelerde en boy oranı korunacaktır.</keepaspect>
+      <store_as_link caption="Arka plan imgelerini depolama, bağlantı kullan">İmgeleri kümede depolamak diskte kapladıkları alanı hızla arttırır ve imgenin kalitesini düşürebilir. Bağlantı kullanmak bunu önler.'Arka plan' klasöründen alınan imgelerin görece bağlantı olarak depolanmaları sunum bilgisayarına geçişi kolaylaştırır. Sunum bilgisayarından farklı bir bilgisayarda yaratılan sunumları dikkatli kullanın!</store_as_link>
+      <background_as_text caption="Dize metni yerine arka planı göster">Yalnızca arka plan imgesini kullan, dize metnini gösterme. Metin imgesi ekranda önceden oluşturulduğunda veya notalar arka plan imgesi kullanılarak görüntülendiğinde yararlıdır.</background_as_text>
+    </imagedefaults>
+    <imagequality caption="İmge Kalitesi Belirle">
+      <note caption="OpenSong bir kümede kullanılan imgeleri JPEG formatında depolamaya çalışır. Aşağıdaki öğeler imge depolama kalitesi ve davranışını belirler. QuickTime kurulu değilse, aşağıdaki kayan cetvel etkisizleştirilecektir, çünkü OpenSong'un JPEG imgeleri kullanıcı seçimli kalitede depolaması buna bağlıdır."/>
+      <compression caption="İmge Sıkıştırma" />
+    </imagequality>
+    <logging caption="Hata Ayıklama Kaydı Ayarları">
+      <append caption="Kayıt Dosyasına Ekle"/>
+      <console caption="Sistem Konsoluna Giriş"/>
+      <level caption="Giriş Düzeyi" disabled="Etkisizleştirildi"/>
+      <dialog caption="Lütfen kaydı depolamak için bir dosya seçin"
+              title="Kayıt Dosyası Seç"/>
+    </logging>
+    <log caption="Şarkı Etkinlik Kaydı Ayarları">
+      <enable caption="Kaydetmeyi Etkinleştir"/>
+      <prompt caption="Sunumdan Önce Uyar"/>
+    </log>
+    <startmode caption="Başlangıç Penceresi">
+      <songs caption="Şarkılar"/>
+      <sets  caption="Kümeler"/>
+    </startmode>
+    <applications caption="Dış Uygulamalar">
+      <pptview caption="Powerpoint Viewer konumu"/>
+      <pptview_browse caption="link(shared/browse/@caption)"/>
+      <videolan caption="Videolan client konumu"/>
+      <videolan_browse caption="link(shared/browse/@caption)"/>
+    </applications>
+    <slidetype_coloring caption="Slayt türü renklendirmesi">
+      <coloring caption="Arka plan renklerini uygula"/>
+      <verse caption="Şarkı, Dize"/>
+      <bridge caption="Şarkı, Köprü"/>
+      <prechorus caption="Şarkı, Ön Koro"/>
+      <chorus caption="Şarkı, Koro"/>
+      <tag caption="Şarkı, Etiket"/>
+      <scripture caption="Kutsal Kitap"/>
+      <custom caption="Kullanıcı slaytı"/>
+      <style caption="Biçem Değişikliği"/>
+      <image caption="İmge slaytı"/>
+      <application caption="Dış Uygulama"/>
+      <blank caption="Boşluk (girilen)"/>
+    </slidetype_coloring>
+  </general_settings>
+
+  <print_settings title="Yazdırma Ayarları">
+    <tabs head3="Kenarlar" head1="Fontlar" head2="Düzen"/>
+    <margins>
+      <left caption="Sol"/>
+      <top caption="Üst"/>
+      <right caption="Sağ"/>
+      <bottom caption="Alt"/>
+      <width caption="Genişlik"/>
+      <height caption="Yükseklik"/>
+      <message caption="Kenarları belirlemek için...Dosya/Sayfa düzenine bakın"/>
+    </margins>
+    <fonts>
+      <title caption="Başlık"/>
+      <author caption="Yazar"/>
+      <sections caption="Bölümler"/>
+      <lyrics caption="Sözler"/>
+      <chords caption="Akorlar"/>
+      <capo caption="Capo"/>
+      <copyright caption="Telif"/>
+      <spacing caption="Aralık"/>
+      <sections_before caption="önce"/>
+      <sections_after caption="sonra"/>
+      <chords_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <chords_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <capo_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <capo_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+      <lyrics_before caption="link(/print_settings/fonts/sections_before/@caption)"/>
+      <lyrics_after caption="link(/print_settings/fonts/sections_after/@caption)"/>
+    </fonts>
+    <layout>
+      <heading_border_thickness caption="Başlık Kenar Kalınlığı"/>
+      <title_in_caps caption="Başlık Büyük Harf"/>
+      <highlight_chorus caption="link(style_editor/options/highlight_chorus/@caption)"/>
+    </layout>
+    <units caption="Birimler">
+      <inches caption="İnç"/>
+      <cm caption="Santimetre"/>
+    </units>
+  </print_settings>
+
+  <presentation_settings title="Sunum Ayarları">
+    <settings head1="Biçem" head2="Seçenekler" head3="Şipşaklar">
+        <default_slides caption="Varsayılan Slayt Biçemi"/>
+        <scripture_slides caption="Varsayılan Kutsal Kitap Biçemi"/>
+        <click_to_change caption="link(shared/click_to_change/@caption)"/>
+        <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+        <export_snapshot caption="Sunulan her slaytın bir şipşağını aşağıdaki dosyaya ver"/>
+        <snapshot_file caption="Şipşak Dosyası Adı">Şipşak dosyasının adını seçin.</snapshot_file>
+        <export_preview caption="Şipşakları küme önizlemesi esnasında ver"/>
+        <export_live_insertions caption="Canlı sunum esnasında girilen slaytların şipşaklarını ver"/>
+        <export_metadata caption="Slayt ayrıntılarını aynı adlı bir xml dosyasına ver."/>
+        <snapshot_parameters caption="link(/presentation_settings/settings/snapshot_parameters)">Dosya adında veya yolunda aşağıdaki parametreler kullanılabilir:
+    - %d: Geçerli ayın günü (01-31)
+    - %h: Geçerli günün saati 24-saat formatında (00-23)
+    - %i: Geçerli saatin dakikası (00-59)
+    - %m: Geçerli ay (01-12)
+    - %n: Geçerli kümedeki slayt sayısı (önüne sıfır koyarak)
+    - %N: Geçerli slaytın adı
+    - %P: Sunum slaytları dizini (önüne sıfır koyarak)
+    - %s: Geçerli saatin saniyesi (00-59)
+    - %S: Geçerli kümenin adı
+    - %T: Geçerli kümenin başlığı
+    - %V: Geçerli slaytın dize göstergesi (şarkılar için, diğer slaytlar için boş)
+    - %y: Geçerli yıl (4 rakkam)</snapshot_parameters>
+    </settings>
+    <transitions caption="Geçişler">
+      <use_transitions caption="Varsayılan olarak etkin"/>
+      <transition_note caption="*Geçişler ekran çözünürlüğünden çok etkilenirler. Geçişler yavaş ise, sunum ekranının çözünürlüğünü azaltın. Ayrıca, geçişler görünmüyorsa, sunum ekranındaki renk ayarları çok düşük olabilir."/>
+      <time caption="Süre" helptag="Toplam geşiş süresi (yavaş sistemlerde daha uzun sürebilir)"/>
+      <frames caption="Çerçeveler" helptag="Slaytlar arası çerçeve veya geçiş adımı sayısı"/>
+    </transitions>
+    <style caption="Biçem">
+      <border_thickness caption="Kenar Kalınlığı"/>
+      <subtitles caption="Alt Başlıklar"/>
+      <modes>
+        <normal caption="Normal"/>
+        <black caption="Siyah"/>
+        <white caption="Beyaz"/>
+        <logo caption="Logo"/>
+        <hidden caption="Gizli"/>
+        <frozen caption="Donmuş"/>
+      </modes>
+
+      <mouse_cursor caption="Fare İmleci">
+         <!--Bunlar kullanıcıların düzenlenebilir imleçleri yararına aşamalı olarak kaldırılacaklardır-->
+        <arrow caption="Ok"/>
+        <cross caption="Artı"/>
+        <hidden caption="Gizli"/>
+        <hourglass caption="Kum saati"/>
+        <ibeam caption="IBeam"/>
+      </mouse_cursor>
+      <blanks caption="Küme öğeleri arasına"/>
+      <blanks_between caption="boş slayt gir"/>
+      <time caption="Süre" helptag="Toplam geçiş süresi (yavaş sistemlerde daha uzun sürebilir)"/>
+      <blank_style caption="Boş kümelerin biçemi"/>
+      <blank_prev caption="Önceki slayt"/>
+      <blank_next caption="Sonraki slayt"/>
+      <initial_mode caption="Başlangıç Sunum Kipi"/>
+    </style>
+    <alerts caption="Uyarılar">
+      <font caption="Font"/>
+      <align caption="Hizala"/>
+    </alerts>
+
+    <monitor caption="Ekranlar">
+      <control caption="Konfigürasyon ekranı"/>
+      <presentation caption="Sunum ekranı"/>
+      <detected caption="%1 ekran algılandı."/>
+      <default_mode caption="Varsayılan ekran kipi"/>
+      <force_4_3_preview caption="4:3 önizlemesini zorla"/>
+    </monitor>
+    <logo caption="Logo">
+      <mask caption="Mask"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+    </logo>
+
+    <audio caption="Ses">
+      <file_to_play caption="Dosya"/>
+      <browse caption="Ara"/>
+      <stop caption="Dur"/>
+      <play caption="Oynat"/>
+    </audio>
+
+    <presentation_control caption="Çeşitli">
+      <exit_prompt caption="Çıkarken uyar"/>
+    </presentation_control>
+
+    <errors>
+        <snapshot_file>Hata: şipşak yaratma etkinleştirildi, ancak dosya adı girilmedi.</snapshot_file>
+    </errors>
+  </presentation_settings>
+
+  <presentation_helper title="Sunum Yardımcısı">
+    <slides head1="Başlık" head2="ID" head3="Metin"/>
+    <modes caption="Kip">
+      <normal caption="[N] Normal"/>
+      <black caption="[K] Siyah"/>
+      <white caption="[W] Beyaz"/>
+      <logo caption="[L] Logo"/>
+      <hidden caption="[H] Gizli"/>
+      <frozen caption="[F] Donmuş"/>
+    </modes>
+    <actions caption="Eylemler">
+      <alert caption="[A] Uyarı">Yeni uyarı (temizlemek için boş bırakın)</alert>
+      <quick_song caption="[Q] Şarkı Ekle"/>
+      <scripture caption="[S] Kutsal Kitap"/>
+      <full_screen caption="[M] Tam Ekran"/>
+      <normal_screen caption="[M] Normal Ekran"/>
+      <return caption="[Esc] Çıkış"/>
+    </actions>
+    <exit caption="Sunumdan çıkılsın mı?"/>
+    <loop caption="Döngü"/>
+    <keys>- Tuşlar -
+Aşağı: Sonraki Slayt
+Yukarı: Önceki Slayt
+Sağ: Sonraki Bölüm
+Sol: Önceki Bölüm
+F1-F15: Şarkı
+1-9: Dize
+C: Koro
+P: Ön Koro
+B: Köprü
+T: Etiket</keys>
+    <preview caption="Geçerli slayt önizlemesi" />
+    <next caption="Sonraki slayt önizlemesi" />
+  </presentation_helper>
+
+  <help_topics title="Yardım Konuları">
+    <tabs head1="Sunum Tuşları" head2="Akor/Söz Formatı" head3="Sunum Alanı" head4="Kapat"/>
+    <print caption="Yazdır"/>
+    <close caption="link(shared/close/@caption)"/>
+    <keys>
+&lt;h1&gt;Sunum Tuşları&lt;/h1&gt;
+
+Sunum aşağıdaki tuşlarla denetlenir:
+
+Esc tuşu: Sunumu sonlandırır.
+Yukarı Ok, Sayı Klavyesinde 8, Geri tuşu: Önceki Slayta Git.
+Aşağı Ok, Sayı Klavyesinde 2, Boşluk tuşu: Sonraki Slayta Git.
+Sol Ok, Sayı Klavyesinde 4 tuşu: Önceki Öğeye Git.
+Sağ Ok, Sayı Klavyesinde 6 tuşu: Sonraki Öğeye Git.
+Q Tuşu: Yeni bir şarkı gir.
+A Tuşu: Yeni bir uyarı gir.
+S Tuşu: Yeni bir ayet gir.
+W Tuşu: Beyaz ekrana geçiş yap.
+K Tuşu: Siyah ekrana geçiş yap.
+L Tuşu: OpenSong Logosunu göster.
+H Tuşu: Metni gizle, yalnızca arka plan imgesini göster.
+F Tuşu: Sunumu dondur (yeni slayt gösterimini engelleyerek geçerli slaytı sunumu etkilemeden değiştirmenize olanak verir, çıkmak için N tuşuna basın).
+N Tuşu: Normal kip (siyah ekran vs. den çık)
+B Tuşu: Köprüye git (şarkı düzenleyicisinde [B#] ile gösterilir). Birden çok köprü varsa, bir sonraki köprüye gitmek için B tuşuna basın.
+C Tuşu: Koroya git (şarkı düzenleyicisinde [C#] ile gösterilir). Birden çok koro varsa, bir sonraki koroya gitmek için C tuşuna basın..
+T Tuşu: Etikete git (şarkı düzenleyicisinde [T#] ile gösterilir). Birden çok etiket varsa, bir sonraki etikete gitmek için T tuşuna basın.
+P Tuşu: Ön koroya git (şarkı düzenleyicisinde [P#] ile gösterilir). Birden çok ön koro varsa,bir sonraki ön koroya gitmek için P tuşuna basın.
+1-9 Tuşları: Dize # git (şarkı düzenleyicisinde [V#] ile gösterilir).
+
+Sayı tuşlarının işlevi Sayı Klavyesinin durumuna bağlıdır.
+</keys>
+
+    <format>
+&lt;h1&gt;OpenSong Söz/Akor Formatı&lt;/h1&gt;
+
+Şarkılar şu satır türlerinden oluşurlar: Bölüm satırları, Akor satırları, Söz satırları ve Yorum satırları. Basit bir şarkının yapısı şöyledir:
+&lt;pre&gt;&lt;b&gt;
+;Remember to sing the verse twice.
+[V]
+.G                C
+ This is a verse, this is a verse.
+.D          G
+ That is so cool.
+
+[C]
+.G               C/D  D     C
+ Sing the chorus now, yeah, yeah,
+.G           C       D/F# G
+ This is the dumbest song ever.&lt;/b&gt;&lt;/pre&gt;
+
+Satır türlerine bakalım...
+
+&lt;h2&gt;Bölüm Satırları&lt;/h2&gt;
+
+Bölüm satırları köşeli parantezlerle ayrılırlar: [ ve ]. Bir "bölüm" bir sonraki bölüm satırına veya şarkı sonuna dek bu bölüm satırını izleyen tüm satırları içerir. Bölüm satırları sunumda görüntülenmezler, ancak slaytların sırasını belirlemekte kullanılırlar, Köşeli parantezlerin içine herhangi bir metin yazılabilir, ancak aşağıdakilerin özel etkileri vardır:
+
+&lt;b&gt;&lt;i&gt;[V]: &lt;/i&gt;&lt;/b&gt;Dizeler. Nota kağıtlarında "V" otomatik olarak kaldırılır ve kalan sayı etrafında bir daire ile yazdırılır. Örneğin: [V1], [V2], [V3].
+
+&lt;b&gt;&lt;i&gt;[C]: &lt;/i&gt;&lt;/b&gt;Koro. Nota kağıtlarında "Koro" ve ek metin otomatik olarak görüntülenir (bak. örnekler). "Koro" etrafında bir dikdörtgen ile yazdırılır. Örneğin: [C], [C2], [CModulation].
+
+&lt;b&gt;&lt;i&gt;[P]: &lt;/i&gt;&lt;/b&gt;Ön koro. Nota kağıtlarında "Ön koro" ve ek metin otomatik olarak görüntülenir (bak. örnekler). "Ön koro" üstünde ve altında yatay çizgilerle yazdırılır. Örneğin: [P], [P2].
+
+&lt;b&gt;&lt;i&gt;[B]: &lt;/i&gt;&lt;/b&gt;Köprü. Nota kağıtlarında "Köprü" ve ek metin otomatik olarak görüntülenir (bak. örnekler). "Köprü" etrafında köşeleri yuvarlatılmış bir dikdörtgen ile yazdırılır. Örneğin: [B], [B2].
+
+&lt;b&gt;&lt;i&gt;[T]: &lt;/i&gt;&lt;/b&gt;Tag. Nota kağıtlarında "Etiket" ve ek metin otomatik olarak görüntülenir (bak. örnekler). "Köprü" etrafında köşeleri yuvarlatılmış bir dikdörtgen ile yazdırılır. Örneğin: [T], [T2].
+
+&lt;h2&gt;Akor Satırları&lt;/h2&gt;
+
+Akor satırları nokta ile başlar: ".". Her akorun ilk harfi altındaki sözlere hizalanmalıdır. Akor satırları sunumda görünmezler, yalnızca nota kağıtlarında görünürler.
+
+&lt;h2&gt;Söz Satırları&lt;/h2&gt;
+
+Söz satırları boşlukla başlar: " ". Sözler genellikle bir önceki akor satırı ile aynı hizada olurlar, ancak bu zorunlu değildir.
+
+&lt;b&gt;&lt;i&gt;"__"&lt;/i&gt;&lt;/b&gt; Akorlara uydurmak için bir sözcüğün uzatılması gerekirse, altçizgi: "_" kullanın. Örneğin:
+&lt;b&gt;&lt;pre&gt;
+.Gsus7 C    G
+ Wel___come home.&lt;/pre&gt;&lt;/b&gt;
+
+Altçizgiler sözcüğün iki parçası arasında merkezlenen uygun bir "-" ile değiştirilirler.
+
+&lt;b&gt;"  "&lt;/b&gt; Sözcükler arasında çoklu boşluklar bulunabilir. Altçizgiler ve boşluklar Sunucuda otomatik olarak çıkarılırlar. Nota kağıtları yazdırılırken her ikisi de kaldırılır ve sayfaya uydurulur.
+
+&lt;b&gt;"|"&lt;/b&gt; Düşey çizgiler nota kağıtlarında boşluklarla, Sunucuda ise yeni bir satırla değiştirilirler.
+
+&lt;b&gt;"||"&lt;/b&gt; Çift düşey çizgiler Sunucuda "yeni slayt" ile değiştirilirler, nota kağıtları yazdırılırken yok sayılırlar. Çift düşey çizgiler satırın sonunda bulunmalıdırlar.
+
+&lt;h3&gt;Tek Akor Satırı için çoklu Söz Satırları!?&lt;/h3&gt;
+
+Birçok şarkıda aynı akorları paylaşan çoklu dizeler vardır. Akorları her dize bölümünde yinelemektense, dize numarası yerine dize satırına göre kümeleyebiliriz. (ilahi kitabı gibi). Bu durumda, her söz satırını bir boşlukla başlatmak yerine, her söz satırını dize numarası ile başlatın. Tek akoru olan çoklu söz atırlarını hizalamanın biraz daha karmaşık olduğuna dikkat edin. Aşağıdaki gibi görünmelidir:
+
+&lt;b&gt;&lt;i&gt;(Söylemeye çalışmayın; zamanı korkunç. *sırıtma*)&lt;/i&gt;&lt;pre&gt;
+[V]
+.G     C               G
+1This  is verse        one;
+2This  is not verse    two;
+3Where did verse three go;
+4Ever__lasting is not  verse four;
+
+.G     D    C                D            G
+1Hear  my   song as I sing,  "Mon_________key."
+2Open  your ears to my       wonderful    song.
+3Why   are  we still         singing this song?
+4This  is   not the way that songs should sound.&lt;/pre&gt;
+&lt;/b&gt;
+Sunucuya gelince, her söz satırının ilk karakteri (yani 1, 2, 3, vs.) içinde bulunduğu bölüme eklenir. Başka bir deyişle, [V] bölüm satırı ve 1, 2, 3, vs. ile başlayan söz satırları V1, V2, V3, vs. olarak görüneceklerdir. 
+
+&lt;h2&gt;Yorum Satırları&lt;/h2&gt;
+
+Yorum satırı için söylenecek fazla bir şey yok. Yorum satırları noktalı virgül: ";" ile başlayan satırlardır. Yorum satırları Sunucuda görüntülenmezler, Nota Kağıtlarında ise Yorum fontu kullanılarak görüntülenirler.
+
+&lt;h2&gt;Sütun Sekmeleri&lt;/h2&gt;
+
+Bir satır yalnızca üç çizgi ("---") içerirse, nota kağıtları sütun kesmesinden başlayarak ikinci bir sütünda yazdırılırlar. 
+
+&lt;h2&gt;Sayfa Sekmeleri&lt;/h2&gt;
+
+Bir satır ("-!!") içerirse, bu işaret uzun şarkılar için nota kağıdında sayfa kesmesinin yerleştirilmesi gereken konumu belirtir.
+
+</format>
+
+    <presentation>
+&lt;h1&gt;OpenSong Sunum Alanı&lt;/h1&gt;
+
+Sunum alanı şarkının söz/akor satırlarından oluşan bölümlerin bir listesini içerir. Her bölüm bir boşlukla ayrılır. Örneğin:
+&lt;b&gt;
+V1 C V2 C V3 C
+&lt;/b&gt;
+Bu örnekte ilk dize ilk slaytta, koro ikinci slaytta, ikinci dize üçüncü slaytta vb. görüntülenecektir.
+
+Şarkınız tek akor için çoklu söz satırları kullanıyorsa, her dize satırının önekinin içinde bulunduğu bölüme eklendiğini akılda tutun. Daha ayrıntılı bilgi için "Söz/Akor Formatı" altındaki "Söz Satırları" yardım bölümüne bakın.
+
+&lt;h3&gt;Boş Sunum Alanı&lt;/h3&gt;
+
+Sunum alanı boş ise, Sunucu slaytları Söz/Akor alanlarındaki sıralamaya göre düzenler. 
+</presentation>
+  </help_topics>
+
+  <font_selection title="Font Seçimi">
+    <face caption="Font"/>
+    <size caption="Boyut"/>
+    <color caption="Renk"/>
+    <bold caption="Kalın"/>
+    <italic caption="İtalik"/>
+    <underline caption="Altçizgi"/>
+    <border caption="Kenar"/>
+    <shadow caption="Gölge"/>
+    <fill caption="Doldur"/>
+  </font_selection>
+
+  <print_preview title="Baskı Önizleme">
+    <first caption="&lt;&lt;"/>
+    <previous caption="&lt;"/>
+    <next caption="&gt;"/>
+    <last caption="&gt;&gt;"/>
+    <zoom_in caption="-"/>
+    <zoom_out caption="+"/>
+    <pages caption="%1 - %2"/>
+    <print_setup caption="Yazdırma Ayarları"/>
+    <print caption="Yazdır"/>
+    <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+    <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+    </print_preview>
+
+<print>
+     <continued caption="(devam)"/>
+     <toc caption="İçindekiler"/>
+     <categorized caption="Tema Sıralı"/>
+     <alphabetical caption="Alfabe Sıralı"/>
+     <copyright caption="Telif"/>
+     <page caption="Sayfa %1"/>
+     <ccli_number caption="link(general_song_editor/ccli/@caption)"/>
+     <ccli_license caption="link(general_settings/general/ccli/@caption)"/>
+     <create_list caption="%1 listesi yaratılıyor..."/>
+     <uncategorized caption="Diğer"/>
+     <setlist caption="Tapınma Düzeni">
+     <date caption="Tarih : "/>
+     </setlist>
+</print>
+
+<songml>
+     <page caption="Sayfa"/>
+     <capo caption="Capo"/>
+     <copyright caption="Telif"/>
+     <symbol caption="&#169;"/>
+     <prechorus caption="Ön Koro"/>
+     <chorus caption="Koro"/>
+     <bridge caption="Köprü"/>
+     <tag caption="Etiket"/>
+     <verse caption="Dize"/>
+     <prechorus_abbreviation caption="chor"/>
+     <chorus_abbreviation caption="chor"/>
+     <bridge_abbreviation caption="brdg"/>
+     <tag_abbreviation caption="tag"/>
+     <author caption="Yazar"/>
+     <hymn_number caption="İlahi numarası"/>
+     <ccli_number caption="CCLI Şarkı #"/>
+     <ccli_license caption="CCLI Lisans #"/>
+     <presentation caption="Sunum Düzeni"/>
+     <!--The string "|NL|" is a special code to tell OpenSong that each subtitle should be on a separate line.-->
+     <separator caption="|NL|"/>
+     <!--The leading comma is needed for internal data structure reasons.-->
+     <sharpchords>,C,C#,D,D#,E,F,F#,G,G#,A,A#,B</sharpchords>
+     <altsharpchords>,B#,C#,D,D#,E,E#,F#,G,G#,A,A#,B</altsharpchords>
+     <flatchords>,C,Db,D,Eb,E,F,Gb,G,Ab,A,Bb,B</flatchords>
+     <altflatchords>,C,Db,D,Eb,Fb,F,Gb,G,Ab,A,Bb,Cb</altflatchords>
+     <chordkeys>Any,A,A#,Ab,B,B#,Bb,C,C#,Cb,D,D#,Db,E,E#,Eb,F,F#,Fb,G,G#,Gb</chordkeys>
+     <chordforms>Any,,m,2,M7,m7,7,dim7,dim,+,sus,sus2,6,6/9,M9,add9,7b5,7#5,9,7b9,7#9,13th,m7b5,m7#5,m7b9,11</chordforms>
+     <formsdescriptive>Any,Major,Minor(m),2nd(2),Major 7th(M7),Minor 7th(m7),Dominant 7th(7),Diminished 7th(dim7),Diminished(dim),Augmented(+),Suspended(sus),Suspended 2nd(sus2),Sixth(6),Six Nine(6/9),Major 9th(M9),Add9(add9),Seven Flat Five(7b5),Seven Sharp Five(7#5),9th(9),Seven Flat Nine(7b9),Seven Sharp Nine(7#9),13th(13),Minor 7th Flat Five(m7b5),Minor 7th Sharp Five(m7#5),Minor 7th Flat Nine(m7b9),11th(11)</formsdescriptive>
+  </songml>
+
+  <smartml>
+    <attrib_except>SmartML.GetAttribute: '%2' dosyasında '%1' değişkeni aranırken hata.</attrib_except>
+    <no_path> Yol bulunamadı</no_path>
+    <no_file>Dosya bulunamadı: %1</no_file>
+    <cant_open>Dosya açılırken hata: %1</cant_open>
+    <cant_create>Dosya yaratılamadı: %1</cant_create>
+    <xml_error>XML dosyası okunurken hata: %1</xml_error>
+    <xml_exterror>XML dosyası okunurken hata: %1: %2: %3</xml_exterror>
+  </smartml>
+
+  <style_editor title="Biçem Düzenleyicisi">
+    <fonts_and_alignment caption="Fontlar ve Hizalama">
+      <title caption="Başlığı Göster"/>
+      <subtitle caption="Alt Başlığı Göster"/>
+      <body caption="Ana Bölümü Göster"/>
+      <body_autosize caption="Metni sığdırmak için fontu ölçekle"/>
+      <align caption="Hizala"/>
+      <margin caption="Kenarlar"/>
+      <tabs caption="Sekmeler"/>
+    </fonts_and_alignment>
+    <options caption="Metin Seçenekleri">
+      <subtitles caption="Şarkı Alt Başlıkları"/>
+      <highlight_chorus caption="Koro metnini vurgula"/>
+      <descriptive_subtitle caption="Alt Başlıkta açıklama bilgisi"/>
+      <verse_in_title caption="Başlığa dize numaralarını ekle"/>
+    </options>
+    <background caption="Arka plan">
+      <color caption="Renk"/>
+      <image caption="İmge"/>
+      <position caption="Konum">
+          <row0 caption="Uzat"/>
+          <row1 caption="Merkezle"/>
+          <!-- <row2 caption="Döşe"/> -->
+      </position>
+      <trim_bottom caption="*Alttan kırp"/>
+      <pixels caption="piksel"/>
+      <click_to_change caption="link(shared/click_to_change/@caption)"/>
+      <right_click_to_clear caption="link(shared/right_click_to_clear/@caption)"/>
+    </background>
+    <trim_note caption="*Filigran, web sitesi url vs. gizlemek için arka planı alttan kırpar. Çarpıklığı önlemek için yanlardan da kırparak denkleştirir."/>
+  </style_editor>
+
+  <style_margins title="Kenar Düzenleyicisi">
+      <left caption="Sol"/>
+      <right caption="Sağ"/>
+      <top caption="Üst"/>
+      <bottom caption="Alt"/>
+      <pixels caption="piksel"/>
+    <preview caption="Önizleme"/>
+  </style_margins>
+
+  <style_tabs title="Sekme Düzenleyicisi">
+    <tabs caption="Sekmeler">
+      <new caption="&amp;Yeni"/>
+      <remove caption="&amp;Çıkar"/>
+      <removeall caption="Tümünü &amp;Çıkar"/>
+    </tabs>
+    <properties caption="Özellikler">
+      <position caption="Konum"/>
+      <pixels caption="piksel"/>
+      <align caption="Hizalama"/>
+      <left caption="Sol"/>
+      <middle caption="Orta"/>
+      <right caption="Sağ"/>
+      <char caption="Karakterde"/>
+      <apply caption="link(shared/apply/@caption)n"/>
+    </properties>
+    <preview caption="Önizleme"/>
+  </style_tabs>
+
+  <song_lookup title="Şarkı Arama">
+    <header caption="Bir şarkı eklemek için, aşağıdaki şarkı başlığını ve sonra 'Ekle' kutusunu tıklayın.Şarkının adını biliyorsanız, Hızlı Arama alanına yazabilir ve 'Ekle' kutusunu tıklayabilirsiniz. Veya şarkı aramak için Search(Ctrl+F), aramayı tekrarlamak için Ctrl+G tıklayabilirsiniz. Ayrıca, şarkıyı eklemek için şarkının adını çift tıklayabilir veya ENTER tuşuna basabilirsiniz."/>
+    <no_selection>Şarkı seçmediniz.</no_selection>
+    <folder caption="Klasör Seç"/>
+    <preview caption="Şarkı Önizleme"/>
+    <text caption="Şurada bulundu:"/>
+    <lookup caption="Hızlı Arama"/>
+    <songs head1="Şarkı Adı" head2="Klasör"/>
+    <presentation caption="link(slide_editor/presentation/@caption)"/>
+    <origorder caption="link(slide_editor/origorder/@caption)"/>
+  </song_lookup>
+
+  <song_activity title="Şarkı Etkinlik Dosyası">
+    <range caption="Tarih aralığı (aa/gg/yyyy)"></range>
+    <to caption="-"/>
+    <find caption="Bul"></find>
+    <clear_log caption="Dosyayı temizle"></clear_log>
+    <print caption="Yazdır"></print>
+    <view caption="Dosyayı Görüntüle"/>
+    <merge caption="Birleştir"/>
+    <export caption="Ver"/>
+    <done caption="Bitti"/>
+    <show caption="Göster">
+      <!--
+        "tag" değişkeni LogEntry class öğesindeki değişmezlere karşı düşmektedir. Listenin sırası doğru öğeye karşı düştükleri sürece yerelleştirme için istenildiği gibi değiştirilebilir. (İngilizcede alfabe sıralı olduğuna dikkat ediniz) 
+        Örneğin, "Moved" etiketinin yerel dildeki değeri her zaman "4" olmalıdır.
+        should always have tag=
+      -->
+      <value tag="0">Tümü</value>
+      <value tag="1">Yaratılan</value>
+      <value tag="8">Kopyalanan</value>
+      <value tag="2">Silinen</value>
+      <value tag="3">Değiştirilen</value>
+      <value tag="4">Taşınan</value>
+      <value tag="5">Sunulan</value>
+      <value tag="6">Yazdırılan</value>
+      <value tag="7">Adı Değiştirilen</value>
+    </show>
+    <songs head7="Akor var" head6="CCLI #" head5="Yazar" head4="Başlık" head3="Etkinlik" head2="Saat" head1="Tarih"/>
+    <input_box>
+      <erase_all>Tüm kayıtlar silinecektir. Devam?</erase_all>
+    </input_box>
+    <description>Yaratıldı|Silindi|Değiştirildi|Taşındı|Sunuldu|Yazdırıldı|Adı Değiştirildi|Kopyalandı</description>
+    <file_type>OpenSong Etkinlik Dosyası</file_type>
+    <merged>Birleştirme tamamlandı. Şarkı etkinlik dosyasına %1 kayıt eklendi.</merged>
+    <merged_dupes>%1 çift kayıt alınmadı.</merged_dupes>
+  </song_activity>
+
+  <scripture_lookup title="Kutsal Kitapta Ara">
+    <lookup caption="Hızlı Arama">
+      <reference caption="Referans"/>
+      <lookup caption="Ara"/>
+      <example caption="Örn: '2Pe 1:1-2' o '2Pet 1:1-2 (TKK)'"/>
+    </lookup>
+    <search caption="Tam metin araması"/>
+    <books caption="Kitap">
+      <ot caption="Eski Antlaşma"/>
+      <nt caption="Yeni Antlaşma"/>
+    </books>
+    <paragraph caption="Bölüm"/>
+    <colon caption=":"/>
+    <from_verse caption="Ayetten"/>
+    <dash caption="-"/>
+    <to_verse caption="Ayete"/>
+    <version caption="Sürüm"/>
+    <select_file caption="Lütfen bir Kutsal Kitap dosyası seçin"/>
+    <verses_per_slide caption="Slaytta ayet sayısı" />
+    <chars_per_slide caption="Slaytta karakter sayısı" />
+    <format caption="Format">
+      <paragraph caption="Bölüm"/>
+      <verse caption="Ayet"/>
+    </format>
+    <shownumbers caption="Ayet numaralarını göster"/>
+    <preview caption="Önizleme "/>
+    <insert caption="link(shared/insert/@caption)"/>
+    <add caption="link(shared/add/@caption)"/>
+    <copy caption="link(shared/copy/@caption)"/>
+    <done caption="link(shared/done/@caption)"/>
+    <bad_reference>
+      <format>Lütfen aramanın formatını kontrol edin ve yeniden deneyin.</format>
+      <empty>Geçersiz referans: referans boş.</empty>
+      <book>Geçersiz referans: kitap bulunamadı.</book>
+      <ambiguous>Geçersiz referans: %1: %2 ile birden çok kitap eşleşiyor.</ambiguous>
+      <version>Geçersiz referans: '%1' sürümü bulunamadı.</version>
+      <chapter>Geçersiz referans: '%1' bölümü bulunamadı.</chapter>
+      <verse>Geçersiz referans: '%1' ayeti bulunamadı.</verse>
+      <verse_range>Geçersiz referans: son ayet numarası ilk ayet numarasına eşit veya daha büyük olmalıdır.</verse_range>
+    </bad_reference>
+  </scripture_lookup>
+
+  <module>
+    <read_error>Dosya okunamadı veya geçersiz dosya formatı.</read_error>
+    <format_error>Geçersiz modül formatı.</format_error>
+    <move_error>Modül dosyasını taşırken hata. Lütfen '%1' dosyasına yazma izniniz olduğunu doğrulayın.</move_error>
+    <rename_error>Modül dosyası adı değiştirilirken hata. Lütfen '%1' dosyasına yazma izniniz olduğunu doğrulayın.</rename_error>
+    <success>Modül başarı ile yüklendi.</success>
+    <file_type>OpenSong Modülleri</file_type>
+    <generate_index>'%1' Kutsal Kitap dosyası için dizin yaratılsın mı ?</generate_index>
+    <generate_error>Dizin yaratırken hata; '%1' dosyasına yazma izniniz olduğunu doğrulayın.</generate_error>
+  </module>
+
+  <index_progress title="Lütfen bekleyin">
+    <top caption="Dizin yaratılıyor:"/>
+    <bottom caption="İptal etmek için 'Esc' tuşuna basın"/>
+  </index_progress>
+
+  <import_from_ccli title="CCLI den al">
+    <user_id caption="Kullanıcı ID"/>
+    <password caption="Parola"/>
+    <for caption="Ara"/>
+    <songs head1="Ly" head2="So" head3="Le" head4="Başlık" head5="Yazar"
+      head6="Katalog" head7="AKA" head8="Anahtar satır" head9="Anahtar" head10="CCLI #"/>
+    <by caption="By">
+      <title_and_aka caption="Başlık ve AKA"/>
+      <title caption="Başlık"/>
+      <lyrics caption="Sözler"/>
+      <author caption="Yazar"/>
+      <catalog caption="Katalog"/>
+      <theme caption="Tema"/>
+      <ccli caption="CCLI #"/>
+    </by>
+    <filter caption="Süz">
+      <all caption="Tümü"/>
+      <lead_sheets caption="Nota Kağıtları"/>
+      <sound_samples caption="Ses Örnekleri"/>
+    </filter>
+    <find caption="Bul"/>
+    <previous_page caption="Önceki Sayfa"/>
+    <next_page caption="Sonraki Sayfa"/>
+    <page caption="Sayfa"/>
+    <of_pages caption="of %1"/>
+    <import caption="Al"/>
+    <errors>
+      <no_data>Veri bulunamadı. Lütfen arama dizininizi ve/veya CCLI ID/parolanızı kontrol edin.</no_data>
+      <bad_html>HTML okurken hata. OpenSong teknik desteğini arayın.</bad_html>
+      <no_results>Sonuç bulunamadı.</no_results>
+      <no_headers>Başlık verisi bulunamadı. Lütfen arama dizininizi ve/veya CCLI ID/parolanızı kontrol edin.</no_headers>
+      <no_connect>CCLI bağlanılamadı. Lütfen daha sonra tekrar deneyin.</no_connect>
+      <already_exists>Şarkı var.</already_exists>
+    </errors>
+  </import_from_ccli>
+
+  <find_image title="İmge Bul">
+    <parent caption="(Parent)"/>
+  </find_image>
+  <input_box title="OpenSong"/>
+
+  <theme_list>
+    <option name="Mesih: Nitelikler"/>
+    <option name="Mesih: Doğum"/>
+    <option name="Mesih: Ölüm/Kefaret"/>
+    <option name="Mesih: Güç/Görkem"/>
+    <option name="Mesih: Sevgi/Merhamet"/>
+    <option name="Mesih: Diriliş"/>
+    <option name="Mesih: İkinci Geliş"/>
+    <option name="Mesih: Zafer"/>
+    <option name="Kilise: Adanma/İtaat"/>
+    <option name="Kilise: Ülke"/>
+    <option name="Kilise: Sonsuz Yaşam/Cennet"/>
+    <option name="Kilise: Müjdeleme"/>
+    <option name="Kilise: Aile/Paydaşlık"/>
+    <option name="Kilise: Tanrı ile paydaşlık"/>
+    <option name="Kilise: Paklık/Kutsallık"/>
+    <option name="Kilise: Tövbe/Kurtuluş"/>
+    <option name="Kilise: Yenilenme"/>
+    <option name="Kilise: Yardım/Hizmet"/>
+    <option name="Kilise: Ruhsal Açlık"/>
+    <option name="Ürün: İman/Umut"/>
+    <option name="Ürün: Sevgi"/>
+    <option name="Ürün: Sevinç"/>
+    <option name="Ürün: Esenlik/Avunma"/>
+    <option name="Ürün: Sabır/Şefkat"/>
+    <option name="Ürün: Alçakgönüllülük/Uysallık"/>
+    <option name="Tanrı: Nitelikler"/>
+    <option name="Tanrı: Yaratıcı/Yaratılış"/>
+    <option name="Tanrı: Baba"/>
+    <option name="Tanrı: Rehberlik/İlgi"/>
+    <option name="Tanrı: Kutsal Ruh"/>
+    <option name="Tanrı: Kutsallık"/>
+    <option name="Tanrı: Sevgi/Merhamet"/>
+    <option name="Tanrı: Güç/Görkem"/>
+    <option name="Tanrı: Vaatler"/>
+    <option name="Tanrı: Zafer"/>
+    <option name="Tanrı: Söz"/>
+    <option name="Tapınma: Güvence/Güven"/>
+    <option name="Tapınma: Çağrı/Açılış"/>
+    <option name="Tapınma: Kutlama"/>
+    <option name="Tapınma: Bildirme"/>
+    <option name="Tapınma: Yakınlık"/>
+    <option name="Tapınma: Davet"/>
+    <option name="Tapınma: Övgü/Hayranlık"/>
+    <option name="Tapınma: Dua/Bağlılık"/>
+    <option name="Tapınma: Sağlama/Kurtarma"/>
+    <option name="Tapınma: Şükran"/>
+  </theme_list>
+
+  <tempo_list>
+    <option name="Çok Hızlı"/>
+    <option name="Hızlı"/>
+    <option name="Orta"/>
+    <option name="Yavaş"/>
+    <option name="Çok Yavaş"/>
+  </tempo_list>
+
+  <time_sig_list>
+    <option name="2/4"/>
+    <option name="3/4"/>
+    <option name="4/4"/>
+    <option name="3/8"/>
+    <option name="5/8"/>
+    <option name="6/8"/>
+  </time_sig_list>
+
+  <transition_list>
+    <option name="Varsayılan"/>
+    <option name="Evet"/>
+    <option name="Hayır"/>
+  </transition_list>
+
+  <imagequality_list>
+    <option name="Tam, en düşük kalite, küçük küme dosyası"/>
+    <option name="Yüksek, düşük kalite"/>
+    <option name="Orta, normal kalite"/>
+    <option name="Küçük, yüksek kalite"/>
+    <option name="Düşük, en yüksek kalite"/>
+    <option name="Hiçbiri, kayıpsız, büyük küme dosyası"/>
+  </imagequality_list>
+
+  <videolan_preset_list>
+    <preset name="Windows için duvar kağıdı arka plan video (RGB 0,0,1 arka plan rengi kullanın)" parametreler="--no-video-deco --no-video-title-show --no-osd --video-wallpaper --direct3d-desktop --one-instance --directx-device=\\.\DISPLAY%d %s"/>
+    <preset name="Sunum ekranında tam ekran video" parametreler="--no-video-deco --no-video-title-show --no-osd --one-instance %s"/>
+    <preset name="Varsayılan DirectShow video girişinden tam ekran video" parametreler="--no-video-deco --no-video-title-show --no-osd --one-instance dshow://"/>
+    <!-- Aşağıdaki satır zorunludur. Çevirmenler: yalnızca 'name' değerini değiştirin -->
+    <preset name="Elle" parameters=""/>
+  </videolan_preset_list>
+
+  <style_preview>
+    <slide_groups>
+      <slide_group name="Örnek Başlık" type="kullanıcı" seconds="0" loop="false">
+        <title>Örnek Başlık</title>
+        <subtitle>Örnek Alt Başlık</subtitle>
+        <notes>Örnek Notlar</notes>
+        <slides>
+          <slide>
+            <body>Bu bir slayt örneğidir.
+Bu metin ana metindir.
+Biçemini değiştirmek için slaytı tıklayın.</body>
+          </slide>
+        </slides>
+      </slide_group>
+    </slide_groups>
+  </style_preview>
+
+
+  <subtitles caption="Alt Başlıklar" head1="Sırala" head2="Etkin" head3="Açıklama">
+    <row0 caption="Telif|copyright"/>
+    <row1 caption="Yazar|author"/>
+    <row2 caption="İlahi numarası|hymn_number"/>
+    <row3 caption="CCLI Şarkı Numarası|ccli_number"/>
+    <row4 caption="CCLI Lisans Numarası|ccli_license"/>
+  </subtitles>
+
+  <shared>
+    <ok caption="TAMAM"/>
+    <cancel caption="İptal"/>
+    <yes caption="Evet"/>
+    <no caption="Hayır"/>
+    <apply caption="Uygul&amp;a"/>
+    <browse caption="Ara"/>
+    <browse_for caption="Klasör Ara"/>
+    <add caption="Ekle"/>
+    <done caption="Bitti"/>
+    <untitled caption="Başlıksız"/>
+    <click_to_change caption="Değiştirmek için tıklayın"/>
+    <right_click_to_clear caption="Temizlemek için sağ tıklayın"/>
+    <insert caption="Gir"/>
+    <close caption="Kapat"/>
+    <search caption="Ara"/>
+    <save caption="Kaydet" message="%1 öğesi kaydedilmedi."/>
+    <nosave caption="Kaydetme"/>
+    <cut caption="Kes"/>
+    <copy caption="Kopyala"/>
+    <paste caption="Yapıştır"/>
+    <clear caption="Temizle"/>
+    <selectall caption="Tümünü Seç"/>
+    <select caption="Seç"/>
+    <exit_program caption="Programdan Çık"/>
+    <export_to caption="Vermek için bir klasör seç."/>
+    <style_file caption="Biçem dosyası seç"/>
+    <title caption="Başlık"/>
+    <author caption="Yazar"/>
+    <copyright caption="Telif"/>
+    <ccli caption="CCLI #"/>
+    <presentation caption="Sunum"/>
+    <lyrics caption="Sözler"/>
+    <theme caption="Tema"/>
+    <capo caption="Capo"/>
+    <chord caption="Akorlar"/>
+    <time_sig caption="Zaman"/>
+    <tempo caption="Tempo"/>
+    <key caption="Anahtar"/>
+    <aka caption="AKA"/>
+    <key_line caption="Anahtar satır"/>
+    <user1 caption="Kullanıcı1"/>
+    <user2 caption="Kullanıcı2"/>
+    <user3 caption="Kullanıcı3"/>
+    <hymn_number caption="İlahi #"/>
+
+  </shared>
+
+  <questions>
+    <new_name caption="Lütfen bir ad girin:"/>
+    <rename caption="Lütfen '%1' öğesi için yeni bir ad girin:"/>
+    <save caption="Değişiklikleri '%1' öğesine kaydetmek istiyor musunuz?"/>
+    <delete caption="'%1' öğesini silmek istediğinizden emin misiniz?"/>
+    <clear caption="Bunu temizlemek istediğinizden emin misiniz?"/>
+    <changed caption="Geçerli şarkı değişti, kaydetmek istiyor musunuz?"/>
+    <revert caption="Tüm değişiklikler kaybolacaktır. Devam?"/>
+    <long_operation caption="Bu işlem uzun sürebilir. Devam?"/>
+    <generic_save caption="Değişiklikler kaydedilsin mi?"/>
+    <generic_save_explanation caption="Kaydetmezseniz, değişiklikler kaybolacaktır"/>
+    <set_changed caption="Geçerli küme değişti, kaydetmek istiyor musunuz?"/>
+    <select_docs_folder caption="OpenSong Belge Klasörünü seçin">OpenSong dosyaları (şarkılar ve kümeler) nereye depolanacak?</select_docs_folder>
+    <activity_log caption="Bu sunumdaki şarkı(lar)ın etkinlik dosyasına kaydedilmesini ister misiniz ? Bunun sunum esnasında eklenen şarkılar için de geçerli olduğuna dikkat edin!"/>
+    <import_presentation caption="Sunum imgeleri al">Slaytları almak istediğiniz sunum dosyasını seçin.</import_presentation>
+    <documents_folder_empty caption="Belge Klasörü yok veya boş. Varsayılan Belgeleri kopyalamak istiyor musunuz?"/>
+    <songs_folder_empty caption="Şarkı Klasörü boş. Varsayılan Şarkıları bu klasöre kopyalamak istiyor musunuz?"/>
+    <sets_folder_empty caption="Küme Klasörü boş. Varsayılan Kümeyi bu klasöre kopyalamak istiyor musunuz?"/>
+    <settings_folder_empty caption="Ayarlar Klasörü boş. Varsayılan Ayarları bu klasöre kopyalamak istiyor musunuz?"/>
+    <backgrounds_folder_empty caption="Arka plan klasörü boş. Varsayılan Arka planları bu klasöre kopyalamak istiyor musunuz?"/>
+    <no_songs_folder caption="Şarkı Klasörü bulunamadı, bu klasörü yaratmak istiyor musunuz?"/>
+    <no_sets_folder caption="Küme klasörü bulunamadı, bu klasörü yaratmak istiyor musunuz?"/>
+    <no_folder caption="'%1' klasörü bulunamadı, bu klasörü yaratmak istiyor musunuz?"/>
+    <destination_exists caption="Dosya hedef klasörde var. Bu dosyanın adını değiştirmek istiyor musunuz?"/>
+    <linked_songs caption="Seçili şarkı bir veya daha çok bağlantılı şarkı içermektedir, bu şarkıları eklemek istiyor musunuz?"/>
+  </questions>
+
+  <about>
+    <additional>Ek Geliştirme:</additional>
+    <copyright>Telif</copyright>
+    <gpl>Bu yazılım GPL koşulları altında yayınlanmaktadır.</gpl>
+    <web>Daha ayrıntılı bilgi için http://www.opensong.org/ sitesine gidin.</web>
+    <translating>OpenSong'u çevirmek için, 'OpenSong Languages' klasöründeki 'English' dosyasını kopyalayın ve adını değiştirin. Yeni dosyada biçim imi ve öznitelik adları dışındaki her şeyi çevirin. Dosyayı Source Forge OpenSong projesi sayfasındaki 'Patches' Tracker bölümüne yükleyin veya opensong-translate@lists.sourceforge.net adresine gönderin. Çeviri resmi sürüme eklenecektir.</translating>
+    <created_with_opensong>OpenSong ile yaratıldı</created_with_opensong>
+    <sources>OpenSong StringUtils (http://www.strout.net/info/coding/rb/) HTMLEntityEncode (http://sourceforge.jp/project/php-i18n/) REALbasic Örnekleri (http://www.declaresub.com/Articles/HowDoI.html) iDeclare (http://www.declaresub.com/iDeclare) SmartSplitter by Harry Hooie (http://www.harryhooie.com/source/) modGtk3 by Jim McKay (https://bitbucket.org/pidog/modgtk3) den kaynak kodları içermektedir. Arka plan klasöründeki PuffyClouds1.jpg imge dosyası FreeStockPhotos.com telifidir. Açılış ekranı ba1969 tarafından yaratılan stock.xchng imgeleri içermektedir.
+    </sources>
+  </about>
+
+  <folderdb_errors>
+    <error code="1">'%1' klasörü var.</error>
+    <error code="2">'%1' klasörü yaratılamadı.</error>
+    <error code="3">'%1' dosyası var.</error>
+    <error code="4">Yeni '%1' dosyasının yolu bulunamadı.</error>
+    <error code="5">'%1' ana klasörüne yazılamadı.</error>
+    <error code="6">'%1' klasörü bulunamadı.</error>
+    <error code="7">'%1' klasörü silinemedi.</error>
+    <error code="8">'%1' dosyası bulunamadı.</error>
+    <error code="9">'%1' dosyası silinemedi.</error>
+    <error code="10">'%2' dosyasının adı değiştirilemedi.</error>
+    <error code="11">'%1' klasörü boş değil.</error>
+    <error code="12">'%1' dosyası '%2' klasörüne taşınamadı.</error>
+    <error code="13">'%1' dosyası '%2' klasöründe var.</error>
+  </folderdb_errors>
+
+  <errors>
+    <empty_group>'%1' kümesi en az bir slayt içermelidir.</empty_group>
+    <unreadable_image>'%1' imge dosyası okunamadı.</unreadable_image>
+    <end_of_songs>Şarkıların sonuna varıldı.</end_of_songs>
+    <already_exists>'%1' öğesi var.</already_exists>
+    <bad_format>'%1' öğesinin formatı hatalı. Atlanıyor...</bad_format>
+    <no_songs>Şarkı listesinde şarkı yok.</no_songs>
+    <no_multi_screen>Çoklu ekran bulunamadı.</no_multi_screen>
+    <bad_file_name>'%1' geçersiz dosya adı.</bad_file_name>
+    <internal>İç hata. Teknik desteği arayın.</internal>
+    <no_such_song>Şarkı bulunamadı.</no_such_song>
+    <no_such_set>'%1' küme dosyası bulunamadı.</no_such_set>
+    <number_please>Lütfen geçerli bir sayı girin.</number_please>
+    <number_range>Lütfen %1 ile %2 arası bir sayı girin.</number_range>
+    <no_path_allowed>Dosya adı bir yol içeremez.</no_path_allowed>
+    <rename_error>Dosya adı değiştirilemedi</rename_error>
+    <same_filename>Hedef dosya kaynak dosya ile aynı.</same_filename>
+    <general1>'%1' dosyasında bilinmeyen hata</general1>
+    <general2>'%1' dosyasında '%2'</general2>
+    <folder_error>İç klasör hatası. Teknik desteği arayın.</folder_error>
+    <create_backgrounds_folder>%1 Arka plan klasörü yaratılamadı. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın veya Genel Ayarlardan yeni bir Belgeler klasörü seçin.</create_backgrounds_folder>
+    <create_sets_folder>%1 Küme klasörü yaratılamadı/değiştirilemedi. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın veya Genel Ayarlardan yeni bir Belgeler klasörü seçin. Lütfen Küme Klasörü olmaksızın kümeleri kaydedemeyeceğinize/sunamayacağınıza dikkat edin.</create_sets_folder>
+    <create_settings_folder>%1 Ayarlar klasörü yaratılamadı. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın veya Genel Ayarlardan yeni bir Belgeler klasörü seçin.</create_settings_folder>
+    <load_default_settings>OpenSong Varsayılan Ayarları yüklemeye çalışacaktır.</load_default_settings>
+    <create_songs_folder>%1 Şarkı Klasörü yaratılamadı. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın veya Genel Ayarlardan yeni bir Belgeler klasörü seçin. Lütfen Şarkı Klasörü olmaksızın şarkıları kaydedemeyeceğinize/sunamayacağınıza dikkat edin.</create_songs_folder>
+    <copy_default_songs>Varsayılan Şarkılar %1 klasörüne kopyalanamadı. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın.</copy_default_songs>
+    <no_backgrounds_folder>%1 Varsayılan Arka plan klasörü bulunamadı, veya klasör boş</no_backgrounds_folder>
+    <no_defaults_folder>%1 Varsayılanlar klasörü bulunamadı, veya klasör boş</no_defaults_folder>
+    <no_scripture_folder>%1 Kutsal Kitap klasörü bulunamadı, veya klasör boş. Kutsal Kitapta arama işlevi kullanılamaz. Lütfen Ayarlar Menüsünden Modül Kur sekmesini seçerek veya OpenSong'u yeniden kurarak bir Kutsal Kitap dosyası ekleyin.</no_scripture_folder>
+    <load_bible>'%1' Varsayılan Kutsal Kitap yüklenemedi. OpenSong varolan bir sonraki Kutsal Kitabı açmaya çalışacaktır.</load_bible>
+    <no_sets_folder>%1 Varsayılan Kümeler Klasörü bulunamadı, veya klasör boş</no_sets_folder>
+    <no_settings_folder>%1 Varsayılan Ayarlar Klasörü bulunamadı, veya klasör boş</no_settings_folder>
+    <no_songs_folder>%1 Varsayılan Şarkılar Klasörü bulunamadı, veya klasör boş.</no_songs_folder>
+    <no_docs_folder>%1 Belgeler Klasörü yaratılamadı/bulunamadı. Lütfen bu klasöre yazma erişiminizin olduğunu doğrulayın veya Genel Ayarlardan yeni bir Belgeler klasörü seçin. Lütfen Belgeler klasörü olmaksızın OpenSong'un çoğu işlevlerinin kullanılamayacağına dikkat edin.</no_docs_folder>
+    <docs_folder>Belgeler Klasörü 'OpenSong Varsayılanlar' klasörünün bir alt klasörü olamaz. 
+Geçici olarak %1 klasörü seçildi
+Lütfen seçiminizi değiştirin.</docs_folder>
+    <fileutils>
+       <destdoesnotexisterror>%1 dosyası yok.</destdoesnotexisterror>
+       <nilobjecterror>NilObjectException: FileUtils için FolderItem değişkeni sıfır</nilobjecterror>
+       <accessdenied>%1 dosya koruma hatası, erişim engellendi.</accessdenied>
+       <fileinuse>%1 dosyası kullanımda hatası. (OpenSong'un ikinci bir kopyası mı çalışıyor?)</fileinuse>
+       <filenotfound>%1 dosyası bulunamadı.</filenotfound>
+       <invalidname>%1 dosyası için geçersiz ad.</invalidname>
+       <notenoughmemory>%1 dosyası erişiminde bellek yetersiz. OpenSong'u yeniden başlatın ve yeniden deneyin.</notenoughmemory>
+       <unknownerror>%1 dosyası erişiminde bilinmeyen hata.</unknownerror>
+       <notaregularfile>%1 klasör değil, dosya olmalıdır.</notaregularfile>
+       <notafolder>%1 dosya değil, klasör olmalıdır.</notafolder>
+       <temporaryfailed>%1 dosyası için geçici dosya yaratma başarısız.</temporaryfailed>
+    </fileutils>
+    <cclinotavailable>CCLI sitesi önemli ölçüde değişmiştir. Değişiklik yeni bir arayüz kullanma olanağı bulununcaya dek alma işlevini devre dışı bırakmıştır. Bu arada, seçenek olarak lütfen OpenSong Import hizmet programını inceleyin.
+OpenSong geliştirme takımı verilen rahatsızlık için özür dilemektedir.
+    </cclinotavailable>
+    <activity_disabled>%1 Şarkı Etkinlik Dosyası yüklenemedi! Lütfen bu dosyanın var olduğunu ve bozuk olmadığını doğrulayın. Etkinlikleri görüntüleme ve kaydetme işlevi bu oturum için devre dışı bırakılacaktır.</activity_disabled>
+    <adding_logentry>Kayıt eklemede hata!</adding_logentry>
+    <chars_per_slide>Slayt başına karakter sayısı 1 ile 1000 arası olmalıdır.</chars_per_slide>
+    <presentations>
+      <nohost>Sunumu yükleyecek bir uygulama yok. Lütfen OpenOffice.org, Microsoft PowerPoint veya Microsoft PowerPoint Viewer programını kurun.</nohost>
+      <unsupported_feature>'%1' uygulaması bu özelliği desteklemiyor.</unsupported_feature>
+      <load_failed>'%1' sunumu açılamadı.</load_failed>
+    </presentations>
+    <videolan_app_missing>Videolan uygulaması doğru biçimde ayarlanmadı. Lütfen Genel Ayarlarda Videolan Dosya Konumunu belirtiniz.</videolan_app_missing>
+    <linked_song>
+       <current>Seçili şarkı geçerli şarkıdır.</current>
+       <exists>Seçili şarkı listede var.</exists>
+       <load_error>%1 bağlantılı şarkıyı yüklemede hata.</load_error>
+    </linked_song>
+
+  </errors>
+
+  <xml_errors>
+    <noattribute>'%2' dosyasında '%1' XML değişkeni bulunamadı.</noattribute>
+  </xml_errors>
+
+  <bible>
+    <errors>
+      <index_generation>'%1' dosyası için dizin yaratırken hata. Kutsal Kitapta arama devre dışı bırakılacaktır.</index_generation>
+
+      <loadxml>'%1' dosyasını yüklerken XML hatası 
+.&#10; %3 satırında '%2' hatası</loadxml>
+
+      <load1>%1 dosyasını yüklerken bilinmeyen hata.</load1>
+      <load2>%1 dosyasını yüklerken hata: %2</load2>
+
+      <noindex>Arama dizini yok. Değişik bir çeviri seçin veya OpenSong'u yeniden başlatın.</noindex>
+
+      <missing_bnames>'OpenSong Ayarlar' bölümünde 'bnames.xml' Zefania destek dosyası bulunamadı</missing_bnames>
+
+      <nobnames>Kutsal Kitapta gerekli bname değişkenleri yok. Değişkenler eklenemedi</nobnames>
+      <roman>'%1' Romen rakkamını dönüştürürken hata: %2</roman>
+
+      <save>Güncellenmiş '%1.' dosyasını kaydederken hata</save>
+    </errors>
+
+    <load_successful>'%1' Kutsal Kitabı başarı ile yüklendi.</load_successful>
+    <messages>
+      <bnames>Bu çeviriye kitap adları eklenmelidir.
+&#10;Lütfen adlar için uygun dili belirtin.</bnames>
+      <save>Güncellenen dosya kaydedilsin mi?</save>
+    </messages>
+  </bible>
+
+  <song>
+    <errors>
+      <unknown_element>Bilinmeyen öğe '%1' şarkısını yüklemektedir.</unknown_element>
+    </errors>
+  </song>
+
+  <open_titles>
+    <audio>Açılacak Ses Dosyasını seçin</audio>
+  </open_titles>
+
+  <hotkeys>
+    <ACTION_FIRST_SLIDE_OF_SECTION>Bölümdeki ilk slayta git</ACTION_FIRST_SLIDE_OF_SECTION>
+    <ACTION_NEXT_SLIDE>Kümede bir sonraki slayta git</ACTION_NEXT_SLIDE>
+    <ACTION_PREV_SLIDE>Kümede bir önceki slayta git</ACTION_PREV_SLIDE>
+    <ACTION_FIRST_SLIDE>Kümedeki ilk slayta git</ACTION_FIRST_SLIDE>
+    <ACTION_LAST_SLIDE>Kümedeki son slayta git</ACTION_LAST_SLIDE>
+    <ACTION_NEXT_SECTION>Kümede bir sonraki bölüme git</ACTION_NEXT_SECTION>
+    <ACTION_PREV_SECTION>Geçerli veya bir önceki kümenin başına git</ACTION_PREV_SECTION>
+    <ACTION_VERSE>Bir sonraki dizeye git</ACTION_VERSE>
+    <ACTION_BRIDGE>Köprüye git</ACTION_BRIDGE>
+    <ACTION_CHORUS>Koroya git</ACTION_CHORUS>
+    <ACTION_PRECHORUS>Ön koroya git</ACTION_PRECHORUS>
+    <ACTION_TAG>Etikete git</ACTION_TAG>
+    <ACTION_NORMAL>Geçerli slaytı görüntüle</ACTION_NORMAL>
+    <ACTION_BLACK>Siyah ekranı görüntüle</ACTION_BLACK>
+    <ACTION_WHITE>Beyaz ekranı görüntüle</ACTION_WHITE>
+    <ACTION_FREEZE>Geçerli slaytın görüntüsünü dondur</ACTION_FREEZE>
+    <ACTION_LOGO>Logoyu görüntüle</ACTION_LOGO>
+    <ACTION_HIDE>Geçerli slaytı gizle (arka plan görüntülenir)</ACTION_HIDE>
+    <ACTION_EXIT>Sunum kipinden çık</ACTION_EXIT>
+    <ACTION_EXIT_PROMPT>Sunum kipinden çık, doğrulama gerektirir</ACTION_EXIT_PROMPT>
+    <ACTION_EXIT_NOPROMPT>Sunum kipinden hemen çık</ACTION_EXIT_NOPROMPT>
+ </hotkeys>
+
+  <progress_status>
+    <folder>%1 dosyası önbelleğe alınıyor</folder>
+    <lead_sheets>Nota Kağıtları yaratılıyor</lead_sheets>
+    <process_themes>Temalar işleniyor</process_themes>
+    <process_songs>Şarkılar işleniyor</process_songs>
+    <song_search>Şarkılar aranıyor</song_search>
+    <export>Şarkı(lar) veriliyor</export>
+    <load_songs>Şarkı(lar) yükleniyor</load_songs>
+    <load_externals>Dış nota kağıt(lar)ı yükleniyor</load_externals>
+    <pass1>Sorting, 1ci Geçiş</pass1>
+    <pass2>Sorting, 2ci Geçiş</pass2>
+    <detect_presentation_hosts>Var olan sunum uygulamaları algılanıyor</detect_presentation_hosts>
+  </progress_status>
+    <export_options title="HTML dosyasına verme Seçenekleri">
+        <handling caption="CSS Biçem Dosyası Yerleştirmesi">
+            <link caption="Biçem Dosyasına bağlantıla"/>
+            <embed caption="Verme dosyasına kat"/>
+        </handling>
+        <options caption="CSS Biçem Dosyası Seçenekleri">
+            <default caption="Belirlenen Biçem Dosyası"/>
+            <print caption="Yazdırma Ayarlarına dayalı Biçem Dosyası kullan"/>
+        </options>
+        <export caption="Çoklu verme">
+            <single caption="Tüm şakılar için tek dosya"/>
+            <unique caption="Tüm şarkılar için özgün dosya"/>
+        </export>
+        <cssfile caption="Biçem Dosyası">link(shared/style_file/@caption)</cssfile>
+        <outdir caption="Çıkış klasörü">link(shared/export_to/@caption)</outdir>
+        <outfile>Çıkış dosyası</outfile>
+        <cancel caption="link(shared/cancel/@caption)"/>
+        <ok caption="link(shared/ok/@caption)"/>
+        <nofile>(Yok)</nofile>
+        <filter_css>Biçem Dosyasını basamaklama</filter_css>
+    </export_options>
+</language>

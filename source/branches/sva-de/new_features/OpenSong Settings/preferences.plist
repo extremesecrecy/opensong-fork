@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>version</key>
+	<string>1</string>
+	<key>log</key>
+	<dict>
+		<key>level</key>
+		<dict>
+			<key>value</key>
+			<real>3</real>
+		</dict>
+		<key>file</key>
+		<dict>
+			<key>console</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>language</key>
+	<dict>
+		<key>value</key>
+		<string></string>
+	</dict>
+	<key>documents_folder</key>
+	<dict>
+		<key>UseOldFolderDB</key>
+		<dict>
+			<key>value</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>saved_state</key>
+	<dict>
+		<key>last_scripture</key>
+		<dict>
+			<key>version</key>
+			<string>KJV</string>
+			<key>verse_per_slide</key>
+			<real>2</real>
+		</dict>
+	</dict>
+</dict>
+</plist>

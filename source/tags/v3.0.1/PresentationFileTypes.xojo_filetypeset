@@ -1,0 +1,34 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=PPTFiles
+		Extension=.ppt;.pps;.pptx;.pptm
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=Microsoft PowerPoint presentation
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ODPFiles
+		Extension=.odp;.sxi
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=OpenOffice.org Impress presentation
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

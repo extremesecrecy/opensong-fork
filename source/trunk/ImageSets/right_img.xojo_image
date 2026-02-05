@@ -1,0 +1,46 @@
+#tag MultiImage
+Image right_img
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAA7L2hvbWUvdm9uYWxsbWVuL2Rldi9PcGVuU29uZy9zb3VyY2UvSW1hZ2VTZXRzL3JpZ2h0X3BpYy5wbmcDAAAAAAEBBAAAAAABAAAAAAAAAA==
+		FullPath = /home/vonallmen/dev/OpenSong/source/ImageSets/right_pic.png
+		PartialPath = ImageSets\right_pic.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAA+L2hvbWUvdm9uYWxsbWVuL2Rldi9PcGVuU29uZy9zb3VyY2UvSW1hZ2VTZXRzL3JpZ2h0X3BpY0AyeC5wbmcDAAAAAAEBBAAAAAABAAAAAAAAAA==
+		FullPath = /home/vonallmen/dev/OpenSong/source/ImageSets/right_pic@2x.png
+		PartialPath = ImageSets\right_pic@2x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAA+L2hvbWUvdm9uYWxsbWVuL2Rldi9PcGVuU29uZy9zb3VyY2UvSW1hZ2VTZXRzL3JpZ2h0X3BpY0AzeC5wbmcDAAAAAAEBBAAAAAABAAAAAAAAAA==
+		FullPath = /home/vonallmen/dev/OpenSong/source/ImageSets/right_pic@3x.png
+		PartialPath = ImageSets\right_pic@3x.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 22.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 22.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

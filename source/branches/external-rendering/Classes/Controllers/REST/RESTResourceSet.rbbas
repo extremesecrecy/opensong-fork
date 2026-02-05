@@ -1,0 +1,314 @@
+#tag Class
+Protected Class RESTResourceSet
+Implements REST.RESTResource
+	#tag Method, Flags = &h21
+		Private Function GetSet(setName As String) As XmlDocument
+		  Dim f As FolderItem
+		  Dim setXml As XmlDocument = Nil
+		  
+		  setName = ReplaceAll(setName, "/", "")
+		  setName = ReplaceAll(setName, "\", "")
+		  setName = ReplaceAll(setName, "..", "")
+		  
+		  f = App.DocsFolder.Child("Sets").Child(setName)
+		  If (f.Exists()) Then
+		    setXml = SmartML.XDocFromFile(f)
+		  End If
+		  
+		  return setXml
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function GetSetSlide(setName As String, slideIndex As Integer) As REST.RESTResponse
+		  Dim result As REST.RESTresponse = Nil
+		  Dim setXml As XmlDocument
+		  Dim xml As XmlDocument
+		  Dim root, slide As XmlNode
+		  Dim slide_group As XmlNode
+		  
+		  slideIndex = Max(slideIndex, 1)
+		  
+		  setXml = GetSet(setName)
+		  If IsNull(setXml) Then
+		    result = New REST.RESTresponse("The requested set is not available.", HttpStatus.NotFound)
+		  Else
+		    result = New REST.RESTresponse
+		    xml = result.CreateXmlResponse(Name(), "slide", setName)
+		    root = xml.DocumentElement()
+		    slide = root.AppendChild(xml.CreateElement("slide"))
+		    SmartML.SetValueN(slide, "@id", slideIndex)
+		    
+		    slide_group = SmartML.GetNode(setXml.DocumentElement, "slide_groups", True).FirstChild
+		    Dim i As Integer = 1
+		    While i < slideIndex And Not IsNull(slide_group)
+		      slide_group  = slide_group.NextSibling
+		      i = i + 1
+		    Wend
+		    
+		    If Not IsNull(slide_group) Then
+		      SmartML.CloneAttributes slide_group, slide
+		      
+		      If slide_group.GetAttribute("type") = "song" Then
+		        
+		        Dim f As FolderItem = MainWindow.Songs.GetFile(slide_group.GetAttribute("path") + "/" +slide_group.GetAttribute("name"))
+		        If f <> Nil And f.Exists Then
+		          Dim songDoc As XmlDocument = SmartML.XDocFromFile(f)
+		          If Not IsNull(songDoc) then
+		            slide.AppendChild(xml.ImportNode(songDoc.DocumentElement(), True))
+		          End If
+		        End If
+		        
+		      Else
+		        SmartML.CloneChildren slide_group, slide
+		        SmartML.CloneAttributes slide_group, slide
+		      End If
+		      
+		    End If
+		    
+		    result.response = xml.ToString
+		    
+		  End If
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function ListSets() As REST.RESTResponse
+		  Dim result As New REST.RESTresponse
+		  Dim xml As XmlDocument
+		  Dim root, set As XmlNode
+		  
+		  xml = result.CreateXmlResponse(Name(), "list")
+		  root = xml.DocumentElement()
+		  
+		  For i As Integer = 0 To MainWindow.pop_sets_sets.ListCount()-1
+		    set = root.AppendChild(xml.CreateElement("set"))
+		    SmartML.SetValueN(set, "@id", i)
+		    set.AppendChild(xml.CreateTextNode(MainWindow.pop_sets_sets.List(i)))
+		  Next
+		  
+		  result.response = xml.ToString
+		  return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function ListSetSlides(setName As String) As REST.RESTResponse
+		  Dim result As REST.RESTresponse = Nil
+		  Dim setXml As XmlDocument
+		  Dim xml As XmlDocument
+		  Dim root, slide As XmlNode
+		  Dim slide_groups, xchild As XmlNode
+		  Dim id As Integer
+		  
+		  setXml = GetSet(setName)
+		  If IsNull(setXml) Then
+		    result = New REST.RESTresponse("The requested set is not available.", HttpStatus.NotFound)
+		  Else
+		    result = New REST.RESTresponse
+		    xml = result.CreateXmlResponse(Name(), "slides", setName)
+		    root = xml.DocumentElement()
+		    
+		    slide_groups = SmartML.GetNode(setXml.DocumentElement, "slide_groups", False)
+		    If Not IsNull(slide_groups) Then
+		      
+		      xchild = slide_groups.FirstChild
+		      id = 0
+		      While xchild <> Nil
+		        id = id + 1
+		        
+		        slide = root.AppendChild(xml.CreateElement("slide"))
+		        SmartML.SetValueN(slide, "@id", id)
+		        SmartML.SetValue(slide, "@name", xchild.GetAttribute("name"))
+		        SmartML.SetValue(slide, "@type", xchild.GetAttribute("type"))
+		        
+		        If xchild.GetAttribute("type") = "song" Then
+		          SmartML.SetValue(slide, "@presentation", xchild.GetAttribute("presentation"))
+		          SmartML.SetValue(slide, "@path", xchild.GetAttribute("path"))
+		        Else
+		          SmartML.SetValue(slide, "title", SmartML.GetValue(xchild, "title"))
+		          SmartML.SetValue(slide, "subtitle", SmartML.GetValue(xchild, "subtitle"))
+		        End If
+		        
+		        xchild = xchild.NextSibling
+		      Wend
+		      
+		    End If
+		    
+		    result.response = xml.ToString
+		    
+		  End If
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function LoadSet(setName As String) As REST.RESTResponse
+		  Dim result As REST.RESTresponse = Nil
+		  Dim setXml As XmlDocument
+		  
+		  If MainWindow.Status_SetChanged Then
+		    result = New REST.RESTresponse("The currently loaded set has unsaved changes, requested action cannot be executed.", HttpStatus.Forbidden)
+		  Else
+		    
+		    setXml = GetSet(setName)
+		    If IsNull(setXml) Then
+		      result = New REST.RESTresponse("The requested set is not available.", HttpStatus.NotFound)
+		    Else
+		      
+		      If MainWindow.LoadSet(setName) Then
+		        result = New REST.RESTResponse("OK")
+		      Else
+		        result = New REST.RESTResponse("The requested action failed.", HttpStatus.InternalServerError)
+		      End If
+		      
+		    End If
+		  End If
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Name() As String
+		  // Part of the REST.RESTResource interface.
+		  
+		  Return "set"
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function PresentSet(setName As String, slideIndex As Integer = 1, mode As Integer = PresentWindow.MODE_DUAL_SCREEN) As REST.RESTResponse
+		  Dim result As REST.RESTresponse = Nil
+		  Dim setXml As XmlDocument
+		  
+		  slideIndex = Max(slideIndex, 1)
+		  'Restrict supported display modes to single and dual screen; it makes no sense to start remote preview
+		  If mode <> PresentWindow.MODE_SINGLE_SCREEN And _
+		    mode <> PresentWindow.MODE_DUAL_SCREEN Then
+		    mode = PresentWindow.MODE_DUAL_SCREEN
+		  End If
+		  
+		  If MainWindow.Status_SetChanged Then
+		    result = New REST.RESTresponse("The currently loaded set has unsaved changes, requested action cannot be executed.", HttpStatus.Forbidden)
+		  Else
+		    
+		    setXml = GetSet(setName)
+		    If IsNull(setXml) Then
+		      result = New REST.RESTresponse("The requested set is not available.", HttpStatus.NotFound)
+		    Else
+		      
+		      If MainWindow.LoadSet(setName) Then
+		        Call MainWindow.ActionSetPresent(mode, slideIndex)
+		        result = New REST.RESTResponse("OK")
+		      Else
+		        result = New REST.RESTResponse("The requested action failed.", HttpStatus.InternalServerError)
+		      End If
+		      
+		    End If
+		  End If
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Process(protocolHandler As REST.RESTProtocolHandler) As REST.RESTresponse
+		  // Part of the REST.RESTResource interface.
+		  Dim result As REST.RESTresponse = Nil
+		  
+		  Select Case protocolHandler.Action()
+		  Case "", _
+		    "list"
+		    
+		    result = ListSets()
+		    
+		  Case "slide", _
+		    "slides"
+		    
+		    If IsNull(protocolHandler.Parameter("slide", Nil)) Then
+		      result = ListSetSlides(protocolHandler.Identifier())
+		    Else
+		      result = GetSetSlide(protocolHandler.Identifier(), protocolHandler.Parameter("slide", 0))
+		    End If
+		    
+		  case "load", _
+		    "present"
+		    
+		    Select Case protocolHandler.Method()
+		    Case HttpMethod.Options
+		      result = New REST.RESTResponse()
+		      If protocolHandler.Header(REST.kAccessControlRequestMethod, "") <> "POST" Then
+		        result.headers.Value(REST.kHeaderAllow) = "POST"
+		      End If
+		      
+		    Case HttpMethod.Post
+		      If Globals.Status_Presentation Then
+		        result = New REST.RESTresponse("There currently is a running presentation, requested action cannot be executed.", HttpStatus.Forbidden)
+		      Else
+		        Select Case protocolHandler.Action()
+		          
+		        case "load"
+		          result = LoadSet(protocolHandler.Identifier())
+		          
+		        case "present"
+		          result = PresentSet(protocolHandler.Identifier(), protocolHandler.Parameter("slide", 0), protocolHandler.Parameter("display", 0))
+		          
+		        End Select
+		      End If
+		      
+		    Else
+		      result = New REST.RESTresponse("The request method is not allowed, use POST.", HttpStatus.MethodNotAllowed)
+		      result.headers.Value(REST.kHeaderAllow) = "POST"
+		      
+		    End Select
+		    
+		  Else
+		    result = New REST.RESTresponse("The requested action is not available.", HttpStatus.NotFound)
+		  End Select
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+
+	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
+	#tag EndViewBehavior
+End Class
+#tag EndClass

@@ -1,0 +1,46 @@
+#tag MultiImage
+Image splash_img
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHSAAAAAAHSAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0Mc3BsYXNoYmcuanBnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjzJM1GUR1KUEVHOEJJTf////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADNRpdtAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAXE1hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAc3BsYXNoYmcuanBnAA4AGgAMAHMAcABsAGEAcwBoAGIAZwAuAGoAcABnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIASVVzZXJzL3BhbG1lcmVkL1NWTi9vcGVuc29uZy1icmFuY2hlcy9tb2Rlcm5pemF0aW9uL0ltYWdlU2V0cy9zcGxhc2hiZy5qcGcAABMAAS8AABUAAgAP//8AAAAAAAAAAA==
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/splashbg.jpg
+		PartialPath = ImageSets\splashbg.jpg
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 400.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 300.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHeAAAAAAHeAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0Pc3BsYXNoYmdAMnguanBnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjyQdgf+51KUEVHOEJJTf////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADYIEHtAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAX01hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAc3BsYXNoYmdAMnguanBnAAAOACAADwBzAHAAbABhAHMAaABiAGcAQAAyAHgALgBqAHAAZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAExVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvc3BsYXNoYmdAMnguanBnABMAAS8AABUAAgAP//8AAAAAAAAAAA==
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/splashbg@2x.jpg
+		PartialPath = ImageSets\splashbg@2x.jpg
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 400.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 300.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHeAAAAAAHeAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADWJff+SCsAAAFY7h0Pc3BsYXNoYmdAM3guanBnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjzCNgf+8BKUEVHOEJJTf////8AAAkgAAAAAAAAAAAAAAAAAAAACUltYWdlU2V0cwAAEAAIAADWJj5OAAAAEQAIAADYIEIQAAAAAQAYAVjuHQFYBWgABwsJAAbFOwAGxTEABhx7AAIAX01hY2ludG9zaCBIRDpVc2VyczoAcGFsbWVyZWQ6AFNWTjoAb3BlbnNvbmctYnJhbmNoZXM6AG1vZGVybml6YXRpb246AEltYWdlU2V0czoAc3BsYXNoYmdAM3guanBnAAAOACAADwBzAHAAbABhAHMAaABiAGcAQAAzAHgALgBqAHAAZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAExVc2Vycy9wYWxtZXJlZC9TVk4vb3BlbnNvbmctYnJhbmNoZXMvbW9kZXJuaXphdGlvbi9JbWFnZVNldHMvc3BsYXNoYmdAM3guanBnABMAAS8AABUAAgAP//8AAAAAAAAAAA==
+		FullPath = /Users/palmered/SVN/opensong-branches/modernization/ImageSets/splashbg@3x.jpg
+		PartialPath = ImageSets\splashbg@3x.jpg
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 400.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 300.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UUID</key>
+	<string>B435BFA2-F9B3-4216-A912-634B0039FF8E</string>
+	<key>appInfo</key>
+	<dict>
+		<key>build</key>
+		<real>0.0</real>
+		<key>formatIdentifier</key>
+		<integer>3</integer>
+		<key>version</key>
+		<string>4.5 (223)</string>
+	</dict>
+	<key>bundleContents</key>
+	<array/>
+	<key>channel</key>
+	<integer>1</integer>
+	<key>cleaning</key>
+	<dict>
+		<key>allowedArchitecturesAppStore</key>
+		<string>x86_64 arm64</string>
+		<key>allowedArchitecturesWeb</key>
+		<string>i386 x86_64 arm64</string>
+		<key>languagePacksProtectAppleHelpBooks</key>
+		<true/>
+	</dict>
+	<key>codesigning</key>
+	<dict>
+		<key>appSandbox</key>
+		<integer>10</integer>
+		<key>generalOptions</key>
+		<integer>32</integer>
+		<key>hardenRuntime</key>
+		<integer>1</integer>
+		<key>team</key>
+		<string>{"name":"Edward Palmer","ID":"CQ3GDFZJ36"}</string>
+	</dict>
+	<key>contentOptions</key>
+	<integer>0</integer>
+	<key>destination</key>
+	<dict>
+		<key>options</key>
+		<integer>2</integer>
+		<key>subFolderName</key>
+		<string>$(bundleName) - $(channel) ($(bundleArch))</string>
+	</dict>
+	<key>entitlements</key>
+	<dict>
+		<key>com.apple.security.print</key>
+		<true/>
+	</dict>
+	<key>entitlementsDebugging</key>
+	<dict/>
+	<key>entitlementsInherited</key>
+	<dict>
+		<key>com.apple.security.app-sandbox</key>
+		<true/>
+		<key>com.apple.security.inherit</key>
+		<true/>
+	</dict>
+	<key>info.plist</key>
+	<dict>
+		<key>LSFileQuarantineEnabled</key>
+		<false/>
+		<key>LSMinimumSystemVersion</key>
+		<string>10.11</string>
+		<key>NSDesktopFolderUsageDescription</key>
+		<string>OpenSong may need to read or write song, set, or scripture files</string>
+		<key>NSDocumentsFolderUsageDescription</key>
+		<string>OpenSong may need to read or write song, set, or scripture files</string>
+		<key>NSDownloadsFolderUsageDescription</key>
+		<string>OpenSong may need to read or write song, set, or scripture files</string>
+		<key>NSHumanReadableCopyright</key>
+		<string>©$(dateYear) $(publisher)
+All rights reserved</string>
+		<key>NSNetworkVolumesUsageDescription</key>
+		<string>OpenSong may need to read or write song, set, or scripture files</string>
+		<key>NSRemovableVolumesUsageDescription</key>
+		<string>OpenSong may need to read or write song, set, or scripture files</string>
+		<key>OWARPublisherName</key>
+		<string>Ed Palmer</string>
+		<key>OWARPublisherSupportEmail</key>
+		<string>ed@edpalmer.me</string>
+	</dict>
+	<key>packing</key>
+	<dict>
+		<key>autoPackDisabled</key>
+		<true/>
+		<key>formats</key>
+		<integer>2</integer>
+		<key>nameCleaningReplacementChar</key>
+		<string>_</string>
+		<key>packageName</key>
+		<string>$(bundleName) $(bundleVerString)</string>
+	</dict>
+	<key>profiles</key>
+	<dict>
+		<key>channels</key>
+		<integer>11</integer>
+	</dict>
+	<key>singleFileOptions</key>
+	<dict/>
+	<key>submission</key>
+	<dict>
+		<key>appleSubmissionAccountID</key>
+		<string>8A9B78C2-7179-4130-8162-7F6B8B592B0C</string>
+		<key>autoSubmit</key>
+		<integer>1</integer>
+	</dict>
+	<key>versionNumberCustomFormat</key>
+	<string>$1.$2.$3	$1.$2.$3</string>
+	<key>versionNumberFormat</key>
+	<integer>0</integer>
+	<key>wrappingAdditional</key>
+	<string></string>
+</dict>
+</plist>

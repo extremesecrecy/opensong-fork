@@ -1,0 +1,624 @@
+#tag Module
+Protected Module PresentationFactory
+	#tag Method, Flags = &h0
+		Sub ClearPresentationCache()
+		  While UBound(m_PresentationList) > -1
+		    Call m_PresentationList.Pop()
+		  Wend
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function CreateMsPowerPointPresentation(presentationFile As FolderItem) As MsPowerPointPresentation
+		  Dim oPres As MsPowerPointPresentation = Nil
+		  Dim oPpt As PowerPointPresentation = Nil
+		  
+		  'The MsPowerPointHost object is used instead of PowerPointApplication to be able to redirect events to PresentationFactory
+		  'Use MsPowerPointHost for all MsPowerPointPresentation object creations to recieve callbacks!
+		  
+		  Try
+		    #pragma BreakOnExceptions Off
+		    If IsNull( m_MsPowerPointHost ) Then
+		      m_MsPowerPointHost = New MsPowerPointHost()
+		    End If
+		    #pragma BreakOnExceptions Default
+		  Catch rtex
+		    'will raise an exeption if Microsoft PowerPoint (Office installation, not just the viewer) is not installed
+		    App.DebugWriter.Write(CurrentMethodName + ": exception " + RuntimeException(rtex).Message, 4)
+		    m_MsPowerPointHost = Nil
+		  End Try
+		  
+		  Try
+		    #pragma BreakOnExceptions Off
+		    If Not IsNull( m_MsPowerPointHost ) Then
+		      oPpt = m_MsPowerPointHost.Presentations.Open( presentationFile.NativePath, false, false, false )
+		      oPres = New MsPowerPointPresentation( oPpt )
+		    End If
+		    #pragma BreakOnExceptions Default
+		  Catch rtex
+		    App.DebugWriter.Write(CurrentMethodName + ": exception " + RuntimeException(rtex).Message, 4)
+		    oPres = Nil
+		  End Try
+		  
+		  Return oPres
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function CreateMsPPTViewPresentation(presentationFile As FolderItem) As MsPPTViewPresentation
+		  Dim oPres As MsPPTViewPresentation = Nil
+		  
+		  If presentationFile.Exists() Then
+		    oPres = New MsPPTViewPresentation( presentationFile )
+		  End If
+		  
+		  Return oPres
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function CreateOOoImpressPresentation(presentationFile As FolderItem) As OooImpressPresentation
+		  Dim oPres As OooImpressPresentation = Nil
+		  Dim oImpressDoc As OLEObject = Nil
+		  
+		  Try
+		    #pragma BreakOnExceptions Off
+		    Dim oServiceManager As OLEObject = New OLEObject("com.sun.star.ServiceManager")
+		    If Not IsNull( oServiceManager ) Then
+		      
+		      Dim oDesktop as OLEObject = oServiceManager.createInstance("com.sun.star.frame.Desktop")
+		      If Not IsNull( oDesktop ) Then
+		        
+		        #If RBVersion >= 2009 Then
+		          
+		          Dim aArgs() As Variant
+		          
+		          'See http://api.openoffice.org/docs/common/ref/com/sun/star/frame/XComponentLoader.html
+		          
+		          Dim olePropHide As OLEObject = oServiceManager.Bridge_GetStruct("com.sun.star.beans.PropertyValue")
+		          olePropHide.Name = "Hidden"
+		          olePropHide.Value = True
+		          aArgs.Append( olePropHide )
+		          
+		          Dim olePropRO As OLEObject = oServiceManager.Bridge_GetStruct("com.sun.star.beans.PropertyValue")
+		          olePropRO.Name = "ReadOnly"
+		          olePropRO.Value = True
+		          aArgs.Append( olePropRO )
+		          
+		          Dim olePropSilent As OLEObject = oServiceManager.Bridge_GetStruct("com.sun.star.beans.PropertyValue")
+		          olePropSilent.Name = "Silent"
+		          olePropSilent.Value = True
+		          aArgs.Append( olePropSilent )
+		          
+		          Try
+		            oImpressDoc = oDesktop.loadComponentFromURL(presentationFile.URLPath(), "_blank", 0, aArgs)
+		          Catch
+		            oImpressDoc = Nil
+		          End Try
+		          
+		        #Else
+		          
+		          Dim aNoArgs() as Variant
+		          Dim param as new OLEParameter
+		          
+		          'This works
+		          param.Type = OLEParameter.ParamTypeString 'or something else?
+		          param.ValueArray = aNoArgs
+		          
+		          Try
+		            oImpressDoc = oDesktop.loadComponentFromURL(presentationFile.URLPath(), "_default", 0, param)
+		          Catch
+		            oImpressDoc = Nil
+		          End Try
+		          
+		        #EndIf
+		        
+		        If Not IsNull( oImpressDoc ) Then
+		          
+		          If oImpressDoc.supportsService("com.sun.star.presentation.PresentationDocument") Then
+		            'Setting "Hidden" does not work for some reason...
+		            'Get the window controller and minimize it
+		            'see http://api.openoffice.org/docs/common/ref/com/sun/star/frame/XController.html
+		            '#If False
+		            Dim oController As OLEObject = oImpressDoc.getCurrentController()
+		            If Not IsNull( oController ) Then
+		              Dim oFrame As OLEObject = oController.getFrame()
+		              If Not IsNull( oFrame ) Then
+		                Dim oComponentWin As OLEObject = oFrame.getContainerWindow()
+		                If Not IsNull( oComponentWin ) Then
+		                  oComponentWin.setVisible( False )
+		                End If
+		              End If
+		            End If
+		            '#EndIf
+		          End If
+		          
+		          oPres = New OOoImpressPresentation( oImpressDoc )
+		        End If
+		        
+		      End If
+		      
+		    End If
+		    #pragma BreakOnExceptions Default
+		  Catch e As RuntimeException
+		    'prevent an application crash, inspect e for debugging.
+		  End Try
+		  
+		  Return oPres
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub DetectAllHosts()
+		  If m_PptAvailable = Integer(HostAvailable.Unknown) Or _
+		    m_PptViewAvailable = Integer(HostAvailable.Unknown) Or _
+		    m_OOoAvailable = Integer(HostAvailable.Unknown) Then
+		    
+		    ProgressWindow.lbl_status.Text = App.T.Translate("progress_status/detect_presentation_hosts") + "..."
+		    ProgressWindow.SetMaximum( 3 )
+		    ProgressWindow.CanCancel False
+		    ProgressWindow.Show()
+		    
+		    ProgressWindow.SetProgress(0)
+		    ProgressWindow.SetStatus( App.T.Translate("external_slide/presentation_settings/host_impress") )
+		    Call OpenOfficeAvailable()
+		    
+		    ProgressWindow.SetProgress(1)
+		    ProgressWindow.SetStatus( App.T.Translate("external_slide/presentation_settings/host_powerpoint") )
+		    Call PowerPointAvailable()
+		    
+		    ProgressWindow.SetProgress(2)
+		    ProgressWindow.SetStatus( App.T.Translate("external_slide/presentation_settings/host_pptview") )
+		    Call PPTViewAvailable()
+		    
+		    ProgressWindow.SetProgress(3)
+		    ProgressWindow.SetStatus( "" )
+		    
+		    ProgressWindow.Close()
+		  End If
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function DetectPPTView(ByRef application As FolderItem, ByRef parameters As String) As Boolean
+		  Dim result as Boolean = False
+		  Dim applCmd As String
+		  Dim applParam As String
+		  Dim appl As FolderItem = Nil
+		  
+		  'Detect Microsoft PPTView
+		  'How to detect?
+		  
+		  '1. Use a configuration setting in the general OS settings and check for existence of the filename
+		  '2. Query the registry if an installation reference is found (only Windows)
+		  '3. See if PowerPoint is installed and use that in 'simple' mode (only Windows)
+		  
+		  If IsNull( appl ) Or Not result Then
+		    appl = App.MainPreferences.GetValueFI(Prefs.kPPTViewLocation, Nil, False)
+		    
+		    If Not IsNull(appl) Then
+		      If Not appl.Exists Then
+		        appl = Nil
+		      Else
+		        applCmd = appl.NativePath
+		        result = True
+		      End If
+		    End If
+		  End If
+		  
+		  #If TargetWin32
+		    If IsNull( appl ) Or Not result Then
+		      Try
+		        #pragma BreakOnExceptions Off
+		        Dim PptViewReg As New RegistryItem("HKEY_CLASSES_ROOT\Applications\pptview.exe\shell\Show\command", False)
+		        Dim command As String=CStr(PptViewReg.DefaultValue)
+		        
+		        SplitCommandString( command, applCmd, applParam )
+		        appl = GetFolderItem(applCmd, FileUtils.PathType)
+		        If Not IsNull(app) Then
+		          If Not appl.Exists() Then
+		            appl = Nil
+		          Else
+		            result = True
+		          End If
+		        End If
+		        #pragma BreakOnExceptions Default
+		      Catch e As  RegistryAccessErrorException
+		        'Key not available
+		      End Try
+		    End If
+		  #EndIf
+		  
+		  #If TargetWin32
+		    If IsNull( appl ) Or Not result Then
+		      Try
+		        #pragma BreakOnExceptions Off
+		        Dim PptFullReg As New RegistryItem("HKEY_CLASSES_ROOT\Applications\POWERPNT.EXE\shell\Show\command", False)
+		        Dim command As String=CStr(PptFullReg.DefaultValue)
+		        
+		        SplitCommandString( command, applCmd, applParam )
+		        appl = GetFolderItem(applCmd, FileUtils.PathType)
+		        If Not IsNull(appl) Then
+		          If Not appl.Exists() Then
+		            appl = Nil
+		          Else
+		            result = True
+		          End If
+		        End If
+		        #pragma BreakOnExceptions Default
+		      Catch e As  RegistryAccessErrorException
+		        'Key not available
+		      End Try
+		    End If
+		    
+		    If IsNull( appl ) Or Not result Then
+		      Try
+		        #pragma BreakOnExceptions Off
+		        Dim PptFullReg As New RegistryItem("HKEY_CLASSES_ROOT\PowerPointViewer.SlideShow.11\shell\Show\command", False)
+		        Dim command As String=CStr(PptFullReg.DefaultValue)
+		        
+		        SplitCommandString( command, applCmd, applParam )
+		        appl = GetFolderItem(applCmd, FileUtils.PathType)
+		        If Not IsNull(appl) Then
+		          If Not appl.Exists() Then
+		            appl = Nil
+		          Else
+		            result = True
+		          End If
+		        End If
+		        #pragma BreakOnExceptions Default
+		      Catch e As  RegistryAccessErrorException
+		        'Key not available
+		      End Try
+		    End If
+		    
+		    If IsNull( appl ) Or Not result Then
+		      Try
+		        #pragma BreakOnExceptions Off
+		        Dim PptFullReg As New RegistryItem("HKEY_CLASSES_ROOT\PowerPointViewer.SlideShow.12\shell\Show\command", False)
+		        Dim command As String=CStr(PptFullReg.DefaultValue)
+		        
+		        SplitCommandString( command, applCmd, applParam )
+		        appl = GetFolderItem(applCmd, FileUtils.PathType)
+		        If Not IsNull(appl) Then
+		          If Not appl.Exists() Then
+		            appl = Nil
+		          Else
+		            result = True
+		          End If
+		        End If
+		        #pragma BreakOnExceptions Default
+		      Catch e As  RegistryAccessErrorException
+		        'Key not available
+		      End Try
+		    End If
+		  #EndIf
+		  
+		  If Not IsNull( appl ) And result Then
+		    application = appl
+		    parameters = applParam.Replace(" ""%1""","")
+		  End If
+		  
+		  Return result
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function GetOrCreate(presentationFilename As String, Host As PresentationHost, cachePresentation As Boolean = True) As iPresentation
+		  'Return either MsPowerPointPresentation or OOoImpressPresentation or Nil
+		  Dim oPres As iPresentation = Nil
+		  Dim createdPres As iPresentation
+		  
+		  Dim presFile As FolderItem
+		  presFile = PathToFolderItem( presentationFilename, FileUtils.PathType )
+		  If presFile.Exists() Then
+		    
+		    For Each createdPres In m_PresentationList
+		      If createdPres.Filename() = presFile.NativePath() Then
+		        oPres = createdPres
+		        Exit
+		      End If
+		    Next createdPres
+		    
+		    If IsNull( oPres ) Then
+		      If Host = PresentationHost.PowerPoint Then
+		        oPres = CreateMsPowerPointPresentation( presFile )
+		      ElseIf Host = PresentationHost.PowerPointViewer Then
+		        oPres = CreateMsPPTViewPresentation( presFile )
+		      ElseIf Host = PresentationHost.OpenOffice Then
+		        oPres = CreateOOoImpressPresentation( presFile )
+		      Else
+		        
+		        If PowerPointAvailable(False) And (presFile.Type = PresentationFileTypes.PPTFiles.Name) Then
+		          oPres = CreateMsPowerPointPresentation( presFile )
+		        ElseIf PPTViewAvailable() And (presFile.Type = PresentationFileTypes.PPTFiles.Name) Then
+		          oPres = CreateMsPPTViewPresentation( presFile )
+		        ElseIf OpenOfficeAvailable() And (presFile.Type = PresentationFileTypes.ODPFiles.Name) Then
+		          oPres = CreateOOoImpressPresentation( presFile )
+		        End If
+		        
+		      End If
+		      
+		      If cachePresentation Then
+		        If Not IsNull( oPres ) Then
+		          Call RegisterPresentation( oPres )
+		        End If
+		      End If
+		    End If
+		    
+		  End If
+		  
+		  Return oPres
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub OnPowerPointEvent(ppt As PowerPointPresentation, iEvent As PresentationEvent)
+		  Dim eventFilename As String
+		  Dim pres As iPresentation
+		  
+		  App.DebugWriter.Write(CurrentMethodName + ": event " + iEvent.StringValue, 8)
+		  
+		  eventFilename = ppt.FullName()
+		  
+		  For Each pres In m_PresentationList
+		    If pres.Filename() = eventFilename Then
+		      pres.Notify( iEvent )
+		    End If
+		  Next pres
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function OpenOfficeAvailable(forceDetect As Boolean = False) As Boolean
+		  If m_OOoAvailable = Integer(HostAvailable.Unknown) Or _
+		    forceDetect Then
+		    
+		    'Detect OpenOffice Impress
+		    
+		    m_OOoAvailable = Integer(HostAvailable.No)
+		    Try
+		      #pragma BreakOnExceptions Off
+		      Dim oServiceManager as New OLEObject("com.sun.star.ServiceManager")
+		      If Not IsNull( oServiceManager ) Then
+		        
+		        Dim oDesktop as OLEObject = oServiceManager.createInstance("com.sun.star.frame.Desktop")
+		        If Not IsNull( oDesktop ) Then
+		          
+		          #If False Then 'Set to True if a full check is required
+		            Dim aNoArgs() as Variant
+		            
+		            Dim param as new OLEParameter
+		            param.Type = OLEParameter.ParamTypeString
+		            param.ValueArray = aNoArgs
+		            
+		            Dim oImpressDoc as OLEObject =  oDesktop.loadComponentFromURL("private:factory/simpress", "", 0, param)
+		            m_OOoAvailable = Integer(HostAvailable.Yes)
+		            
+		            'If the creation of the object from the URL above does not throw an error, OOo Impress installed;
+		            'the actual document creation does not need too be checked (afaik).
+		            'If this is required, make sure the targetFrame parameter is not "" but "_blank" (or something like that)
+		            
+		            If Not IsNull( oImpressDoc ) Then
+		              'm_OOoAvailable = Integer(HostAvailable.Yes)
+		              
+		              oImpressDoc.close( False )
+		            End If
+		          #Else
+		            m_OOoAvailable = Integer(HostAvailable.Yes)
+		          #Endif
+		          
+		        End If
+		        
+		      End If
+		      #pragma BreakOnExceptions Default
+		    Catch
+		      'any...
+		    End Try
+		    
+		  End If
+		  
+		  Return m_OOoAvailable = Integer(HostAvailable.Yes)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function PowerPointAvailable(viewerAcceptable As Boolean = True, forceDetect As Boolean = False) As Boolean
+		  If m_PptAvailable = Integer(HostAvailable.Unknown)Or _
+		    forceDetect Then
+		    
+		    'Detect Microsoft Office PowerPoint
+		    
+		    m_PptAvailable = Integer(HostAvailable.No)
+		    Try
+		      #pragma BreakOnExceptions Off
+		      Dim ppApp As MsPowerPointHost = New MsPowerPointHost()
+		      If Not IsNull( ppApp ) Then
+		        m_PptAvailable = Integer(HostAvailable.Yes)
+		      End If
+		      #pragma BreakOnExceptions Default
+		    Catch
+		      'catch all
+		    End Try
+		    
+		  End If
+		  
+		  Return m_PptAvailable = Integer(HostAvailable.Yes)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function PPTViewAvailable(forceDetect As Boolean = False) As Boolean
+		  If m_PptViewAvailable = Integer(HostAvailable.Unknown) Or _
+		    forceDetect Then
+		    
+		    Dim PPTViewLocation As FolderItem
+		    Dim PPTViewParameters As String
+		    
+		    If DetectPPTView(PPTViewLocation, PPTViewParameters) Then
+		      m_PptViewAvailable = Integer(HostAvailable.Yes)
+		    Else
+		      m_PptViewAvailable = Integer(HostAvailable.No)
+		    End If
+		  End If
+		  
+		  Return m_PptViewAvailable = Integer(HostAvailable.Yes)
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function RegisterPresentation(presentation As iPresentation) As Boolean
+		  Dim success As Boolean = False
+		  
+		  If presentation IsA iPresentation Then
+		    If m_PresentationList.IndexOf( presentation ) = -1 Then
+		      m_PresentationList.Append( presentation )
+		      success = True
+		    End If
+		  End If
+		  
+		  Return success
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub SplitCommandString(command As String, ByRef application As String, ByRef parameters As String)
+		  If command.StartsWith( """" ) Then
+		    
+		    Dim i As Integer = command.InStr( 2, """" )
+		    If i > 0 Then
+		      application = command.Mid( 2, i-2 )
+		      parameters = command.Mid( i+1 ).Trim()
+		    End If
+		    
+		  Else
+		    
+		    Dim i As Integer = command.InStr( 2, " " )
+		    If i > 0 Then
+		      application = command.Left( i )
+		      parameters = command.Mid( i+1 ).Trim()
+		    End If
+		    
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function StringValue(Extends e As PresentationEvent) As String
+		  Select Case e
+		  Case PresentationEvent.BeginPresentation
+		    Return "BeginPresentation"
+		  Case PresentationEvent.EndPresentation
+		    Return "EndPresentation"
+		  Case PresentationEvent.NextSlide
+		    Return "NextSlide"
+		  End Select
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function UnregisterPresentation(presentation As iPresentation) As Boolean
+		  Dim success As Boolean
+		  Dim i As Integer
+		  
+		  success = False
+		  
+		  If presentation IsA iPresentation Then
+		    i = m_PresentationList.IndexOf( presentation )
+		    If i > -1 Then
+		      m_PresentationList.Remove( i )
+		      success = True
+		    End If
+		  End If
+		  
+		  Return success
+		End Function
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h21
+		Private m_MsPowerPointHost As MsPowerPointHost = Nil
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private m_OOoAvailable As Integer = -1
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private m_PptAvailable As Integer = -1
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private m_PptViewAvailable As Integer = -1
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private m_PresentationList(-1) As iPresentation
+	#tag EndProperty
+
+
+	#tag Enum, Name = HostAvailable, Flags = &h0
+		Unknown=-1
+		  No=0
+		Yes=1
+	#tag EndEnum
+
+	#tag Enum, Name = PresentationEvent, Flags = &h0
+		BeginPresentation
+		  EndPresentation
+		NextSlide
+	#tag EndEnum
+
+	#tag Enum, Name = PresentationHost, Flags = &h0
+		Automatic=0
+		  PowerPoint=1
+		  PowerPointViewer=2
+		OpenOffice=3
+	#tag EndEnum
+
+
+	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+	#tag EndViewBehavior
+End Module
+#tag EndModule

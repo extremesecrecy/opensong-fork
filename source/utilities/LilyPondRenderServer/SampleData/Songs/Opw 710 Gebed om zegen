@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>
+  <title>710 Gebed om zegen</title>
+  <copyright>Tekst: Hans Maat
+Muziek: Gerrit Dekker
+© Small Stone Media</copyright>
+  <lyrics>;$hyphenlanguage=nl_NL
+[N]
+ \relative c'
+ {
+  \time 2/2 
+  \key a \major
+  \clef "treble"
+  cis2. b8 b (b2) r4 b8 cis d4 d8 d (d) d4 d8 (d2) cis
+  cis2. b8 b (b2) r4 b8 cis d4 d8 d (d) d4 d8 (d2) cis
+  gis'4 gis8 gis (gis) a4 e8 (e) a,4. r4 r8 a8
+  gis'4 gis8 gis8 (gis) a4 e8 (e2) r2
+  fis2 a b4 e,8 e (e4) r d' cis8 cis (cis) b4 b8 (b1)
+ }
+[NC1]
+ \relative c'
+ {
+  \time 2/2
+  \key a \major
+  \clef "treble"
+  r2 cis'4 b a a gis e8 fis (fis) fis4. r2
+  fis4 fis gis cis,8 a' (a4) r4
+  \times 2/3 { cis4 b a } 
+  gis2 e4 cis8 fis (fis) fis4. r2
+  fis4 fis gis cis,8 a' (a4) r4 a gis fis2 fis4 e4 (e)
+  a, r a'8 gis fis2 gis4 cis,8 a'8 (a4) r a gis fis2 fis4 e (e) a, r8 a8 a8 gis a2.
+  b4 cis b8 b (b4) a a2
+ }
+[NC2]
+ \relative c'
+ {
+  \time 2/2
+  \key a \major
+  \clef "treble"
+  r2 cis'4 b a a gis e8 fis (fis) fis4. r2
+  fis4 fis gis cis,8 a' (a4) r4
+  \times 2/3 { cis4 b a } 
+  gis2 e4 cis8 fis (fis) fis4. r4 r8
+  fis fis4 fis gis cis,8 a' (a4) r4 a gis fis2 fis4 e4 (e)
+  a, r a'8 gis fis4 fis8 gis8 (gis4) cis,8 a'8 (a4) r a gis fis2 fis4 e (e) a, r8 a8 a8 gis a2.
+  b4 cis b8 b (b4) a a2
+ }
+[V1]
+ Zegen mij op de weg die ik moet gaan _
+ Zegen mij op de plek waar ik zal staan _
+ Zegen mij in alles, wat U van mij verlangt.
+ O God, zegen mij alle dagen lang!
+[C1]
+ Vader, maak mij tot een zegen;
+ ga mij niet voorbij.
+ Regen op mij met Uw Geest, Heer,
+ Jezus, kom tot mij
+ ||
+ als de Bron van leven,
+ die ontspringt, diep in mij.
+ Breng een stroom van zegen,
+ waarin U zelf steeds mooier wordt voor mij.
+[V2]
+ Zegen ons waar we in geloof voor leven.
+ Zegen ons waar we hoop en liefde geven.
+ Zegen om de ander tot ze _ gen te zijn.
+ O God, zegen ons tot in eeuwigheid!
+[C2]
+ Vader, maak ons tot een zegen;
+ hier in de woestijn.
+ Wachtend op uw milde regen,
+ om zelf een bron te zijn.
+ ||
+ Met een hart vol vrede,
+ zijn wij zegenend nabij.
+ Van uw liefde delend,
+ waarin wij zelf tot bron van zegen zijn.
+ </lyrics>
+  <hymn_number>710</hymn_number>
+  <presentation>V1 C1 V2 C2</presentation>
+  <author></author>
+  <ccli></ccli>
+  <capo print="false"></capo>
+  <key></key>
+  <aka></aka>
+  <key_line></key_line>
+  <user1></user1>
+  <user2></user2>
+  <user3></user3>
+  <theme></theme>
+  <linked_songs/>
+  <tempo></tempo>
+  <time_sig></time_sig>
+  <backgrounds resize="screen" keep_aspect="true" link="true" background_as_text="false"/>
+</song>

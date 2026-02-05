@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="bible">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="b"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="b">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="c">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="v"> </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="n"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="n"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="n" type="xs:string"/>
+    <xs:simpleType name="text">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:element name="v" type="verse"/>
+    <xs:complexType name="verse">
+        <xs:simpleContent>
+            <xs:extension base="text">
+                <xs:attribute ref="n"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
